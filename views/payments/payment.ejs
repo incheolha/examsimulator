@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.2.js"></script>
+    	<style>
+        	body        { padding-top:80px; }
+    	</style>
+
+        <!--   결재 시스템 모듈입니다   --> 
+
+                                    <script>
+                                                function payment1(px,py) {
+ 
+                                        var IMP = window.IMP; // 생략가능         
+                                        IMP.init('imp66601308'); // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+                                        IMP.request_pay({
+                                        pg : param_pg, // version 1.1.0부터 지원.
+                                        pay_method : param_pay_method,
+                                        merchant_uid : param_merchant_uid,
+                                        name : param_name,
+                                        amount : py,
+                                        buyer_email : px,
+                                        buyer_name : param_buyer_name,
+                                        buyer_tel : param_buyer_tel,
+                                        buyer_addr : param_buyer_addr,
+                                        buyer_postcode : param_buyer_postcode,
+                                        m_redirect_url : 'https://www.yourdomain.com/payments/complete'
+                                    }, function(rsp) {
+                                        if ( rsp.success ) {
+                                            var msg = '결제가 완료되었습니다.';
+                                            console.log(rsp);
+                                            msg += '고유ID : ' + rsp.imp_uid;
+                                            msg += '상점 거래ID : ' + rsp.merchant_uid;
+                                            msg += '결제 금액 : ' + rsp.paid_amount;
+                                            msg += '카드 승인번호 : ' + rsp.apply_num;
+                                        } else {
+                                            var msg = '결제에 실패하였습니다.';
+                                            msg += '에러내용 : ' + rsp.error_msg;
+                                        }
+                                        alert(msg);
+                                    });     
+
+                                        }
+                                    </script>
+    <!-- 결재시스템 마무리 -->
+    
+		<title>프로필 화면</title>
+ /head>
+
+<body>
+		<div class="container">			
+						
+			<div class="page-header text-center">
+		        <h1><span class="fa fa-book"></span> 사용자 프로필</h1>
+                <br>
+    <!--    <button onclick="payment1()"> 결재하기 </button> -->
+        <br>
+		        <a href="/logout" class="btn btn-default btn-sm">로그아웃</a>
+		    </div>
+			<br>
+		    <div class="row">
+		
+		        <div class="col-sm-6">
+		            <div class="well">
+
+		            
+		            	<% if (user.provider == undefined || user.provider == '') { %>
+			                <h3><span class="fa fa-user"></span> 로컬 프로필</h3>
+							<br>
+							<p>
+								<strong>이메일</strong>: <%= user.email %><br><br>
+		                		<strong>별명</strong>: <%= user.name %>
+			                </p>
+			            <% } else if (user.provider == 'facebook') { %>
+							<h3 class="text-primary"><span class="fa fa-facebook"></span> 페이스북 프로필</h3>
+							<br>
+		                    <p>
+		                        <strong>아이디</strong>: <%= user.facebook.id %><br><br>
+		                        <strong>이메일</strong>: <%= user.facebook.email %><br><br>
+		                        <strong>이름</strong>: <%= user.facebook.name %>
+		                    </p>
+		                <% } else if (user.provider == 'twitter') { %>
+							<h3 class="text-primary"><span class="fa fa-twitter"></span> 트위터 프로필</h3>
+							<br>
+		                    <p>
+		                        <strong>아이디</strong>: <%= user.twitter.id %><br><br>
+		                        <strong>이메일</strong>: <%= user.twitter.email %><br><br>
+		                        <strong>이름</strong>: <%= user.twitter.name %>
+		                    </p>
+		                <% } else if (user.provider == 'google') { %>
+							<h3 class="text-primary"><span class="fa fa-google"></span> 구글 프로필</h3>
+							<br>
+		                    <p>
+		                        <strong>아이디</strong>: <%= user.google.id %><br><br>
+		                        <strong>이메일</strong>: <%= user.email %><br><br>
+		                        <strong>이름</strong>: <%= user.name %>
+		                    </p>
+						<% } %>
+		                	<script> 
+                                    var userEmail = '<%= user.email %>';
+                                    var userEmail = '<%= user.name %>';
+                                                    var param_pg = 'inicis';
+                                                    var param_pay_method = 'card';
+                                                    var param_name = "토플 모의시험 결재시스템";
+                                                    var param_merchant_uid = 'merchant_'+new Date().getTime();
+                                                    var param_amount = 1000;
+                                                    var param_buyer_email = '<%= user.email %>';
+                                                    var param_buyer_name = '<%= user.name %>';
+                                                    var param_buyer_tel = '010-4023-9334';
+                                                    var param_buyer_addr = '경기도 성남시 분당구 서현동 210';
+                                                    var param_buyer_postcode = '15804';
+                                   
+                                     var y = 1000;
+                            payment1(x, y)</script>
+						<br>
+		            </div>
+		        </div>
+		
+		    </div>
+			
+		</div>	
+			
+
+	</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		
+		<title>홈 화면</title>
+		
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    	
+    	<style>
+        	body { padding-top:80px; }
+        	
+			@font-face {
+				font-family: 'Nanum Gothic'; font-style: normal; font-weight: 400;
+				src: url('../public/NanumGothic-Regular.eot');
+				src: local('NanumGothic'),
+					url('../public/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+					url('../public/NanumGothic-Regular.woff2') format('woff2'),
+					url('../public/NanumGothic-Regular.woff') format('woff'),
+					url('../public/NanumGothic-Regular.ttf') format('truetype');
+			}
+            
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            li {
+                width: 40%;
+				display: inline-block;
+				text-align: center;
+            }
+
+            li:first-child a {
+                border-left: 0;
+            }
+
+            li a {
+                /** 링크의 박스화 --> 하나의 목록 안을 전체 클릭 가능하게 한다. */
+                display: block;
+                width: auto;
+                
+                
+                /** li에게 border를 지정할 경우 li의 총 넓이 합이 100%를 초과하므로,
+                 * 	레이아웃이 깨지게 된다.
+                 *  링크는 width가 auto이므로, border를 주어도 전체 크기에
+                 *  영향이 없다. */
+                border-left: 1px dotted #cccccc;
+            }
+
+            li a:hover {
+                background-color: #d7d8d0;
+            }
+        	
+        	h1, p, a { font-family: 'Nanum Gothic' }
+    	</style>
+        <script src="/public/ckeditor/ckeditor.js"></script>
+    
+	</head>
+	<body>
+		<div class="container">
+		    <div class="jumbotron text-center">
+		        <h1> <a href="writing">Carousel</a> </h1>
+				<br>
+						
+		    </div>
+            <div class="jumbotron text-center">
+                <ul>
+                    <li> <a href="writing1">Integrated Writing</a> </li>
+                    <li> <a href="writing2">Independent Writing</a> </li>
+                </ul>
+            </div>
+            <div class="jumbotron text-center">
+<!--                <form method="post" enctype="multipart/form-data" action="/process/addpost"> 이 개쇙키 쓰면 업로드 안됨 이유 모름-->
+                <form class="content ui form" method="post" action="/process/addpost">
+                    <div class="two fields">
+				    		<div class="field">
+				      			<label>제목</label>
+								<input type="text" name="title" placeholder="제목 입력">
+							</div>
+							<div class="field"></div>
+                    </div>
+                    
+                    <br>
+								
+                    <div class="field">
+<!--                        editors2-->
+                        <textarea name="contents" id="contents" rows="10" cols="80" >
+                        This is my textarea to be replaced with CKEditor..
+                        </textarea>
+                        <script type="text/javascript">
+                        // Replace the <textarea id="editor1"> with a CKEditor
+                        // instance, using default configuration.
+                        CKEDITOR.replace( 'contents' , {
+                        filebrowserUploadUrl: '/process/singleupload'
+                        });
+                        </script>
+                    </div>		
+                    
+                    <br>
+								
+                    <div class="two fields">
+                        <div class="field">
+				      		<label>작성자</label>
+								<input type="text" name="writer" placeholder="작성자아이디 입력">
+                        </div>
+                        <div class="field"></div>
+                    </div>
+					
+                    <br>
+                    
+                    <input class="ui submit button" type="submit" value="추가" name="" />
+                    <input class="ui button" type="button" value="취소" name="" onclick="javascript:history.back()" />
+                    
+                </form>
+                
+			</div>
+            </div>
+		</div>
+	</body>
+</html>

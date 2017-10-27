@@ -1,0 +1,176 @@
+/*
+	StyleSheet For Responsive Bootstrap Carousel
+	Author: szthemes
+	Item Name: Responsive Bootstrap Carousel
+	Author URI: http://codecanyon.net/user/szthemes
+	Description: Different Types of Bootstrap Carousel
+
+									Content List
+  -----------------------------------------------------------------------------------
+	NAME ----------------------------------------LINE NUMBER--------------------- #
+	TESTIMONIAL THUMBNAILS CAROUSEL -------------31------------------------------ 01
+	RESPONSIVE ----------------------------------148----------------------------- 02	
+	COLORS --------------------------------------160----------------------------- 03	
+	[ Note: Line Numbers Are According To Notepad++ ]
+  -----------------------------------------------------------------------------------
+							Fonts Styles
+  -----------------------------------------------------------------------------------
+	  'Raleway', sans-serif ---------------------------------- 01
+	            FontAwesome ---------------------------------- 02
+  -----------------------------------------------------------------------------------
+							Color Codes
+  -----------------------------------------------------------------------------------
+	NAME    ------------------------RGB-------------------------- #
+	#ffffff -------------------rgb(255, 255, 255)---------------- 01
+	#000000 -------------------rgb(0, 0, 0)---------------------- 02
+	#feb600 -------------------rgb(254, 182, 0)------------------ 03	Replace Only This Color To Change Whole Color Scheme
+	#cb9200 -------------------rgb(203, 146, 0)------------------ 04	Replace Only This Color To Change Whole Color Scheme
+*/
+
+/*------------------------------------------------------*/
+/* TESTIMONIAL THUMBNAILS CAROUSEL
+/*------------------------------------------------------*/
+
+.testimonial_thumbnails_carousel_wrapper {
+  padding: 25px;
+  overflow: hidden;
+}
+/*---------- FADE EFFECT ----------*/
+.testimonial_thumbnails_carousel_fade {
+  opacity: 1;
+}
+.testimonial_thumbnails_carousel_fade .item {
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  left: 0 !important;
+  display: block !important;
+  -webkit-transition: opacity ease-in-out 0.7s;
+  -moz-transition: opacity ease-in-out 0.7s;	
+  -ms-transition: opacity ease-in-out 0.7s;	
+  -o-transition: opacity ease-in-out 0.7s;  
+  transition: opacity ease-in-out 0.7s;
+}
+.testimonial_thumbnails_carousel_fade .item:first-child {
+  top: auto;
+  position: relative;
+}
+.testimonial_thumbnails_carousel_fade .item.active {
+  opacity: 1;
+  z-index: 2;
+  -webkit-transition: opacity ease-in-out 0.7s;
+  -moz-transition: opacity ease-in-out 0.7s;	
+  -ms-transition: opacity ease-in-out 0.7s;	
+  -o-transition: opacity ease-in-out 0.7s;  
+  transition: opacity ease-in-out 0.7s;
+}
+/*---------- INDICATORS THUMBNAIL IMAGES ----------*/
+.testimonial_thumbnails_carousel_indicators {
+  left: 0%;
+  right: 0%;
+  z-index: 3;
+  bottom: 0%;
+  width: 100%;
+  margin-left: 0%;
+  position: relative;
+  margin-bottom: 0px;
+  padding: 5px 0px 0px 0px;
+}
+.testimonial_thumbnails_carousel_indicators li {
+  width: 8%;
+  margin: 0px;
+  height: auto;
+  border: none;
+  -webkit-border-radius: 0%;
+  border-radius: 0%;
+}
+.testimonial_thumbnails_carousel_indicators li img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.testimonial_thumbnails_carousel_indicators .active {
+  width: 8%;
+  height: auto;
+  border: none;
+}
+.testimonial_thumbnails_carousel_indicators .active img {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+/*---------- CAPTION ----------*/
+.testimonial_thumbnails_carousel_caption {
+  text-align: center;
+  padding: 50px 100px 40px 100px;
+}
+.testimonial_thumbnails_carousel_caption>p {
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Raleway', sans-serif;
+}
+.testimonial_thumbnails_carousel_caption>p>i {
+  margin-right: 10px;
+}
+.testimonial_thumbnails_carousel_caption>h3 {
+  font-weight: 700;
+  text-transform: capitalize;
+  font-family: 'Raleway', sans-serif;
+}
+.testimonial_thumbnails_carousel_caption>a,
+.testimonial_thumbnails_carousel_caption>a:visited {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  -webkit-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+
+/*------------------------------------------------------*/
+/* RESPONSIVE
+/*------------------------------------------------------*/
+
+/*----------  MEDIA 600px ----------*/
+@media only screen and (max-width: 600px) {
+  /*---------- CAPTION ----------*/
+  .testimonial_thumbnails_carousel_caption {
+    padding: 0px 0px 30px 0px;
+  }
+}
+
+/*------------------------------------------------------*/
+/* COLORS (GOLDEN)
+/*------------------------------------------------------*/
+
+.testimonial_thumbnails_carousel_wrapper {
+  background: #ffffff;
+}
+/*---------- CAPTION ----------*/
+.testimonial_thumbnails_carousel_caption>a,
+.testimonial_thumbnails_carousel_caption>a:visited {
+  color: #feb600;
+}
+.testimonial_thumbnails_carousel_caption>a:hover,
+.testimonial_thumbnails_carousel_caption>a:active {
+  color: #cb9200;
+}
+
+/*----------  END  ----------*/

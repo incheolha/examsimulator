@@ -1,0 +1,255 @@
+/*
+	StyleSheet For Responsive Bootstrap Carousel
+	Author: szthemes
+	Item Name: Responsive Bootstrap Carousel
+	Author URI: http://codecanyon.net/user/szthemes
+	Description: Different Types of Bootstrap Carousel
+
+								Content List
+  -----------------------------------------------------------------------------------
+	NAME ----------------------------------------LINE NUMBER--------------------- #
+	ONE COLOR CAROUSEL --------------------------32------------------------------ 01
+	RESPONSIVE ----------------------------------139----------------------------- 02	
+	COLORS --------------------------------------206----------------------------- 03
+	[ Note: Line Numbers Are According To Notepad++ ]
+  -----------------------------------------------------------------------------------
+							Fonts Styles
+  ------------------------------------------------------------------
+	  'Open Sans', sans-serif ---------------------------------- 01
+	              FontAwesome ---------------------------------- 02
+  -----------------------------------------------------------------------------------
+							Color Codes
+  -----------------------------------------------------------------------------------
+	NAME    ------------------------RGB-------------------------- #
+	#ffffff -------------------rgb(255, 255, 255)---------------- 01
+	#000000 -------------------rgb(0, 0, 0)---------------------- 02
+	#d15d3f -------------------rgb(209, 93, 63)------------------ 03 Replace Only This Color To Change Whole Color Scheme
+	#b74425 -------------------rgb(183, 68, 37)------------------ 04 Replace Only This Color To Change Whole Color Scheme
+	#f16c49 -------------------rgb(241, 108, 73)----------------- 05 Replace Only This Color To Change Whole Color Scheme
+*/
+
+/*------------------------------------------------------*/
+/* ONE COLOR CAROUSEL
+/*------------------------------------------------------*/
+
+.one_color_carousel_wrapper {
+  overflow: hidden;
+  max-height: 661px;
+}
+.one_color_carousel_wrapper > .carousel-inner > .item > img,
+.one_color_carousel_wrapper > .carousel-inner > .item > a > img {
+  opacity: 0.6;
+  margin: auto;
+  width: 100% !important;
+}
+/*---------- FADE EFFECT ----------*/
+.one_color_carousel_fade {
+  opacity: 1;
+}
+.one_color_carousel_fade .item {
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  left: 0 !important;
+  display: block !important;
+  -webkit-transition: opacity ease-in-out 0.7s;
+  -moz-transition: opacity ease-in-out 0.7s;
+  -ms-transition: opacity ease-in-out 0.7s;	
+  -o-transition: opacity ease-in-out 0.7s;
+  transition: opacity ease-in-out 0.7s;
+}
+.one_color_carousel_fade .item:first-child {
+  top: auto;
+  position: relative;
+}
+.one_color_carousel_fade .item.active {
+  opacity: 1;
+  z-index: 2;
+  -webkit-transition: opacity ease-in-out 0.7s;
+  -moz-transition: opacity ease-in-out 0.7s;
+  -ms-transition: opacity ease-in-out 0.7s;
+  -o-transition: opacity ease-in-out 0.7s;
+  transition: opacity ease-in-out 0.7s;
+}
+/*---------- LEFT/RIGHT CONTROL ----------*/
+.one_color_carousel_control_left,
+.one_color_carousel_control_right {
+  top: 50%;
+  z-index: 2;
+  width: 55px;
+  height: 55px;
+  border: none;
+  text-align: center;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.one_color_carousel_control_icons {
+  line-height: 50px;
+  font-size: 34px !important;
+  font-weight: normal !important;
+}
+.one_color_carousel_control_left {
+  left: 1% !important;
+}
+.one_color_carousel_control_right {
+  right: 1% !important;
+}
+/*---------- CAPTION ----------*/
+.one_color_carousel_caption {
+  left: 0%;
+  right: 0%;
+  z-index: 1;
+  width: 100%;
+  bottom: 55%;
+  text-shadow: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+}
+.one_color_carousel_caption h1 {
+  font-size: 60px;
+  font-weight: 800;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.one_color_carousel_caption h1 a {
+  text-decoration: none;
+}
+.one_color_carousel_caption h2 {
+  font-size: 35px;
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+}
+.one_color_carousel_caption>img {
+  left: 13%;
+  right: 0%;
+  top: 185px;
+  width: 75%;
+  position: absolute;
+  text-align: center;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+/*------------------------------------------------------*/
+/* RESPONSIVE
+/*------------------------------------------------------*/
+
+/*---------- MEDIA 480px ----------*/
+@media only screen and (max-width: 480px) {
+  /*---------- LEFT/RIGHT CONTROL ----------*/
+  .one_color_carousel_control_left,
+  .one_color_carousel_control_right {
+    border: none;
+  }
+  .one_color_carousel_control_icons {
+    font-size: 18px !important;
+  }
+  /*---------- CAPTION ----------*/
+  .one_color_carousel_caption {
+    bottom: 40%;
+  }
+  .one_color_carousel_caption h1 {
+    font-size: 25px;
+    margin: 0px 0px 10px 0px;
+  }
+  .one_color_carousel_caption h2 {
+    font-size: 20px;
+    margin: 0px 0px 10px 0px;
+  }
+  .one_color_carousel_caption img {
+    top: 85px;
+  }
+}
+
+/*---------- MEDIA 481px - 600px ----------*/
+@media (min-width: 481px) and (max-width: 600px) {
+  /*---------- LEFT/RIGHT CONTROL ----------*/
+  .one_color_carousel_control_left,
+  .one_color_carousel_control_right {
+    border: none;
+  }
+  /*---------- CAPTION ----------*/
+  .one_color_carousel_caption {
+    bottom: 170px;
+  }
+  .one_color_carousel_caption h1 {
+    font-size: 40px;
+  }
+  .one_color_carousel_caption h2 {
+    font-size: 30px;
+  }
+  .one_color_carousel_caption img {
+    top: 160px;
+  }
+}
+
+/*---------- MEDIA 601px - 767px ----------*/
+@media (min-width: 601px) and (max-width: 767px) {
+  /*---------- CAPTION ----------*/
+  .one_color_carousel_caption {
+    bottom: 225px;
+  }
+  .one_color_carousel_caption h1 {
+    font-size: 50px;
+  }
+  .one_color_carousel_caption img {
+    top: 160px;
+  }
+}
+
+/*------------------------------------------------------*/
+/* COLORS (ORANGE)
+/*------------------------------------------------------*/
+
+.one_color_carousel_wrapper {
+  background: rgb(241,108,73);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(241,108,73,1)), color-stop(100%,rgba(230,104,71,1)));
+  background: -webkit-linear-gradient(top,  rgba(241,108,73,1) 0%, rgba(230,104,71,1) 100%);
+  background: -moz-linear-gradient(top,  rgba(241,108,73,1) 0%, rgba(230,104,71,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(241,108,73,1) 0%, rgba(230,104,71,1) 100%);
+  background: -o-linear-gradient(top,  rgba(241,108,73,1) 0%, rgba(230,104,71,1) 100%);
+  background: linear-gradient(to bottom,  rgba(241,108,73,1) 0%, rgba(230,104,71,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f16c49', endColorstr='#e66847',GradientType=0 );
+}
+/*---------- LEFT/RIGHT CONTROL ----------*/
+.one_color_carousel_control_left,
+.one_color_carousel_control_left:hover,
+.one_color_carousel_control_left:active,
+.one_color_carousel_control_left:focus,
+.one_color_carousel_control_right,
+.one_color_carousel_control_right:hover,
+.one_color_carousel_control_right:active,
+.one_color_carousel_control_right:focus {
+  color: #ffffff;
+  border: 1px solid #b74425;
+  background: #d15d3f !important; 
+  -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+/*---------- CAPTION ----------*/
+.one_color_carousel_caption h2,
+.one_color_carousel_caption h1 a,
+.one_color_carousel_caption h1 a:visited {
+  color: #ffffff;
+}
+
+/*---------- MEDIA QUERIES ----------*/
+@media only screen and (max-width: 600px) {
+  /*---------- LEFT/RIGHT CONTROL ----------*/
+  .one_color_carousel_control_left,
+  .one_color_carousel_control_right,
+  .one_color_carousel_control_left:hover,
+  .one_color_carousel_control_left:active,
+  .one_color_carousel_control_left:focus,
+  .one_color_carousel_control_right:hover,
+  .one_color_carousel_control_right:active,
+  .one_color_carousel_control_right:focus	{
+    background: transparent !important;
+  }
+}
+/*----------  END  ----------*/

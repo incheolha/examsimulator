@@ -1,0 +1,144 @@
+/*
+	StyleSheet For Responsive Bootstrap Carousel
+	Author: szthemes
+	Item Name: Responsive Bootstrap Carousel
+	Author URI: http://codecanyon.net/user/szthemes
+	Description: Different Types of Bootstrap Carousel
+
+								Content List
+  -----------------------------------------------------------------------------------
+	NAME ----------------------------------------LINE NUMBER--------------------- #
+	FULL WIDTH CAROUSEL -------------------------31------------------------------ 01
+	RESPONSIVE ----------------------------------79------------------------------ 02	
+	COLORS --------------------------------------133----------------------------- 03	
+	[ Note: Line Numbers Are According To Notepad++ ]
+  -----------------------------------------------------------------------------------
+							Fonts Styles
+  -----------------------------------------------------------------------------------
+	  'Raleway', sans-serif ---------------------------------- 01
+	            FontAwesome ---------------------------------- 02
+  -----------------------------------------------------------------------------------
+							Color Codes
+  -----------------------------------------------------------------------------------
+	NAME    ------------------------RGB-------------------------- #
+	#ffffff -------------------rgb(255, 255, 255)---------------- 01
+	#000000 -------------------rgb(0, 0, 0)---------------------- 02
+	#f9bf36 -------------------rgb(249, 191, 54)----------------- 03 Replace Only This Color To Change Whole Color Scheme
+	#282828 -------------------rgb(40, 40, 40)------------------- 04 
+*/
+
+/*------------------------------------------------------*/
+/* FULL WIDTH CAROUSEL
+/*------------------------------------------------------*/
+
+.post_carousel_wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.post_carousel_wrapper > .carousel-inner > .item > img,
+.post_carousel_wrapper > .carousel-inner > .item > a > img {
+  opacity: 0.5;
+  margin: auto;
+  width: 100% !important;
+}
+/*---------- INDICATORS CONTROL ----------*/
+.post_carousel_indicators {
+  bottom: 0px;
+}
+.post_carousel_indicators li {
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+/*---------- CAPTION ----------*/
+.post_carousel_caption {
+  left: 0%;
+  z-index: 1;
+  width: 100%;
+  bottom: 20%;
+  text-shadow: none;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+.post_carousel_caption h1 {
+  font-size: 45px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.post_carousel_caption h2 {
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+
+/*------------------------------------------------------*/
+/* RESPONSIVE
+/*------------------------------------------------------*/
+
+/*----------  MEDIA 480px  ----------*/
+@media only screen and (max-width: 480px) {
+  /*---------- INDICATORS CONTROL ----------*/
+  .post_carousel_indicators {
+    bottom: -10px;
+  }
+  /*---------- CAPTION ----------*/
+  .post_carousel_caption h1 {
+    font-size: 16px;
+    margin: 0px 0px 0px 0px;
+  }
+  .post_carousel_caption h2 {
+    font-size: 14px;
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+/*----------  MEDIA 481px - 600px  ----------*/
+@media (min-width: 481px) and (max-width: 600px) {
+  /*---------- INDICATORS CONTROL ----------*/
+  .post_carousel_indicators {
+    bottom: -10px;
+  }
+  /*---------- CAPTION ----------*/
+  .post_carousel_caption h1 {
+    font-size: 25px;
+    margin: 0px 0px 0px 0px;
+  }
+  .post_carousel_caption h2 {
+    font-size: 20px;
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+/*----------  MEDIA 601px - 767px  ----------*/
+@media (min-width: 601px) and (max-width: 767px) {
+  /*---------- INDICATORS CONTROL ----------*/
+  .post_carousel_indicators {
+    bottom: -10px;
+  }
+  /*---------- CAPTION ----------*/
+  .post_carousel_caption h1 {
+    font-size: 30px;
+  }
+  .post_carousel_caption h2{
+    font-size: 30px;
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+/*------------------------------------------------------*/
+/* COLORS (BLACK AND WHITE)
+/*------------------------------------------------------*/
+
+.post_carousel_wrapper {
+  background: #000000;
+}
+/*---------- CAPTION ----------*/
+.post_carousel_caption h2,
+.post_carousel_caption h1 {
+  color: #ffffff;
+}
+/*----------  END  ----------*/

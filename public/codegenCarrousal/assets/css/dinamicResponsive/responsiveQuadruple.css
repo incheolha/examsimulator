@@ -1,0 +1,84 @@
+/* RESPONSIVE - SPECIAL TO QUADRUPLE CAROUSEL */
+.multiple.m-quadruple:not(.m-reponsive-except) .m-carousel-titles,
+.multiple.m-quadruple:not(.m-reponsive-except) .m-nav{
+    display: none;
+    margin-left: -30000px;
+}
+.multiple.m-quadruple:not(.m-reponsive-except) .m-recipient{
+    padding-top: 0;
+}
+.multiple.m-quadruple:not(.m-reponsive-except) .m-content.m-1-4,
+.multiple.m-quadruple:not(.m-reponsive-except) .m-content.m-2-4,
+.multiple.m-quadruple:not(.m-reponsive-except) .m-content.m-3-4,
+.multiple.m-quadruple:not(.m-reponsive-except) .m-content.m-4-4 {
+    right: auto;
+    left: auto;
+    margin-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+.multiple.m-quadruple.m-topnav:not(.m-reponsive-except) .m-content.m-1-4,
+.multiple.m-quadruple.m-bottomnav:not(.m-reponsive-except) .m-content.m-1-4 {
+    margin-left: 0;
+}
+.multiple.m-quadruple.m-topnav:not(.m-reponsive-except) .m-content.m-3-4,
+.multiple.m-quadruple.m-bottomnav:not(.m-reponsive-except) .m-content.m-3-4,
+.multiple.m-quadruple.m-bottomnav:not(.m-reponsive-except) .m-content.m-4-4,
+.multiple.m-quadruple.m-bottomnav:not(.m-reponsive-except) .m-content.m-4-4 {
+    margin-right: 0;
+}
+.m-quadruple:not(.m-reponsive-except) .m-nav.back {
+    display: none;
+}
+.m-quadruple:not(.m-reponsive-except) .m-nav {
+    display:none;
+}
+.multiple.m-quadruple:not(.m-reponsive-except) .m-content.m-1-4 .m-block,
+.multiple.m-quadruple:not(.m-reponsive-except) .m-content.m-3-4 .m-block {
+    float: none;
+    left: auto;
+}
+.m-quadruple:not(.m-reponsive-except) .m-recipient .m-4-4 .m-track {
+    padding-right: 4px;
+    padding-left: 0;
+    margin-left: 0;
+}
+.m-quadruple:not(.m-reponsive-except) .m-recipient .m-1-4 .m-track {
+    padding-left: 4px;
+    padding-right: 0;
+    margin-right: 0;
+}
+.multiple.m-quadruple:not(.m-reponsive-except) .m-content.m-1-4 .m-block {
+    float: none;
+    right: auto;
+}
+.multiple.m-quadruple:not(.m-reponsive-except) .m-prev:before,
+.multiple.m-quadruple:not(.m-reponsive-except) .m-next:before{
+    color:#666;
+}
+.multiple.m-quadruple:not(.m-reponsive-except) .m-prev,
+.multiple.m-quadruple:not(.m-reponsive-except) .m-next{
+    display: inline-block !important;
+    background: #fff;
+    border: 2px solid #ddd;
+    padding: 5px;
+    z-index: 9000;
+    width: 33px;
+    height: 32px;
+}
+.multiple.m-quadruple:not(.m-reponsive-except) .m-prev{
+    left: 0;
+}
+.multiple.m-quadruple:not(.m-reponsive-except) .m-next{
+    right: 0;
+}
+.multiple.m-quadruple:not(.m-reponsive-except) .m-prev:hover,
+.multiple.m-quadruple:not(.m-reponsive-except) .m-prev:focus,
+.multiple.m-quadruple:not(.m-reponsive-except) .m-next:hover,
+.multiple.m-quadruple:not(.m-reponsive-except) .m-next:focus{
+    background: #fff;
+}
+.multiple.m-quadruple:not(.m-reponsive-except) .m-prev:hover:before,
+.multiple.m-quadruple:not(.m-reponsive-except) .m-next:hover:before {
+    color: #000;
+}

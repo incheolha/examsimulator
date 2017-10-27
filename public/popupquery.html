@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+ 		<style>
+                #popup_this {
+                    top: 50%;
+                    left: 50%;
+                    text-align:center;
+                    margin-top: -50px;
+                    margin-left: -100px;
+                    position: fixed;
+                    background: #fff;
+                    padding: 30px;
+                }
+                .b-close {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    cursor: pointer;
+                    color: #fff;
+                    background: #ff0000;
+                    padding: 5px 10px;
+                }
+         
+         </style>
+
+		<script src="/public/toeflassets/js/jquery-3.2.1.min.js"></script>
+        <script src="/public/toeflassets/js/jquery.bpopup.min.js"></script>
+		
+            <script>
+            $( document ).ready(function() {
+                $('#popup_this').bPopup();
+            });
+            </script>
+
+	</head>
+
+	<body>
+                <div id="popup_this">
+                    <span class="button b-close">
+                        <span>X</span>
+                    </span>
+                    <h3>A nice ad goes here!</h3>
+                    <p>Nulla at nunc posuere, dictum sem sed, tristique mi.</p>
+                </div>
+
+
+	</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	
+ <head>
+		
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" type="text/css" href="../Semantic/semantic.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../Semantic/semantic.js"></script>
+     <script src="QuestionType.js"></script>
+    <style>
+        
+        body{margin:20px;
+        }
+        .ui.left.labeled.fluid.input{
+            margin: 5px;
+            padding: 1px;
+        }
+       #submitBtn{
+            float:right;
+        }
+        
+        
+    </style>    
+</head>
+	
+<body>
+
+<div class="ui info message">
+  <i class="close icon"></i>
+  <div class="header">
+    How to do...
+  </div>
+  <ul class="list">
+    
+    <li>양식에 맞게 입력해 주세요.</li>
+    <li>정답은 한개만 체크됩니다.</li>
+    <li>복수정답은 문제유형중 multiple answers를 선택해주세요.</li>  
+      
+  </ul>
+</div>  
+	<div id="listening_qtype_1">
+      
+    <form method="post" action="/process/toefl/listening/multerAddProblemListening">    
+        
+<h1 class="ui header">QuestionType : Listen Again</h1>	       	  
+    <input type="hidden" name="listeningProblemType" value=2>	
+	<input type="hidden" name="ExamNO" value=1>
+    <input type="hidden" name="ExamDesc" value=1>
+    <input type="hidden" name="listeningChapterNumber" value=1>
+<!-- 회차정보, 챕터넘버 정보 같이 들어가야 함 -->
+<table class="ui fixed single line celled blue table">
+  <thead>
+    <tr><th><h3 class="ui header">문제입력하기</h3> </th>
+    
+    <th><div class="ui fluid input"><input type="text" name="listeningProblem" id=question_field placeholder="문제를 입력하세요"/></div></th>
+  </tr></thead>
+  <tbody>
+    <tr>
+       <td><h3 class="ui header"> 문제를 읽어주는 나레이터 mp3파일 첨부하기</h3></td> 
+ 
+    <td>     
+        <label for="lc_ch_1_mp3_ipt" class="ui icon button">
+                 <i class="file icon"></i>
+                Open mp3 File</label>
+            <input type="file" id="lc_ch_1_mp3_ipt" style="display:none" accept="audio/*" multiple>
+            <div id="lc_ch_1_mp3_pre">  
+              </div>   
+    </td> 
+    
+      </tr>
+
+	<tr>	
+		 <td><h3 class="ui header">Partial lecture/conversation narrator mp3파일 업로드 하기 </h3></td>
+		<td> 
+        
+                <label for="lc_ch_2_mp3_ipt" class="ui icon button">
+                 <i class="file icon"></i>
+                Open mp3 File</label>
+            <input type="file" id="lc_ch_2_mp3_ipt" style="display:none" accept="audio/*" multiple>
+            <div id="lc_ch_2_mp3_pre">  
+              </div>  
+   
+        </td> 
+	</tr>
+	
+	<tr>	
+		 <td><h3 class="ui header"> lecture/conversation narrator img파일 업로드 하기 </h3></td>
+		<td>  
+            <label for="lc_ch_1_img_ipt" class="ui icon button">
+                 <i class="file icon"></i>
+                Open img File</label>
+            <input type="file" id="lc_ch_1_img_ipt" style="display:none" accept="image/*" multiple>
+            <div id="lc_ch_1_img_pre">
+            </div> 
+        </td> 
+	</tr>  
+      
+      
+    <tr>
+       <td><h3 class="ui header"> 문항 입력하기</h3></td>
+
+            <td>
+        <div class="ui left labeled fluid input">
+          <label for="listeningProblemArticle1" class="ui blue label">A</label>    
+		  <input type="text" name='listeningProblemArticle1'  id=question_field_a /> </div>   
+                
+        <div class="ui left labeled fluid input"> 
+          <label for="question_field_b" class="ui blue label">B</label>        
+		  <input type="text" name='listeningProblemArticle2'  id=question_field_b /> </div>   	
+       <div class="ui left labeled fluid input"> 
+          <label for="question_field_c" class="ui blue label">C</label>       
+		  <input type="text" name='listeningProblemArticle3'  id=question_field_c /> </div>   
+       <div class="ui left labeled fluid input">
+          <label for="question_field_d" class="ui blue label">D</label>       
+		  <input type="text" name='listeningProblemArticle4'  id=question_field_d /> </div>                
+	   </td>
+    </tr>
+    <tr>
+     <td><h3 class="ui header">정답</h3></td>
+      <td>
+          <div class="ui form">
+  <div class="grouped fields">
+    <label><h5 class="ui header">정답을 체크해 주세요!</h5></label>
+    <div class="field">
+      <div class="ui toggle checkbox">
+        <input type="radio" name="listeningProblemAnswer" value="a">
+        <label>A</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui toggle checkbox">
+        <input type="radio" name="listeningProblemAnswer" value="b">
+        <label>B</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui toggle checkbox">
+        <input type="radio" name="listeningProblemAnswer" value="c">
+        <label>C</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui toggle checkbox">
+        <input type="radio" name="listeningProblemAnswer" value="d">
+        <label>D</label>
+      </div>
+    </div>
+  </div>
+</div>
+          
+     
+    </tr>
+    <tr>
+        
+      <td><h3 class="ui header">해설 </h3></td>
+        <td><div class="ui fluid input"><input type="text" name='listeningProblemComment'  id=description_field /></div>
+        
+   </tr>  
+      
+  </tbody>
+</table>
+        
+    		<button type="submit" class="ui primary button" id="submitBtn">출제하기</button>    
+        </form>
+    </div>
+    
+    
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+   <div class="ui blue borderless inverted menu" id="mainMenu">
+          <div class="left menu">
+            <a class="item">
+              <h1>Toefl Simulator<br></h1> <br><br> <h4>for Teachers</h4>   
+              </a>
+            </div>      
+        <div class="centered menu">  
+            
+          <a class="item">
+           
+            <i class="huge github icon"></i>
+            </a>
+  
+        </div>     
+        <div class="right menu">
+        <a class="item" id="clock"> </a>    
+       
+    <div class="ui dropdown item">
+       <i class="user icon"></i>
+       <% if (user.permissionTag == 'toeflTeacher') { %>
+         
+          <%= user.name %> 선생님, 환영합니다.
+		      <!-- <%= user.email %> -->
+        <% } %>
+
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item">profile</a>
+         <a class="item" href="/logout">Logout</a>
+            </div>
+        </div>    
+     </div>   
+    </div>
+
+          <div>
+          <div class="ui huge breadcrumb">
+          <a class="section" id="breadcrumbMain">문제출제하기</a>
+          <i class="right chevron icon divider"></i>
+          <a class="section"> <%= ExamNO %> 회차</a>
+          <i class="right chevron icon divider"></i>  
+          <div class="active section">Speaking</div>
+         
+    
+        </div>
+              <button class="teal ui right floated button" id="sp_chapter_complete_btn">챕터 완료</button>
+         </div>
+             
+             
+        <br>
+             <br>
+    
+       <div class="ui inverted blue six item  menu" id="qtypeSelection">
+  
+      <a class="item">
+        chapter1
+      </a>
+      <a class="item">
+        chapter2
+      </a>
+      <a class="item">
+        chapter3
+      </a>
+      <a class="item">
+        chapter4
+      </a>
+      <a class="item">
+       chapter5
+      </a>
+      <a class="item">
+        chapter6
+      </a>   
+         
+    </div>

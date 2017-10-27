@@ -1,0 +1,259 @@
+      
+ 
+<!DOCTYPE html>
+<html>
+ 
+ <head>
+   <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" type="text/css" href="../../../public/sementicTest/Semantic/semantic.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../../../public/sementicTest/Semantic/semantic.js"></script>  
+    <script src="../../../public/sementicTest/ckeditor/ckeditor.js"></script>
+    <script src="../../../public/sementicTest/AddSpeaking.js"></script> 
+    
+	<style>
+    
+	 body{
+            margin: 15px;
+           
+        }
+		
+        #mainMenu {
+                height: 100px;
+            
+              } 
+
+        #qtypeSelection {
+          
+
+        }
+        
+        </style>     
+</head>   
+
+     
+  
+                    <!--
+     15초의 준비시간, 45초의 응답시간 
+    fs.write  no img, just announcement audio 필요 
+-->
+
+<!--
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+-->
+<body onload=startTime()>
+     <div class="ui blue borderless inverted menu" id="mainMenu">
+          <div class="left menu">
+            <a class="item">
+              <h1>Toefl Simulator<br></h1> <br><br> <h4>for Teachers</h4>   
+              </a>
+            </div>      
+        <div class="centered menu">  
+            
+          <a class="item">
+           
+            <i class="huge github icon"></i>
+            </a>
+  
+        </div>     
+        <div class="right menu">
+        <a class="item" id="clock"> </a>    
+       
+    <div class="ui dropdown item">
+       <i class="user icon"></i>
+       <% if (user.permissionTag == 'toeflTeacher') { %>
+         
+          <%= user.name %> 선생님, 환영합니다.
+		      <!-- <%= user.email %> -->
+        <% } %>
+
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item">profile</a>
+         <a class="item" href="/logout">Logout</a>
+            </div>
+        </div>    
+     </div>   
+    </div>
+
+          <div>
+          <div class="ui huge breadcrumb">
+          <a class="section" id="breadcrumbMain">문제출제하기</a>
+          <i class="right chevron icon divider"></i>
+          <a class="section"> <%= ExamNO %> 회차</a>
+          <i class="right chevron icon divider"></i>  
+          <div class="active section">Speaking</div>
+         
+    
+        </div>
+              <button class="teal ui right floated button" id="sp_chapter_complete_btn">챕터 완료</button>
+         </div>
+             
+             
+        <br>
+             <br>
+    
+       <div class="ui inverted blue six item menu">
+  <div class="item">
+         <form action="/toeflTeacher/speaking/ch1" method="POST" >
+          <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+          <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+          <input type="hidden" name="speakingProblemType" value=1>
+       <button type="submit" class="ui primary button">Chapter1</button> 
+           </form> 
+  </div>
+   <div class="item">
+         <form action="/process/toefl/speaking/ch2" method="POST" >
+          <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+          <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+          <input type="hidden" name="speakingProblemType" value=2>
+       <button type="submit" class="ui primary button">Chapter2</button> 
+           </form> 
+  </div>  <div class="item">
+         <form action="/process/toefl/speaking/ch3" method="POST" >
+          <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+          <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+          <input type="hidden" name="speakingProblemType" value=3>
+       <button type="submit" class="ui primary button">Chapter3</button> 
+           </form> 
+  </div>  <div class="item">
+         <form action="/process/toefl/speaking/ch4" method="POST" >
+          <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+          <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+          <input type="hidden" name="speakingProblemType" value=4>
+       <button type="submit" class="ui primary button">Chapter4</button> 
+           </form> 
+  </div>  <div class="item">
+         <form action="/process/toefl/speaking/ch5" method="POST" >
+          <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+          <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+          <input type="hidden" name="speakingProblemType" value=5>
+       <button type="submit" class="ui primary button">Chapter5</button> 
+           </form> 
+  </div>  <div class="item">
+         <form action="/process/toefl/speaking/ch6" method="POST" >
+          <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+          <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+          <input type="hidden" name="speakingProblemType" value=6>
+       <button type="submit" class="ui primary button">Chapter6</button> 
+           </form> 
+  </div>
+</div>
+
+
+        <div class="ui segment"  id="chapter2" >
+         <form class="ui form" action="/process/toefl/speaking/multerAddSpeaking" id="speakingForm1" method="post" enctype="multipart/form-data">
+              <div class="field">
+
+<!--
+                <div class="ui tag labels">
+                  <a class="ui top big blue label">
+                    Academic, General / Specific
+                  </a>  
+                </div>
+-->
+            <div class="ui blue ribbon big label">
+                <i class="spoon icon"></i>  Academic, General / Specific
+            </div>                    
+                  
+        <h3 class="ui header">문제를 소개하는 Narrator mp3 파일을 올려주세요  </h3>       
+        <label for="sp_ch_4_mp3_ipt" class="ui icon button">
+            <i class="file icon"></i>
+            Open mp3 File</label>
+            <input type="file" id="sp_ch_4_mp3_ipt" style="display:none" accept="audio/*" multiple>
+            <div id="sp_ch_4_mp3_pre">  
+              </div>             
+                  
+     
+
+              </div>
+                
+                
+              <div class="field">
+    
+        <h3 class="ui header"> 읽을 지문 작성하기 </h3>     <textarea name="editor3" id="editor3"></textarea>
+                  
+       
+          
+                
+              </div>
+              
+             <div class="field">
+        
+        <h3 class="ui header"> Lecture mp3/img 파일 업로드하기   </h3>      
+            <label for="sp_ch_4_img_ipt" class="ui icon button">
+                 <i class="file icon"></i>
+                Open img File</label>
+            <input type="file" id="sp_ch_4_img_ipt" style="display:none" accept="image/*" multiple>
+            <div id="sp_ch_4_img_pre">
+            </div> 
+            <br>
+            <br>  
+              <label for="sp_ch_4_1_mp3_ipt" class="ui icon button">
+                 <i class="file icon"></i>
+                Open mp3 File</label>
+            <input type="file" id="sp_ch_4_1_mp3_ipt" style="display:none" accept="audio/*" multiple>
+            <div id="sp_ch_4_1_mp3_pre">  
+              </div>   
+                
+                
+                
+                </div>                                
+             
+            <div class='field'>
+                <h3 class="ui header">  문제 입력하기   </h3>   
+                <input type="text" class="ui input" placeholder="문제를 입력해 주세요 ">
+                
+                </div>    
+                
+                
+                                
+                                
+              <button class="ui blue button" type="submit">Submit</button>
+            </form>  
+        </div>
+        
+
+
+		<div class="ui modal" id="go_back_main_modal">
+          <i class="close icon"></i>
+          <div class="header">
+			
+  
+			  
+           메인 화면으로 이동하기
+          </div>
+          <div class="content">
+         
+            <div class="description">
+              <div class="ui header">
+				 
+				  문제 출제하기 메인 화면으로 이동합니다.</div>
+           
+            </div>
+          </div>
+          <div class="actions">
+         
+              <button class="ui grey deny button">이전으로</button>
+              
+              <button class="ui blue button">이동하기</button>
+            
+          </div>
+        </div> 		 		 
+			 
+			 
+
+</body>
+    
+    
+</html>    
+
+            
+
+
+     

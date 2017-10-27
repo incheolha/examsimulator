@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tsm &mdash; ExamSim</title>
+	
+<!--meta-->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content=""/>
+	<meta name="twitter:image" content=""/>
+	<meta name="twitter:url" content=""/>
+	<meta name="twitter:card" content=""/>
+<!--홈페이지 아이콘-->
+    <link rel="shortcut icon" href="/public/toeflassets/images/favicon.ico" />
+<!--css-->
+	<link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel='stylesheet' type="text/css">
+	<link rel="stylesheet" href="/public/toeflassets/css/animate.css">
+	<link rel="stylesheet" href="/public/toeflassets/css/icomoon.css">
+	<link rel="stylesheet" href="/public/toeflassets/css/simple-line-icons.css">
+	<link rel="stylesheet" href="/public/toeflassets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/public/toeflassets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/public/toeflassets/css/bootstrap.css">
+	<link rel="stylesheet" href="/public/toeflassets/css/index_style.css">
+	<link rel="stylesheet" id="theme-switch" href="/public/toeflassets/css/index_style.css">
+<!--script-->
+	<script src="/public/toeflassets/js/main.js"></script>
+    <script src="/public/toeflassets/js/modernizr-2.6.2.min.js"></script>
+	<script src="/public/toeflassets/js/jquery.min.js"></script>
+	<script src="/public/toeflassets/js/jquery.easing.1.3.js"></script>
+	<script src="/public/toeflassets/js/bootstrap.min.js"></script>
+	<script src="/public/toeflassets/js/jquery.waypoints.min.js"></script>
+    <script src="/public/toeflassets/js/owl.carousel.min.js"></script>
+	<script src="/public/toeflassets/js/jquery.style.switcher.js"></script>
+	<script>
+	$(function(){
+		$('#colour-variations ul').styleSwitcher({
+			defaultThemeId: 'theme-switch',
+			hasPreview: false,
+			cookie: {
+	          	expires: 30,
+	          	isManagingLoad: true
+	      	}
+		});	
+		$('.option-toggle').click(function() {
+			$('#colour-variations').toggleClass('sleep');
+		});
+	});
+	</script>
+	
+<style>
+	* {font-family: 'spoqa Han Sans', 'Sans-serif';}
+	.sb {
+		display: inline;
+	}
+	#colour-variations {
+		padding: 10px;
+		-webkit-transition: 0.5s;
+	  	-o-transition: 0.5s;
+	  	transition: 0.5s;
+		width: 140px;
+		position: fixed;
+		left: 0;
+		top: 100px;
+		z-index: 999999;
+		background: #fff;
+		/*border-radius: 4px;*/
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+		-webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+	}
+	#colour-variations.sleep {
+		margin-left: -140px;
+	}
+	#colour-variations h3 {
+		text-align: center;
+		font-size: 11px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		color: #777;
+		margin: 0 0 10px 0;
+		padding: 0;;
+	}
+	#colour-variations ul,
+	#colour-variations ul li {
+		padding: 0;
+		margin: 0;
+	}
+	#colour-variations li {
+		list-style: none;
+		display: inline;
+	}
+	#colour-variations li a {
+		width: 20px;
+		height: 20px;
+		position: relative;
+		float: left;
+		margin: 5px;
+	}
+	#colour-variations li a[data-theme="style"] {
+		background: #6173f4;
+	}
+	.option-toggle {
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin-top: 5px;
+		margin-right: -30px;
+		width: 30px;
+		height: 30px;
+		background: #f64662;
+		text-align: center;
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+		color: #fff;
+		cursor: pointer;
+		-webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+	}
+	.option-toggle i {
+		top: 2px;
+		position: relative;
+	}
+	.option-toggle:hover, .option-toggle:focus, .option-toggle:active {
+		color:  #fff;
+		text-decoration: none;
+		outline: none;
+	}
+</style>
+
+</head>
+<body>
+<!--메뉴-->
+	<header role="banner" id="fh5co-header">
+			<div class="container">
+			    <nav class="navbar navbar-default">
+		        <div class="navbar-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+		          	<a class="navbar-brand" href="/"> tsm</a> 
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		          <ul class="nav navbar-nav navbar-right">
+                    <li><a href="" data-nav-section="home">Home</a></li>
+		            <li><a href="#" data-nav-section="press">Lecture</a></li>
+                    <li><a href="#" data-nav-section="services">Exam</a></li>
+		            <li><a href="#" data-nav-section="pricing">Event</a></li>
+       				<li><a href="#" data-nav-section="contact">Contact</a></li>
+					<% if ( !login_success ) { %>
+						<li><a href="/login">Login</a></li>
+
+					<%  } else { %>  
+	
+					<li><a href="/logout">logout</a></li>
+					  
+					<% } %>	
+		          </ul>
+		        </div>
+			    </nav>
+		  </div>
+	</header>
+<!--캐러셀-->
+	<div id="slider" data-section="home">
+		<div class="owl-carousel owl-carousel-fullwidth">
+		    <div class="item">
+		    	<div class="container" style="position: relative;">
+		    		<div class="row">
+					    <div class="col-md-7 col-md-push-3 col-sm-7 col-sm-push-1 col-sm-push-5">
+			    			<div class="fh5co-owl-text-wrap">
+						    	<div class="fh5co-owl-text">
+						    		<h1 class="fh5co-lead to-animate">Case Study Title</h1>
+									<h2 class="fh5co-sub-lead to-animate">100% Free Fully Responsive HTML5 Bootstrap Template. Crafted with love by the fine folks at</h2>
+									<p class="to-animate-2 sb"><a href="#" data-nav-section="services" class="btn btn-primary btn-lg">시험보기</a></p>
+									<p class="to-animate-2 sb"><a href="#" class="btn btn-primary btn-lg">공유 신청</a></p>
+						    	</div>
+						    </div>
+					    </div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="item">
+		    	<div class="container" style="position: relative;">
+		    		<div class="row">
+		    			<div class="col-md-7 col-md-push-3 col-sm-7 col-sm-push-1 col-sm-push-5">
+			    			<div class="fh5co-owl-text-wrap">
+						    	<div class="fh5co-owl-text">
+						    		<h1 class="fh5co-lead to-animate">Case Study Title</h1>
+									<h2 class="fh5co-sub-lead to-animate">100% Free Fully Responsive HTML5 Bootstrap Template. Crafted with love by the fine folks at</h2>
+									<p class="to-animate-2 sb"><a href="#" class="btn btn-primary btn-lg">시험보기</a></p>
+									<p class="to-animate-2 sb"><a href="#" class="btn btn-primary btn-lg">공유 신청</a></p>
+						    	</div></div></div>
+		    		</div></div></div></div></div>
+<!--시험종류-->
+    <div id="fh5co-our-services" data-section="services">
+  <div class="container">
+    <div class="row row-bottom-padded-sm">
+      <div class="col-md-12 section-heading text-center">
+        <h2 class="to-animate">Exam simulation</h2>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 to-animate">
+              <h3>이용가능한 시험</h3>
+            </div></div></div></div>
+	 <ul class="nav nav-pills">
+                    <li class="filter" data-filter="all">
+                        <a href="#noAction">All</a>
+                    </li>
+                    <li class="filter" data-filter="web">
+                        <a href="#noAction">영어</a>
+                    </li>
+                    <li class="filter" data-filter="photo">
+                        <a href="#noAction">중국어</a>
+                    </li>
+                    <li class="filter" data-filter="identity">
+                        <a href="#noAction">일본어</a>
+                    </li>
+                </ul>
+  <div class="row">
+<div class="col-md-4">
+  <ul id="portfolio-grid" class="thumbnails row">
+                        <li class="span4 mix web">
+                            <div class="thumbnail float_l">
+                                <img src="../public/toeflassets/images/test.jpeg">
+                                <a href="/toefl_exam" class="more show_hide">
+                                    <i class="icon-plus"></i>
+                                </a>
+                                <h3>toefl</h3>
+                                <p>영어권 대학에서 사용되는 학문적인 영어 구사 능력을 평가하는 시험입니다.</p>
+                                <div class="mask"></div>
+                            </div>
+                        </li>
+                        <li class="span4 mix photo">
+                            <div class="thumbnail float_l">
+                                <img src="../public/toeflassets/images/test.jpeg">
+                                <a href="#single-project" class="show_hide more" rel="#slidingDiv1">
+                                    <i class="icon-plus"></i>
+                                </a>
+                                <h3>teps</h3>
+                                <p>한국인들의 영어 의사소통 능력을 측정하기 위해 개발된 시험입니다.</p>
+                                <div class="mask"></div>
+                            </div>
+                        </li>
+                        <li class="span4 mix identity">
+                            <div class="thumbnail float_l">
+                                <img src="../public/toeflassets/images/test.jpeg">
+                                <a href="/" class="more show_hide">
+                                    <i class="icon-plus"></i>
+                                </a>
+                                <h3>toeic</h3>
+                                <p>현재 취업에 있어 필수적인 영어시험 점수로 이용되고 있습니다.</p>
+                                <div class="mask"></div>
+                            </div>
+                        </li>
+                        <li class="span4 mix web">
+                            <div class="thumbnail float_l">
+                                <img src="../public/toeflassets/images/test.jpeg">
+                                <a href="#single-project" class="show_hide more">
+                                    <i class="icon-plus"></i>
+                                </a>
+                                <h3>ielts</h3>
+                                <p>유학이나 연수 및 이민을 준비하는 분들께 적합한 시험입니다.</p>
+                                <div class="mask"></div>
+                            </div>
+                        </li>
+                        <li class="span4 mix photo">
+                            <div class="thumbnail ">
+                                <img src="../public/toeflassets/images/test.jpeg">
+                                <a href="#single-project" class="show_hide more" rel="#slidingDiv4">
+                                    <i class="icon-plus"></i>
+                                </a>
+                                <h3>opic</h3>
+                                <p>절대평가 방식으로 측정되는 5개의 외국어 말하기 평가시험 입니다.</p>
+                                <div class="mask"></div>
+                            </div>
+                        </li>
+                        <li class="span4 mix identity">
+                            <div class="thumbnail">
+                                <img src="../public/toeflassets/images/test.jpeg">
+                                <a href="#single-project" class="show_hide more" rel="#slidingDiv5">
+                                    <i class="icon-plus"></i>
+                                </a>
+                                <h3>neat</h3>
+                                <p>일상생활에 필요한 실용 영어능력을 평가하는 시험입니다.</p>
+                                <div class="mask"></div>
+                            </div>
+                        </li>
+                        <li class="span4 mix web">
+                            <div class="thumbnail">
+                                <img src="../public/toeflassets/images/test.jpeg"/>
+                                <a href="#single-project" class="show_hide more" rel="#slidingDiv6">
+                                    <i class="icon-plus"></i>
+                                </a>
+                                <h3>Thumbnail label</h3>
+                                <p>Thumbnail caption...</p>
+                                <div class="mask"></div>
+                            </div>
+                        </li>
+                        <li class="span4 mix photo">
+                            <div class="thumbnail">
+                                <img src="../public/toeflassets/images/test.jpeg">
+                                <a href="#single-project" class="show_hide more" rel="#slidingDiv7">
+                                    <i class="icon-plus"></i>
+                                </a>
+                                <h3>Thumbnail label</h3>
+                                <p>Thumbnail caption...</p>
+                                <div class="mask"></div>
+                            </div>
+                        </li>
+                        <li class="span4 mix identity">
+                            <div class="thumbnail">
+                                <img src="../public/toeflassets/images/test.jpeg">
+                                <a href="#single-project" class="show_hide more" rel="#slidingDiv8">
+                                    <i class="icon-plus"></i>
+                                </a>
+                                <h3>Thumbnail label</h3>
+                                <p>Thumbnail caption...</p>
+                                <div class="mask"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div></div></div>
+<!--돈-->
+	<div id="fh5co-pricing" data-section="pricing">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="single-animate animate-pricing-1">Event</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
+							<h3>묶음세일</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-6">
+					<div class="price-box to-animate">
+						<h2 class="pricing-plan">Starter</h2>
+						<div class="price"><sup class="currency">$</sup>7<small>/mo</small></div>
+						<p>Basic customer support for small business</p>
+						<hr>
+						<ul class="pricing-info">
+							<li>10 projects</li>
+							<li>20 Pages</li>
+							<li>20 Emails</li>
+							<li>100 Images</li>
+						</ul>
+						<a href="#" class="btn btn-default btn-sm">Get started</a>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="price-box to-animate">
+						<h2 class="pricing-plan">Regular</h2>
+						<div class="price"><sup class="currency">$</sup>19<small>/mo</small></div>
+						<p>Basic customer support for small business</p>
+						<hr>
+						<ul class="pricing-info">
+							<li>15 projects</li>
+							<li>40 Pages</li>
+							<li>40 Emails</li>
+							<li>200 Images</li>
+						</ul>
+						<a href="#" class="btn btn-default btn-sm">Get started</a>
+					</div>
+				</div>
+				<div class="clearfix visible-sm-block"></div>
+				<div class="col-md-3 col-sm-6 to-animate">
+					<div class="price-box popular">
+						<div class="popular-text">Best value</div>
+						<h2 class="pricing-plan">Plus</h2>
+						<div class="price"><sup class="currency">$</sup>79<small>/mo</small></div>
+						<p>Basic customer support for small business</p>
+						<hr>
+						<ul class="pricing-info">
+							<li>Unlimitted projects</li>
+							<li>100 Pages</li>
+							<li>100 Emails</li>
+							<li>700 Images</li>
+						</ul>
+						<a href="#" class="btn btn-primary btn-sm">Get started</a>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="price-box to-animate">
+						<h2 class="pricing-plan">Enterprise</h2>
+						<div class="price"><sup class="currency">$</sup>125<small>/mo</small></div>
+						<p>Basic customer support for small business</p>
+						<hr>
+						<ul class="pricing-info">
+							<li>Unlimitted projects</li>
+							<li>Unlimitted Pages</li>
+							<li>Unlimitted Emails</li>
+							<li>Unlimitted Images</li>
+						</ul>
+						<a href="#" class="btn btn-default btn-sm">Get started</a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+<!--인기시험-->
+	<div id="fh5co-press" data-section="press">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="single-animate animate-press-1">lecture</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-press-2">
+							<h3>Top 4</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="fh5co-press-item to-animate">
+						<div class="fh5co-press-img" style="background-image: url(../public/toeflassets/images/1.jpg)">
+						</div>
+						<div class="fh5co-press-text">
+							<h3 class="h2 fh5co-press-title">노드랑 함께 죽자</h3>
+                                <div>#강의 관련 정보<br>
+                                #강의 관련 정보<br>
+                                #강의 관련 정보</div>
+							<p><a href="#" class="btn btn-primary btn-sm">Learn</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="fh5co-press-item to-animate">
+						<div class="fh5co-press-img" style="background-image: url(../public/toeflassets/images/2.jpg)">
+						</div>
+						<div class="fh5co-press-text">
+							<h3 class="h2 fh5co-press-title">Toefl 방학특강</h3>
+                                <div>#강의 관련 정보<br>
+                                #강의 관련 정보<br>
+                                #강의 관련 정보</div>
+							<p><a href="#" class="btn btn-primary btn-sm">Learn</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="fh5co-press-item to-animate">
+						<div class="fh5co-press-img" style="background-image: url(../public/toeflassets/images/3.jpg);">
+						</div>
+						<div class="fh5co-press-text">
+							<h3 class="h2 fh5co-press-title">만점 토익</h3>
+				                <div>#강의 관련 정보<br>
+                                #강의 관련 정보<br>
+                                #강의 관련 정보</div>
+							<p><a href="#" class="btn btn-primary btn-sm">Learn</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="fh5co-press-item to-animate">
+						<div class="fh5co-press-img" style="background-image: url(../public/toeflassets/images/4.jpg);">
+						</div>
+						<div class="fh5co-press-text">
+							<h3 class="h2 fh5co-press-title">글자는 65자까지</h3>
+				                <div>#강의 관련 정보<br>
+                                #강의 관련 정보<br>
+                                #강의 관련 정보</div>
+							<p><a href="#" class="btn btn-primary btn-sm">Learn</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--contact us-->
+	<div id="fh5co-pricing" data-section="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="single-animate animate-pricing-1">contact us</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
+							<h3>마음의 소리</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-left=10%; float: center;">
+				<div class="col-md-12 col-sm-12">
+					<div class="to-animate">
+						<div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name" id="name">
+            
+                                </div>
+						<div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email" id="email">
+                  
+                                </div>
+                                <div class="form-group">
+                                    <textarea rows="10" cols="40" class="form-control" placeholder="Your Message" id="message"></textarea>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-primary btn-xl">Send Message</button>
+                            </div>
+					</div>
+				</div>			                         
+			</div>
+		</div>
+	</div>
+<!--발바닥-->
+	<footer id="footer" role="contentinfo">
+		<div class="container">
+			<div class="row row-bottom-padded-sm">
+				<div class="col-md-12">
+					<p class="copyright text-center">&copy; 2015 Free <a href="index.html">Tsm</a>. All Rights Reserved. <br> Free HTML5 Template by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> | Images by <a href="http://pexels.com/" target="_blank">Pexels</a> &amp;  <a href="http://unsplash.com/" target="_blank">Unsplash</a></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<ul class="social social-circle">
+						<li><a href="#"><i class="icon-twitter"></i></a></li>
+						<li><a href="#"><i class="icon-facebook"></i></a></li>			
+						<li><a href="#"><i class="icon-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+<!-- jQuery -->
+	<script src="../public/toeflassets/js/jquery.min.js"></script>
+	<script src="../public/toeflassets/js/jquery.easing.1.3.js"></script>
+	<script src="../public/toeflassets/js/bootstrap.min.js"></script>
+	<script src="../public/toeflassets/js/jquery.waypoints.min.js"></script>
+    <script src="../public/toeflassets/js/owl.carousel.min.js"></script>
+	<script src="../public/toeflassets/js/jquery.style.switcher.js"></script>
+	<script>
+	$(function(){
+		$('#colour-variations ul').styleSwitcher({
+			defaultThemeId: 'theme-switch',
+			hasPreview: false,
+			cookie: {
+	          	expires: 30,
+	          	isManagingLoad: true
+	      	}
+		});	
+		$('.option-toggle').click(function() {
+			$('#colour-variations').toggleClass('sleep');
+		});
+	});
+	</script>
+
+<!--이동금지-->
+	<script src="../public/toeflassets/js/main.js"></script>
+</body>
+</html>

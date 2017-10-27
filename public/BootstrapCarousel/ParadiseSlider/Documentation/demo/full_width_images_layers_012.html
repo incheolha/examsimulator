@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+
+	<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+	<!--[if IE 7]><html class="lt-ie9 lt-ie8"> <![endif]-->
+	<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+	<!--[if gt IE 8]><!--> 
+	
+<html>
+ 
+	<!--<![endif]-->
+	<!--======= Head =========-->
+	<head>
+	
+		<!--======= Meta =========-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!--======= Title =========-->
+		<title>Paradise Slider Documentation</title>
+	
+		<!--======= Short-Cut Icon =========-->
+		<link rel="shortcut icon" href="#"/>
+		
+		<!--======= Google Web Fonts =========-->	
+		<link href='https://fonts.googleapis.com/css?family=Muli:400,400italic,300,300italic|Raleway:400,300,500,600,700,800' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800,400italic,600italic,700italic,800italic,300italic' rel='stylesheet' type='text/css'>
+		<!--======= Helping Plug-in StyleSheets =========-->
+		<link href="css/bootstrap.css" rel="stylesheet" media="all">
+		
+		<!--======= Customized StyleSheets =========-->
+		<link href="css/documentation_demo.css" rel="stylesheet" media="all">
+		
+	</head>
+	
+<body>
+
+	<div class="container documentation_header">
+		<a href="../documentation.html"><img src="images/logo.png" alt="logo"/></a>
+		<h4>Welcome to</h4>
+		<h2>paradise</h2>
+		<p>We would like to thank you for purchasing Paradise Slider!  
+			<br>
+			We are very pleased that you have chosen Paradise Slider for your Project.
+		</p>
+	</div>
+	
+	<div class="container-fluid navigation_bar" data-spy="affix" data-offset-top="600">
+		<ul>
+			<li><a href="../documentation.html">Home</a></li>
+			<li><a href="#quick_start">GetStarted</a></li>
+			<li><a href="#elements">Elements</a></li>
+			<li><a href="#classes">Classes</a></li>
+			<li><a href="#controls">Controls</a></li>
+			<li><a href="#animation">Animation</a></li>
+			<li><a href="#settings">Settings</a></li>
+		</ul>
+	</div>
+	
+	<div class="container documentation_demos">
+		<h1>full width images layers 012</h1>
+		<h2 id="quick_start">01 - Get Started</h2>
+		<div class="alert alert-danger doc_alert">
+			<strong>Note:</strong> This documentation Page is only for <code> full width images layers 012 </code> template. It has no link with other templates if you want to read their documentation then click <a href="../documentation.html">here</a>
+		</div>
+		<h3>Required Files And Folders</h3>
+		<h4><br>Please follow the instructions:</h4>
+		<ol>
+			<li>Please upload the <code>paradise</code> folder to your server. In this folder you will find the following sub folders containing all of the items content:
+				<ul>
+					<li>js</li>
+					<li>css</li>
+					<li>fonts</li>
+					<li>images</li>
+					<li>font-awesome-4.7.0</li>
+				</ul>
+				If your Paradise Slider is placed in a different folder, don’t forget to change the file paths in the upcoming examples!<br><br>
+			</li>
+			<li>This step is very important, because product functionality depends on these files, so please first of all attach these files carefully. CSS in <code>&lt;head&gt;</code> section and JavaScript in <code>&lt;body&gt;</code> section:</li>
+		</ol>
+				
+		<ul class="well documentation_demos_well">
+			<li class="doc_demo_well_coment">&lt;!-- Google Web Fonts --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;link</span> <span class="doc_attrb">href</span>=<span class="doc_src">"https://fonts.googleapis.com/css?family=Lato:700,900|Averia+Serif+Libre:300,300italic"</span> <span class="doc_attrb">rel</span>=<span class="doc_src">"stylesheet"</span> <span class="doc_attrb">type</span>=<span class="doc_src">"text/css"</span><span class="doc_tag">&gt;</span>
+				</code>
+			</li>
+			<li><br></li>
+			<li class="doc_demo_well_coment">&lt;!-- Font Awesome Version - 4.7.0 --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;link</span> <span class="doc_attrb">href</span>=<span class="doc_src">"paradise/font-awesome-4.7.0/css/font-awesome.min.css"</span> <span class="doc_attrb">rel</span>=<span class="doc_src">"stylesheet"</span> <span class="doc_attrb">type</span>=<span class="doc_src">"text/css"</span><span class="doc_tag">&gt;</span>
+				</code>
+			</li>
+			<li><br></li>
+			<li class="doc_demo_well_coment">&lt;!-- Bootstrap Style Sheet Version - 3.3.7 --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;link</span> <span class="doc_attrb">href</span>=<span class="doc_src">"paradise/css/bootstrap.min.css"</span> <span class="doc_attrb">rel</span>=<span class="doc_src">"stylesheet"</span> <span class="doc_attrb">media</span>=<span class="doc_src">"all"</span><span class="doc_tag">&gt;</span>
+				</code>
+			</li>
+			<li><br></li>
+			<li class="doc_demo_well_coment">&lt;!-- Animation Style Sheet Version - 3.5.2 --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;link</span> <span class="doc_attrb">href</span>=<span class="doc_src">"paradise/css/animate.min.css"</span> <span class="doc_attrb">rel</span>=<span class="doc_src">"stylesheet"</span> <span class="doc_attrb">media</span>=<span class="doc_src">"all"</span><span class="doc_tag">&gt;</span>
+				</code>
+			</li>
+			<li><br></li>
+			<li class="doc_demo_well_coment">&lt;!-- Paradise Slider Main Style Sheet --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;link</span> <span class="doc_attrb">href</span>=<span class="doc_src">"paradise/css/min/paradise_slider_min.css"</span> <span class="doc_attrb">rel</span>=<span class="doc_src">"stylesheet"</span> <span class="doc_attrb">media</span>=<span class="doc_src">"all"</span><span class="doc_tag">&gt;</span>
+				</code>
+			</li>
+			<li><br></li>
+			<li><br></li>
+			<li><br></li>
+			<li class="doc_demo_well_coment">&lt;!-- jQuery Version - 3.2.1 --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;script</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/js/jquery-3.2.1.min.js"</span><span class="doc_tag">&gt;&lt;/script&gt;</span>
+				</code>
+			</li>
+			<li><br></li>
+			<li class="doc_demo_well_coment">&lt;!-- Bootstrap JS File Version - 3.3.7 --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;script</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/js/bootstrap.min.js"</span><span class="doc_tag">&gt;&lt;/script&gt;</span>
+				</code>
+			</li>
+			<li><br></li>
+			<li class="doc_demo_well_coment">&lt;!-- Touch Swipe JS File Version - 1.6.18 --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;script</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/js/jquery.touchSwipe.min.js"</span><span class="doc_tag">&gt;&lt;/script&gt;</span>
+				</code>
+			</li>
+			<li><br></li>
+			<li class="doc_demo_well_coment">&lt;!-- Paradise Slider Main JS File --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;script</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/js/paradise_slider_min.js"</span><span class="doc_tag">&gt;&lt;/script&gt;</span>
+				</code>
+			</li>
+		</ul>
+		<div class="alert alert-danger doc_alert">
+			<strong>Note:</strong> All these files are only for <code> full width images layers 012 </code> template only
+		</div>
+		<h3>Or by using CDN</h3>
+		<p>You can load Bootstrap and jQuery files with a single line of code from their official online sources. You don't even have to download or install anything!</p> 
+		<ul class="well documentation_demos_well">
+			<li class="doc_demo_well_coment">&lt;!-- Bootstrap Style Sheet Version - 3.3.7 --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;link</span> <span class="doc_attrb">href</span>=<span class="doc_src">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"</span> <span class="doc_attrb">rel</span>=<span class="doc_src">"stylesheet"</span> <span class="doc_attrb">media</span>=<span class="doc_src">"all"</span><span class="doc_tag">&gt;</span>
+				</code>
+			</li>
+			<li><br></li>
+			<li class="doc_demo_well_coment">&lt;!-- jQuery Version - 3.2.1 --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;script</span> <span class="doc_attrb">src</span>=<span class="doc_src">"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"</span><span class="doc_tag">&gt;&lt;/script&gt;</span>
+				</code>
+			</li>
+			<li><br></li>
+			<li class="doc_demo_well_coment">&lt;!-- Bootstrap JS File Version - 3.3.7 --&gt;</li>
+			<li>
+				<code>
+					<span class="doc_tag">&lt;script</span> <span class="doc_attrb">src</span>=<span class="doc_src">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"</span><span class="doc_tag">&gt;&lt;/script&gt;</span>
+				</code>
+			</li>
+		</ul>
+
+		<h3>mega vs single</h3>
+		<p>You can use Paradise Slider CSS in two ways:</p>
+		<ul>
+			<li>You can use only one Compressed or UnCompressed CSS file for all <code>Paradise Slider Templates</code>. You can find these files in the sub folder <code>min</code> in main css folder.</li>
+			<li>As well as concern to other method, you can use a single CSS file for a single <code>Paradise Slider Template</code>. You can find all of these files in the main CSS folder. In this case you can use only <code>full_width_images_layers_012.css</code> file.</li>
+		</ul>
+
+
+		<h3>HTML Markup</h3>
+		<p>After attaching all of the above files, insert following HTML to the <code>&lt;body&gt;</code> section. This HTML defines your slider content.</p>
+		<pre class="doc_html_code">
+<span class="doc_tag">&lt;body&gt;</span>
+
+<span class="doc_demo_well_coment">&lt;!-- Paradise Slider --&gt;</span>
+<span class="doc_tag">&lt;div</span> <span class="doc_attrb">id</span>=<span class="doc_src">"fw_il_012"</span> <span class="doc_attrb">class</span>=<span class="doc_src">"carousel slide ps_slide_y ps_control_r_y swipe_y ps_easeOutInCubic"</span> data-ride=<span class="doc_src">"carousel"</span> data-pause=<span class="doc_src">"hover"</span>
+data-interval=<span class="doc_src">"4000"</span> data-duration=<span class="doc_src">"2000"</span><span class="doc_tag">&gt;</span>
+
+    <span class="doc_demo_well_coment">&lt;!-- Wrapper For Slides --&gt;</span>
+    <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"carousel-inner"</span> role=<span class="doc_src">"listbox"</span><span class="doc_tag">&gt;</span>
+
+        <span class="doc_demo_well_coment">&lt;!-- First Slide --&gt;</span>
+        <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"item active"</span><span class="doc_tag">&gt;</span>
+
+          <span class="doc_demo_well_coment">&lt;!-- 1st row --&gt;</span>
+          <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"row"</span><span class="doc_tag">&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 1st Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_01.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_01"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 2nd Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_02.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_02"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+          <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /row --&gt;</span>
+
+          <span class="doc_demo_well_coment">&lt;!-- 2nd row --&gt;</span>
+          <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"row"</span><span class="doc_tag">&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 1st Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_03.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_03"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 2nd Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_04.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_04"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+          <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /row --&gt;</span>
+        <span class="doc_tag">&lt;/div&gt;</span>
+        <span class="doc_demo_well_coment">&lt;!-- End of Slide --&gt;</span>
+
+        <span class="doc_demo_well_coment">&lt;!-- Second Slide --&gt;</span>
+        <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"item"</span><span class="doc_tag">&gt;</span>
+
+          <span class="doc_demo_well_coment">&lt;!-- 1st row --&gt;</span>
+          <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"row"</span><span class="doc_tag">&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 1st Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_05.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_05"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 2nd Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_06.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_06"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+          <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /row --&gt;</span>
+
+          <span class="doc_demo_well_coment">&lt;!-- 2nd row --&gt;</span>
+          <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"row"</span><span class="doc_tag">&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 1st Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_07.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_07"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 2nd Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_08.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_08"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+          <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /row --&gt;</span>
+        <span class="doc_tag">&lt;/div&gt;</span>
+        <span class="doc_demo_well_coment">&lt;!-- End of Slide --&gt;</span>
+
+    <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- End of Wrapper For Slides --&gt;</span>
+
+    <span class="doc_demo_well_coment">&lt;!-- Left Control --&gt;</span>
+    <span class="doc_tag">&lt;a</span> <span class="doc_attrb">class</span>=<span class="doc_src">"left carousel-control"</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#fw_il_012"</span> <span class="doc_attrb">role</span>=<span class="doc_src">"button"</span> <span class="doc_attrb">data-slide</span>=<span class="doc_src">"prev"</span><span class="doc_tag">&gt;</span>
+        <span class="doc_tag">&lt;span</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fa fa-long-arrow-down"</span> <span class="doc_attrb">aria-hidden</span>=<span class="doc_src">"true"</span><span class="doc_tag">&gt;</span><span class="doc_tag">&lt;/span&gt;</span>
+        <span class="doc_tag">&lt;span</span> <span class="doc_attrb">class</span>=<span class="doc_src">"sr-only"</span><span class="doc_tag">&gt;</span>Previous<span class="doc_tag">&lt;/span&gt;</span>
+    <span class="doc_tag">&lt;/a&gt;</span>
+
+    <span class="doc_demo_well_coment">&lt;!-- Right Control --&gt;</span>
+    <span class="doc_tag">&lt;a</span> <span class="doc_attrb">class</span>=<span class="doc_src">"right carousel-control"</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#fw_il_012"</span> <span class="doc_attrb">role</span>=<span class="doc_src">"button"</span> <span class="doc_attrb">data-slide</span>=<span class="doc_src">"next"</span><span class="doc_tag">&gt;</span>
+        <span class="doc_tag">&lt;span</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fa fa-long-arrow-up"</span> <span class="doc_attrb">aria-hidden</span>=<span class="doc_src">"true"</span><span class="doc_tag">&gt;</span><span class="doc_tag">&lt;/span&gt;</span>
+        <span class="doc_tag">&lt;span</span> <span class="doc_attrb">class</span>=<span class="doc_src">"sr-only"</span><span class="doc_tag">&gt;</span>Next<span class="doc_tag">&lt;/span&gt;</span>
+    <span class="doc_tag">&lt;/a&gt;</span>
+
+<span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!--End Paradise Slider--&gt;</span>
+
+<span class="doc_tag">&lt;/body&gt;</span>
+		</pre>
+
+		<div class="alert alert-danger doc_alert">
+			<strong>Note:</strong> The Above example will create three slides. This HTML Structure is only for <code> full width images layers 012 </code> template
+		</div>
+		<h2 id="elements">02 - Slider HTML Elements</h2>
+		<h3>Bootstrap Carousel Contents</h3>
+		<p><code> Bootstrap Carousel</code> is the foundation of this slider. The main structure of <code> Bootstrap Carousel</code> which is used in this template is as following:</p>
+		<pre class="doc_html_code">
+
+    <span class="doc_tag">&lt;div</span> <span class="doc_attrb">id</span>=<span class="doc_src">"myCarousel"</span> <span class="doc_attrb">class</span>=<span class="doc_src">"carousel slide"</span> data-ride=<span class="doc_src">"carousel"</span> data-pause=<span class="doc_src">"hover"</span> data-interval=<span class="doc_src">"4000"</span><span class="doc_tag">&gt;</span>
+
+        <span class="doc_demo_well_coment">&lt;!-- Wrapper For Slides --&gt;</span>
+        <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"carousel-inner"</span> role=<span class="doc_src">"listbox"</span><span class="doc_tag">&gt;</span>
+
+            <span class="doc_demo_well_coment">&lt;!-- Slide --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"item"</span><span class="doc_tag">&gt;</span>
+
+                <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"image.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"image"</span> <span class="doc_tag">/&gt;</span>
+
+            <span class="doc_tag">&lt;/div&gt;</span>
+
+        <span class="doc_tag">&lt;/div</span>
+
+    <span class="doc_tag">&lt;/div&gt;</span>
+		</pre>
+
+		<p>We have assigned our own id to the first <code>&lt;div&gt;</code> that is <code> fw_il_012 </code> (FullWidth_ImagesLayers_012)</p>
+		
+		<h3>Slide Contents</h3>
+		<p>The content for the slide is as following:</p>
+		<ul>
+			<li>In bootstrap carousel <code>&lt;div&gt;</code> element which has <code>item</code> as class name show a single slide.</li>
+			<li>We have divided this <code>item</code> section in further two sections.</li>
+			<li>We have created two <code>row</code> sections. We have added two number of columns in each <code>row</code>, and assigned these columns <code>col-xs-6</code> size. Every <code>col-xs-6</code> section has a background image. And we have created our own <code>&lt;div&gt;</code> element which has <code>fw_il_012_slide</code> as class name for Text Layer.</li>
+		</ul>
+		<pre class="doc_html_code">
+
+        <span class="doc_demo_well_coment">&lt;!-- Slide --&gt;</span>
+        <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"item"</span><span class="doc_tag">&gt;</span>
+
+          <span class="doc_demo_well_coment">&lt;!-- 1st row --&gt;</span>
+          <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"row"</span><span class="doc_tag">&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 1st Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_01.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_01"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 2nd Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_02.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_02"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+          <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /row --&gt;</span>
+
+          <span class="doc_demo_well_coment">&lt;!-- 2nd row --&gt;</span>
+          <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"row"</span><span class="doc_tag">&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 1st Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_03.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_03"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+            <span class="doc_demo_well_coment">&lt;!-- 2nd Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_04.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_04"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+          <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /row --&gt;</span>
+        <span class="doc_tag">&lt;/div&gt;</span>
+        <span class="doc_demo_well_coment">&lt;!-- End of Slide --&gt;</span>
+		</pre>
+
+		<p>In this template we have used following components for Text Layer</p>
+
+		<ul>
+			<li><code>&lt;span&gt;</code></li>
+			<li><code>&lt;a&gt;</code></li>
+		</ul>
+
+		<div class="alert alert-danger doc_alert">
+			<strong>Note:</strong> The <code>active</code> class needs to be added to the first slide. Otherwise, the carousel will not be visible.
+		</div>
+
+		<h2 id="classes">03 - Classes</h2>
+		<p>We have used following our own classes and id in this template, that control and change the whole slider.</p>
+	
+		<code>#fw_il_012</code> : Describe the Slider's Unique Id.<br><br>
+		<code>.fw_il_012_slide</code> : Enable Styles of Text Layer Portion<br><br>
+		<code>.slide</code> : Enable Sliding Effect.<br><br>
+		<code>.swipe_y</code>: This class enables vertical swipe function<br><br>
+		<code>.ps_slide_y</code> : Enable Vertical Sliding Effect.<br><br>
+		<code>.ps_easeOutInCubic</code> : This class enables Transition Timing Function for Slide Effect<br><br>
+		<code>.ps_control_r_y</code> : This class makes right side, Left and Right control buttons<br><br>
+
+		<div class="alert alert-danger doc_alert">
+				<strong>Note:</strong> <code>fw_il</code> Stands for " Full Width Images Layers " and <code>012</code> means " Version 012 ". And <code>ps</code> stands for " Paradise Slider ".
+		</div>
+		
+		<h2 id="fonts">04 - Fonts</h2>
+		<p>We have used the following Fonts in this template. You can download these fonts from <code>google fonts</code> to get the same result of template</p>
+
+		<ul>
+			<li>Lato</li>
+			<li>Averia Serif Libre</li>
+		</ul>
+
+		<h2 id="controls">05 - Controls</h2>
+
+<pre class="doc_html_code">
+    <span class="doc_demo_well_coment">&lt;!-- Left Control --&gt;</span>
+    <span class="doc_tag">&lt;a</span> <span class="doc_attrb">class</span>=<span class="doc_src">"left carousel-control"</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#fw_il_012"</span> <span class="doc_attrb">role</span>=<span class="doc_src">"button"</span> <span class="doc_attrb">data-slide</span>=<span class="doc_src">"prev"</span><span class="doc_tag">&gt;</span>
+        <span class="doc_tag">&lt;span</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fa fa-long-arrow-down"</span> <span class="doc_attrb">aria-hidden</span>=<span class="doc_src">"true"</span><span class="doc_tag">&gt;</span><span class="doc_tag">&lt;/span&gt;</span>
+        <span class="doc_tag">&lt;span</span> <span class="doc_attrb">class</span>=<span class="doc_src">"sr-only"</span><span class="doc_tag">&gt;</span>Previous<span class="doc_tag">&lt;/span&gt;</span>
+    <span class="doc_tag">&lt;/a&gt;</span>
+
+    <span class="doc_demo_well_coment">&lt;!-- Right Control --&gt;</span>
+    <span class="doc_tag">&lt;a</span> <span class="doc_attrb">class</span>=<span class="doc_src">"right carousel-control"</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#fw_il_012"</span> <span class="doc_attrb">role</span>=<span class="doc_src">"button"</span> <span class="doc_attrb">data-slide</span>=<span class="doc_src">"next"</span><span class="doc_tag">&gt;</span>
+        <span class="doc_tag">&lt;span</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fa fa-long-arrow-up"</span> <span class="doc_attrb">aria-hidden</span>=<span class="doc_src">"true"</span><span class="doc_tag">&gt;</span><span class="doc_tag">&lt;/span&gt;</span>
+        <span class="doc_tag">&lt;span</span> <span class="doc_attrb">class</span>=<span class="doc_src">"sr-only"</span><span class="doc_tag">&gt;</span>Next<span class="doc_tag">&lt;/span&gt;</span>
+    <span class="doc_tag">&lt;/a&gt;</span>
+</pre>
+		<p>In this template we have used vertical, Left and Right control buttons to move from one slide to another slide. You can move from one slide to another by clicking on these buttons or by dragging through the mouse button vertically. We have created the following additional functions to control the slides:</p>
+
+		<ol>
+			<li><h4><code>.slide</code></h4> This class enables Sliding Effect..
+				<br><strong>If you want to know about other animation effects of sliding please click <a href="navigation_indicators.html">HERE</a>.</strong></li>
+			<li><h4><code>.swipe_y</code></h4> This class enables swipe function. You can controll the slides by dragging the mouse button vertically and in touch devices this class also enables the touch control.
+				<br><strong>If you want to know about other functions click <a href="navigation_indicators.html">HERE</a>.</strong></li>
+			<li><h4><code>.ps_slide_y</code></h4> This class moves the slides vertically. Without <code>.slide</code> class <code>.ps_slide_y</code> will not work.
+				<br><strong>If you want to know about other animation effects of sliding please click <a href="navigation_indicators.html">HERE</a>.</strong></li>
+			<li><h4><code>.ps_easeOutInCubic</code></h4> This class enables Transition Timing Function for Slide Effect.
+				<br><strong>If you want to know about other Transition Timing Function for Slide Effect please click <a href="navigation_indicators.html">HERE</a>.</strong></li>
+			<li><h4><code>.ps_control_r_y</code></h4> This class makes right side vertical, Left and Right control buttons.
+				<br><strong>If you want to know about other types of controls buttons please click <a href="navigation_indicators.html">HERE</a>.</strong></li>
+			<li><h4><code>data-pause="hover"</code></h4> This attribute pauses the slider from sliding through the next slide when the mouse pointer enters the slider, and when the mouse pointer leaves the slider it resumes the sliding.</li>
+			<li><h4><code>data-interval="4000"</code></h4> This attribute specifies the delay (in milliseconds) between each slide.</li>
+			<li><h4><code>data-duration="2000"</code></h4> This attribute specifies the duration (in milliseconds) of sliding.</li>
+			<li class="alert alert-danger doc_alert">
+			<strong>Note:</strong> If you are using more than one Sliders on one page or file, the first slider <code>data-duration=""</code> value will apply on all others sliders.
+			</li>
+		</ol>
+		
+		<h2 id="animation">06 - Animation</h2>
+		<p>We have used animate.css of Daniel Eden for animation. In this template we have used three animation effect as follow:</p>
+		<br><code>fadeIn</code><br><br>
+		<p>You can create animation by using the data attribute like <code>data-animation="animated flipInX"</code> </p>
+<pre class="doc_html_code">
+            <span class="doc_demo_well_coment">&lt;!-- 2nd Image --&gt;</span>
+            <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"col-xs-6"</span><span class="doc_tag">&gt;</span>
+              <span class="doc_tag">&lt;img</span> <span class="doc_attrb">src</span>=<span class="doc_src">"paradise/images/fw_il_012_04.jpg"</span> <span class="doc_attrb">alt</span>=<span class="doc_src">"fw_il_012_04"</span> data-animation=<span class="doc_src">"animated fadeIn"</span><span class="doc_tag">/&gt;</span>
+              <span class="doc_demo_well_coment">&lt;!-- Slide Text Layer --&gt;</span>
+              <span class="doc_tag">&lt;div</span> <span class="doc_attrb">class</span>=<span class="doc_src">"fw_il_012_slide"</span><span class="doc_tag">&gt;</span>
+                  <span class="doc_tag">&lt;span</span><span class="doc_tag">&gt;</span>- natural<span class="doc_tag">&lt;/span&gt;</span>
+                  <span class="doc_tag">&lt;a</span> <span class="doc_attrb">href</span>=<span class="doc_src">"#"</span><span class="doc_tag">&gt;</span>read me<span class="doc_tag">&lt;/a&gt;</span>
+              <span class="doc_tag">&lt;/div&gt;</span> <span class="doc_demo_well_coment">&lt;!-- /fw_il_012_slide --&gt;</span>
+            <span class="doc_tag">&lt;/div&gt;</span>
+</pre>
+		
+		<h4>For complete list of animation effects please <a href="animation.html" class="btn btn-info btn-sm" role="button">Click Here</a></h4>
+
+		<h2 id="settings">07 - Slider Settings</h2>
+		<p>We have created a separate page for slider settings please <a href="carousel.html" class="btn btn-info btn-sm" role="button">Click Here</a>
+
+		<h2 id="settings">08 - Images</h2>
+		<p><code>1732 x 1155</code> in pixels.</p>
+		<p><code>3:2</code> Alway keeps its aspect ratio when you want to change the size of the image</p>
+
+		<h2>09 - Support</h2>
+		<p>Please do not hesitate if you have any queries about this item. We are always there for your help. You can contact us on this e-mail address szthemes53@gmail.com</p>
+
+	</div>
+
+	<div class="main_footer">
+		<div class="container documentation_footer">
+			<div class="row">
+				<div class="col-md-3">
+					<img src="images/logo_footer.png" alt="company logo" />
+					<p>We have prepared 100+ pre-made layouts of bootstrap carousel. It is very easy to create new layouts by combining these pre-layouts. Paradise Slider is a fully responsive slider and works perfectly on all screen sizes and mobile devices.</p>
+					<a href="#">100 + pre-made layouts</a>
+				</div>
+				<div class="col-md-3">
+					<h5>Read More About</h5>
+					<ul>
+						<li><a href="../documentation.html">Documentation Home</a></li>
+						<li><a href="carousel.html">Bootstrap Carousel</a></li>
+						<li><a href="animation.html">Animation Setting</a></li>
+						<li><a href="navigation_indicators.html">Navigation & Indicators</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<h5>Use Full Links</h5>
+					<div class="row">
+						<div class="col-md-4">
+							<a href="http://themeforest.net/" target="_blank"><img src="images/themeforest.png" alt="themeforest" /></a>
+						</div>
+						<div class="col-md-4">
+							<a href="http://codecanyon.net/" target="_blank"><img src="images/codecanyon.png" alt="codecanyon" /></a>
+						</div>
+						<div class="col-md-4">
+							<a href="http://videohive.net/" target="_blank"><img src="images/videohive.png" alt="videohive" /></a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<a href="http://graphicriver.net/" target="_blank"><img src="images/graphicriver.png" alt="graphicriver" /></a>
+						</div>
+						<div class="col-md-4">
+							<a href="http://photodune.net/" target="_blank"><img src="images/photodune.png" alt="photodune" /></a>
+						</div>
+						<div class="col-md-4">
+							<a href="http://codecanyon.net/user/szthemes/portfolio" target="_blank"><img src="images/szthemes.png" alt="Our Portfolio" /></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 doc_contactus">
+					<h5>Contac Us</h5>
+					<ul>
+						<li><a href="http://codecanyon.net/user/szthemes/portfolio" target="_blank">Our Portfolio</a></li>
+						<li><a href="http://codecanyon.net/user/szthemes" target="_blank">szthemes</a></li>
+						<li><a href="#">szthemes53@gmail.com</a></li>
+					</ul>
+					<p>
+					Paradise Slider is a fully responsive slider and works perfectly on all screen sizes and mobile devices.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid documentation_footer_inner">
+		<div class="container">
+			<p>© 2016 Paradise Slider · Built by <a href="http://codecanyon.net/user/szthemes" target="_blank">szthemes</a> using Bootstrap.</p>
+		</div>
+	</div>
+
+	<!--======= JavaScript =========-->
+	
+	<!--======= jQuery =========-->
+	<script src="js/jquery-1.12.0.js"></script>
+	
+	<!--======= Bootstrap =========-->
+	<script src="js/bootstrap.js"></script>
+	
+	<!--======= Plug-In =========-->
+	<script src="js/SmoothScroll.js"></script>
+
+	<script>
+	
+		var $root = $('html, body');
+		$('a').click(function() {
+			var href = $.attr(this, 'href');
+			$root.animate({									<!--======= Onclick smooth scroll function =========-->
+				scrollTop: $(href).offset().top - 120
+			}, 500, function () {
+				window.location.hash = href;
+			});
+			return false;
+		});
+// create the back to top button
+$('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
+
+var amountScrolled = 300;
+
+$(window).scroll(function() {
+	if ( $(window).scrollTop() > amountScrolled ) {
+		$('a.back-to-top').fadeIn('slow');
+	} else {
+		$('a.back-to-top').fadeOut('slow');
+	}
+});
+
+$('a.back-to-top, a.simple-back-to-top').click(function() {
+	$('html, body').animate({
+		scrollTop: 0
+	}, 700);
+	return false;
+});
+	</script>
+	
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+/* RESPONSIVE - SPECIAL TO MONO CAROUSEL */
+.multiple.m-mono:not(.m-reponsive-except) .m-carousel-titles{
+    display: none;
+}
+.multiple.m-mono:not(.m-reponsive-except) .m-recipient{
+    padding-top: 0;
+}
+.m-mono:not(.m-reponsive-except) .m-nav,
+.m-mono.m-leftnav:not(.m-reponsive-except) .m-nav,
+.m-mono.m-rightnav:not(.m-reponsive-except) .m-nav {
+    width: 95%;
+    left: 2.5%;
+    border: 0;
+    margin-left: 0;
+    height: 35px;
+    margin-top: 0;
+    top: 298px;
+}
+.m-mono:not(.m-reponsive-except) .m-nav .up {
+    position: absolute;
+    top: 4px;
+    left: 5px;
+}
+.m-mono:not(.m-reponsive-except) .m-nav .down {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    left: auto;
+}
+.m-mono:not(.m-reponsive-except) .m-nav .player {
+    left: 50%;
+    margin-left: -10px;
+}
+.m-mono.m-leftnav:not(.m-reponsive-except) .m-nav .up i,
+.m-mono.m-leftnav:not(.m-reponsive-except) .m-nav .down i,
+.m-mono.m-rightnav:not(.m-reponsive-except) .m-nav .up i,
+.m-mono.m-rightnav:not(.m-reponsive-except) .m-nav .down i{
+    behavior:url(-ms-transform.htc);
+    /* Firefox */
+    -moz-transform:rotate(270deg);
+    /* Safari and Chrome */
+    -webkit-transform:rotate(270deg);
+    /* Opera */
+    -o-transform:rotate(270deg);
+    /* IE9 */
+    -ms-transform:rotate(270deg);
+}

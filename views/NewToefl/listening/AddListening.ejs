@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" type="text/css" href="../../../public/sementicTest/Semantic/semantic.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../../../public/sementicTest/Semantic/semantic.js"></script>  
+    <script src="../../../public/sementicTest/AddListening.js"></script>
+    
+    <style>
+        body{
+            margin :15px;
+        }
+        
+        .ui.inverted.menu {
+
+        height: 100px;
+            
+      };
+ 
+    </style>
+        
+            
+        
+        
+    </head>
+   
+    
+     <body onload=startTime()>
+ <div class="ui blue borderless inverted menu">
+          <div class="left menu">
+            <a class="item">
+              <h1>Toefl Simulator<br></h1> <br><br> <h4>for Teachers</h4>   
+              </a>
+            </div>      
+        <div class="centered menu">  
+            
+          <a class="item">
+           
+            <i class="huge github icon"></i>
+            </a>
+  
+        </div>     
+        <div class="right menu">
+        <a class="item" id="clock"> </a>    
+       
+    <div class="ui dropdown item">
+      <i class="user icon"></i>하인철 선생님 <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item">profile</a>
+        <a class="item">Logout</a>
+            </div>
+        </div>    
+     </div>   
+    </div>
+
+        <div>
+          <div class="ui huge breadcrumb">
+          <a class="section">문제출제하기</a>
+          <i class="right chevron icon divider"></i>
+          <div class="active section">Listening</div>
+           <i class="right chevron icon divider"></i>  
+      
+    
+        </div>
+              <button class="teal ui right floated button" id="lc_chapter_complete_btn">챕터 완료</button>
+         </div>
+       
+        <br>
+        <div class="ui borderless menu" id="test">
+          
+            
+            <a class="ui blue labeled icon active button" data-tooltip="버튼을 눌러 문제를 추가해보세요 !" data-position="right center" id="addProblem" >
+            문제 추가하기
+            <i class="add icon"></i>
+           
+        </a>
+      
+        </div>
+ 
+        <div>
+            <iframe id="output" name="output" width="100%" height="700" style="border: 1px solid #0E6EB8">ggg</iframe>
+         
+        </div> 
+        
+<!--
+        //modal
+        
+-->
+            <div class="ui longer modal" id="lc_addproblem_modal">
+              <i class="close icon"></i>
+              <div class="header">
+                Profile Picture
+              </div>
+              <div class="content">
+                 <div class="ui form">
+                  <div class="field">
+                      <label>Gender</label>
+                      <div class="ui selection dropdown">
+                          <input type="hidden" name="gender">
+                          <i class="dropdown icon"></i>
+                          <div class="default text">Gender</div>
+                          <div class="menu">
+                              <div class="item" data-value="1">type1</div>
+                              <div class="item" data-value="2">type2</div>
+                              <div class="item" data-value="3">type3</div>
+                              <div class="item" data-value="4">type4</div>
+                              <div class="item" data-value="5">type5</div>
+                              <div class="item" data-value="6">type6</div>
+                              <div class="item" data-value="7">type7</div>
+
+                          </div>
+                      </div>
+                  </div>
+                      <div class="actions">
+                        <div class="ui black deny button">
+                          Nope
+                        </div>
+                          <button class="ui positive right labeled icon button" id="test2" >
+                          Yep, that's me
+                          <i class="checkmark icon"></i>
+                          </button>
+                        </div>  
+                 </div>
+              </div>        
+        </div>
+        
+		        <div class="ui modal" id="ch_com_modal">
+          <i class="close icon"></i>
+          <div class="header">
+           챕터 완료하기
+          </div>
+          <div class="content">
+         
+            <div class="description">
+              <div class="ui header">지금까지 작업한 내용을 저장하고 초기화면 or 다른챕터 선택으로 이동합니다</div>
+              
+				<p><i class="warning sign icon"></i>저장하지 않은 작업들은 모두 사라집니다.</p>
+            </div>
+          </div>
+          <div class="actions">
+          <div class="ui buttons">
+              <button class="ui green button">초기화면으로가기</button>
+              <div class="or"></div>
+              <button class="ui blue button">다른챕터선택</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui modal" id="go_back_main_modal">
+          <i class="close icon"></i>
+          <div class="header">
+			
+  
+			  
+           메인 화면으로 이동하기
+          </div>
+          <div class="content">
+         
+            <div class="description">
+              <div class="ui header">
+				 
+				  문제 출제하기 메인 화면으로 이동합니다.</div>
+           
+            </div>
+          </div>
+          <div class="actions">
+         
+              <button class="ui grey button">이전으로</button>
+              
+              <button class="ui blue button">이동하기</button>
+            
+          </div>
+        </div> 
+		 
+		 
+        <div id="ui_import_listening_modal">
+         </div>
+      
+    </body>
+    
+
+    
+</html>    

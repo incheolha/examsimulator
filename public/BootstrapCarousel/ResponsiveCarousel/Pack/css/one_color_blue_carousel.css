@@ -1,0 +1,322 @@
+/*
+	StyleSheet For Responsive Bootstrap Carousel
+	Author: szthemes
+	Item Name: Responsive Bootstrap Carousel
+	Author URI: http://codecanyon.net/user/szthemes
+	Description: Different Types of Bootstrap Carousel
+
+								Content List
+  -----------------------------------------------------------------------------------
+	NAME ----------------------------------------LINE NUMBER--------------------- #
+	ONE COLOR BLUE CAROUSEL ---------------------31------------------------------ 01
+	RESPONSIVE ----------------------------------155----------------------------- 02	
+	COLORS --------------------------------------261----------------------------- 03
+	[ Note: Line Numbers Are According To Notepad++ ]
+  -----------------------------------------------------------------------------------
+							Fonts Styles
+  -----------------------------------------------------------------------------------
+	  'Open Sans', sans-serif ---------------------------------- 01
+	              FontAwesome ---------------------------------- 02
+  -----------------------------------------------------------------------------------
+							Color Codes
+  -----------------------------------------------------------------------------------
+	NAME    ------------------------RGB-------------------------- #
+	#ffffff -------------------rgb(255, 255, 255)---------------- 01
+	#000000 -------------------rgb(0, 0, 0)---------------------- 02
+	#3690c3 -------------------rgb(209, 93, 63)------------------ 03 Replace Only This Color To Change Whole Color Scheme
+	#327da9 -------------------rgb(183, 68, 37)------------------ 04 Replace Only This Color To Change Whole Color Scheme
+*/
+
+/*------------------------------------------------------*/
+/* ONE COLOR BLUE CAROUSEL
+/*------------------------------------------------------*/
+
+.one_color_blue_carousel_wrapper {
+  overflow: hidden;
+  max-height: 661px;
+}
+.one_color_blue_carousel_wrapper > .carousel-inner > .item > img,
+.one_color_blue_carousel_wrapper > .carousel-inner > .item > a > img {
+  opacity: 0.6;
+  margin: auto;
+  width: 100% !important;
+}
+/*---------- FADE EFFECT ----------*/
+.one_color_blue_carousel_fade {
+  opacity: 1;
+}
+.one_color_blue_carousel_fade .item {
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  left: 0 !important;
+  display: block !important;
+  -webkit-transition: opacity ease-in-out 0.7s;
+  -moz-transition: opacity ease-in-out 0.7s;	
+  -ms-transition: opacity ease-in-out 0.7s;	
+  -o-transition: opacity ease-in-out 0.7s;  
+  transition: opacity ease-in-out 0.7s;
+}
+.one_color_blue_carousel_fade .item:first-child {
+  top: auto;
+  position: relative;
+}
+.one_color_blue_carousel_fade .item.active {
+  opacity: 1;
+  z-index: 2;
+  -webkit-transition: opacity ease-in-out 0.7s;
+  -moz-transition: opacity ease-in-out 0.7s;	
+  -ms-transition: opacity ease-in-out 0.7s;	
+  -o-transition: opacity ease-in-out 0.7s;  
+  transition: opacity ease-in-out 0.7s;
+}
+/*---------- LEFT/RIGHT CONTROL ----------*/
+.one_color_blue_carousel_control_left,
+.one_color_blue_carousel_control_right {
+  top: 50%;
+  z-index: 2;
+  opacity: 0;
+  width: 55px;
+  height: 55px;
+  border: none;
+  text-align: center;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.one_color_blue_carousel_wrapper:hover .one_color_blue_carousel_control_left,
+.one_color_blue_carousel_wrapper:hover .one_color_blue_carousel_control_right {
+  opacity: 0.7;
+}
+.one_color_blue_carousel_control_icons {
+  line-height: 50px;
+  font-size: 34px !important;
+  font-weight: normal !important;
+}
+.one_color_blue_carousel_control_left {
+  left: 1% !important;
+}
+.one_color_blue_carousel_control_right {
+  right: 1% !important;
+}
+/*---------- CAPTION ----------*/
+.one_color_blue_carousel_caption {
+  left: 0%;
+  right: 0%;
+  z-index: 1;
+  width: 100%;
+  bottom: 35%;
+  text-shadow: none;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+}
+.one_color_blue_carousel_caption_text {
+  width: 40%;
+  left:135px;
+  padding: 25px;
+  text-align: left;
+  position: relative;
+}
+.one_color_blue_carousel_caption_text h1 {
+  font-size: 50px;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.one_color_blue_carousel_caption_text p {
+  text-align: justify;
+  margin-bottom: 30px;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+.one_color_blue_carousel_caption_text a,
+.one_color_blue_carousel_caption_text a:visited {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 25px 15px 25px;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+.one_color_blue_carousel_caption>img {
+  right: 17%;
+  top: -70px;
+  width: 23%;
+  position: absolute;
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+}
+
+/*------------------------------------------------------*/
+/* RESPONSIVE
+/*------------------------------------------------------*/
+
+/*----------  MEDIA 480px  ----------*/
+@media only screen and (max-width: 480px) {
+  /*---------- LEFT/RIGHT CONTROL ----------*/
+  .one_color_blue_carousel_control_left,
+  .one_color_blue_carousel_control_right {
+    border: none;
+  }
+  .one_color_blue_carousel_control_icons {
+    font-size: 18px !important;
+  }
+  /*---------- CAPTION ----------*/
+  .one_color_blue_carousel_caption {
+    bottom: 5px;
+  }
+  .one_color_blue_carousel_caption_text {
+    left: 0px;
+    width: 100%;
+    padding: 2px;
+    text-align: center;
+  }
+  .one_color_blue_carousel_caption_text h1 {
+    font-size: 25px;
+    margin: 0px 0px 10px 0px;
+  }
+  .one_color_blue_carousel_caption_text p {
+    font-size: 11px;
+    margin: 0px 0px 10px 0px;
+  }
+  .one_color_blue_carousel_caption_text a {
+    padding: 5px 10px 5px 10px;
+  }
+  .one_color_blue_carousel_caption img {
+    display: none;
+  }
+}
+
+/*----------  MEDIA 481px - 600px  ----------*/
+@media (min-width: 481px) and (max-width: 600px) {
+  /*---------- LEFT/RIGHT CONTROL ----------*/
+  .one_color_blue_carousel_control_left,
+  .one_color_blue_carousel_control_right {
+    border: none;
+  }
+  /*---------- CAPTION ----------*/
+  .one_color_blue_carousel_caption {
+    bottom: 5px;
+  }
+  .one_color_blue_carousel_caption_text {
+    left: 0px;
+    width: 100%;
+    padding: 2px;
+    text-align: center;
+  }
+  .one_color_blue_carousel_caption_text h1 {
+    margin: 0px 0px 10px 0px;
+  }
+  .one_color_blue_carousel_caption_text p {
+    margin: 0px 0px 10px 0px;
+  }
+  .one_color_blue_carousel_caption img {
+    display: none;
+  }
+}
+
+/*----------  MEDIA 601px - 767px  ----------*/
+@media (min-width: 601px) and (max-width: 767px) {
+  /*---------- CAPTION ----------*/
+  .one_color_blue_carousel_caption {
+    bottom: 50px;
+  }
+  .one_color_blue_carousel_caption_text {
+    left: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  .one_color_blue_carousel_caption img {
+    display: none;
+  }
+}
+
+/*----------  MEDIA 768px - 991px  ----------*/
+@media (min-width: 768px) and (max-width: 991px) {
+  /*---------- CAPTION ----------*/
+  .one_color_blue_carousel_caption {
+    bottom: 50px;
+  }
+  .one_color_blue_carousel_caption>img {
+    top: 100px;
+  }
+}
+
+/*----------  MEDIA 992px - 1250px  ----------*/
+@media (min-width: 992px) and (max-width: 1250px) {
+  /*---------- CAPTION ----------*/
+  .one_color_blue_carousel_caption {
+    bottom: 25%;
+  }
+  .one_color_blue_carousel_caption>img {
+    top: 50px;
+  }
+}
+
+/*------------------------------------------------------*/
+/* COLORS (BLUE)
+/*------------------------------------------------------*/
+
+.one_color_blue_carousel_wrapper {
+  background: rgb(67,169,228);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(67,169,228,1)), color-stop(100%,rgba(57,154,209,1)));
+  background: -webkit-linear-gradient(top,  rgba(67,169,228,1) 0%, rgba(57,154,209,1) 100%);
+  background: -moz-linear-gradient(top,  rgba(67,169,228,1) 0%, rgba(57,154,209,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(67,169,228,1) 0%, rgba(57,154,209,1) 100%);
+  background: -o-linear-gradient(top,  rgba(67,169,228,1) 0%, rgba(57,154,209,1) 100%);
+  background: linear-gradient(to bottom,  rgba(67,169,228,1) 0%, rgba(57,154,209,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43a9e4', endColorstr='#399ad1',GradientType=0 );
+}
+/*---------- LEFT/RIGHT CONTROL ----------*/
+.one_color_blue_carousel_control_left,
+.one_color_blue_carousel_control_left:hover,
+.one_color_blue_carousel_control_left:active,
+.one_color_blue_carousel_control_left:focus,
+.one_color_blue_carousel_control_right,
+.one_color_blue_carousel_control_right:hover,
+.one_color_blue_carousel_control_right:active,
+.one_color_blue_carousel_control_right:focus {
+  color: #ffffff;
+  border: 1px solid #327da9;
+  background: #3690c3 !important; 
+  -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+/*---------- CAPTION ----------*/
+.one_color_blue_carousel_caption h2,
+.one_color_blue_carousel_caption h1 a,
+.one_color_blue_carousel_caption h1 a:visited {
+  color: #ffffff;
+}
+.one_color_blue_carousel_caption_text a,
+.one_color_blue_carousel_caption_text a:visited {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.one_color_blue_carousel_caption_text a:hover,
+.one_color_blue_carousel_caption_text a:active,
+.one_color_blue_carousel_caption_text a:focus {
+  color: #3690c3;
+  background: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+/*---------- MEDIA QUERIES ----------*/
+@media only screen and (max-width: 600px) {
+	/*---------- LEFT/RIGHT CONTROL ----------*/
+  .one_color_blue_carousel_control_left,
+  .one_color_blue_carousel_control_right,
+  .one_color_blue_carousel_control_left:hover,
+  .one_color_blue_carousel_control_left:active,
+  .one_color_blue_carousel_control_left:focus,
+  .one_color_blue_carousel_control_right:hover,
+  .one_color_blue_carousel_control_right:active,
+  .one_color_blue_carousel_control_right:focus	{
+    background: transparent !important;
+  }
+}
+/*----------  END  ----------*/

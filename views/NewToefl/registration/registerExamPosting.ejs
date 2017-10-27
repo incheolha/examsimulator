@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Auto Loading Bootstrap Modal on Page Load</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#myModal").modal({
+            backdrop: 'static'});
+        
+        $("#myModal").on('shown.bs.modal', function(){
+            $(this).find('#inputName').focus();
+        });
+    });
+</script>
+
+</head>
+
+<body>
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">시험 등록 메뉴</h4>
+            </div>
+            <div class="modal-body">
+				<p>토플 시험을 출제하시기를 원하십니까?</p>
+                <form name="myForm" action="/register/addregister" method="post">
+           
+                    <div class="form-group">
+                        <% var curRegisterNo = SetregisterNo; %>
+                        <p>시험회차 : <%= curRegisterNo %>
+                      
+                    <input type="hidden" name="registerNo" value=<%=curRegisterNo %> />
+                            
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="registerDesc" required class="form-control" placeholder="출제시험 설명을 입력하세요" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">출제하기</button>
+    		        <a href="/" class="btn btn-default btn-sm">취소</a>
+		    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>                                		

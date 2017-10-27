@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		
+		<title>홈 화면입니다.</title>
+		
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    	
+    	<style>
+        	body { padding-top:80px; }
+        	
+			@font-face {
+				font-family: 'Nanum Gothic'; font-style: normal; font-weight: 400;
+				src: url('../public/NanumGothic-Regular.eot');
+				src: local('NanumGothic'),
+					url('../public/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+					url('../public/NanumGothic-Regular.woff2') format('woff2'),
+					url('../public/NanumGothic-Regular.woff') format('woff'),
+					url('../public/NanumGothic-Regular.ttf') format('truetype');
+			}
+        	
+        	h1, p, a { font-family: 'Nanum Gothic' }
+    	</style>
+    
+	</head>
+	<body>
+		<div class="container">
+		    <div class="jumbotron text-center">
+		        <h1><span class="fa fa-shopping-cart"></span> TOEFL SIMULATOR HOME</h1>
+				<br>
+				<% if (login_success) { %>
+					<p>로그인되어 있습니다.</p>
+            	<% if (user.provider == undefined || user.provider == '') { %>
+			                <h3><span class="fa fa-user"></span> 로컬 프로필</h3>
+							<br>
+							<p>
+								<strong>이메일</strong>: <%= user.email %><br><br>
+		                		<strong>별명</strong>: <%= user.name %>
+			                </p>
+			            <% } else if (user.provider == 'facebook') { %>
+							<h3 class="text-primary"><span class="fa fa-facebook"></span> 페이스북 프로필</h3>
+							<br>
+		                    <p>
+		                        <strong>아이디</strong>: <%= user.facebook.id %><br><br>
+		                        <strong>이메일</strong>: <%= user.facebook.email %><br><br>
+		                        <strong>이름</strong>: <%= user.facebook.name %>
+		                    </p>
+		                <% } else if (user.provider == 'twitter') { %>
+							<h3 class="text-primary"><span class="fa fa-twitter"></span> 트위터 프로필</h3>
+							<br>
+		                    <p>
+		                        <strong>아이디</strong>: <%= user.twitter.id %><br><br>
+		                        <strong>이메일</strong>: <%= user.twitter.email %><br><br>
+		                        <strong>이름</strong>: <%= user.twitter.name %>
+		                    </p>
+		                <% } else if (user.provider == 'google') { %>
+							<h3 class="text-primary"><span class="fa fa-google"></span> 구글 프로필</h3>
+							<br>
+		                    <p>
+		                        <strong>아이디</strong>: <%= user.google.id %><br><br>
+		                        <strong>이메일</strong>: <%= user.google.emails[0].value %><br><br>
+		                        <strong>이름</strong>: <%= user.google.displayName %>
+		                    </p>
+						<% } %>
+		                	
+						<br>
+					<br>
+			        <a href="/payment" class="btn btn-default"><span class="fa fa-user"></span>결재하기</a>
+					<a href="/logout" class="btn btn-default"><span class="fa fa-user"></span>로그아웃</a>
+				<% } else { %>
+					<p>로그인하세요.<p>
+					<p>계정이 없으시면 회원가입하세요.</p>
+					<br>
+			        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>로그인</a>
+			        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>회원가입</a>
+					<br>
+					<a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> 페이스북으로 로그인</a>
+					<br>
+					<a href="/auth/google" class="btn btn-primary"><span class="fa fa-google"></span> 구글로 로그인</a>
+					<br>
+					<a href="/auth/kakao" class="btn btn-primary"><span class="fa fa-google"></span> 카카오 로그인</a>
+
+				<% } %>
+				
+		    </div>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+	<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+	<!--[if IE 7]><html class="lt-ie9 lt-ie8"> <![endif]-->
+	<!--[if IE 8]><html class="lt-ie9"> <![endif]-->
+	<!--[if gt IE 8]><!--> 
+	
+<html>
+ 
+	<!--<![endif]-->
+	<!-- Head -->
+	<head>
+
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Title -->
+		<title>x_025_shop_modal</title>
+
+		<!-- Short-Cut Icon -->
+		<link rel="shortcut icon" href="#" />
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+		
+		<!-- Font Awesome Version - 4.6.3 -->
+		<link href="paradise/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+		<!-- Bootstrap Style Sheet Version - 3.3.7 -->
+		<link href="paradise/css/bootstrap.min.css" rel="stylesheet" media="all">
+
+		<!-- Paradise Slider Main Style Sheet -->
+		<link href="paradise/css/x_025_shop_modal.css" rel="stylesheet" media="all">
+
+	</head>
+
+<body>
+
+	<!--
+	In this example we have used a 4 column Image Gallery to Trigger the Modal.
+	You can also use link, button etc to Trigger the Modal.
+	-->
+
+	<!-- Paradise Gallery For Modal -->
+	<div class="container-fluid x_025_shop_modal_gallery">
+		<div class="row"> <!-- .row -->
+
+			<div class="col-xs-6 col-sm-3"> <!-- 1st column -->
+				<img src="paradise/images/x_025_shop_modal_01.png" alt="x_025_shop_modal_01" data-toggle="modal" data-target="#x_025_shop_modal">
+			</div>
+
+		</div> <!-- /.row -->
+	</div> <!-- /.x_025_shop_modal_gallery -->
+
+	<!-- Responsive Bootstrap Modal Popup -->
+	<div id="x_025_shop_modal" class="modal fade x_025_shop_modal x_025_shop_modal_size" role="dialog">
+
+		<!-- Modal Dialog-->
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+
+				<!-- Close Button -->
+				<a href="#" data-dismiss="modal" class="x_025_shop_modal_close">close</a>
+
+				<!-- Slider -->
+				<div id="x_025_shop_sldr" class="carousel slide x_025_shop_modal_indicators x_025_shop_modal_controls thumb_scroll_x swipe_x ps_easeOutInCubic" data-ride="carousel" data-pause="hover" data-interval="false" data-duration="2000">
+
+					<!-- Wrapper For Slides -->
+					<div class="carousel-inner" role="listbox">
+
+						<!-- First Slide -->
+						<div class="item active">
+							<!-- Image -->
+							<div class="x_025_shop_modal_img">
+								<img src="paradise/images/x_025_shop_modal_01.png" alt="x_025_shop_modal_01">
+							</div>
+							<!-- Slide Text -->
+							<div class="x_025_shop_modal_txt">
+								<!-- Name -->
+								<h1>complete name of product, company and modal number</h1>
+								<!-- Rating Stars -->
+								<ul>
+									<li><span class="fa fa-star"></span></li>
+									<li><span class="fa fa-star"></span></li>
+									<li><span class="fa fa-star"></span></li>
+									<li><span class="fa fa-star-half-o"></span></li>
+									<li><span class="fa fa-star-o"></span></li>
+								</ul>
+								<!-- Price -->
+								<h2>$250.00</h2>
+								<!-- Detail -->
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer ut purus ac augue commodo commodo. Nunc nec mi eu justo tempor consectetuer. Etiam vitae nisl. In dignissim lacus ut ante. Cras elit lectus, bibendum a, adipiscing vitae, commodo et, dui.</p>
+								<!-- Form -->
+								<form action="#">
+									<div class="x_025_shop_modal_form_num">
+										<label>quantity</label>
+										<input type="number" name="quantity" min="1" max="20">
+									</div>
+									<div class="x_025_shop_modal_form_color">
+										<label>colours</label>
+										<select name="colors">
+											<option value="red">red</option>
+											<option value="green">green</option>
+											<option value="blue">blue</option>
+											<option value="yellow">yellow</option>
+										</select>
+									</div>
+									<div class="x_025_shop_modal_form_size">
+										<label>size</label>
+										<select name="size">
+											<option value="10">10</option>
+											<option value="12">12</option>
+											<option value="14">14</option>
+										</select>
+									</div>
+									<div class="x_025_shop_modal_form_btn">
+										<button type="submit">add to cart</button>
+									</div>
+								</form><!-- /Form -->
+							</div> <!-- /.x_025_shop_modal_txt -->
+						</div>
+						<!-- End of Slide -->
+
+						<!-- Second Slide -->
+						<div class="item">
+							<!-- Image -->
+							<div class="x_025_shop_modal_img">
+								<img src="paradise/images/x_025_shop_modal_02.png" alt="x_025_shop_modal_02">
+							</div>
+							<!-- Slide Text -->
+							<div class="x_025_shop_modal_txt">
+								<!-- Name -->
+								<h1>complete name of product, company and modal number</h1>
+								<!-- Rating Stars -->
+								<ul>
+									<li><span class="fa fa-star"></span></li>
+									<li><span class="fa fa-star"></span></li>
+									<li><span class="fa fa-star"></span></li>
+									<li><span class="fa fa-star-half-o"></span></li>
+									<li><span class="fa fa-star-o"></span></li>
+								</ul>
+								<!-- Price -->
+								<h2>$250.00</h2>
+								<!-- Detail -->
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer ut purus ac augue commodo commodo. Nunc nec mi eu justo tempor consectetuer. Etiam vitae nisl. In dignissim lacus ut ante. Cras elit lectus, bibendum a, adipiscing vitae, commodo et, dui.</p>
+								<!-- Form -->
+								<form action="#">
+									<div class="x_025_shop_modal_form_num">
+										<label>quantity</label>
+										<input type="number" name="quantity" min="1" max="20">
+									</div>
+									<div class="x_025_shop_modal_form_color">
+										<label>colours</label>
+										<select name="colors">
+											<option value="red">red</option>
+											<option value="green">green</option>
+											<option value="blue">blue</option>
+											<option value="yellow">yellow</option>
+										</select>
+									</div>
+									<div class="x_025_shop_modal_form_size">
+										<label>size</label>
+										<select name="size">
+											<option value="10">10</option>
+											<option value="12">12</option>
+											<option value="14">14</option>
+										</select>
+									</div>
+									<div class="x_025_shop_modal_form_btn">
+										<button type="submit">add to cart</button>
+									</div>
+								</form><!-- /Form -->
+							</div> <!-- /.x_025_shop_modal_txt -->
+						</div>
+						<!-- End of Slide -->
+						
+						<!-- Third Slide -->
+						<div class="item">
+							<!-- Image -->
+							<div class="x_025_shop_modal_img">
+								<img src="paradise/images/x_025_shop_modal_03.png" alt="x_025_shop_modal_03">
+							</div>
+							<!-- Slide Text -->
+							<div class="x_025_shop_modal_txt">
+								<!-- Name -->
+								<h1>complete name of product, company and modal number</h1>
+								<!-- Rating Stars -->
+								<ul>
+									<li><span class="fa fa-star"></span></li>
+									<li><span class="fa fa-star"></span></li>
+									<li><span class="fa fa-star"></span></li>
+									<li><span class="fa fa-star-half-o"></span></li>
+									<li><span class="fa fa-star-o"></span></li>
+								</ul>
+								<!-- Price -->
+								<h2>$250.00</h2>
+								<!-- Detail -->
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer ut purus ac augue commodo commodo. Nunc nec mi eu justo tempor consectetuer. Etiam vitae nisl. In dignissim lacus ut ante. Cras elit lectus, bibendum a, adipiscing vitae, commodo et, dui.</p>
+								<!-- Form -->
+								<form action="#">
+									<div class="x_025_shop_modal_form_num">
+										<label>quantity</label>
+										<input type="number" name="quantity" min="1" max="20">
+									</div>
+									<div class="x_025_shop_modal_form_color">
+										<label>colours</label>
+										<select name="colors">
+											<option value="red">red</option>
+											<option value="green">green</option>
+											<option value="blue">blue</option>
+											<option value="yellow">yellow</option>
+										</select>
+									</div>
+									<div class="x_025_shop_modal_form_size">
+										<label>size</label>
+										<select name="size">
+											<option value="10">10</option>
+											<option value="12">12</option>
+											<option value="14">14</option>
+										</select>
+									</div>
+									<div class="x_025_shop_modal_form_btn">
+										<button type="submit">add to cart</button>
+									</div>
+								</form><!-- /Form -->
+							</div> <!-- /.x_025_shop_modal_txt -->
+						</div>
+						<!-- End of Slide -->
+
+					</div> <!-- End of Wrapper For Slides -->
+
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<!-- 1st Indicator -->
+						<li data-target="#x_025_shop_sldr" data-slide-to="0" class="active">
+							<!-- 1st Indicator Image -->
+							<img src="paradise/images/x_025_shop_modal_01.png" alt="x_025_shop_modal_01">
+						</li>
+						<!-- 2nd Indicator -->
+						<li data-target="#x_025_shop_sldr" data-slide-to="1">
+							<!-- 2nd Indicator Image -->
+							<img src="paradise/images/x_025_shop_modal_02.png" alt="x_025_shop_modal_02">
+						</li>
+						<!-- 3rd Indicator -->
+						<li data-target="#x_025_shop_sldr" data-slide-to="2">
+							<!-- 3rd Indicator Image -->
+							<img src="paradise/images/x_025_shop_modal_03.png" alt="x_025_shop_modal_03">
+						</li>
+					</ol>
+					
+					<!-- Left Control Button -->
+					<a class="left carousel-control" href="#x_025_shop_sldr" role="button" data-slide="prev">
+						<span class="fa fa-angle-left"></span>
+					</a>
+					<!-- Right Control Button -->
+					<a class="right carousel-control" href="#x_025_shop_sldr" role="button" data-slide="next">
+						<span class="fa fa-angle-right"></span>
+					</a>
+
+				</div> <!-- End Slider -->
+
+			</div> <!-- /Modal content-->
+		</div> <!-- /Modal Dialog-->
+	</div> <!-- .modal -->
+    <!-- End Responsive Bootstrap Modal Popup -->
+
+	<!-- jQuery Version - 3.2.1 -->
+	<script src="paradise/js/jquery-3.2.1.min.js"></script>
+
+	<!-- Bootstrap JS File Version - 3.3.7 -->
+	<script src="paradise/js/bootstrap.min.js"></script>
+
+	<!-- Touch Swipe JS File Version - 1.6.18 -->
+	<script src="paradise/js/jquery.touchSwipe.min.js"></script>
+
+	<!-- Paradise Slider Main JS File -->
+	<script src="paradise/js/paradise_slider_min.js"></script>
+
+</body>
+
+</html>
+
+ <!-- End -->

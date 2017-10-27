@@ -1,0 +1,365 @@
+/*
+	StyleSheet For Responsive Bootstrap Carousel
+	Author: szthemes
+	Item Name: Responsive Bootstrap Carousel
+	Author URI: http://codecanyon.net/user/szthemes
+	Description: Different Types of Bootstrap Carousel
+
+								Content List
+  -----------------------------------------------------------------------------------
+	NAME ----------------------------------------LINE NUMBER--------------------- #
+	SIMPLE SECOND CAROUSEL ----------------------30------------------------------ 01
+	RESPONSIVE ----------------------------------209----------------------------- 02	
+	COLORS --------------------------------------298----------------------------- 03
+	[ Note: Line Numbers Are According To Notepad++ ]
+  -----------------------------------------------------------------------------------
+							Fonts Styles
+  -----------------------------------------------------------------------------------
+	  'Raleway', sans-serif ---------------------------------- 01
+	            FontAwesome ---------------------------------- 02
+  -----------------------------------------------------------------------------------
+							Color Codes
+  -----------------------------------------------------------------------------------
+	NAME    ------------------------RGB-------------------------- #
+	#ffffff -------------------rgb(255, 255, 255)---------------- 01
+	#000000 -------------------rgb(0, 0, 0)---------------------- 02
+	#bf392b -------------------rgb(191, 57, 43)------------------ 03 Replace Only This Color To Change Whole Color Scheme
+*/
+
+/*------------------------------------------------------*/
+/* SIMPLE SECOND CAROUSEL
+/*------------------------------------------------------*/
+
+.simple_second_carousel_wrapper {
+  overflow: hidden;
+  max-height: 650px;
+}
+.simple_second_carousel_wrapper > .carousel-inner > .item > img,
+.simple_second_carousel_wrapper > .carousel-inner > .item > a > img {
+  opacity: 0.7;
+  margin: auto;
+  width: 100% !important;
+}
+/*---------- FADE EFFECT ----------*/
+.simple_second_carousel_fade {
+  opacity: 1;
+}
+.simple_second_carousel_fade .item {
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  left: 0 !important;
+  display: block !important;
+  -webkit-transition: opacity ease-in-out 0.7s;
+  -moz-transition: opacity ease-in-out 0.7s;	
+  -ms-transition: opacity ease-in-out 0.7s;	
+  -o-transition: opacity ease-in-out 0.7s;  
+  transition: opacity ease-in-out 0.7s;
+}
+.simple_second_carousel_fade .item:first-child {
+  top: auto;
+  position: relative;
+}
+.simple_second_carousel_fade .item.active {
+  opacity: 1;
+  z-index: 2;
+  -webkit-transition: opacity ease-in-out 0.7s;
+  -moz-transition: opacity ease-in-out 0.7s;	
+  -ms-transition: opacity ease-in-out 0.7s;	
+  -o-transition: opacity ease-in-out 0.7s;  
+  transition: opacity ease-in-out 0.7s;
+}
+/*---------- CONTROL INDICATORS ----------*/
+.simple_second_carousel_indicators li {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.simple_second_carousel_indicators .active {
+  width: 10px;
+  margin: 1px;
+  height: 10px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+/*---------- LEFT/RIGHT CONTROL ----------*/
+.simple_second_carousel_control_left,
+.simple_second_carousel_control_right {
+  top: 50%;
+  z-index: 2;
+  opacity: 0;
+  width: 55px;
+  height: 55px;
+  border: none;
+  text-align: center;
+  -webkit-border-radius: 0%;
+  border-radius: 0%;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.simple_second_carousel_wrapper:hover .simple_second_carousel_control_left,
+.simple_second_carousel_wrapper:hover .simple_second_carousel_control_right {
+  opacity: 1;
+}
+.simple_second_carousel_control_icons {
+  line-height: 50px;
+  font-size: 34px !important;
+  font-weight: normal !important;
+}
+.simple_second_carousel_control_left {
+  left: 1% !important;
+}
+.simple_second_carousel_control_right {
+  right: 1% !important;
+}
+/*---------- CAPTION ----------*/
+.simple_second_carousel_caption {
+  left: 0%;
+  z-index: 1;
+  width: 100%;
+  bottom: 45%;
+  text-shadow: none;
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+  font-family: 'Raleway', sans-serif;
+}
+.simple_second_carousel_caption h2 {
+  font-size: 30px;
+  margin: 0px 0px 15px 0px;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.simple_second_carousel_caption h1 {
+  font-size: 45px;
+  font-weight: 800;
+  margin: 0px 0px 40px 0px;
+  text-transform: uppercase;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+.simple_second_carousel_button_colored,
+.simple_second_carousel_button_colored:visited {
+  outline: 0;
+  width: auto;
+  height: 44px;
+  border: none;
+  margin: 0 10px;
+  padding: 0 23px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  text-shadow: none;
+  line-height: 44px;
+  position: relative;
+  font-style: normal;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  font-family: 'Raleway', sans-serif;
+  -webkit-border-radius: 0px; 
+  border-radius: 0px; 
+  -webkit-box-sizing:initial !important;
+  box-sizing:initial !important;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: color 0.3s ease-in-out 0s;
+  transition: color 0.3s ease-in-out 0s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.simple_second_carousel_button_colored:before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  -webkit-border-radius: 0px; 
+  border-radius: 0px;
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out 0s;
+  transition: transform 0.3s ease-in-out 0s;
+}
+.simple_second_carousel_button_colored:hover,
+.simple_second_carousel_button_colored:active,
+.simple_second_carousel_button_colored:focus {
+  box-shadow: none;	
+  outline: none !important;
+}
+.simple_second_carousel_button_colored:hover:before,
+.simple_second_carousel_button_colored:focus:before,
+.simple_second_carousel_button_colored:active:before {
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+}
+
+/*------------------------------------------------------*/
+/* RESPONSIVE
+/*------------------------------------------------------*/
+
+/*----------  MEDIA 480px  ----------*/
+@media only screen and (max-width: 480px) {
+  /*---------- CONTROL INDICATORS ----------*/
+  .simple_second_carousel_indicators {
+    display: none;
+  }
+  /*---------- LEFT/RIGHT CONTROL ----------*/
+  .simple_second_carousel_control_left,
+  .simple_second_carousel_control_right {
+    border: none;
+  }
+  .simple_second_carousel_control_icons {
+    font-size: 18px !important;
+  }
+  /*---------- CAPTION ----------*/
+  .simple_second_carousel_caption {
+    left: 0%;
+    width: 100%;
+    bottom: 5%;
+    padding: 5px 5px 5px 5px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+  }
+  .simple_second_carousel_caption h2 {
+    font-size: 20px;
+    margin: 0px 0px 10px 0px;
+  }
+  .simple_second_carousel_caption h1 {
+    font-size: 25px;
+    margin: 0px 0px 10px 0px;
+  }
+  .simple_second_carousel_button_colored,
+  .simple_second_carousel_button_colored:visited {
+    margin: 0 0;
+    height: 34px;
+    padding: 0 13px;
+    line-height: 34px;
+  }
+}
+
+/*----------  MEDIA 481px - 600px  ----------*/
+@media (min-width: 481px) and (max-width: 600px) {
+  /*---------- CONTROL INDICATORS ----------*/
+  .simple_second_carousel_indicators {
+    display: none;
+  }
+  /*---------- LEFT/RIGHT CONTROL ----------*/
+  .simple_second_carousel_control_left,
+  .simple_second_carousel_control_right {
+    border: none;
+  }
+  /*---------- CAPTION ----------*/
+  .simple_second_carousel_caption {
+    left: 0%;
+    bottom: 5%;
+    width: 100%;
+  }
+}
+
+/*----------  MEDIA 601px - 767px  ----------*/
+@media (min-width: 601px) and (max-width: 767px) {
+  /*---------- CAPTION ----------*/
+  .simple_second_carousel_caption {
+    left: 0%;
+    bottom: 15%;
+    width: 100%;
+  }
+}
+
+/*----------  MEDIA 768px - 991px  ----------*/
+@media (min-width: 768px) and (max-width: 991px) {
+  /*---------- CAPTION ----------*/
+  .simple_second_carousel_caption {
+    bottom: 20%;
+  }
+}
+
+/*----------  MEDIA 992px - 1250px  ----------*/
+@media (min-width: 992px) and (max-width: 1250px) {
+  /*---------- CAPTION ----------*/
+  .simple_second_carousel_caption {
+    bottom: 25%;
+  }
+}
+
+/*------------------------------------------------------*/
+/* COLORS (MAROON)
+/*------------------------------------------------------*/
+
+.simple_second_carousel_wrapper {
+  background: #000000;
+}
+/*---------- CONTROL INDICATORS ----------*/
+.simple_second_carousel_indicators li {
+  background: #ffffff;
+}
+.simple_second_carousel_indicators .active {
+  background: #bf392b;
+  border-color: #bf392b;
+}
+/*---------- LEFT/RIGHT CONTROL ----------*/
+.simple_second_carousel_control_left,
+.simple_second_carousel_control_left:hover,
+.simple_second_carousel_control_left:active,
+.simple_second_carousel_control_left:focus,
+.simple_second_carousel_control_right,
+.simple_second_carousel_control_right:hover,
+.simple_second_carousel_control_right:active,
+.simple_second_carousel_control_right:focus {
+  color: #bf392b;
+  background: #ffffff !important;
+}
+/*---------- CAPTION ----------*/
+.simple_second_carousel_caption h2,
+.simple_second_carousel_caption h1 {
+  color: #ffffff;
+}
+.simple_second_carousel_button_colored,
+.simple_second_carousel_button_colored:visited {
+  color: #bf392b;
+}
+.simple_second_carousel_button_colored:hover,
+.simple_second_carousel_button_colored:active,
+.simple_second_carousel_button_colored:focus {
+  color: #ffffff !important;
+}
+.simple_second_carousel_button_colored,
+.simple_second_carousel_button_colored:visited {
+  background: #bf392b;
+}
+.simple_second_carousel_button_colored:hover,
+.simple_second_carousel_button_colored:active,
+.simple_second_carousel_button_colored:focus {
+  background: #bf392b !important;
+}
+.simple_second_carousel_button_colored:before {
+  background: #ffffff;
+}
+
+/*---------- MEDIA QUERIES ----------*/
+@media only screen and (max-width: 600px) {
+  /*---------- LEFT/RIGHT CONTROL ----------*/
+  .simple_second_carousel_control_left,
+  .simple_second_carousel_control_right,
+  .simple_second_carousel_control_left:hover,
+  .simple_second_carousel_control_left:active,
+  .simple_second_carousel_control_left:focus,
+  .simple_second_carousel_control_right:hover,
+  .simple_second_carousel_control_right:active,
+  .simple_second_carousel_control_right:focus	{
+    background: transparent !important;
+  }
+}
+/*----------  END  ----------*/

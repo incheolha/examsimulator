@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>사용자 리스트 테스트</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.2.js"></script>
+ 
+ /head>
+<body>
+	<h1>사용자 리스트</h1>
+        <p> this is a sample payment </p>
+				<br>
+				<% if (login_success) { %>
+		   	<% if (user.provider == undefined || user.provider == '') { %>
+			                <h3><span class="fa fa-user"></span> 로컬 프로필</h3>
+							<br>
+							<p>
+								<strong>이메일</strong>: <%= user.email %><br><br>
+		                		<strong>별명</strong>: <%= user.name %>
+			                </p>
+			            <% } else if (user.provider == 'facebook') { %>
+							<h3 class="text-primary"><span class="fa fa-facebook"></span> 페이스북 프로필</h3>
+							<br>
+		                    <p>
+		                        <strong>아이디</strong>: <%= user.facebook.id %><br><br>
+		                        <strong>이메일</strong>: <%= user.facebook.email %><br><br>
+		                        <strong>이름</strong>: <%= user.facebook.name %>
+		                    </p>
+		                <% } else if (user.provider == 'twitter') { %>
+							<h3 class="text-primary"><span class="fa fa-twitter"></span> 트위터 프로필</h3>
+							<br>
+		                    <p>
+		                        <strong>아이디</strong>: <%= user.twitter.id %><br><br>
+		                        <strong>이메일</strong>: <%= user.twitter.email %><br><br>
+		                        <strong>이름</strong>: <%= user.twitter.name %>
+		                    </p>
+		                <% } else if (user.provider == 'google') { %>
+							<h3 class="text-primary"><span class="fa fa-google"></span> 구글 프로필</h3>
+							<br>
+		                    <p>
+		                        <strong>아이디</strong>: <%= user.google.id %><br><br>
+		                        <strong>이메일</strong>: <%= user.google.emails[0].value %><br><br>
+		                        <strong>이름</strong>: <%= user.google.displayName %>
+		                    </p>
+						<% } %>
+
+						<br>
+
+</body>
+</html>

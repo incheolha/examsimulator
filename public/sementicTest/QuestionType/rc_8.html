@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	 <head>
+		
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" type="text/css" href="../Semantic/semantic.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../Semantic/semantic.js"></script>
+    
+      
+    <style>
+        
+        body{margin:20px;
+        }
+        .ui.left.labeled.fluid.input{
+            margin: 5px;
+            padding: 1px;
+        }
+       .ui.button{
+            float:right;
+        }
+        .ui.toggle.checkbox{
+            
+            margin:4px;
+        }
+    
+        
+    </style>    
+             
+    <script>
+    
+//        $(document).ready(function(){
+//            $('.ui.checkbox').checkbox('unceckable', );
+//        })
+//        
+         
+    </script>     
+         
+	</head>
+	
+    
+    
+    <body>
+   
+    <div class="ui info message">
+  <i class="close icon"></i>
+  <div class="header">
+    How to do...
+  </div>
+  <ul class="list">
+    
+    <li>지문을 다 입력하시거나, 원하는만큼 입력하시면 됩니다.</li>
+    <li>문제 갯수에 맞게 정답을 체크해 주세요.</li>
+      
+  </ul>
+</div>   
+	
+  <div id="reading_qtype_2">
+      
+    <form method="post" action="/process/toefl/reading/AddproblemReading">    
+        
+<h1 class="ui header">Question Type : Summary</h1>	       	  
+    <input type="hidden" name="readingProblemType" value=8>	
+	<input type="hidden" name="ExamNO" value=1>
+    <input type="hidden" name="ExamDesc" value=1>
+    <input type="hidden" name="readingChapterNumber" value=1>
+<!-- 회차정보, 챕터넘버 정보 같이 들어가야 함 -->
+<table class="ui fixed single line celled blue table">
+  <thead>
+    <tr><th><h3 class="ui header">문제입력하기</h3> </th>
+    
+    <th><div class="ui fluid input"><input type="text" name="readingProblem" id=question_field placeholder="문제를 입력하세요"/></div></th>
+  </tr></thead>
+  <tbody>
+    <tr>
+       <td><h3 class="ui header"> 문항 입력하기</h3></td>
+
+            <td>
+        <div class="ui left labeled fluid input">
+          <label for="amount" class="ui blue label">A </label>    
+		  <input type="text" name='readingArticle1'  id=question_field_a /> </div>   
+                
+        <div class="ui left labeled fluid input"> 
+          <label for="amount" class="ui blue label">B</label>        
+		  <input type="text" name='readingArticle2'  id=question_field_b /> </div>   	
+       <div class="ui left labeled fluid input"> 
+          <label for="amount" class="ui blue label">C</label>       
+		  <input type="text" name='readingArticle3'  id=question_field_c /> </div>   
+       <div class="ui left labeled fluid input">
+          <label for="amount" class="ui blue label">D</label>       
+		  <input type="text" name='readingArticle4' id=question_field_d /> </div>  
+       <div class="ui left labeled fluid input">
+          <label for="amount" class="ui blue label">E</label>       
+		  <input type="text" name='readingArticle5' id=question_field_e /> </div>  
+       <div class="ui left labeled fluid input">
+          <label for="amount" class="ui blue label">F</label>       
+		  <input type="text" name='readingArticle6'  id=question_field_f /> 
+        </div>                  
+                
+	   </td>
+    </tr>
+    <tr>
+     <td><h3 class="ui header">정답</h3></td>
+      <td>
+
+
+
+  <div class="item">
+      <h4 class="ui header">정답 3개를 체크해주세요.</h4>
+    <div class="list">
+      <div class="item">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="readingAnswer" value="a">
+          <label>A</label>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="readingAnswer" value="b">
+          <label>B</label>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="readingAnswer" value="c">
+          <label>C</label>
+        </div> 
+      </div>
+      <div class="item">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="readingAnswer" value="d">
+          <label>D</label>
+        </div> 
+      </div>        
+      <div class="item">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="readingAnswer" value="e">
+          <label>E</label>
+        </div> 
+      </div>
+      <div class="item">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="readingAnswer" value="f">
+          <label>F</label>
+        </div> 
+      </div>        
+    </div>
+  </div>
+      
+     
+    </tr>
+    <tr>
+        
+      <td><h3 class="ui header">해설 </h3></td>
+        <td><div class="ui fluid input"><input type="text" name='readingComment'  id=description_field /></div>
+        
+   </tr>  
+      
+  </tbody>
+</table>
+        
+    		<button type="submit" class="ui primary button">출제하기</button>    
+        </form>
+    </div>    
+        
+        
+        
+    </body>
+
+
+    
+</html>

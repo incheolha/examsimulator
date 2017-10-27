@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+	<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+	<!--[if IE 7]><html class="lt-ie9 lt-ie8"> <![endif]-->
+	<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+	<!--[if gt IE 8]><!--> 
+	
+<html>
+ 
+	<!--<![endif]-->
+	<!--======= Head =========-->
+	<head>
+	
+		<!--======= Meta =========-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!--======= Title =========-->
+		<title>Navigation, Indicators And Sliding Effects</title>
+	
+		<!--======= Short-Cut Icon =========-->
+		<link rel="shortcut icon" href="#"/>
+		
+		<!--======= Google Web Fonts =========-->	
+		<link href='https://fonts.googleapis.com/css?family=Muli:400,400italic,300,300italic|Raleway:400,300,500,600,700,800' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+		<!--======= Helping Plug-in StyleSheets =========-->
+		<link href="css/bootstrap.css" rel="stylesheet" media="all">
+		
+		<!--======= Customized StyleSheets =========-->
+		<link href="css/documentation_demo.css" rel="stylesheet" media="all">
+		
+	</head>
+	
+<body>
+
+	<div class="container documentation_header">
+		<a href="../documentation.html"><img src="images/logo.png" alt="logo"/></a>
+		<h4>Welcome to</h4>
+		<h2>paradise</h2>
+		<p>We would like to thank you for purchasing Paradise Slider!  
+			<br>
+			We are very pleased that you have chosen Paradise Slider for your Project.
+		</p>
+	</div>
+	
+	<div class="container-fluid navigation_bar" data-spy="affix" data-offset-top="600">
+		<ul>
+			<li><a href="../documentation.html">Home</a></li>
+			<li><a href="#effects">Effects</a></li>
+			<li><a href="#navigation">Navigation</a></li>
+			<li><a href="#indicators">Indicators</a></li>
+			<li><a href="#support">support</a></li>
+		</ul>
+	</div>
+
+	<div class="container documentation_demos">
+		<h1>Effects of Sliding</h1>
+		<div id="effects" class="table-responsive">          
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Class</th>
+						<th>.slide class</th>
+						<th>Effect</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.slide</td>
+						<td>Yes</td>
+						<td>Slide Left To Right</td>
+					</tr>
+					<tr>
+						<td>.ps_slide_y</td>
+						<td>Yes</td>
+						<td>Slide Vertically</td>
+					</tr>
+					<tr>
+						<td>.ps_fade</td>
+						<td>No</td>
+						<td>Fade-in & Fade-out</td>
+					</tr>
+					<tr>
+						<td>.ps_zoom_i</td>
+						<td>No</td>
+						<td>Zoom In</td>
+					</tr>
+					<tr>
+						<td>.ps_spread</td>
+						<td>No</td>
+						<td>Spread In & Out Horizontally</td>
+					</tr>
+					<tr>
+						<td>.ps_spread_y</td>
+						<td>No</td>
+						<td>Spread In & Out Vertically</td>
+					</tr>
+					<tr>
+						<td>.ps_rotate_scale_c</td>
+						<td>No</td>
+						<td>Clockwise Rotate + Scale</td>
+					</tr>
+					<tr>
+						<td>.ps_rotate_scale_o</td>
+						<td>No</td>
+						<td>Clockwise Rotate + Scale Zero</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<h1>Transition Timing Function For Slide Effect</h1>
+		<div id="effects" class="table-responsive">          
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Class</th>
+						<th>Class</th>
+						<th>Class</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.ps_ease</td>
+						<td>.ps_easeInOut</td>
+						<td>.ps_speedy</td>
+					</tr>
+					<tr>
+						<td>.ps_slowSpeedy</td>
+						<td>.ps_easeOutInCubic</td>
+						<td>.ps_swing</td>
+					</tr>
+					<tr>
+						<td>.ps_easeOutCubic</td>
+						<td>.ps_easeInOutCubic</td>
+						<td>.ps_easeOutCirc</td>
+					</tr>
+					<tr>
+						<td>.ps_easeOutExpo</td>
+						<td>.ps_easeInQuad</td>
+						<td>.ps_easeOutQuad</td>
+					</tr>
+					<tr>
+						<td>.ps_easeInOutQuad</td>
+						<td>.ps_easeOutQuart</td>
+						<td>.ps_easeInOutQuart</td>
+					</tr>
+					<tr>
+						<td>.ps_easeOutQuint</td>
+						<td>.ps_easeInSine</td>
+						<td>.ps_easeOutSine</td>
+					</tr>
+					<tr>
+						<td>.ps_easeInOutSine</td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h1>Ken Burns Effect</h1>
+		<div id="effects" class="table-responsive">          
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Class</th>
+						<th>Work With</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.kbrns_zoomInOut</td>
+						<td>All Demos Except Background Image Attach In CSS</td>
+					</tr>
+					<tr>
+						<td>.kbrns_zoomOutIn</td>
+						<td>All Demos Except Background Image Attach In CSS</td>
+					</tr>
+					<tr>
+						<td>.kbrns_zoomIn</td>
+						<td>All Demos Except Background Image Attach In CSS</td>
+					</tr>
+					<tr>
+						<td>.kbrns_ltr</td>
+						<td>Only kenburns_064, kenburns_065</td>
+					</tr>
+					<tr>
+						<td>.kbrns_rtl</td>
+						<td>Only kenburns_064, kenburns_065</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h1>Modal Appearance Effect</h1>
+		<div id="effects" class="table-responsive">          
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Class</th>
+						<th>Class</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.ps_modal_zoomIn</td>
+						<td>.ps_modal_zoomOut</td>
+					</tr>
+					<tr>
+						<td>.ps_modal_fadeInLeft</td>
+						<td>.ps_modal_fadeInRight</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<h1>Swipe, MouseWheel, Thumbnails</h1>
+		<div id="effects" class="table-responsive">          
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Swipe</th>
+						<th>MouseWheel</th>
+						<th>Thumbnails</th>
+					</tr>
+				</thead>
+				<tbody>
+						<td>.swipe_x : Horizontal Swipe</td>
+						<td>.mouse_wheel_y : Only Upword</td>
+						<td>.thumb_scroll_x : Horizontal Scroll</td>
+					</tr>
+					<tr>
+						<td>.swipe_y : Vertical Swipe</td>
+						<td>mouse_wheel_xy : Upword & Downword</td>
+						<td>.thumb_scroll_y : Vertical Scroll</td>
+					</tr>
+				</tbody>
+			</table>
+		<h4>Swipe Function:</h4>
+		<p>By using swipe function you can controll the slides by dragging the mouse button Horizontally and Vertically in touch devices this Function also enables the touch control. Please follow the instructions:</p>
+		<ul>
+			<li>Just assign a class according to your requirement to the first slider div after the <code>.carousel</code> class.</li>
+			<li>If you want to enables the Horizontally Swipe Please use <code>.swipe_x</code> class.</li>
+			<li>If you want to enables the Vertically Swipe Please use <code>.swipe_y</code> class.</li>
+		</ul>
+		<br>
+		<h4>MouseWheel Function:</h4>
+		<p>By using MouseWheel funciton you can move through the slides with mouse wheel. Please follow the instructions:</p>
+		<ul>
+			<li>Just assign a class according to your requirement to the first slider div after the <code>.carousel</code> class.</li>
+			<li>If you want to enables the Upword Mouse Wheel Button Scroll Please use <code>.mouse_wheel_y</code> class.</li>
+			<li>If you want to enables the Upword and Downword Mouse Wheel Button Scroll Please use <code>.mouse_wheel_vy</code> class.</li>
+		</ul>
+		</br>
+		<h4>Thumbnails Scrolling Function:</h4>
+		<p>In Indicator Navigation Thumbnails Layouts this function helps in scrolling the thumbnails according to the sliding. Please follow the instructions:</p>
+		<ul>
+			<li>Just assign a class according to your requirement to the first slider div after the <code>.carousel</code> class.</li>
+			<li>If you are using the Horizontal Thumbnails Indicators then you will use <code>.thumb_scroll_x</code> class.</li>
+			<li>If you are using the Vertical Thumbnails Indicators then you will use <code>.thumb_scroll_y</code> class.</li>
+			<li class="alert alert-danger doc_alert">
+			<strong>Caution:</strong> Never use more than one vertical thumbnail slider or horizontal thumbnail slider on one page or in one file. This will disturb the Thumbnails Scrolling Function.
+			</li>
+			<li class="alert alert-danger doc_alert">
+			<strong>Note:</strong> But if you want to use more than one slider on one page or in one file, you must use one vertical thumbnail slider and other horizontal thumbnail slider. This will work fine for only two sliders. 
+			</li>
+		</ul>
+		</div>
+
+		<h1>Navigation Buttons</h1>
+		<div id="navigation" class="table-responsive">          
+			<table class="table table-bordered table-hover doc_nav_table">
+				<thead>
+					<tr>
+						<th>Class</th>
+						<th>Image</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.ps_control_bsquare</td>
+						<td><img src="images/ps_control_bsquare.png" alt="Border Square Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_bround</td>
+						<td><img src="images/ps_control_bround.png" alt="Border Round Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_hradius</td>
+						<td><img src="images/ps_control_hradius.png" alt="Half Radius Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_bfradius</td>
+						<td><img src="images/ps_control_bfradius.png" alt="Border Fill Radius Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_rotate_f</td>
+						<td><img src="images/ps_control_rotate_f.png" alt="Rotate Fill Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_l_y</td>
+						<td><img src="images/ps_control_l_y.png" alt="Vertical Icons Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_r_y</td>
+						<td><img src="images/ps_control_r_y.png" alt="Right Vertical Icons Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_sbo</td>
+						<td><img src="images/ps_control_sbo.png" alt="Square Border And Outline Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_halfr</td>
+						<td><img src="images/ps_control_halfr.png" alt="Half Radius Fill Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_wflong</td>
+						<td><img src="images/ps_control_wflong.png" alt="Long Width Fill Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_rfsmall</td>
+						<td><img src="images/ps_control_rfsmall.png" alt="Small Radius Fill Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_roundsm</td>
+						<td><img src="images/ps_control_roundsm.png" alt="Small Round Fill Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_rt_y</td>
+						<td><img src="images/ps_control_rt_y.png" alt="Vertical Right Top Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_squarefill</td>
+						<td><img src="images/ps_control_squarefill.png" alt="Square Fill Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_rectanlefil</td>
+						<td><img src="images/ps_control_rectanlefil.png" alt="Rectanle Fill Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_bradiustrans</td>
+						<td><img src="images/ps_control_bradiustrans.png" alt="Border Radius Transparent Background Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_xlongicon</td>
+						<td><img src="images/ps_control_xlongicon.png" alt="Transparent Background long icons Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_smsquare</td>
+						<td><img src="images/ps_control_smsquare.png" alt="Small and Square Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_smradiusfill</td>
+						<td><img src="images/ps_control_smradiusfill.png" alt="Small and radius Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_smbrdrfill</td>
+						<td><img src="images/ps_control_smbrdrfill.png" alt="Small and border Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_smlongtrans</td>
+						<td><img src="images/ps_control_smlongtrans.png" alt="Small and long Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_brdrfillhand</td>
+						<td><img src="images/ps_control_brdrfillhand.png" alt="border fill hand icon Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_smcartbrdr</td>
+						<td><img src="images/ps_control_smcartbrdr.png" alt="small caret border icon Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_hlfradsarrow</td>
+						<td><img src="images/ps_control_hlfradsarrow.png" alt="half radius arrow icon Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_hrbrarrow</td>
+						<td><img src="images/ps_control_hrbrarrow.png" alt="half radius with borders arrow icon Buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_bottom_lx</td>
+						<td><img src="images/ps_control_bottom_lx.png" alt="bottom and left side small icons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_bottom_rx</td>
+						<td><img src="images/ps_control_bottom_rx.png" alt="bottom and right side small icons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_l_t_y</td>
+						<td><img src="images/ps_control_l_t_y.png" alt="left and top Vertical, side small icons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_t_b_y</td>
+						<td><img src="images/ps_control_t_b_y.png" alt="top and bottom Vertical icons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_b_r_radius</td>
+						<td><img src="images/ps_control_b_r_radius.png" alt="bottom and right radius horizontal buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_square_box</td>
+						<td><img src="images/ps_control_square_box.png" alt="top and right square box buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_glow</td>
+						<td><img src="images/ps_control_glow.png" alt="top and left glow buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_long_striped</td>
+						<td><img src="images/ps_control_long_striped.png" alt="bottom and left striped buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_xs_long</td>
+						<td><img src="images/ps_control_xs_long.png" alt="small and long top and right control buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_square_txt</td>
+						<td><img src="images/ps_control_square_txt.png" alt="square box with text and icon bottom and right control buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_radius_txt</td>
+						<td><img src="images/ps_control_radius_txt.png" alt="radius box with text and icon bottom and left control buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_black_box_txt</td>
+						<td><img src="images/ps_control_black_box_txt.png" alt="square black box with text and icon" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_radius_txt_x</td>
+						<td><img src="images/ps_control_radius_txt_x.png" alt="radius box with text" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_text</td>
+						<td><img src="images/ps_control_text.png" alt="Only Text" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_txt_oblong</td>
+						<td><img src="images/ps_control_txt_oblong.png" alt="oblong Text" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_txt_y</td>
+						<td><img src="images/ps_control_txt_y.png" alt="vertical Text" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_txt</td>
+						<td><img src="images/ps_control_txt.png" alt="vertical only Text" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_txt_db</td>
+						<td><img src="images/ps_control_txt_db.png" alt="double border only Text" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_txt_rdb</td>
+						<td><img src="images/ps_control_txt_rdb.png" alt="double radius border only Text" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_txt_icon</td>
+						<td><img src="images/ps_control_txt_icon.png" alt="Text And Icons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_cs_icon</td>
+						<td><img src="images/ps_control_cs_icon.png" alt="CSS icons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_blue</td>
+						<td><img src="images/ps_control_blue.png" alt="blue color left and right butons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_orange</td>
+						<td><img src="images/ps_control_orange.png" alt="Orange color left and right butons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_gray</td>
+						<td><img src="images/ps_control_gray.png" alt="Gray color left and right butons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_yellow</td>
+						<td><img src="images/ps_control_yellow.png" alt="Yellow color left and right butons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_green_long</td>
+						<td><img src="images/ps_control_green_long.png" alt="Green color left and right butons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_reddish_rbox</td>
+						<td><img src="images/ps_control_reddish_rbox.png" alt="Red color left and right butons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_ylow_box</td>
+						<td><img src="images/ps_control_ylow_box.png" alt="yellow color left and right butons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_brown</td>
+						<td><img src="images/ps_control_brown.png" alt="Brown color left and right butons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_control_gray_lg</td>
+						<td><img src="images/ps_control_gray_lg.png" alt="Large Gray color left and right butons" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<h1>Indicators Buttons</h1>
+		<div id="indicators" class="table-responsive">          
+			<table class="table table-bordered table-hover doc_nav_table">
+				<thead>
+					<tr>
+						<th>Class</th>
+						<th>Image</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.ps_indicators_y</td>
+						<td><img src="images/ps_indicators_y.png" alt="Vertical Indicators" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_l</td>
+						<td><img src="images/ps_indicators_l.png" alt="Indicators Left Side" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_bx</td>
+						<td><img src="images/ps_indicators_bx.png" alt="Indicators border Horizontal" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_ld</td>
+						<td><img src="images/ps_indicators_ld.png" alt="Indicators Round Left And Down" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_square_trns</td>
+						<td><img src="images/ps_indicators_square_trns.png" alt="Indicators Square White And Transparent" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_length_x</td>
+						<td><img src="images/ps_indicators_length_x.png" alt="Indicators in the bottom and left side of the slider" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_numbers_x</td>
+						<td><img src="images/ps_indicators_numbers_x.png" alt="Numbers indicators in the top and left side of the slider" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_numbers_y</td>
+						<td><img src="images/ps_indicators_numbers_y.png" alt="Vertical Numbers indicators in the top and right side of the slider" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_numbers_y_c</td>
+						<td><img src="images/ps_indicators_numbers_y_c.png" alt="Vertical Numbers indicators in the Center and right side of the slider" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_numb_brdr</td>
+						<td><img src="images/ps_indicators_numb_brdr.png" alt="Horizontal Numbers indicators in the top and left side of the slider" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_numb_long</td>
+						<td><img src="images/ps_indicators_numb_long.png" alt="long indicators with numbers in the bottom and center side of the slider" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_numb_glow</td>
+						<td><img src="images/ps_indicators_numb_glow.png" alt="glow indicators with numbers in the bottom and center of the slider" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_long_striped</td>
+						<td><img src="images/ps_indicators_long_striped.png" alt="top and right striped buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_num_sm</td>
+						<td><img src="images/ps_indicators_num_sm.png" alt="bottom and right small numbers buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_square_dots</td>
+						<td><img src="images/ps_indicators_square_dots.png" alt="top and left square dots buttons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_radius_icons</td>
+						<td><img src="images/ps_indicators_radius_icons.png" alt="top and right radius indicators with icons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_square_num</td>
+						<td><img src="images/ps_indicators_square_num.png" alt="bottom and right square indicators with numbers" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_radius_num</td>
+						<td><img src="images/ps_indicators_radius_num.png" alt="bottom and left radius indicators with numbers" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_caption</td>
+						<td><img src="images/ps_indicators_caption.png" alt="bottom and left indicators with caption" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_txt_caption</td>
+						<td><img src="images/ps_indicators_txt_caption.png" alt="top and left indicators with caption" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_brdr_caption</td>
+						<td><img src="images/ps_indicators_brdr_caption.png" alt="top and right indicators with border and caption" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_text</td>
+						<td><img src="images/ps_indicators_text.png" alt="top and center indicators with text" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_txt_db</td>
+						<td><img src="images/ps_indicators_txt_db.png" alt="top and left indicators with text and double border" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_txt_rdb</td>
+						<td><img src="images/ps_indicators_txt_rdb.png" alt="top and left indicators with text and double radius border" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_txt_icon</td>
+						<td><img src="images/ps_indicators_txt_icon.png" alt="indicators with text" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_cs_icon</td>
+						<td><img src="images/ps_indicators_cs_icon.png" alt="CSS icons" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_blue</td>
+						<td><img src="images/ps_indicators_blue.png" alt="blue color indicators box" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_orange</td>
+						<td><img src="images/ps_indicators_orange.png" alt="Orange color indicators box" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_gray</td>
+						<td><img src="images/ps_indicators_gray.png" alt="Gray color indicators box" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_yellow</td>
+						<td><img src="images/ps_indicators_yellow.png" alt="Yellow color indicators box" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_green_line</td>
+						<td><img src="images/ps_indicators_green_line.png" alt="Green color indicators box" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_reddish_num</td>
+						<td><img src="images/ps_indicators_reddish_num.png" alt="Green color indicators box" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_ylow_num</td>
+						<td><img src="images/ps_indicators_ylow_num.png" alt="Yellow color indicators box" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_brown</td>
+						<td><img src="images/ps_indicators_brown.png" alt="Brown color indicators box" /></td>
+					</tr>
+					<tr>
+						<td>.ps_indicators_gray_lg</td>
+						<td><img src="images/ps_indicators_gray_lg.png" alt="Large Gray color indicators box" /></td>
+					</tr>
+			</table>
+		</div>
+
+		<h2 id="support">04 - Support</h2>
+		<p>Please do not hesitate if you have any queries about this item. We are always there for your help. You can contact us on this e-mail address szthemes53@gmail.com</p>
+
+	</div>
+	<div class="main_footer">
+		<div class="container documentation_footer">
+			<div class="row">
+				<div class="col-md-3">
+					<img src="images/logo_footer.png" alt="company logo" />
+					<p>We have prepared 100+ pre-made layouts of bootstrap carousel. It is very easy to create new layouts by combining these pre-layouts. Paradise Slider is a fully responsive slider and works perfectly on all screen sizes and mobile devices.</p>
+					<a href="#">100 + pre-made layouts</a>
+				</div>
+				<div class="col-md-3">
+					<h5>Read More About</h5>
+					<ul>
+						<li><a href="../documentation.html">Documentation Home</a></li>
+						<li><a href="carousel.html">Bootstrap Carousel</a></li>
+						<li><a href="animation.html">Animation Setting</a></li>
+						<li><a href="navigation_indicators.html">Navigation & Indicators</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<h5>Use Full Links</h5>
+					<div class="row">
+						<div class="col-md-4">
+							<a href="http://themeforest.net/" target="_blank"><img src="images/themeforest.png" alt="themeforest" /></a>
+						</div>
+						<div class="col-md-4">
+							<a href="http://codecanyon.net/" target="_blank"><img src="images/codecanyon.png" alt="codecanyon" /></a>
+						</div>
+						<div class="col-md-4">
+							<a href="http://videohive.net/" target="_blank"><img src="images/videohive.png" alt="videohive" /></a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<a href="http://graphicriver.net/" target="_blank"><img src="images/graphicriver.png" alt="graphicriver" /></a>
+						</div>
+						<div class="col-md-4">
+							<a href="http://photodune.net/" target="_blank"><img src="images/photodune.png" alt="photodune" /></a>
+						</div>
+						<div class="col-md-4">
+							<a href="http://codecanyon.net/user/szthemes/portfolio" target="_blank"><img src="images/szthemes.png" alt="Our Portfolio" /></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 doc_contactus">
+					<h5>Contac Us</h5>
+					<ul>
+						<li><a href="http://codecanyon.net/user/szthemes/portfolio" target="_blank">Our Portfolio</a></li>
+						<li><a href="http://codecanyon.net/user/szthemes" target="_blank">szthemes</a></li>
+						<li><a href="#">szthemes53@gmail.com</a></li>
+					</ul>
+					<p>
+					Paradise Slider is a fully responsive slider and works perfectly on all screen sizes and mobile devices.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid documentation_footer_inner">
+		<div class="container">
+			<p>© 2016 Paradise Slider · Built by <a href="http://codecanyon.net/user/szthemes" target="_blank">szthemes</a> using Bootstrap.</p>
+		</div>
+	</div>
+
+	<!--======= JavaScript =========-->
+	
+	<!--======= jQuery =========-->
+	<script src="js/jquery-1.12.0.js"></script>
+	
+	<!--======= Bootstrap =========-->
+	<script src="js/bootstrap.js"></script>
+	
+	<!--======= Plug-In =========-->
+	<script src="js/SmoothScroll.js"></script>
+	<script src="js/jquery.backTop.min.js"></script>
+
+	
+	<script>
+	
+		var $root = $('html, body');
+		$('a').click(function() {
+			var href = $.attr(this, 'href');
+			$root.animate({									<!--======= Onclick smooth scroll function =========-->
+				scrollTop: $(href).offset().top - 120
+			}, 500, function () {
+				window.location.hash = href;
+			});
+			return false;
+		});
+// create the back to top button
+$('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
+
+var amountScrolled = 300;
+
+$(window).scroll(function() {
+	if ( $(window).scrollTop() > amountScrolled ) {
+		$('a.back-to-top').fadeIn('slow');
+	} else {
+		$('a.back-to-top').fadeOut('slow');
+	}
+});
+
+$('a.back-to-top, a.simple-back-to-top').click(function() {
+	$('html, body').animate({
+		scrollTop: 0
+	}, 700);
+	return false;
+});
+	</script>
+	
+</body>
+
+</html>

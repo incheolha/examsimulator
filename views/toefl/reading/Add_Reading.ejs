@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Tabs - Simple manipulation</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #dialog label, #dialog input { display:block; }
+  #dialog label { margin-top: 0.5em; }
+  #dialog input, #dialog textarea { width: 95%; }
+  #tabs { margin-top: 1em; }
+  #tabs li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+  #add_tab { cursor: pointer; }
+  </style>
+  
+	
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+	<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>	
+	<!--public 에 addreading과 관련있는 javascript 사용   -->
+<script src="../../../public/toeflassets/js/toeflAddreading_listening.js"></script>
+
+</head>
+
+<body>
+ 
+<div id="dialog" title="문제 추가하기 ">
+  <form >
+    <fieldset class="ui-helper-reset">
+      <label for="tab_title">Title</label>
+      
+      <input type="text" name="tab_title" id="tab_title" value="Tab Title" class="ui-widget-content ui-corner-all">
+      
+      <label for="tab_content">Content</label>
+      
+      <textarea name="tab_content" id="tab_content" class="ui-widget-content ui-corner-all">Tab content</textarea>
+  
+      <label for="addProblem">문제유형을 선택해주세요.</label>
+     
+      <select name="addProblem" id="addProblem">
+      <option value="reading_qtype_1">Sentence Simplication</option>
+      <option value="reading_qtype_2">Fact &amp; Negative Fact</option>
+      <option selected="selected" value="reading_qtype_3">"Vocabulary"</option>
+      <option value="reading_qtype_4">"Reference"</option>
+      <option value="reading_qtype_5">"Rhetorical Purpose"</option>
+	    <option value="reading_qtype_6">"Inference"</option>
+	    <option value="reading_qtype_7">"Insertion"</option>
+      <option value="reading_qtype_8">"Summary"</option>	  
+      <option value="reading_qtype_9">"Category Chart"</option>		  
+		  </select>
+   
+    </fieldset>
+	  
+  </form>
+</div>
+ 
+<div> 
+<!--이곳의 div는 컨테이너와 똑같은 역할을한다.  -->
+ <div width="100%">
+
+<button id="add_tab">Add Problem</button>
+</div>
+
+
+<div style="width: 49%; float: left;">
+
+  <div id="tabs">
+    <ul>
+      <li><a href="#tabs-1">Nunc tincidunt</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span>	</li>
+    </ul>
+
+    <div id="tabs-1">
+      <div style="border: 1px solid gold; float: left; width: 50%;">
+        첫번째 영역
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+ <div style="border: 1px solid red; float: right; width: 49%; margin-top:20px;">
+    <textarea id="readingScript" name="readingScript">
+    <%=
+     var ckEditor = posts._doc.readingScript;
+     var entities = new Entities();
+    %>
+    <div>
+    <%=ckEditor %>
+    </div>
+                            
+    </textarea>
+    
+    <script>
+      CKEDITOR.replace( 'readingScript', {
+        filebrowserUploadUrl: '/upload',
+      });      
+    </script>
+  
+
+</div>
+
+</div>
+
+
+</body>
+</html>

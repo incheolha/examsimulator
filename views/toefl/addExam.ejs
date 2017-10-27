@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+   
+<style>
+   
+  .thumb {
+     height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
+   
+   
+</style>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>   
+<script src="//cdn.ckeditor.com/4.7.1/full/ckeditor.js"></script>
+<script src="../../public/toeflassets/js/toeflAddExam.js"></script>   
+
+</head>
+
+   <body>
+ 
+<button class="ui-button ui-widget ui-corner-all" id="Reading_Btn">Reading</button>
+
+<button class="ui-button ui-widget ui-corner-all" id="Listening_Btn">Listening</button>   
+
+<button class="ui-button ui-widget ui-corner-all" id="Speaking_Btn">Speaking</button>
+
+<button class="ui-button ui-widget ui-corner-all" id="Writing_Btn">Writing</button>
+
+      
+<div id="Reading">
+
+  <ul>
+    <li><a href="#Reading_1">Chapter1</a></li>
+    <li><a href="#Reading_2">Chapter2</a></li>
+    <li><a href="#Reading_3">Chapter3</a></li>  
+  </ul>
+
+  <div id="Reading_1">
+
+   <form action="/process/toefl/reading/updatereading" method="post" >
+          
+         <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+         <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+
+        <input type="hidden" name="readingChapterNumber" value=1>
+      
+        <textarea id="readingScript1" name="readingScript" class="ckeditor">rlqhs</textarea>
+    
+        <button type=submit class="ui-button ui-widget ui-corner-all" id="comment" > 문제출제하기 </button>
+
+   </form>   
+   
+  </div>
+   
+   
+  <div id="Reading_2">
+    
+   <form action="/process/toefl/reading/updatereading" method="post" >
+          
+         <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+         <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+
+        <input type="hidden" name="readingChapterNumber" value=2>
+      
+        <textarea id="readingScript1" name="readingScript" class="ckeditor">rlqhs</textarea>
+    
+        <button type=submit class="ui-button ui-widget ui-corner-all" id="comment" > 문제출제하기 </button>
+
+   </form>   
+     
+   </div>
+   
+  <div id="Reading_3">
+   
+   <form action="/process/toefl/reading/updatereading" method="post" >
+          
+         <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+         <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+
+        <input type="hidden" name="readingChapterNumber" value=3>
+      
+        <textarea id="readingScript1" name="readingScript" class="ckeditor">rlqhs</textarea>
+
+        <button type=submit class="ui-button ui-widget ui-corner-all" id="comment" > 문제출제하기 </button>
+
+   </form>   
+      
+  </div>
+   
+</div> 
+<!-- Reading tab end  -->
+
+
+<div id="Listening">
+  <ul>
+    <li><a href="#Listening_1">Chapter1</a></li>
+    <li><a href="#Listening_2">Chapter2</a></li>
+    <li><a href="#Listening_3">Chapter3</a></li>
+     <li><a href="#Listening_4">Chapter4</a></li>
+    <li><a href="#Listening_5">Chapter5</a></li>
+    <li><a href="#Listening_6">Chapter6</a></li>  
+  </ul>
+   
+  <div id="Listening_1">
+
+      <!-- <form method="post" enctype="multipart/form-data" action="/process/singleupload"> -->
+   <form action="/process/multer/updatelistening" method="post" enctype="multipart/form-data">
+      <% var a=1 %>
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>  
+      <input type="hidden" name="listeningChapterNumber" value=<%= a %>>
+      이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+      
+      <input type="file" id="files" class="img_upload_lc1" name="listeningChapterImage" /><p>
+     
+       <output id="image_holder_lc1"></output><p>
+       <!-- <input type="submit" value="업로드" name="submit"/> -->
+        <!-- </form> -->
+       이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 ) 
+      
+      <input type="file" id="mp3_upload_lc1" class="mp3_upload_lc1" name="listeningChapterAudio" multiple /><p> 
+
+      <div id="mp3_holder_lc1"></div>
+          <button type="submit" value="upload">문제출제하러가기!</button> 
+   </form>         
+  </div>
+   
+   
+  <div id="Listening_2">
+
+   <form action="/process/multer/updatelistening" method="post" enctype="multipart/form-data">
+	 
+	<input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+      <input type="hidden" name="listeningChapterNumber" value=2>
+      
+         이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+       
+      <input type="file" id="files" class="img_upload_lc2" name="listeningChapterImage" multiple /><p>
+     
+       <output id="image_holder_lc2"></output><p>
+     
+       이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 ) 
+      
+      <input type="file" id="mp3_upload_lc2" class="mp3_upload_lc2" name="listeningChapterAudio" multiple /><p> 
+
+       <div id="mp3_holder_lc2"></div>
+      <button type="submit" value="문제출제하러가기">문제출제하러가기</button>
+   </form>   
+  </div>
+   
+  <div id="Listening_3">
+
+   <form action="/process/multer/updatelistening" method="post" enctype="multipart/form-data">
+      
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>  
+      <input type="hidden" name="listeningChapterNumber" value=3>
+
+      이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+   
+      <input type="file" id="files" class="img_upload_lc3" name="listeningChapterImage"  multiple /><p>
+     
+       <output id="image_holder_lc3"></output><p>
+     
+       이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 ) 
+   
+      <input type="file" id="mp3_upload_lc3" class="mp3_upload_lc3" name="listeningChapterAudio" multiple /><p> 
+      
+      <div id="mp3_holder_lc3"></div>   
+      <button type="submit" value="문제출제하러가기">문제출제하러가기</button>
+   </form>>     
+  </div>
+   
+ <div id="Listening_4">
+
+    <form action="/process/multer/updatelistening" method="post" >
+      
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>  
+      <input type="hidden" name="listeningChapterNumber" name="listeningChapterImage" value=4>  
+      
+      이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+
+       <input type="file" id="files" class="img_upload_lc4"  multiple /><p>
+     
+      <output id="image_holder_lc4"></output><p>
+     
+       이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 ) 
+      
+      <input type="file" id="mp3_upload_lc4" class="mp3_upload_lc4" name="listeningChapterAudio" multiple /><p> 
+
+      <div id="mp3_holder_lc4"></div>
+              
+   <form>     
+  </div>
+   
+  <div id="Listening_5">
+
+     <form action="/process/multer/updatelistening" method="post" enctype="multipart/form-data">
+         
+         <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+         <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>     
+         <input type="hidden" name="listeningChapterNumber"  value=5>
+      
+      이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+
+       <input type="file" id="files" class="img_upload_lc5" name="listeningChapterImage"  multiple /><p>
+
+       <output id="image_holder_lc5"></output><p>
+     
+      이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 )
+          
+      <input type="file" id="mp3_upload_lc5" class="mp3_upload_lc5" name="listeningChapterAudio" multiple /><p> 
+
+       <output id="mp3_holder_lc5"></output><p>
+
+   </form>    
+  </div>
+   
+  <div id="Listening_6">
+
+     <form action="/process/multer/updatelistening" method="post" enctype="multipart/form-data" >
+      
+         <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+         <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+         <input type="hidden" name="listeningChapterNumber" value=6>
+   
+         이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+    <input type="file" id="files" class="img_upload_lc6" name="listeningChapterImage"  multiple /><p>
+     
+    <output id="image_holder_lc6"></output><p>
+     
+    이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 ) 
+
+    <input type="file" id="mp3_upload_lc6" class="mp3_upload_lc6" name="listeningChapterAudio" multiple /><p> 
+
+    <output id="mp3_holder_lc6"></output><p>
+
+
+   <form>
+  </div>
+
+</div>
+<!-- linsteing tab end  -->
+
+<div id="Speaking">
+  <ul>
+    <li><a href="#Speaking_1">Personal Preference </a></li>
+    <li><a href="#Speaking_2">Paired Choice</a> </li>
+    <li><a href="#Speaking_3">Situational Fit and Explain</a></li>
+    <li><a href="#Speaking_4">Academic, General / Specific</a></li>
+    <li><a href="#Speaking_5">Problem Solution</a></li>
+    <li><a href="#Speaking_6">Academic Summary </a></li>     
+  </ul>
+
+  <div id="Speaking_1">
+
+      
+   <form action="/process/multer/addspeaking" id="speakingForm1" method="post" enctype="multipart/form-data" > 
+     15초의 준비시간, 45초의 응답시간 
+    fs.write  no img, just announcement audio 필요 
+
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+      
+      step1) Personal Preference 에 관련된 문제를 입력해주세요 
+
+       <input type="textarea" id="speaking_type1"><p>
+   
+         이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+    
+      <input type="file" id="files" class="img_upload_sp1" name="speakingProblemImage" multiple /><p>
+     
+      <output id="image_holder_sp1"></output><p>
+     
+       이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 ) 
+      <input type="file" id="files" class="mp3_upload_sp1" name="speakingProblemListeningAudio"  multiple /><p>
+
+    <output id="mp3_holder_sp1"></output><p>
+      
+      <input type="submit" id="hi" value="submit">submit
+
+   </form>
+ 
+  </div>
+
+  <div id="Speaking_2">
+
+    15초의 준비시간 
+    45초의 응답시간 no img just announcement audio
+
+    
+
+  <form action="/process/multer/addspeaking" id="speakingForm2" method="post" enctype="multipart/form-data" > 
+      
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+      
+       이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+    
+      <input type="file" id="files" class="img_upload_sp2" name="speakingProblemImage" multiple /><p>
+     
+      <output id="image_holder_sp2"></output><p>
+     
+       이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 ) 
+	
+   <input type="file" id="files" class="mp3_upload_sp2" name="speakingProblemListeningAudio"  multiple /><p>
+
+    <output id="mp3_holder_sp2"></output><p>
+   
+   </form>
+  </div>
+
+  <div id="Speaking_3">
+     
+    <form action="/process/multer/addspeaking" method="post" id="speakingForm3" enctype="multipart/form-data" > 
+
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+
+      <!-- 이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+    
+      <input type="file" id="files" class="img_upload_sp3" name="speakingProblemImage" multiple /><p>
+     
+      <output id="image_holder_sp3"></output><p> -->
+     
+	  
+	   <!-- <input type="file" id="files" class="mp3_upload_sp3" name="speakingProblemListeningAudio"  multiple /><p>
+
+    <output id="mp3_holder_sp3"></output><p> -->
+
+ 	<table id='type1_table' border="1">
+	<tr>
+		<td> lecture/conversation 선택하기 </td>
+		<td>
+		<select name="listeningAnnouncementText1">
+			<option value="Listen again to part of the lecture, Then answer the question.">Listen again to part of the lecture, Then answer the question.</option>
+			<option value="Listen again to part of the conversation, Then answer the question.">Listen again to part of the conversation, Then answer the question.</option>
+		</select>
+		</td>	
+	</tr>
+	<tr>
+		<td> lecture/conversation narrator mp3파일 업로드 하기 </td>
+		<td> <input type="file" id="mp3_upload" name= "listeningAnnouncementAudio1"> </td>
+	</tr>
+	<tr>	
+		<td> partial lecture/conversataion mp3파일 업로드 하기 </td>
+		<td> <input type="file" id="mp3_upload" name= "listeningProblemAudio1"> </td> 
+	</tr>
+	
+	<tr>	
+		<td> partial lecture/conversataion img파일 업로드 하기 </td>
+		<td> <input type="file" id="img_upload" name= " listeningProblemImage"> </td> 
+	</tr>
+	
+	<tr>
+      <td>문제</td>
+	  <td><input type="text" name="listeningProblem" id=question_field /></td>
+	</tr>
+	
+	<tr>
+      <td>문제와 관련된 mp3파일 첨부하기</td>
+	  <td> <input type="file" name="listeningProblemAudio2"/></td>
+	</tr>
+	
+	<tr>
+	<td>문제를 읽어주는 narrator mp3파일 첨부하기</td> 
+	<td><input type="file" id="mp3_upload" name= "listeningAnnouncementAudio2"></td> 
+   </tr>
+   
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='listeningProblemArticle1'  id=question_field_a /><br />
+		  <input type="text" name='listeningProblemArticle2'  id=question_field_b /><br />
+		  <input type="text" name='listeningProblemArticle3'  id=question_field_c /><br />
+		  <input type="text" name='listeningProblemArticle4'  id=question_field_d />
+	   </td>
+   </tr>
+   
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="d" />d
+   </tr>
+   
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='listeningProblemComment'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+   
+   </form>
+  </div>
+
+  <div id="Speaking_4">
+       <form action="/process/multer/addspeaking" method="post" id="speakingForm4" enctype="multipart/form-data" > 
+
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+         
+      이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+    
+      <input type="file" id="files" class="img_upload_sp4" name="speakingProblemImage" multiple /><p>
+     
+      <output id="image_holder_sp4"></output><p>
+     
+       이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 ) 
+		 
+	   <input type="file" id="files" class="mp3_upload_sp4" name="speakingProblemListeningAudio"  multiple /><p>
+
+    <output id="mp3_holder_sp4"></output><p>
+   </form>     
+  </div>
+
+  <div id="Speaking_5">
+     <form action="/process/multer/addspeaking" method="post" id="speakingForm5" enctype="multipart/form-data" > 
+
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+
+          이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+    
+      <input type="file" id="files" class="img_upload_sp5" name="speakingProblemImage" multiple /><p>
+     
+      <output id="image_holder_sp5"></output><p>
+     
+       이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 ) 
+		 
+	   <input type="file" id="files" class="mp3_upload_sp5" name="speakingProblemListeningAudio"  multiple /><p>
+
+    <output id="mp3_holder_sp5"></output><p>
+
+   </form>   
+  </div>
+
+  <div id="Speaking_6">
+   
+     <form action="/process/multer/addspeaking" method="post" id="speakingForm6" enctype="multipart/form-data" > 
+
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+
+          이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+    
+      <input type="file" id="files" class="img_upload_sp6" name="speakingProblemImage" multiple /><p>
+     
+      <output id="image_holder_sp6"></output><p>
+     
+       이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 ) 
+         <input type="file" id="files" class="mp3_upload_sp6" name="speakingProblemListeningAudio"  multiple /><p>
+
+    <output id="mp3_holder_sp6"></output><p>
+
+   </form>   
+  </div>
+
+</div>      
+<!--Speaking tab end  -->
+
+<div id="Writing">
+  <ul>
+    <li><a href="#Writing_1">Integrated Type</a></li>
+    <li><a href="#Writing_2">Independent Type</a></li>
+  </ul>
+
+ <div id="Writing_1">
+    
+   <form action="/process/toefl/writing/updatewriting" method="post" >
+    
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
+
+      이 파트와 관련있는 img 파일을 올려주세요 (다중 이미지가능 )
+   
+      <input type="file" id="files" class="img_upload_sp6"  multiple /><p>
+     
+      <output id="image_holder_sp6"></output><p>
+   
+      이 파트와 관련있는 mp3 파일을 올려주세요 (다중 audio가능 ) 
+    
+      <input type="file" id="files1" name="files[]" multiple /><p> 
+   
+      <div id="list2"></div>
+    
+       <textarea id="writingScript1" name="writingScript1" class="ckeditor">rlqhs</textarea>
+    </form>
+  </div>
+   
+  <div id="Writing_2">
+   
+   <form action="/process/toefl/writing/updatewriting" method="post" >
+   
+      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>           
+      
+      Independece type 문제를 출제해 주세요.
+
+      <textarea id="writingScript2" name="writingScript2" class="ckeditor">rlqhs</textarea>
+   
+   </form> 
+ </div>
+
+</div>
+<!--speaking tab end  -->
+ 
+
+</body>
+</html>

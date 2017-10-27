@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" type="text/css" href="Semantic/semantic.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="Semantic/semantic.js"></script>  
+    
+    <script src="https://cdn.ckeditor.com/4.7.2/standard/ckeditor.js"></script>    
+        
+    <style>
+     #clock{
+ background-color:cadetblue;
+ width:300px;
+ color:#ffffff;
+ padding:20px;
+ font-size:50px;
+ text-align:center;
+ border-radius: 15px;
+ 
+
+ }
+ .clockWrapper{
+ background-color: #c4c5c7;
+ border-radius: 15px;
+ padding:20px;
+ width: 150;
+ box-shadow: 6px 6px 25px #333;
+ margin:auto;
+ }
+    
+    </style>
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    var i = document.getElementById("good");
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('clock').innerHTML =
+    i+ h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i}; // 숫자가 10보다 작을 경우 앞에 0을 붙여줌
+    return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+<div id="clock" >
+ 
+</div>
+    
+</body>
+</html>
+

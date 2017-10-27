@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Tabs - Simple manipulation</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #dialog label, #dialog input { display:block; }
+  #dialog label { margin-top: 0.5em; }
+  #dialog input, #dialog textarea { width: 95%; }
+  #tabs { margin-top: 1em; }
+  #tabs li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+  #add_tab { cursor: pointer; }
+  </style>
+  
+	
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+	<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>	
+	
+<script src="../../../public/toeflassets/js/toeflAddreading_listening.js"></script>
+
+</head>
+<body>
+    <input type="text" name="ExamNO" value=<%= ExamNO %>>
+    <input type="text" name="ExamDesc" value=<%= ExamDesc %>>   
+
+<div id="dialog" title="Tab data">
+  <form>
+
+
+    <fieldset class="ui-helper-reset">
+
+      <label for="tab_title">Title</label>
+    
+      <input type="text" name="tab_title" id="tab_title" value="Tab Title" class="ui-widget-content ui-corner-all">
+    
+      <label for="tab_content">Content</label>
+    
+      <textarea name="tab_content" id="tab_content" class="ui-widget-content ui-corner-all">Tab content</textarea>
+  
+      <label for="addProblem">문제유형을 선택해주세요.</label>
+
+      <select name="addProblem" id="addProblem">
+        <% var star = "*" + ExamNO %>
+
+        <% var sample = "listening_qtype_1" + star %>
+      <option value=<%= sample %>>Topic/main Idea</option>
+      <option value="listening_qtype_2">Listen Again</option>
+      <option selected="selected" value="listening_qtype_3">"Inference"</option>
+      <option value="listening_qtype_4">"attitude &amp; purpose"</option>
+      <option value="listening_qtype_5">Multiple answers</option>
+	    <option value="listening_qtype_6">Table completion</option>
+	    <option value="listening_qtype_7">Sentence Simplification</option>	  
+      
+      </select>
+
+    </fieldset>
+
+  </form>
+</div>
+ 
+<button id="add_tab">문제 추가하기</button>
+ 
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Nunc tincidunt</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+  </ul>
+  
+  <div id="tabs-1">
+    <p>좌측 상단에 보이는 문제 추가하기 버튼을 눌러 문제를 추가해 보세요 </p>
+  </div>
+
+</div>
+ 
+ 
+</body>
+</html>

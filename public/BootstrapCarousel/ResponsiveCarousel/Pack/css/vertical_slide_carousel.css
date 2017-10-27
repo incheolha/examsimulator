@@ -1,0 +1,210 @@
+/*
+	StyleSheet For Responsive Bootstrap Carousel
+	Author: szthemes
+	Item Name: Responsive Bootstrap Carousel
+	Author URI: http://codecanyon.net/user/szthemes
+	Description: Different Types of Bootstrap Carousel
+
+								Content List
+  -----------------------------------------------------------------------------------
+	NAME ----------------------------------------LINE NUMBER--------------------- #
+	VIRTICAL SLIDE CAROUSEL ---------------------28------------------------------ 01
+	RESPONSIVE ----------------------------------165----------------------------- 02	
+	COLORS --------------------------------------197----------------------------- 03
+  -----------------------------------------------------------------------------------
+							Fonts Styles
+  -----------------------------------------------------------------------------------
+	  'Open Sans', sans-serif ---------------------------------- 01
+	              FontAwesome ---------------------------------- 02
+  -----------------------------------------------------------------------------------
+							Color Codes
+  -----------------------------------------------------------------------------------
+	NAME    ------------------------RGB-------------------------- #
+	#ffffff -------------------rgb(255, 255, 255)---------------- 01
+	#000000 -------------------rgb(0, 0, 0)---------------------- 02
+*/
+
+/*------------------------------------------------------*/
+/* VIRTICAL SLIDE CAROUSEL
+/*------------------------------------------------------*/
+
+.vertical_slide_carousel_wrapper {
+  overflow: hidden;
+  max-height: 661px;
+  background-image: url("../images/black_carousel_background.png");
+}
+.vertical_slide_carousel_wrapper > .carousel-inner > .item > img,
+.vertical_slide_carousel_wrapper > .carousel-inner > .item > a > img {
+  opacity: 0.6;
+  margin: auto;
+  width: 100% !important;
+}
+/*---------- VERTICLE EFFECT ----------*/
+.vertical_slide_effect {
+  height: 100%;
+}
+.vertical_slide_effect > .item {
+  -webkit-transition: 0.6s ease-in-out top;
+  -o-transition: 0.6s ease-in-out top;
+  transition: 0.6s ease-in-out top;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .vertical_slide_effect > .item {
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    -o-transition: -o-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+  .vertical_slide_effect > .item.next,
+  .vertical_slide_effect > .item.active.right {
+    top: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  .vertical_slide_effect > .item.prev,
+  .vertical_slide_effect > .item.active.left {
+    top: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  .vertical_slide_effect > .item.next.left,
+  .vertical_slide_effect > .item.prev.right,
+  .vertical_slide_effect > .item.active {
+    top: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.vertical_slide_effect > .active {
+  top: 0;
+}
+.vertical_slide_effect > .next,
+.vertical_slide_effect > .prev {
+  top: 0;
+  width: auto;
+  height: 100%;
+}
+.vertical_slide_effect > .next {
+  left: 0;
+  top: 100%;
+}
+.vertical_slide_effect > .prev {
+  left: 0;
+  top: -100%
+}
+.vertical_slide_effect > .next.left,
+.vertical_slide_effect > .prev.right {
+  top: 0;
+}
+.vertical_slide_effect > .active.left {
+  left: 0;
+  top: -100%;
+}
+.vertical_slide_effect > .active.right {
+  left: 0;
+  top: 100%;
+}
+/*---------- INDICATORS CONTROL ----------*/
+.vertical_slide_carousel_indicators {
+  top: 40%;
+  left: 87%;
+  z-index: 3;
+  width: 10%;
+  overflow: auto;
+  margin-left: 0%;
+  position: absolute;
+  margin-bottom: 0px;
+  padding: 0px 5px 0px 5px;
+}
+.vertical_slide_carousel_indicators li {
+  width: 13px;
+  height: 13px;
+  display: block;
+  margin-bottom: 10px;
+}
+.vertical_slide_carousel_indicators .active {
+  margin: 1px;
+  width: 13px;
+  height: 13px;
+  margin-bottom: 10px;
+}
+/*---------- CAPTION ----------*/
+.vertical_slide_carousel_caption {
+  left: 0%;
+  right: 0%;
+  z-index: 1;
+  width: 100%;
+  bottom: 29%;
+  text-shadow: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+}
+.vertical_slide_carousel_caption h1 {
+  font-size: 50px;
+  font-weight: 800;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.vertical_slide_carousel_caption h1 a {
+  text-decoration: none;
+}
+.vertical_slide_carousel_caption>img {
+  width: 72%;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+/*------------------------------------------------------*/
+/* RESPONSIVE
+/*------------------------------------------------------*/
+
+/*---------- MEDIA 480px ----------*/
+@media only screen and (max-width: 480px) {
+  /*---------- CAPTION ----------*/
+  .vertical_slide_carousel_caption {
+    bottom: 0%;
+  }
+  .vertical_slide_carousel_caption h1 {
+    font-size: 25px;
+  }
+}
+/*---------- MEDIA 481px - 600px ----------*/
+@media (min-width: 481px) and (max-width: 600px) {
+  /*---------- CAPTION ----------*/
+  .vertical_slide_carousel_caption {
+    bottom: 0%;
+  }
+  .vertical_slide_carousel_caption h1 {
+    font-size: 40px;
+  }
+}
+/*---------- MEDIA 601px - 767px ----------*/
+@media (min-width: 601px) and (max-width: 767px) {
+  /*---------- CAPTION ----------*/
+  .vertical_slide_carousel_caption {
+    bottom: 0%;
+  }
+}
+
+/*------------------------------------------------------*/
+/* COLORS (WHITE)
+/*------------------------------------------------------*/
+
+/*---------- INDICATORS CONTROL ----------*/
+.vertical_slide_carousel_indicators .active {
+  border: 1px solid #ffffff;
+}
+/*---------- CAPTION ----------*/
+.vertical_slide_carousel_caption h2,
+.vertical_slide_carousel_caption h1 a,
+.vertical_slide_carousel_caption h1 a:visited {
+  color: #ffffff;
+}
+/*----------  END  ----------*/

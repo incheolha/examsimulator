@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	 <head>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script src="../../../public/ckeditor/ckeditor.js"></script>
+     <!-- jquery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- my css -->
+<link href="/public/toeflassets/css/semantic.min.css" rel="stylesheet" >
+		<link href="/public/cleditor/jquery.cleditor.css" rel="stylesheet" />
+
+		
+		<script src="/public/toeflassets/js/jquery-2.1.4.min.js"></script>
+		<script src="/public/toeflassets/js/semantic.min.js"></script>
+		<script src="/public/cleditor/jquery.cleditor.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				var output = $("#contentsOutput").text();
+				console.log('output : ' + output);
+				
+				$("#contentsOutput").html(output);
+				 
+			});
+		</script>
+		
+	</head>
+	<body>
+	
+		  <div class="container post post-new">
+			<br>
+
+			<div class="ui raised segment">
+				<a class="ui blue ribbon label">리딩 문제 추가</a>
+      			<span id="board_title"><%=title %></span>
+			
+				
+<!--
+				<div class="ui blue fluid card">
+					 <div class="content">
+						<% 
+						   var curTitle = posts._doc.ExamNO;
+						   var curContents = posts._doc.ExamDesc;
+						   var curWriter = posts._doc.writer.email; 
+                           var curId = posts._doc._id; 
+						  
+						   // html-entities module is required in post.js
+						   var entities = new Entities();
+						   
+						   var decodedContents = entities.decode(curContents);
+						%>
+						
+						<div id="titleOutput" class="header"><%=curTitle %></div>
+	   					<div class="meta">
+	     						<span class="right floated time">1일전</span>
+	     						<span class="category">일반</span>
+	   					</div>
+	   					<div id="contentsOutput" class="description">
+					       <%=decodedContents %>
+					    </div>
+					 </div>
+	  				<div class="extra content">
+	    				<div class="right floated author">
+	      					<img class="ui avatar image" src="/public/author.png"> <%=curWriter %>
+	    				</div>
+	  				</div>
+					
+				</div>
+-->
+				
+
+                <div class="ui very relaxed selection celled list">
+                    <%  
+                        for (var i = 0; i < posts._doc.problems.length; i++) {
+                           var curCommentContents = posts._doc.problems[i].ExamDesc;
+                           var curCommentWriter = posts._doc.problems[i].writer;
+                           %>
+                            <div class="item">
+                                <div class="ui grid">
+                                    <div class="sixteen wide column">
+                                        <div class="ui header">
+                                            <h4 class="ui left aligned header">
+                                                <%=curCommentContents %>
+                                            </h4>
+                                            <h5 class="ui right aligned orange header">
+                                                <%=curCommentWriter %>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <% } %>	
+
+                </div>
+
+                
+                
+                <div>
+                    <form class="post-form form-horizontal" method="post" action="/process/toefl/reading/addproblemreading">
+                
+                            
+                     
+                        
+					
+								<div class="two fields">
+				    		<div class="field">
+				      			<label>문제</label>
+								<input class="form-control" type="text" id="readingProblem" name="readingProblem" value="">
+							</div>
+							<div class="field"></div>
+						</div>
+						
+                            
+                            <div class="two fields">
+				    		<div class="field">
+				      			<label>문항A</label>
+								<input class="form-control" type="text" id="readingArticle1" name="readingArticle1" value="">
+							</div>
+							<div class="field"></div>
+						</div>
+                        
+                        <div class="two fields">
+				    		<div class="field">
+				      			<label>문항B</label>
+								<input class="form-control" type="text" id="readingArticle2" name="readingArticle2" value="">
+							</div>
+							<div class="field"></div>
+						</div>
+                        
+                        <div class="two fields">
+				    		<div class="field">
+				      			<label>문항C</label>
+								<input class="form-control" type="text" id="readingArticle3" name="readingArticle3" value="">
+							</div>
+							<div class="field"></div>
+						</div>
+                        
+                        <div class="two fields">
+				    		<div class="field">
+				      			<label>문항D</label>
+								<input class="form-control" type="text" id="readingArticle4" name="readingArticle4" value="">
+							</div>
+							<div class="field"></div>
+						</div>
+                        
+                        <div class="two fields">
+				    		<div class="field">
+				      			<label>문항E</label>
+								<input class="form-control" type="text" id="readingArticle5" name="readingArticle5" value="">
+							</div>
+							<div class="field"></div>
+						</div>
+                        
+                        <div class="two fields">
+				    		<div class="field">
+				      			<label>문항F</label>
+								<input class="form-control" type="text" id="readingArticle6" name="readingArticle6" value="">
+							</div>
+							<div class="field"></div>
+						</div>
+                        
+                        
+                        
+                        <div class="two fields">
+				    		<div class="field">
+				      			<label>정답</label>
+								<input type="checkbox" id="readingAnswer" name="readingAnswer" value="A">A
+                                <input type="checkbox" id="readingAnswer" name="readingAnswer" value="B">B
+                                <input type="checkbox" id="readingAnswer" name="readingAnswer" value="C">C
+                                <input type="checkbox" id="readingAnswer" name="readingAnswer" value="D">D
+                                <input type="checkbox" id="readingAnswer" name="readingAnswer" value="E">E
+                                <input type="checkbox" id="readingAnswer" name="readingAnswer" value="F">F
+							</div>
+							<div class="field"></div>
+						</div>
+                        
+                        <div class="two fields">
+				    		<div class="field">
+				      			<label>해설</label>
+								<input class="form-control" type="text" id="readingComment" name="readingComment" value="">
+							</div>
+							<div class="field"></div>
+						</div>
+                        
+                        <div class="two fields">
+				    		<div class="field">
+				      			<label>단어해설</label>
+								<input class="form-control" type="text" id="readingParagraphGlossary" name="readingGlossary" value="">
+							</div>
+							<div class="field"></div>
+						</div>
+                            
+                        <div class="two fields">
+				    		<div class="field">
+				      			<label>작성자</label>
+								<input type="text" name="writer" placeholder="댓글작성자 입력">
+							</div>
+							<div class="field"></div>
+						</div>
+								 
+                        <input hidden type="text" name="id" value="<%=curId %>">
+                        
+						<input class="ui submit button" type="submit" value="문제추가" name="" />
+					</form>
+                </div>
+                
+				<br><br><a class="ui button" href='/process/toefl/reading/listreading?page=0&perPage=2'>문제 목록</a>
+				
+			</div>
+			
+		</div>
+			
+	</body>
+</html>
+

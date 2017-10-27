@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	 <head>
+		
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" type="text/css" href="../Semantic/semantic.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../Semantic/semantic.js"></script>
+    
+	</head>
+
+	
+    <body>
+    <div id="listening_qtype_4">
+    <form id='listening_qtype_11111' method="post" action="process/multer/addProblemListening">    
+    
+    
+<h1>Attitude & Purpose</h1>	
+	<input type="hidden" name="listeningProblemType" value=2>	
+	
+ 	<table id='type1_table' border="1">
+	<tr>
+		<td> lecture/conversation 선택하기 </td>
+		<td>
+		<select name="listeningAnnouncementText1">
+			<option value="Listen again to part of the lecture, Then answer the question.">Listen again to part of the lecture, Then answer the question.</option>
+			<option value="Listen again to part of the conversation, Then answer the question.">Listen again to part of the conversation, Then answer the question.</option>
+		</select>
+		</td>	
+	</tr>
+	<tr>
+		<td> lecture/conversation narrator mp3파일 업로드 하기 </td>
+		<td> <input type="file" id="mp3_upload" name= "listeningAnnouncementAudio1"> </td>
+	</tr>
+	<tr>	
+		<td> partial lecture/conversataion mp3파일 업로드 하기 </td>
+		<td> <input type="file" id="mp3_upload" name= "listeningProblemAudio1"> </td> 
+	</tr>
+	
+	<tr>	
+		<td> partial lecture/conversataion img파일 업로드 하기 </td>
+		<td> <input type="file" id="img_upload" name= " listeningProblemImage"> </td> 
+	</tr>
+	
+	<tr>
+      <td>문제</td>
+	  <td><input type="text" name="listeningProblem" id=question_field /></td>
+	</tr>
+	
+	<tr>
+      <td>문제와 관련된 mp3파일 첨부하기</td>
+	  <td> <input type="file" name="listeningProblemAudio2"/></td>
+	</tr>
+	
+	<tr>
+	<td>문제를 읽어주는 narrator mp3파일 첨부하기</td> 
+	<td><input type="file" id="mp3_upload" name= "listeningAnnouncementAudio2"></td> 
+   </tr>
+   
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='listeningProblemArticle1'  id=question_field_a /><br />
+		  <input type="text" name='listeningProblemArticle2'  id=question_field_b /><br />
+		  <input type="text" name='listeningProblemArticle3'  id=question_field_c /><br />
+		  <input type="text" name='listeningProblemArticle4'  id=question_field_d />
+	   </td>
+   </tr>
+   
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="d" />d
+   </tr>
+   
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='listeningProblemComment'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+		</div>
+    </body>
+
+</html>

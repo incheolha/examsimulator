@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+ 	<% include ./carousalhead.ejs %>
+<body>
+	<% include ./carousalpart.ejs %>
+
+<!-- 서버측으로 부터 오는 정보를 처리하는 exam처리 -->    
+	<% 
+		var result = ["/public/toeflassets/images/1_study.png",
+					"/public/toeflassets/images/2_omr.png",
+					"/public/toeflassets/images/3_note.png",
+					"/public/toeflassets/images/4_note.png",
+					"/public/toeflassets/images/5_note.png",
+					"/public/toeflassets/images/6_teacher.png",
+					"/public/toeflassets/images/7_medal.png",
+					"/public/toeflassets/images/8_teacher.png",
+					"/public/toeflassets/images/9_teacher.png",
+					"/public/toeflassets/images/10_teacher.png",
+					"/public/toeflassets/images/11_note.png"];
+
+		var addImage = "/public/toeflassets/images/add.png";          <!-- 시험 추가 이미지 -->
+		var addRegisterNo = lists[0]._doc.RegisterNo + 1;
+
+	%>                                 <!-- 서버로 부터 들어오는 등록시험 총 _doc 수  -->
+            <div class="col-xs-12 col-sm-6 col-md-2 gp_products_item">
+			
+					<div class="gp_products_inner">				
+						<div class="gp_products_item_image">
+
+				                        <!-- route/toefl_routing에 가면 /toefl/registerExamPost가 정의되어 있음 -->
+
+							<a href="/toefl/registerExamPost?registerNo=<%=addRegisterNo%>"><img src="<%=addImage%>" alt="gp product 001" /></a>
+						</div>
+
+						<div class="gp_products_item_caption">
+							<ul class="gp_products_caption_name">
+								<li><%=addRegisterNo %> 회차</li>
+							
+							</ul>
+							<ul class="gp_products_caption_rating">
+								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star-half-o"></i></li>
+								<li class="pull-right"><a href="#">free</a></li>
+							</ul>
+						</div>
+						<div class="case"></div>
+					</div>
+					
+				</div>
+
+	    <%		for (var i = 0; i < lists.length; i++) {
+				var curImage = lists[i];
+				var curRegisterNo = lists[i]._doc.RegisterNo;
+				var curRegisterDesc = lists[i]._doc.RegisterDesc;
+		%>
+
+			<div class="col-xs-12 col-sm-6 col-md-3 gp_products_item">
+
+					<div class="gp_products_inner">
+				
+						<div class="gp_products_item_image">
+
+
+								<!-- route/toefl_routing에 가면 /toefl/updateExamPost 이 정의되어 있음 -->
+
+							<a href="/toefl/updateExamPost?registerNo=<%=curRegisterNo %>&registerDesc=<%=curRegisterDesc %>"><img src="<%=curImage%>" alt="gp product 001" /></a>
+						</div>
+						
+						<div class="gp_products_item_caption">
+							<ul class="gp_products_caption_name">
+								<li><%=curRegisterNo %> 회차</li>
+								<li><%=curRegisterDesc %></li>
+							</ul>
+							<ul class="gp_products_caption_rating">
+								<li class="pull-right"><a href="#">free</a></li>
+							</ul>
+						</div>
+					</div>
+				
+				</div>
+	
+        <% } %>				
+    <br>
+</body>
+</html>
+
+ <!--*-*-*-*-*-*-*-*-*-*- End *-*-*-*-*-*-*-*-*-*-->

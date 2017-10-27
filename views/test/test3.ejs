@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>사용자 리스트 페이지</title>
+	</head>
+	<body>
+		<h2>사용자 리스트</h2>
+		<div>
+			<ul>
+				<% 
+                 var result = ["/public/codegen/assets/images/samples/3.jpg","/public/codegen/assets/images/samples/3.jpg","/public/codegen/assets/images/samples/3.jpg"]
+                for (var i = 0; i < result.length; i++) {
+					   var curId = i;
+                       var x ='"';        
+                       var curImage = result[curId];
+
+				%>
+                         <img alt="" src="<%=curImage%>"/>
+				<% } %>	
+			</ul>
+		</div>
+		<br><br><a href='/public/listuser.html'>다시 요청하기</a>
+	</body>
+</html>
+

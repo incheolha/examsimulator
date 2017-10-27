@@ -1,0 +1,90 @@
+/* RESPONSIVE - SPECIAL TO DOUBLE CAROUSEL */
+.multiple.m-double:not(.m-reponsive-except) .m-carousel-titles{
+    display: none;
+}
+.multiple.m-double.m-topnav:not(.m-reponsive-except) .m-recipient,
+.multiple.m-double.m-bottomnav:not(.m-reponsive-except) .m-recipient {
+    padding-top: 0;
+}
+.m-double:not(.m-reponsive-except) .m-nav.back {
+    display: none;
+}
+.m-double:not(.m-reponsive-except) .m-nav {
+    width: 95%;
+    left: 2.5%;
+    margin-left: 0;
+    height: 35px;
+    margin-top: 0;
+}
+.m-double.m-topnav:not(.m-reponsive-except) .m-nav,
+.m-double.m-leftnav:not(.m-reponsive-except) .m-nav,
+.m-double.m-rightnav:not(.m-reponsive-except) .m-nav,
+.m-double.m-bottomnav:not(.m-reponsive-except) .m-nav,
+.multiple.m-2c.m-topnav:not(.m-reponsive-except) .m-nav,
+.m-2c:not(.m-reponsive-except) .m-nav {
+    width: 95%;
+    left: 2.5%;
+    margin-left: 0;
+    height: 35px;
+    margin-top: 0;
+    border:0;
+}
+.m-double:not(.m-reponsive-except) .m-nav .up,
+.m-double:not(.m-reponsive-except) .m-nav .down,
+.m-double:not(.m-reponsive-except) .m-nav .player {
+    margin-top: 0
+}
+.m-double:not(.m-reponsive-except) .m-nav .up {
+    position: absolute;
+    top: 2px;
+    left: 8px;
+}
+.m-double:not(.m-reponsive-except) .m-nav .down {
+    position: absolute;
+    top: 3px;
+    left: auto;
+    right: 8px;
+}
+.m-double:not(.m-reponsive-except) .m-nav .player {
+    margin-top: -16.5px;
+    left: 50%;
+    margin-left: -10px;
+}
+.multiple.m-double:not(.m-reponsive-except) .m-content.m-1-2 {
+    margin-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+.multiple.m-double:not(.m-reponsive-except) .m-content.m-2-2 {
+    margin-right: 0;
+    padding-left: 0;
+    width: 100%;
+}
+.multiple.m-double.m-topnav:not(.m-reponsive-except) .m-content.m-1-2,
+.multiple.m-double.m-bottomnav:not(.m-reponsive-except) .m-content.m-1-2 {
+    margin-left: 0;
+}
+.multiple.m-double.m-topnav:not(.m-reponsive-except) .m-content.m-2-2,
+.multiple.m-double.m-bottomnav:not(.m-reponsive-except) .m-content.m-2-2 {
+    margin-right: 0;
+}
+.multiple.m-double:not(.m-reponsive-except) .m-content.m-1-2 .m-block,
+.multiple.m-double:not(.m-reponsive-except) .m-content.m-2-2 .m-block {
+    float: none;
+    width: 100%;
+    left: auto;
+}
+.m-double:not(.m-reponsive-except) .m-recipient .m-2-2 .m-track {
+    padding-right: 4px;
+    padding-left: 0;
+    margin-left: 0;
+}
+.m-double:not(.m-reponsive-except) .m-recipient .m-2-2 .m-track {
+    padding-left: 4px;
+    padding-right: 0;
+    margin-right: 0;
+}
+.multiple.m-double:not(.m-reponsive-except) .m-content.m-1-2 .m-block {
+    float: none;
+    right: auto;
+}

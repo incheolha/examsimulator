@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		
+		<title>홈 화면</title>
+		
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    	
+    	<style>
+        	body { padding-top:80px; }
+        	
+			@font-face {
+				font-family: 'Nanum Gothic'; font-style: normal; font-weight: 400;
+				src: url('../public/NanumGothic-Regular.eot');
+				src: local('NanumGothic'),
+					url('../public/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+					url('../public/NanumGothic-Regular.woff2') format('woff2'),
+					url('../public/NanumGothic-Regular.woff') format('woff'),
+					url('../public/NanumGothic-Regular.ttf') format('truetype');
+			}
+            
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            li {
+                width: 40%;
+				display: inline-block;
+				text-align: center;
+            }
+
+            li:first-child a {
+                border-left: 0;
+            }
+
+            li a {
+                /** 링크의 박스화 --> 하나의 목록 안을 전체 클릭 가능하게 한다. */
+                display: block;
+                width: auto;
+                
+                
+                /** li에게 border를 지정할 경우 li의 총 넓이 합이 100%를 초과하므로,
+                 * 	레이아웃이 깨지게 된다.
+                 *  링크는 width가 auto이므로, border를 주어도 전체 크기에
+                 *  영향이 없다. */
+                border-left: 1px dotted #cccccc;
+            }
+
+            li a:hover {
+                background-color: #d7d8d0;
+            }
+        	
+        	h1, p, a { font-family: 'Nanum Gothic' }
+    	</style>
+    
+	</head>
+	<body>
+		<div class="container">
+		    <div class="jumbotron text-center">
+                <h1> <a href="writing">Carousel</a> </h1>
+				<br>
+						
+		    </div>
+            <div class="jumbotron text-center">
+                <ul>
+                    <li> <a href="writing1">Integrated Writing</a> </li>
+                    <li> <a href="writing2">Independent Writing</a> </li>
+                </ul>
+            </div>
+            <div class="jumbotron text-center">
+                <h2>Create Writing Exam</h2>
+            </div>
+		</div>
+	</body>
+</html>

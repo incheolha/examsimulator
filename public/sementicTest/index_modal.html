@@ -1,0 +1,378 @@
+   <!DOCTYPE html>
+
+<html>
+    <head>
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" type="text/css" href="Semantic/semantic.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="Semantic/semantic.js"></script>  
+    <script src="ckeditor/ckeditor.js"></script>
+    <!--	index js import	-->
+	<script src='index.js'></script>   
+<!--		index css import-->
+    <link href="index.css">
+
+    </head>
+    
+    <div class="ui coupled longer modal" id="reading_modal">   
+    <div class="ui first modal">
+        <div class="ui three top attached steps">
+          <div class="completed active step">
+            <i class="truck icon"></i>
+            <div class="content">
+              <div class="title">Step 1</div>
+              <div class="description">출제할 챕터를 선택하세요</div>
+            </div>
+          </div>
+          <div class="disabled step">
+            <i class="payment icon"></i>
+            <div class="content">
+              <div class="title">Step 2</div>
+              <div class="description">챕터 지문 만들기</div>
+            </div>
+          </div>
+  
+        </div>            
+          <i class="close icon"></i>
+          <div class="header">
+            선택한 항목 : 회차 Reading Chapter : <text id="selectVal"></text>
+          </div>
+          <div class="content">
+            
+              <div class="ui selection fluid dropdown" id="select_Dropdown">
+              <input type="hidden" name="gender">
+              <i class="dropdown icon"></i>
+              <div class="default text">Select Chapter</div>
+              <div class="menu">
+                <div class="item" data-value="1">Chapter1</div>
+                <div class="item" data-value="2">Chapter2</div>
+                <div class="item" data-value="3">Chapter3</div>
+                <div class="item" data-value="4">dummy</div>
+                  
+              </div>
+            </div>  
+              
+            <table class="ui selectable celled table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Status</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <div class="grouped fileds">
+                  
+                    
+                <tr>
+                  <td>Chapter1</td>
+                  <td class="positive">Available</td>
+                 
+                </tr>
+                <tr>
+                  <td>Chapter2</td>
+                  <td class="positive">Available</td>
+                   
+                </tr>
+                <tr>
+                  <td>Chapter3</td>
+                  <td class="positive">Available</td>
+                   
+                </tr>
+                <tr>
+                  <td>Dummy!</td>
+                   <td class="positive">Available</td>
+                  
+                </tr>
+                    
+                  </div>  
+              </tbody>
+                
+            </table>
+ 
+            <div class="description">
+              <div class="ui header">We've auto-chosen a profile image for you.</div>
+            </div>
+          </div>
+          <div class="actions">
+            <div class="ui red  deny button">
+              Nope
+            </div>
+            <div class="blue primary ui button">
+              Next!
+            </div>
+          </div>
+            
+</div>
+
+<div class="ui second modal">
+        <div class="ui three top attached steps">
+          <div class="completed disabled step">
+            <i class="truck icon"></i>
+            <div class="content">
+              <div class="title">Step 1</div>
+              <div class="description">출제할 챕터를 선택하세요</div>
+            </div>
+          </div>
+          <div class="completed active step">
+            <i class="payment icon"></i>
+            <div class="content">
+              <div class="title">Step 2</div>
+              <div class="description">챕터 지문 만들기</div>
+            </div>
+          </div>
+         
+        </div>            
+          <i class="close icon"></i>
+          <div class="header">
+           선택한 항목 : 회차 Reading Chapter : <text id="selectVal3"></text>
+          </div>
+          <div class="content">
+            <div class="ui header">챕터에 맞는 지문을 올리고 문제를 출제하러 가보세요!</div>  
+            <div class="ui fluid input">
+              <input type="text" placeholder="Script Subject"><br>
+             
+            </div>
+              <br> 
+        <textarea name="editor1"></textarea>
+        
+
+            
+          </div>
+          <div class="actions">
+            <div class="ui red deny button">
+              Nope
+            </div>
+            <div class="ui yellow button" id="test2">
+              back  
+            </div>  
+            <div class="blue ui button">
+              Next!
+            </div>
+          </div>
+            
+        </div>        
+</div>  
+       
+        
+ <div class="ui coupled longer modal" id="listening_modal">   
+    <div class="ui third longer modal">
+        <div class="ui three top attached steps">
+          <div class="completed active step">
+            <i class="truck icon"></i>
+            <div class="content">
+              <div class="title">Step 1</div>
+              <div class="description">출제할 챕터를 선택하세요</div>
+            </div>
+          </div>
+          <div class="disabled step">
+            <i class="payment icon"></i>
+            <div class="content">
+              <div class="title">Step 2</div>
+              <div class="description">Chapter conver/lecture File upload하기</div>
+            </div>
+          </div>
+        
+        </div>            
+          <i class="close icon"></i>
+          <div class="header">
+            선택한 항목 : 회차 Listening Chapter : <text id="selectVal2"></text>
+		</div>  
+          <div class="content">
+            
+         <div class="ui selection fluid dropdown" id="listening_dropdown">
+            <input type="hidden" name="gender">
+             <i class="dropdown icon"></i>
+             <div class="default text">Select Chapter</div>              
+                <div class="menu">
+                <div class="item" data-value="1">Chapter1</div>
+                <div class="item" data-value="2">Chapter2</div>
+                <div class="item" data-value="3">Chapter3</div>      
+                <div class="item" data-value="4">Chapter4</div>
+                <div class="item" data-value="5">Chapter5</div>
+                <div class="item" data-value="6">Chapter6</div>
+                <div class="item" data-value="7">dummy</div>
+                  
+                </div>  
+              </div>  
+            <table class="ui selectable celled table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Status</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                  
+                <div class="grouped fileds">
+                  
+                    
+                <tr>
+                  <td>Chapter1</td>
+                  <td class="positive">Available</td>
+                 
+                </tr>
+                <tr>
+                  <td>Chapter2</td>
+                  <td class="positive">Available</td>
+                   
+                </tr>
+                <tr>
+                  <td>Chapter3</td>
+                  <td class="positive">Available</td>
+                   
+                </tr>
+                <tr>
+                  <td>Chapter4</td>
+                   <td class="positive">Available</td>
+                  
+                </tr>
+                <tr>
+                  <td>Chapter5</td>
+                   <td class="positive">Available</td>
+                  
+                </tr>
+                <tr>
+                  <td>Chapter6</td>
+                   <td class="positive">Available</td>
+                  
+                </tr>
+                 <tr>
+                  <td> Dummy </td>
+                   <td class="positive">Available</td>
+                  
+                </tr>               
+                    
+                    
+                    
+                  </div>  
+              </tbody>
+                
+            </table>
+ 
+            <div class="description">
+              <div class="ui header">We've auto-chosen a profile image for you.</div>
+            </div>
+          </div>
+          <div class="actions">
+            <div class="ui red  deny button">
+              Nope
+            </div>
+            <div class="blue primary ui button">
+              Next!
+            </div>
+          </div>
+            
+</div>
+
+<div class="ui fourth longer modal">
+        <div class="ui three top attached steps">
+          <div class="completed disabled step">
+            <i class="truck icon"></i>
+            <div class="content">
+              <div class="title">Step 1</div>
+              <div class="description">출제할 챕터를 선택하세요</div>
+            </div>
+          </div>
+          <div class="completed active step">
+            <i class="payment icon"></i>
+            <div class="content">
+              <div class="title">Step 2</div>
+              <div class="description">Chapter conver/lecture File upload하기</div>
+            </div>
+          </div>
+        
+        </div>            
+          <i class="close icon"></i>
+          <div class="header">
+          선택한 항목 : 회차 Listening Chapter : <text id="selectVal2"></text>
+          </div>
+          <div class="scrolling content">
+            <div class="ui header">챕터에 맞는 지문을 올리고 문제를 출제하러 가보세요!</div>  
+
+            <label for="lc_ch_1_img_ipt" class="ui icon button">
+                 <i class="file icon"></i>
+                Open img File</label>
+            <input type="file" id="lc_ch_1_img_ipt" style="display:none" accept="image/*" multiple>
+            <div id="lc_ch_1_img_pre">
+            </div> 
+            <br>
+            <br>  
+              <label for="lc_ch_1_mp3_ipt" class="ui icon button">
+                 <i class="file icon"></i>
+                Open mp3 File</label>
+            <input type="file" id="lc_ch_1_mp3_ipt" style="display:none" accept="audio/*" multiple>
+            <div id="lc_ch_1_mp3_pre">  
+              </div>   
+            </div>
+<!--
+                  listeningChapterNumber:{type:Number},
+                listeningChapterAudio:{type: String, trim:true, 'default':''},
+                listeningChapterImage:{type: String, trim:true, 'default':''},
+        
+-->
+          <div class="actions">
+            <div class="ui red deny button">
+              Nope
+            </div>
+            <div class="ui yellow button" id="test2">
+              back  
+            </div>  
+            <div class="blue ui button">
+              Next!
+            </div>
+          </div>
+            
+        </div>        
+    </div>
+        
+    <div class="ui fifth small modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Speaking 출제하기 
+  </div>
+  <div class="content">
+    
+    <div class="description">
+      <div class="ui header">선택한 항목 : 회차 시간 </div>
+      <h4 class="ui header">스피킹 출제화면으로 이동할까요?</h4>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui red deny button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>    
+        
+<div class="ui sixth small modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Writing 출제하기
+  </div>
+  <div class="content">
+    <div class="description">
+      <div class="ui header">선택한 항목 : 회차 시간 </div>
+       <h4 class="ui header">라이팅 출제화면으로 이동할까요?</h4>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui red deny button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>        
+</html>     

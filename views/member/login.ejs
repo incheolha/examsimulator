@@ -1,0 +1,70 @@
+ <!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="/public/toeflassets/css/login_style.css">
+  
+</head>
+
+<body>
+  <div class="cont">
+<!-- user 계정 로그인 하기 -->
+    <form action="/login" method="post" >
+      <div class="form sign-in">
+        <h2>로그인</h2>
+        <label>
+        <span>Email</span>
+          <input type="email" name="email" class="email" placeholder="이메일">
+        </label>
+        <label>
+        <span>Password</span>
+          <input type="password" name="password" class="password" placeholder="비밀번호">
+        </label>
+        <p class="forgot-pass">비밀번호를 잊으셨나요?</p>
+          <button type="submit" class="button login">로그인</button>
+          <button type="submit" class="button"><a href="/auth/facebook" class="button facebook">Connect with<span>facebook</span></a></button>
+		  <button type="submit" class="button"><a href="/auth/facebook" class="button google">Connect with <span>Google</span></a></button>
+      </div>
+    </form>
+	  
+<!-- user 회원가입하기 -->
+      <div class="sub-cont">
+        <div class="img">
+          <div class="img__text m--up">
+            <h2>학생으로</h2>
+              <p>회원가입하기!</p>
+          </div>
+          <div class="img__text m--in">
+            <h2>학생 이지요?</h2>
+            <p>학생 계정이 있으시면 로그인만 하세요!</p>
+          </div>
+          <div class="img__btn">
+            <span class="m--up">가입하기</span>
+            <span class="m--in">로그인하기</span>
+          </div>
+        </div>
+    <form action="/signup" method="post" >            
+      <div class="form sign-up">
+         <h2>회원가입</h2>
+         <label>
+         <span>email</span>
+            <input type="email" name="email" class="email" placeholder="이메일">
+         </label>
+         <label>
+           <span>password</span>
+             <input type="password" name="password" class="password" placeholder="비밀번호">
+         </label>
+         <label>
+           <span>name</span>
+             <input type="text" name="name" class="name" placeholder="이름">
+         </label>    
+           <a href="/index_logout"><button type="submit" class="button signup">회원가입</button></a>
+      </div>
+	</form>
+    </div>
+  
+</div>   
+<script src="/public/toeflassets/js/index.js"></script>
+</body>
+</html>

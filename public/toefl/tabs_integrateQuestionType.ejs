@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html>
+	
+<head>	
+ <script src="../toeflassets/js/toeflAddreading_listening.js?<%= ExamNO %>"></script>
+</head>
+
+	
+<body>
+
+	<div id="listening_qtype_1">
+      
+    <form method="post" action="/process/toefl/listening/multerAddProblemListening">    
+    
+    
+	<h1>QuestionType:topic/main idea & Details</h1>	
+	<input type="hidden" name="listeningProblemType" value=1>	
+	<input type="text" name="ExamNO" value=<%= ExamNO %>>
+    <input type="text" name="ExamDesc" value=<%= ExamDesc %>> 
+    <input type="text" name="listeningChapterNumber" value=<%= listeningChapterNumber %>>       
+
+     
+ 	<table id='type1_table' border="1">
+   	<tr>
+      <td>문제</td>
+        
+	  <td><input type="text" name="listeningProblem" id=question_field /></td>
+	</tr>
+	
+	 <td>문제를 읽어주는 나레이터 mp3파일 첨부하기</td> 
+	<td><input type="file" id="mp3_upload" name= "listeningAnnouncementAudio1"></td> 
+   </tr>
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='listeningProblemArticle1'  id=question_field_a /><br />
+		  <input type="text" name='listeningProblemArticle2'  id=question_field_b /><br />
+		  <input type="text" name='listeningProblemArticle3'  id=question_field_c /><br />
+		  <input type="text" name='listeningProblemArticle4'  id=question_field_d />
+	   </td>
+   </tr>
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="d" />d
+   </tr>
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='listeningProblemComment'  id=description_field />
+        
+   </tr>
+   
+</table>
+		<button type="submit">출제하기</button>
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+
+
+</div>		
+	<div id="listening_qtype_2">	
+    <form id='listening_qtype_11111' method="post" action="process/multer/addProblemListening">    
+    
+    
+	<h1>QuestionType:Listen Again</h1>	
+	<input type="hidden" name="listeningProblemType" value=2>	
+	
+ 	<table id='type1_table' border="1">
+	<tr>
+		<td> lecture/conversation 선택하기 </td>
+		<td>
+		<select name="listeningAnnouncementText1">
+			<option value="Listen again to part of the lecture, Then answer the question.">Listen again to part of the lecture, Then answer the question.</option>
+			<option value="Listen again to part of the conversation, Then answer the question.">Listen again to part of the conversation, Then answer the question.</option>
+		</select>
+		</td>	
+	</tr>
+	<tr>
+		<td> lecture/conversation narrator mp3파일 업로드 하기 </td>
+		<td> <input type="file" id="mp3_upload" name= "listeningAnnouncementAudio1"> </td>
+	</tr>
+	<tr>	
+		<td> partial lecture/conversataion mp3파일 업로드 하기 </td>
+		<td> <input type="file" id="mp3_upload" name= "listeningProblemAudio1"> </td> 
+	</tr>
+	
+	<tr>	
+		<td> partial lecture/conversataion img파일 업로드 하기 </td>
+		<td> <input type="file" id="img_upload" name= " listeningProblemImage"> </td> 
+	</tr>
+	
+	<tr>
+      <td>문제</td>
+	  <td><input type="text" name="listeningProblem" id=question_field /></td>
+	</tr>
+	
+	<tr>
+      <td>문제와 관련된 mp3파일 첨부하기</td>
+	  <td> <input type="file" name="listeningProblemAudio2"/></td>
+	</tr>
+	
+	<tr>
+	<td>문제를 읽어주는 narrator mp3파일 첨부하기</td> 
+	<td><input type="file" id="mp3_upload" name= "listeningAnnouncementAudio2"></td> 
+   </tr>
+   
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='listeningProblemArticle1'  id=question_field_a /><br />
+		  <input type="text" name='listeningProblemArticle2'  id=question_field_b /><br />
+		  <input type="text" name='listeningProblemArticle3'  id=question_field_c /><br />
+		  <input type="text" name='listeningProblemArticle4'  id=question_field_d />
+	   </td>
+   </tr>
+   
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="d" />d
+   </tr>
+   
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='listeningProblemComment'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+
+			
+		
+</div>
+
+<div id="listening_qtype_3">
+	
+    <form id='listening_qtype_11111' method="post" action="process/multer/addProblemListening">    
+    
+    
+		<h1>QuestionType:Inference</h1>	
+	<input type="hidden" name="listeningProblemType" value=2>	
+	
+ 	<table id='type1_table' border="1">
+	<tr>
+		<td> lecture/conversation 선택하기 </td>
+		<td>
+		<select name="listeningAnnouncementText1">
+			<option value="Listen again to part of the lecture, Then answer the question.">Listen again to part of the lecture, Then answer the question.</option>
+			<option value="Listen again to part of the conversation, Then answer the question.">Listen again to part of the conversation, Then answer the question.</option>
+		</select>
+		</td>	
+	</tr>
+	<tr>
+		<td> lecture/conversation narrator mp3파일 업로드 하기 </td>
+		<td> <input type="file" id="mp3_upload" name= "listeningAnnouncementAudio1"> </td>
+	</tr>
+	<tr>	
+		<td> partial lecture/conversataion mp3파일 업로드 하기 </td>
+		<td> <input type="file" id="mp3_upload" name= "listeningProblemAudio1"> </td> 
+	</tr>
+	
+	<tr>	
+		<td> partial lecture/conversataion img파일 업로드 하기 </td>
+		<td> <input type="file" id="img_upload" name= " listeningProblemImage"> </td> 
+	</tr>
+	
+	<tr>
+      <td>문제</td>
+	  <td><input type="text" name="listeningProblem" id=question_field /></td>
+	</tr>
+	
+	<tr>
+      <td>문제와 관련된 mp3파일 첨부하기</td>
+	  <td> <input type="file" name="listeningProblemAudio2"/></td>
+	</tr>
+	
+	<tr>
+	<td>문제를 읽어주는 narrator mp3파일 첨부하기</td> 
+	<td><input type="file" id="mp3_upload" name= "listeningAnnouncementAudio2"></td> 
+   </tr>
+   
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='listeningProblemArticle1'  id=question_field_a /><br />
+		  <input type="text" name='listeningProblemArticle2'  id=question_field_b /><br />
+		  <input type="text" name='listeningProblemArticle3'  id=question_field_c /><br />
+		  <input type="text" name='listeningProblemArticle4'  id=question_field_d />
+	   </td>
+   </tr>
+   
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="d" />d
+   </tr>
+   
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='listeningProblemComment'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+			
+		</div>	
+	
+	<div id="listening_qtype_4">
+    <form id='listening_qtype_11111' method="post" action="process/multer/addProblemListening">    
+    
+    
+<h1>Attitude & Purpose</h1>	
+	<input type="hidden" name="listeningProblemType" value=2>	
+	
+ 	<table id='type1_table' border="1">
+	<tr>
+		<td> lecture/conversation 선택하기 </td>
+		<td>
+		<select name="listeningAnnouncementText1">
+			<option value="Listen again to part of the lecture, Then answer the question.">Listen again to part of the lecture, Then answer the question.</option>
+			<option value="Listen again to part of the conversation, Then answer the question.">Listen again to part of the conversation, Then answer the question.</option>
+		</select>
+		</td>	
+	</tr>
+	<tr>
+		<td> lecture/conversation narrator mp3파일 업로드 하기 </td>
+		<td> <input type="file" id="mp3_upload" name= "listeningAnnouncementAudio1"> </td>
+	</tr>
+	<tr>	
+		<td> partial lecture/conversataion mp3파일 업로드 하기 </td>
+		<td> <input type="file" id="mp3_upload" name= "listeningProblemAudio1"> </td> 
+	</tr>
+	
+	<tr>	
+		<td> partial lecture/conversataion img파일 업로드 하기 </td>
+		<td> <input type="file" id="img_upload" name= " listeningProblemImage"> </td> 
+	</tr>
+	
+	<tr>
+      <td>문제</td>
+	  <td><input type="text" name="listeningProblem" id=question_field /></td>
+	</tr>
+	
+	<tr>
+      <td>문제와 관련된 mp3파일 첨부하기</td>
+	  <td> <input type="file" name="listeningProblemAudio2"/></td>
+	</tr>
+	
+	<tr>
+	<td>문제를 읽어주는 narrator mp3파일 첨부하기</td> 
+	<td><input type="file" id="mp3_upload" name= "listeningAnnouncementAudio2"></td> 
+   </tr>
+   
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='listeningProblemArticle1'  id=question_field_a /><br />
+		  <input type="text" name='listeningProblemArticle2'  id=question_field_b /><br />
+		  <input type="text" name='listeningProblemArticle3'  id=question_field_c /><br />
+		  <input type="text" name='listeningProblemArticle4'  id=question_field_d />
+	   </td>
+   </tr>
+   
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="d" />d
+   </tr>
+   
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='listeningProblemComment'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+		</div>
+		
+<div id="listening_qtype_5">		
+		
+    <form id='listening_qtype_11111' method="post" action="process/multer/addProblemListening">    
+    
+    
+	<h1>QuestionType:Table Completion</h1>	
+	<input type="hidden" name="listeningProblemType" value=1>	
+	
+ 	<table id='type1_table' border="1">
+   	<tr>
+      <td>문제</td>
+        
+	  <td><input type="text" name="listeningProblem" id=question_field /></td>
+	</tr>
+		
+	 <td>문제를 읽어주는 나레이터 mp3파일 첨부하기</td> 
+	<td><input type="file" id="mp3_upload" name= "listeningAnnouncementAudio1"></td> 
+   </tr>
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='listeningProblemArticle1'  id=question_field_a /> (a)<br />
+		  <input type="text" name='listeningProblemArticle2'  id=question_field_b /> (b)<br />
+		  <input type="text" name='listeningProblemArticle3'  id=question_field_c /> (c)<br />
+		  <input type="text" name='listeningProblemArticle4'  id=question_field_d /> (d)<br />
+		  <input type="text" name='listeningProblemArticle5'  id=question_field_e /> (e)<br />	
+		  <input type="text" name='listeningProblemArticle6'  id=question_field_f /> (f)
+	   </td>
+   </tr>
+   <tr>
+      <td>정답</td>
+      <td>
+		  				문항 1번이 true 라면, a 번에 체크를 해주시면 됩니다. 아니라면 빈 상태 유지.최대 6문제 까지 가능 <p>
+		  				<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="c" />c<br/>
+						<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="d" />d<br/>
+						<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="e" />e<br/>
+						<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="d" />f
+   </tr>
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='listeningProblemComment'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+	<input type=button value="이챕터저장하기">
+	<input type=button value="이전문제">
+	<input type=button value="다음문제">
+			
+</div>
+		
+    <form id='listening_qtype_11111' method="post" action="process/multer/addProblemListening">    
+    
+    
+	<h1>QuestionType: Multiple Answers</h1>	
+	<input type="hidden" name="listeningProblemType" value=1>	
+	
+ 	<table id='type1_table' border="1">
+   	<tr>
+      <td>문제</td>
+        
+	  <td><input type="text" name="listeningProblem" id=question_field /></td>
+	</tr>
+	
+	 <td>문제를 읽어주는 나레이터 mp3파일 첨부하기</td> 
+	<td><input type="file" id="mp3_upload" name= "listeningAnnouncementAudio1"></td> 
+   </tr>
+   <tr>
+      <td>문항</td>
+      <td>
+		  최대 5문제, 정답 3개 까지 처리 가능합니다 <p>
+		  <input type="text" name='listeningProblemArticle1'  id=question_field_a /><br />
+		  <input type="text" name='listeningProblemArticle2'  id=question_field_b /><br />
+		  <input type="text" name='listeningProblemArticle3'  id=question_field_c /><br />
+		  <input type="text" name='listeningProblemArticle4'  id=question_field_d /><br />
+		  <input type="text" name='listeningProblemArticle5'  id=question_field_e /><br />
+			
+	   </td>
+   </tr>
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="c" />c<br/>
+						<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="d" />d<br/>
+						<input type="checkbox" id="answer_value" name="listeningProblemAnswer" value="e" />e<br/>
+						
+   </tr>
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='listeningProblemComment'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+	<input type=button value="이챕터저장하기">
+	<input type=button value="이전문제">
+	<input type=button value="다음문제">
+				
+</div>
+	
+	<div id="reading_qtype_1">
+		
+	<h1>Sentence Simplification</h1>	
+	
+	
+	<form id='form1'>
+ 	<table id='type1_table' border="1">
+   	<tr>
+      <th>문제</th>
+      <th><input type="text" name='question_field' id=question_field /></th>
+   </tr>
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='question_field'  id=question_field_a /><br />
+		  <input type="text" name='question_field'  id=question_field_b /><br />
+		  <input type="text" name='question_field'  id=question_field_c /><br />
+		  <input type="text" name='question_field'  id=question_field_d />
+	   </td>
+   </tr>
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="answer_value" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="answer_value" value="d" />d
+   </tr>
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='question_field'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+	<input type=button value="이챕터저장하기">
+	<input type=button value="이전문제">
+	<input type=button value="다음문제">
+
+	<script src="../../toeflassets/js/toeflAddExam_qtype.js"></script>	
+	
+		
+</div>
+		
+		
+		
+		
+	<div id ="reading_qtype_2">
+		
+	<h1>Fact &amp; Negative Fact</h1>	
+	
+	
+	<form id='form1'>
+ 	<table id='type1_table' border="1">
+   	<tr>
+      <th>문제</th>
+      <th><input type="text" name='question_field' id=question_field /></th>
+   </tr>
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='question_field'  id=question_field_a /><br />
+		  <input type="text" name='question_field'  id=question_field_b /><br />
+		  <input type="text" name='question_field'  id=question_field_c /><br />
+		  <input type="text" name='question_field'  id=question_field_d />
+	   </td>
+   </tr>
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="answer_value" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="answer_value" value="d" />d
+   </tr>
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='question_field'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+	<input type=button value="이챕터저장하기">
+	<input type=button value="이전문제">
+	<input type=button value="다음문제">
+		
+</div>	
+		
+		
+<div id="reading_qtype_3">		
+	<h1>QuestionType: Vocabulary</h1>	
+	
+	
+	<form id='form1'>
+ 	<table id='type1_table' border="1">
+   	<tr>
+      <th>문제</th>
+      <th><input type="text" name='question_field' id=question_field /></th>
+   </tr>
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='question_field'  id=question_field_a /><br />
+		  <input type="text" name='question_field'  id=question_field_b /><br />
+		  <input type="text" name='question_field'  id=question_field_c /><br />
+		  <input type="text" name='question_field'  id=question_field_d />
+	   </td>
+   </tr>
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="answer_value" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="answer_value" value="d" />d
+   </tr>
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='question_field'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+	<input type=button value="이챕터저장하기">
+	<input type=button value="이전문제">
+	<input type=button value="다음문제">
+		
+</div>		
+		
+		
+<div id="reading_qtype_4">
+	<h1>QuestionType: Reference</h1>	
+	
+	
+	<form id='form1'>
+ 	<table id='type1_table' border="1">
+   	<tr>
+      <th>문제</th>
+      <th><input type="text" name='question_field' id=question_field /></th>
+   </tr>
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='question_field'  id=question_field_a /><br />
+		  <input type="text" name='question_field'  id=question_field_b /><br />
+		  <input type="text" name='question_field'  id=question_field_c /><br />
+		  <input type="text" name='question_field'  id=question_field_d />
+	   </td>
+   </tr>
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="answer_value" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="answer_value" value="d" />d
+   </tr>
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='question_field'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+	<input type=button value="이챕터저장하기">
+	<input type=button value="이전문제">
+	<input type=button value="다음문제">
+		
+</div>
+	
+	<div id="reading_qtype_5">	
+	<h1>QuestionType: rhetorical Purpose</h1>	
+	
+	
+	<form id='form1'>
+ 	<table id='type1_table' border="1">
+   	<tr>
+      <th>문제</th>
+      <th><input type="text" name='question_field' id=question_field /></th>
+   </tr>
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='question_field'  id=question_field_a /><br />
+		  <input type="text" name='question_field'  id=question_field_b /><br />
+		  <input type="text" name='question_field'  id=question_field_c /><br />
+		  <input type="text" name='question_field'  id=question_field_d />
+	   </td>
+   </tr>
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="answer_value" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="answer_value" value="d" />d
+   </tr>
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='question_field'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+	<input type=button value="이챕터저장하기">
+	<input type=button value="이전문제">
+	<input type=button value="다음문제">
+		
+</div>
+		
+	
+	<div id="reading_qtype_6">
+	<h1>QuestionType: Inference</h1>	
+	
+	
+	<form id='form1'>
+ 	<table id='type1_table' border="1">
+   	<tr>
+      <th>문제</th>
+      <th><input type="text" name='question_field' id=question_field /></th>
+   </tr>
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='question_field'  id=question_field_a /><br />
+		  <input type="text" name='question_field'  id=question_field_b /><br />
+		  <input type="text" name='question_field'  id=question_field_c /><br />
+		  <input type="text" name='question_field'  id=question_field_d />
+	   </td>
+   </tr>
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="answer_value" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="answer_value" value="d" />d
+   </tr>
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='question_field'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+	<input type=button value="이챕터저장하기">
+	<input type=button value="이전문제">
+	<input type=button value="다음문제">
+</div>	
+		
+		
+<div id="reading_qtype_7">		
+	<h1>Insertion</h1>	
+	
+	
+	<form id='form1'>
+ 	<table id='type1_table' border="1">
+   	<tr>
+		<td colspan="2"><label> Look at the four squares &#91; &#9679; &#93; that indicate where the following sentence could be added to the passage.</label></td>
+	</tr>
+	<tr>	
+      <td>문제</td>
+		
+      <td><input type="textarea" name='question_field' id=question_field /></td>
+   </tr>
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='question_field'  id=question_field_a /><br />
+		  <input type="text" name='question_field'  id=question_field_b /><br />
+		  <input type="text" name='question_field'  id=question_field_c /><br />
+		  <input type="text" name='question_field'  id=question_field_d />
+	   </td>
+   </tr>
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="answer_value" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="c" />c<br/>
+                    	<input type="checkbox" id="answer_value" name="answer_value" value="d" />d
+   </tr>
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='question_field'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+	<input type=button value="이챕터저장하기">
+	<input type=button value="이전문제">
+	<input type=button value="다음문제">
+</div>		
+
+		
+<div id="reading_qtype_8">		
+	<h1>Summary</h1>	
+	
+	
+	<form id='form1'>
+ 	<table id='type1_table' border="1">
+   	<tr>
+      <th>문제</th>
+      <th><input type="text" name='question_field' id=question_field /></th>
+   </tr>
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='question_field'  id=question_field_a /><br />
+		  <input type="text" name='question_field'  id=question_field_b /><br />
+		  <input type="text" name='question_field'  id=question_field_c /><br />
+		   <input type="text" name='question_field'  id=question_field_d /><br />
+		  <input type="text" name='question_field'  id=question_field_e /><br />
+		  <input type="text" name='question_field'  id=question_field_f />
+		  
+	   </td>
+   </tr>
+   <tr>
+      <td>정답</td>
+      <td>				<input type="checkbox" id="answer_value" name="answer_value" value="a" />a<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="c" />c<br/>
+		    		<input type="checkbox" id="answer_value" name="answer_value" value="d" />d<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="e" />e<br/>
+                    	<input type="checkbox" id="answer_value" name="answer_value" value="f" />f
+   </tr>
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='question_field'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+	<input type=button value="이챕터저장하기">
+	<input type=button value="이전문제">
+	<input type=button value="다음문제">
+</div>
+		
+<div id="reading_qtype_9">	
+
+	<h1>Category Chart</h1>	
+	
+	
+	<form id='form1'>
+ 	<table id='type1_table' border="1">
+   	<tr>
+      <th>문제</th>
+      <th><input type="text" name='question_field' id=question_field /></th>
+   </tr>
+	<tr>
+		
+	</tr>	
+   <tr>
+      <td>문항</td>
+      <td>
+		  <input type="text" name='question_field'  id=question_field_a /><br />
+		  <input type="text" name='question_field'  id=question_field_b /><br />
+		  <input type="text" name='question_field'  id=question_field_c /><br />
+		  <input type="text" name='question_field'  id=question_field_d /><br />
+		  <input type="text" name='question_field'  id=question_field_e /><br />
+		  <input type="text" name='question_field'  id=question_field_f /><br />
+		  <input type="text" name='question_field'  id=question_field_g />
+	   </td>
+   </tr>
+	<td>category1</td>
+	 <td><input type="text" name=category1></td>		
+   <tr>
+      <td>정답</td>
+	   
+      <td>
+		  <input type="checkbox"id="answer_value" n	ame="answer_value" value="a"/>a<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="c" />c<br/>
+		   <input type="checkbox"id="answer_value" n	ame="answer_value" value="d"/>d<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="e" />e<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="f" />f<br/>
+                    	<input type="checkbox" id="answer_value" name="answer_value" value="g" />g
+   </tr>
+	<td>category2</td>
+	 <td><input type="text" name=category2></td>		
+	<tr>
+      <td>정답</td>
+	   
+      <td>				 <input type="checkbox"id="answer_value" n	ame="answer_value" value="a"/>a<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="b" />b<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="c" />c<br/>
+		   <input type="checkbox"id="answer_value" n	ame="answer_value" value="d"/>d<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="e" />e<br/>
+                        <input type="checkbox" id="answer_value" name="answer_value" value="f" />f<br/>
+                    	<input type="checkbox" id="answer_value" name="answer_value" value="g" />g
+   </tr>	
+   <tr>
+      <td>해설</td>
+	  <td><input type="text" name='question_field'  id=description_field />
+        
+   </tr>
+
+</table>
+	<input type="button" id="save" value="저장" onclick="read_only();">
+	
+</form>
+	
+	<input type=button value="수정" onclick="disable_read_only();">
+	<input type=button value="삭제">
+	
+	<input type=button value="이챕터저장하기">
+	<input type=button value="이전문제">
+	<input type=button value="다음문제">
+
+
+</div>	
+		
+</body>
+</html>	

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="utf-8">
+<!--title-->
+  <title>회원가입</title>
+<!--link-->
+  <link href="toeflassets/css/login_bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="toeflassets/css/simple-line-icons.css">
+	
+	<style>
+		li {list-style: none; display: inline-block;}
+		.passport {margin-bottom: 4%; margin-left: -1.2%}
+	</style>
+</head>
+<body>
+  <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		  <button type="button" class="undo" onclick ="history.back()"> &lt; </button>
+          <button type="button" class="close" onclick ="self.close()">×</button>
+          <h1>Sign up</h1>
+        </div>
+        <div class="modal-body">
+          <form class="form col-md-12 center-block">
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" placeholder="Password">
+            </div>
+			  <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="name">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-lg btn-block">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      <div class="modal-footer">
+        <form class="col-md-12">
+			<div class="passport">
+				<ul class="social social-circle">
+		  			<li><a href="/auth/google" class="btn social btn-primary google btn-lg btn-block icon-social-gplus"> google</a></li>
+		  			<li><a href="/auth/facebook" class="btn social btn-primary facebook btn-lg btn-block icon-social-facebook"> facebook</a></li>
+		  			<li><a href="/auth/youtube" class="btn social btn-primary youtube btn-lg btn-block icon-social-youtube"> youtube</a></li>
+	      			<li><a href="/auth/instagram" class="btn social btn-primary instagram btn-lg btn-block icon-social-instagram"> instagram</a></li>
+				</ul>
+			</div>
+		</form>	
+      </div>
+    </div>
+  </div>
+</div>
+	
+<!--script-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script src="toeflassets/js/login_bootstrap.js"></script>
+	
+</body>
+</html>

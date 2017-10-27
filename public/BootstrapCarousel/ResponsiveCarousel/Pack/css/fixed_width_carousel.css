@@ -1,0 +1,332 @@
+/*
+  StyleSheet For Responsive Bootstrap Carousel
+  Author: szthemes
+  Item Name: Responsive Bootstrap Carousel
+  Author URI: http://codecanyon.net/user/szthemes
+  Description: Different Types of Bootstrap Carousel
+
+								Content List
+  -----------------------------------------------------------------------------------
+	NAME ----------------------------------------LINE NUMBER--------------------- #
+	FIXED WIDTH CAROUSEL ------------------------30------------------------------ 01
+	RESPONSIVE ----------------------------------210----------------------------- 02	
+	COLORS --------------------------------------265----------------------------- 03	
+	[ Note: Line Numbers Are According To Notepad++ ]
+  ------------------------------------------------------------------
+							Fonts Styles
+  ------------------------------------------------------------------
+	'Open Sans', sans-serif ---------------------------------- 01
+	            FontAwesome ---------------------------------- 02
+  ------------------------------------------------------------------
+							Color Codes
+  ------------------------------------------------------------------
+	NAME    ------------------------RGB-------------------------- #
+	#ffffff -------------------rgb(255, 255, 255)---------------- 01
+	#000000 -------------------rgb(0, 0, 0)---------------------- 02
+	#8ac007 -------------------rgb(249, 191, 54)----------------- 03 	Replace Only This Color To Change Whole Color Scheme
+*/
+
+/*------------------------------------------------------*/
+/* FIXED WIDTH CAROUSEL
+/*------------------------------------------------------*/
+
+.fixed_width_carousel_wrapper {
+  margin-top: 0px;
+  overflow: hidden;
+  max-height: 550px;
+}
+.fixed_width_carousel_wrapper > .carousel-inner > .item > img,
+.fixed_width_carousel_wrapper > .carousel-inner > .item > a > img {
+  opacity: 0.6;
+  margin: auto;
+  width: 100% !important;
+}
+/*---------- LEFT/RIGHT CONTROL ----------*/
+.fixed_width_carousel_control_left,
+.fixed_width_carousel_control_right {
+  top: 40%;
+  z-index: 2;
+  opacity: 0;
+  width: 35px;
+  border: none;
+  height: 100px;
+  text-align: center;
+  -webkit-border-radius: 0%;
+  border-radius: 0%;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.fixed_width_carousel_wrapper:hover .fixed_width_carousel_control_left,
+.fixed_width_carousel_wrapper:hover .fixed_width_carousel_control_right {
+  opacity: 0.7;
+}
+.fixed_width_carousel_icons {
+  text-shadow: none;
+  line-height: 100px;
+  font-size: 25px !important;
+  font-weight: normal !important;
+}
+.fixed_width_carousel_control_left {
+  left: 0% !important;
+}
+.fixed_width_carousel_control_right {
+  right: 0% !important;
+}
+/*---------- FADE EFFECT ----------*/
+.fixed_width_carousel_fade {
+  opacity: 1;
+}
+.fixed_width_carousel_fade .item {
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  left: 0 !important;
+  display: block !important;
+  -webkit-transition: opacity ease-in-out 0.3s;
+  -moz-transition: opacity ease-in-out 0.3s;
+  -ms-transition: opacity ease-in-out 0.3s;
+  -o-transition: opacity ease-in-out 0.3s;
+  transition: opacity ease-in-out 0.3s;
+}
+.fixed_width_carousel_fade .item:first-child {
+  top: auto;
+  position: relative;
+}
+.fixed_width_carousel_fade .item.active {
+  opacity: 1;
+  z-index: 2;
+  -webkit-transition: opacity ease-in-out 0.3s;
+  -moz-transition: opacity ease-in-out 0.3s;
+  -ms-transition: opacity ease-in-out 0.3s;
+  -o-transition: opacity ease-in-out 0.3s;
+  transition: opacity ease-in-out 0.3s;
+}
+/*---------- CAPTION ----------*/
+.fixed_width_carousel_caption {
+  left: 0%;
+  right: 0%;
+  width: 100%;
+  bottom: 45%;
+  text-shadow: none;
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+.fixed_width_carousel_caption h1 {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+  -webkit-animation-timing-function: cubic-bezier(.22,.81,.01,.99);
+  animation-timing-function: cubic-bezier(.22,.81,.01,.99);
+}
+.fixed_width_carousel_caption p {
+  width: 50%;
+  float: none;
+  margin: auto;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 5px 10px 5px;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-timing-function: cubic-bezier(.22,.81,.01,.99);
+  animation-timing-function: cubic-bezier(.22,.81,.01,.99);
+}
+.fixed_width_carousel_button_colored,
+.fixed_width_carousel_button_colored:visited {
+  outline: 0;
+  width: auto;
+  height: 44px;
+  border: none;
+  padding: 0 23px;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+  margin: 25px 10px;
+  text-shadow: none;
+  line-height: 44px;
+  position: relative;
+  font-style: normal;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  font-weight: normal;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-border-radius: 0px; 
+  -moz-border-radius: 0px;
+  border-radius: 0px; 
+  -webkit-box-sizing:initial !important;
+  -moz-box-sizing:initial !important;
+  box-sizing:initial !important;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: color 0.3s ease-in-out 0s;
+  transition: color 0.3s ease-in-out 0s;
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+  -webkit-animation-timing-function: cubic-bezier(.22,.81,.01,.99);
+  animation-timing-function: cubic-bezier(.22,.81,.01,.99);
+}
+.fixed_width_carousel_button_colored:before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  -webkit-border-radius: 0px; 
+  -moz-border-radius: 0px;
+  border-radius: 0px; 
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out 0s;
+  transition: transform 0.3s ease-in-out 0s;
+}
+.fixed_width_carousel_button_colored:hover,
+.fixed_width_carousel_button_colored:active,
+.fixed_width_carousel_button_colored:focus {
+  box-shadow: none;	
+  outline: none !important;
+}
+.fixed_width_carousel_button_colored:hover:before,
+.fixed_width_carousel_button_colored:focus:before,
+.fixed_width_carousel_button_colored:active:before {
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+}
+
+/*------------------------------------------------------*/
+/* RESPONSIVE
+/*------------------------------------------------------*/
+
+/*---------- MEDIA 480px ----------*/
+@media only screen and (max-width: 480px) {
+  /*---------- CAPTION ----------*/
+  .fixed_width_carousel_caption {
+    bottom: -15px;
+  }
+  .fixed_width_carousel_caption h1 {
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+  .fixed_width_carousel_caption p {
+    width: 100%;
+    letter-spacing: 1px;
+    padding: 10px 5px 10px 5px;
+  }
+  .fixed_width_carousel_button_colored,
+  .fixed_width_carousel_button_colored:visited {
+    height: 34px;
+    padding: 0 13px;
+    margin: 10px 10px;
+    line-height: 34px;
+  }
+}
+
+/*---------- MEDIA 481px - 600px ----------*/
+@media (min-width: 481px) and (max-width: 600px) {
+  /*---------- CAPTION ----------*/
+  .fixed_width_carousel_caption {
+    bottom: -15px;
+  }
+  .fixed_width_carousel_caption h1 {
+    font-size: 40px;
+  }
+}
+
+/*---------- MEDIA 601px - 767px ----------*/
+@media (min-width: 601px) and (max-width: 767px) {
+  /*---------- CAPTION ----------*/
+  .fixed_width_carousel_caption {
+    bottom: 15%;
+  }
+}
+
+/*---------- MEDIA 768px - 991px ----------*/
+@media (min-width: 768px) and (max-width: 991px) {
+  /*---------- CAPTION ----------*/
+  .fixed_width_carousel_caption {
+    bottom: 20%;
+  }
+}
+
+/*------------------------------------------------------*/
+/* COLORS (PARROT GREEN)
+/*------------------------------------------------------*/
+
+.fixed_width_carousel_wrapper {
+  background: #000000;
+}
+/*---------- LEFT/RIGHT CONTROL ----------*/
+.fixed_width_carousel_control_left,
+.fixed_width_carousel_control_right {
+  color: #ffffff;
+  background: #000000 !important;
+}
+.fixed_width_carousel_control_left:hover,
+.fixed_width_carousel_control_left:active,
+.fixed_width_carousel_control_left:focus,
+.fixed_width_carousel_control_right:hover,
+.fixed_width_carousel_control_right:active,
+.fixed_width_carousel_control_right:focus {
+  color: #ffffff;
+  background: #8ac007 !important;
+}
+/*---------- CAPTION ----------*/
+.fixed_width_carousel_caption h1 {
+  color: #ffffff;
+}
+.fixed_width_carousel_caption p {
+  color: #ffffff;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+.fixed_width_carousel_button_colored,
+.fixed_width_carousel_button_colored:visited {
+  color: #ffffff;
+}
+.fixed_width_carousel_button_colored:hover,
+.fixed_width_carousel_button_colored:active,
+.fixed_width_carousel_button_colored:focus {
+  color: #ffffff !important;
+}
+.fixed_width_carousel_button_colored,
+.fixed_width_carousel_button_colored:visited {
+  background: #8ac007;
+}
+.fixed_width_carousel_button_colored:hover,
+.fixed_width_carousel_button_colored:active,
+.fixed_width_carousel_button_colored:focus {
+  background: #8ac007 !important;
+}
+.fixed_width_carousel_button_colored:before {
+  background: #000000;
+}
+
+/*---------- MEDIA QUERIES ----------*/
+@media only screen and (max-width: 600px) {
+  /*---------- LEFT/RIGHT CONTROL ----------*/
+  /*---------- LONG CONTROL ----------*/
+  .fixed_width_carousel_control_left,
+  .fixed_width_carousel_control_right,
+  .fixed_width_carousel_control_left:hover,
+  .fixed_width_carousel_control_left:active,
+  .fixed_width_carousel_control_left:focus,
+  .fixed_width_carousel_control_right:hover,
+  .fixed_width_carousel_control_right:active,
+  .fixed_width_carousel_control_right:focus	{
+    background: transparent !important;
+  }
+}
+/*---------- END ----------*/

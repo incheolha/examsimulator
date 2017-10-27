@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+
+	<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+	<!--[if IE 7]><html class="lt-ie9 lt-ie8"> <![endif]-->
+	<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+	<!--[if gt IE 8]><!--> 
+	
+<html>
+ 
+	<!--<![endif]-->
+	<!--======= Head =========-->
+	<head>
+	
+		<!--======= Meta =========-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!--======= Title =========-->
+		<title>Responsive Bootstrap Carousel</title>
+	
+		<!--======= Short-Cut Icon =========-->
+		<link rel="shortcut icon" href="images/star_logo.png"/>
+		
+		<!--======= Google Web Fonts =========-->	
+		<link href='http://fonts.googleapis.com/css?family=Raleway:500,700,400' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+		
+		<!--======= Helping Plug-in StyleSheets =========-->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="all">
+		
+		<!--======= Customized StyleSheets =========-->
+		<link href="css/doc_min.css" rel="stylesheet" media="all">
+		
+	</head>
+	
+<body>
+
+		<!--++++++++++ Navigation Bar ++++++++++-->
+		<div class="sz-navbar-header-wrap sz-navbar-header-wrap-separate" data-spy="affix" data-offset-top="1" data-offset-bottom="0">
+		
+			<div class="container">
+			
+				<div class="row">
+					
+					<div class="col-md-12">
+					
+						<!--======= Main Navigation Bar  =========-->
+						<nav class="navbar navbar-default sz-main-menu-bar">
+
+							<!--======= Toggle Button For Small Screens =========-->
+							<div class="navbar-header sz-menu-bar-header sz-menu-bar-header-transparent">
+								<a class="navbar-brand sz-navbar-brand" href="index.html">
+									<img class="img-responsive" src="images/logo.png" alt="logo" id="sz-logo"/>
+								</a>
+								<button type="button" class="navbar-toggle sz-menu-bar-toggle sz-menu-bar-toggle-transparent" data-toggle="collapse" data-target="#szNavbar">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>                        
+								</button>
+							</div>
+								
+							<!--======= Navbar Beginning =========-->				
+							<div class="collapse navbar-collapse sz-menu-collapse" id="szNavbar">
+													
+								<ul class="nav navbar-nav sz-menu-bar-nav sz-menu-bar-nav-transparent pull-right">
+									
+									<!--======= Home Tab =========-->
+									<li>
+										<a href="#home">HOME
+											
+										</a>
+									</li>
+									
+									<li>
+										<a href="#how-to">HOW TO...
+											
+										</a>
+									</li>	
+									<li>
+										<a href="#use_css">CSS
+											
+										</a>
+									</li>
+									
+									<li>
+										<a href="#html-section">HTML
+											
+										</a>
+									</li>	
+
+									<li>
+										<a href="#sz_image">IMAGES
+											
+										</a>
+									</li>
+									
+									<li>
+										<a href="#classes">CLASSES
+											
+										</a>
+									</li>
+
+									<li>
+										<a href="#sz_animation">ANIMATION
+											
+										</a>
+									</li>
+									
+									<li>
+										<a href="#sz_carousel">CAROUSEL
+											
+										</a>
+									</li>
+
+									<li>
+										<a href="#support">SUPPORT</a>
+									</li>
+														
+								</ul>	
+								
+							</div>
+						</nav> <!--++++++++++ End Main Navigation BAR ++++++++++-->
+					</div>
+				</div>	
+			</div>			
+		</div> <!--++++++++++ End Navigation BAR ++++++++++-->
+		
+		<div  id="home" class="container-fluid sz-doc-main-heading">
+		
+			<h1>GuideBook</h1>
+			<h2>Responsive Bootstrap Carousel</h2>
+			<h4>Last updated <br />( 10 July 2017 )</h4>
+		
+		</div>
+		
+		<div class="container sz-doc-introduction">
+
+			
+			<p class="thnx">Thank You for Purchasing Responsive Bootstrap Carousel. Please do not hesitate if you have any queries about this item. We are always there for your help. You can contact us on this e-mail address szthemes53@gmail.com.</p>
+			
+			<h1>What We Have Prepared ?</h1>
+			
+			<p>We have prepared a set of Carousels. This Pack includes Different types of carousel like thumbnail image gallery and content carousel with animated captions, testimonial carousel, portfolio carousel, video carousel etc.</p>
+			
+			<h1>Features</h1>
+			
+			<ul>
+			
+				<li>Touch Enabled</li>
+				<li>Built In Bootstrap</li>
+				<li>100% Responsive</li>
+				<li>Font Awesome Icons</li>
+				<li>Clean Documentation</li>
+				<li>Code Verified By W3C</li>
+				<li>Cross Browser Compatibility</li>
+			
+			</ul>
+		
+		</div>
+		
+		<div class="container sz-doc-how-to">
+		
+			<h1 id="how-to">How To...</h1>
+			<h3 id="how-to">Bootstrap, JQuery & FontAwesome</h3>
+			<p class="heading_span">First of all add the following bootstrap, jQuery and fontawesome files in <code>&lt;head/body&gt;</code> portion of your html file:</p>
+			
+				<ul class="sz-doc-code-ul well">
+					
+					<li><h4>CSS</h4></li>
+					
+					<li>&lt;!-- Bootstrap CSS --&gt;</li>
+					
+					<li><code>&lt;link href="css/bootstrap.min.css" rel="stylesheet" media="all"&gt;</code></li>
+					
+					<li>&lt;!-- Font Wesome CSS --&gt;</li>
+					
+					<li><code>&lt;link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all"&gt;</code></li>
+					
+					<li><h4>JavaScript/jQuery</h4></li>
+					
+					<li>&lt;!-- Bootstrap JavaScript --&gt;</li>
+					
+					<li><code>&lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;</code></li>
+					
+					<li>&lt;!-- JQuery - 3.2.1 --&gt;</li>
+					
+					<li><code>&lt;script src="js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</code></li>
+
+				</ul>
+				
+				<p>You can find these files in the following sub-folders of Main <code>Pack</code> folder:</p>
+				
+					<ul>
+					
+						<li>js</li>
+						<li>CSS</li>
+						<li>fonts</li>
+						<li>font-awesome-4.7.0</li>
+					
+					</ul>
+				
+				<br>
+				<h3>Or</h3>
+				<p>You can load Bootstrap, Font Awesome and jQuery files with a single line of code from their official online sources. You don't even have to download or install anything!</p>
+				
+				<ul class="sz-doc-code-ul well">
+				
+					<li><h4>CSS</h4></li>
+					
+					<li>&lt;!-- Bootstrap latest compiled and minified CSS --&gt;</li>
+					
+					<li><code>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"&gt;</code></li>
+					
+					<li>&lt;!-- Font Wesome CSS --&gt;</li>
+					
+					<li><code>&lt;link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"&gt;</code></li>
+					
+					<li><h4>JavaScript/jQuery</h4></li>
+					
+					<li>&lt;!-- jQuery - 3.2.1 --&gt;</li>
+					
+					<li><code>&lt;script src="//code.jquery.com/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</code></li>
+					
+					<li>&lt;!-- Bootstrap latest compiled and minified JavaScript --&gt;</li>
+					
+					<li><code>&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;</code></li>
+
+				</ul>
+
+				<h3>Animation & TouchSwipe Files</h3>
+				
+				<p class="heading_span">We used <code>animate.css of Daniel Eden</code> for animation. So you should also attach this from <code>css</code> folder in your HTML file.</p>
+				<p class="heading_span">To enable touch for mobiles and other devices you must attach <code>"jquery.touchSwipe.min.js"</code> from <code>"js"</code>folder</p>
+				
+				<ul class="sz-doc-code-ul well">
+					
+					<li>&lt;!-- Animation Plug-In CSS --&gt;</li>
+					
+					<li><code>&lt;link href="css/single_css_file/animate.min.css" rel="stylesheet"&gt;</code></li>
+					
+					<li>&lt;!-- Touch Enabled Plug-In JavaScript --&gt;</li>
+					
+					<li><code>&lt;script src="js/jquery.touchSwipe.min.js"&gt;&lt;/script&gt;</code></li>
+
+				</ul>
+				
+				<p>The further guide line about <code>animation.css</code> is mentioned in <code>Animation</code> Part below.</p>
+
+				<br>
+				<h1 id="use_css">Use of CSS</h1>
+				<p>In <code>Pack</code> Folder you will find <code>"CSS"</code> sub-folder. You can use CSS files from this folder by the following way: </p>
+				
+				<p>For every single HTML file you have to use CSS file as you can see below:</p>
+					<ul class="sz-doc-code-ul well">
+						
+						<li><code>fixed_width_carousel.css</code></li>
+						<li><code>ken_burns_effect_carousel.css</code></li>
+						<li><code>portfolio_columns_carousel.css</code></li>
+						<li><p>There are 36 files in <code>"css"</code> folder for all the HTML files. The detail about names of CSS files are mentioned in the table. Which ever file you want to use just attach that particular file in the <code>&lt;head/body&gt;</code> section of your HTML file.</p></li>
+						<li><h4>You Can Also Use Compressed CSS File From <code>mega_files</code> folder</h4></li>
+						<li><code>responsive_bootstrap_carousel_mega_min.css</code></li>
+						<li class="li_note">Note:<br>You can use only this file for all HTML files</li>
+					
+					</ul>
+
+				<h3>The CSS files those are used for HTML files are mentioned below in the table:</h3>
+
+				<div class="table-responsive">          
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>HTML</th>
+								<th>CSS</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+						
+							<tr>
+								<td>
+									<ul>
+										<li>fixed_width_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>fixed_width_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>full_width_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>full_width_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>ken_burns_effect_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>ken_burns_effect_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>one_color_blue_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>one_color_blue_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>one_color_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>one_color_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>portfolio_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>portfolio_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>post_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>post_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>rotate_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>rotate_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>simple_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>simple_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>simple_second_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>simple_second_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_thumbnails_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_thumbnails_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_thumbnails_ind_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_thumbnails_ind_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>thumbnail_image_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>thumbnail_image_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>thumbnail_image_gallery_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>thumbnail_image_gallery_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>thumbnail_image_left_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>thumbnail_image_left_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>thumbnail_text_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>thumbnail_text_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>thumbnail_text_left_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>thumbnail_text_left_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>vertical_slide_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>vertical_slide_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>video_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>video_carousel.css</li></ul></td>
+							</tr>
+
+							<tr>
+								<td>
+									<ul>
+										<li>portfolio_2_columns_video_carousel.html</li>
+										<li>portfolio_3_columns_video_carousel.html</li>
+										<li>portfolio_4_columns_video_carousel.html</li>
+										<li>portfolio_6_columns_video_carousel.html</li>
+										<li>adv_portfolio_2_columns_video_carousel.html</li>
+										<li>adv_portfolio_3_columns_video_carousel.html</li>
+										<li>adv_portfolio_4_columns_video_carousel.html</li>
+										<li>adv_portfolio_6_columns_video_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>portfolio_columns_video_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>commerce_2_columns_carousel.html</li>
+										<li>commerce_3_columns_carousel.html</li>
+										<li>commerce_4_columns_carousel.html</li>
+										<li>adv_commerce_2_columns_carousel.html</li>
+										<li>adv_commerce_3_columns_carousel.html</li>
+										<li>adv_commerce_4_columns_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>commerce_columns_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>portfolio_2_columns_carousel.html</li>
+										<li>portfolio_3_columns_carousel.html</li>
+										<li>portfolio_4_columns_carousel.html</li>
+										<li>adv_portfolio_2_columns_carousel.html</li>
+										<li>adv_portfolio_3_columns_carousel.html</li>
+										<li>adv_portfolio_4_columns_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>portfolio_columns_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>team_2_columns_carousel.html</li>
+										<li>team_3_columns_carousel.html</li>
+										<li>team_4_columns_carousel.html</li>
+										<li>adv_team_2_columns_carousel.html</li>
+										<li>adv_team_3_columns_carousel.html</li>
+										<li>adv_team_4_columns_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>team_columns_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>gp_product_advance_2_col_carousel.html</li>
+										<li>gp_product_advance_3_col_carousel.html</li>
+										<li>gp_product_advance_4_col_carousel.html</li>
+										<li>gp_product_advance_6_col_carousel.html</li>
+										<li>adv_gp_product_advance_2_col_carousel.html</li>
+										<li>adv_gp_product_advance_3_col_carousel.html</li>
+										<li>adv_gp_product_advance_4_col_carousel.html</li>
+										<li>adv_gp_product_advance_6_col_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>gp_product_carousel_advance.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_2_col_speech_bubble_border_carousel.html</li>
+										<li>testimonial_3_col_speech_bubble_border_carousel.html</li>
+										<li>testimonial_4_col_speech_bubble_border_carousel.html</li>
+										<li>adv_testimonial_2_col_speech_bubble_border_carousel.html</li>
+										<li>adv_testimonial_3_col_speech_bubble_border_carousel.html</li>
+										<li>adv_testimonial_4_col_speech_bubble_border_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_speech_bubble_border_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_2_col_speech_bubble_carousel.html</li>
+										<li>testimonial_3_col_speech_bubble_carousel.html</li>
+										<li>testimonial_4_col_speech_bubble_carousel.html</li>
+										<li>adv_testimonial_2_col_speech_bubble_carousel.html</li>
+										<li>adv_testimonial_3_col_speech_bubble_carousel.html</li>
+										<li>adv_testimonial_4_col_speech_bubble_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_speech_bubble_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_2_col_speech_bubble_circle_carousel.html</li>
+										<li>testimonial_3_col_speech_bubble_circle_carousel.html</li>
+										<li>testimonial_4_col_speech_bubble_circle_carousel.html</li>
+										<li>adv_testimonial_2_col_speech_bubble_circle_carousel.html</li>
+										<li>adv_testimonial_3_col_speech_bubble_circle_carousel.html</li>
+										<li>adv_testimonial_4_col_speech_bubble_circle_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_speech_bubble_circle_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_2_columns_carousel.html</li>
+										<li>testimonial_3_columns_carousel.html</li>
+										<li>testimonial_4_columns_carousel.html</li>
+										<li>adv_testimonial_2_columns_carousel.html</li>
+										<li>adv_testimonial_3_columns_carousel.html</li>
+										<li>adv_testimonial_4_columns_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_columns_carousel.css</li></ul></td>
+							</tr>
+
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_2_columns_text_carousel.html</li>
+										<li>testimonial_3_columns_text_carousel.html</li>
+										<li>testimonial_4_columns_text_carousel.html</li>
+										<li>adv_testimonial_2_columns_text_carousel.html</li>
+										<li>adv_testimonial_3_columns_text_carousel.html</li>
+										<li>adv_testimonial_4_columns_text_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_columns_text_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_box_spch_2_col_carousel.html</li>
+										<li>testimonial_box_spch_3_col_carousel.html</li>
+										<li>testimonial_box_spch_4_col_carousel.html</li>
+										<li>adv_testimonial_box_spch_2_col_carousel.html</li>
+										<li>adv_testimonial_box_spch_3_col_carousel.html</li>
+										<li>adv_testimonial_box_spch_4_col_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_speech_bubble_box_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_box_spch_2_col_left_carousel.html</li>
+										<li>testimonial_box_spch_3_col_left_carousel.html</li>
+										<li>testimonial_box_spch_4_col_left_carousel.html</li>
+										<li>adv_testimonial_box_spch_2_col_left_carousel.html</li>
+										<li>adv_testimonial_box_spch_3_col_left_carousel.html</li>
+										<li>adv_testimonial_box_spch_4_col_left_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_speech_bubble_box_left_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_box_spch_2_col_right_carousel.html</li>
+										<li>testimonial_box_spch_3_col_right_carousel.html</li>
+										<li>testimonial_box_spch_4_col_right_carousel.html</li>
+										<li>adv_testimonial_box_spch_2_col_right_carousel.html</li>
+										<li>adv_testimonial_box_spch_3_col_right_carousel.html</li>
+										<li>adv_testimonial_box_spch_4_col_right_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_speech_bubble_box_right_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_box_spch_2_col_top_carousel.html</li>
+										<li>testimonial_box_spch_3_col_top_carousel.html</li>
+										<li>testimonial_box_spch_4_col_top_carousel.html</li>
+										<li>adv_testimonial_box_spch_2_col_top_carousel.html</li>
+										<li>adv_testimonial_box_spch_3_col_top_carousel.html</li>
+										<li>adv_testimonial_box_spch_4_col_top_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_speech_bubble_box_top_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>testimonial_box_spch_2_col_bottom_carousel.html</li>
+										<li>testimonial_box_spch_3_col_bottom_carousel.html</li>
+										<li>testimonial_box_spch_4_col_bottom_carousel.html</li>
+										<li>adv_testimonial_box_spch_2_col_bottom_carousel.html</li>
+										<li>adv_testimonial_box_spch_3_col_bottom_carousel.html</li>
+										<li>adv_testimonial_box_spch_4_col_bottom_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>testimonial_speech_bubble_box_bottom_carousel.css</li></ul></td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>range_slides_2_columns_carousel.html</li>
+										<li>range_slides_3_columns_carousel.html</li>
+										<li>range_slides_4_columns_carousel.html</li>
+										<li>range_slides_6_columns_carousel.html</li>
+										<li>adv_range_slides_2_columns_carousel.html</li>
+										<li>adv_range_slides_3_columns_carousel.html</li>
+										<li>adv_range_slides_4_columns_carousel.html</li>
+										<li>adv_range_slides_6_columns_carousel.html</li>
+									</ul>
+								</td>
+								<td><ul><li>range_slides_carousel.css</li></ul></td>
+							</tr>
+
+						</tbody>
+
+					</table>
+				</div>
+				<h1>Use of JavaScript/JQuery</h1>
+				
+				<p>In <code>Pack</code> folder you will find <code>"js"</code> sub-folder. In <code>"js"</code> folder you will find <code>"responsive_bootstrap_carousel.js"</code> file. Just attach this file in <code>&lt;head/body&gt;</code> of your HTML file.</p>
+
+				<h1>Now</h1>
+				
+				<ul class="sz-doc-code-ul well">
+				
+					<li><h4>CSS</h4></li>
+					
+					<li>&lt;!-- Pack CSS --&gt;</li>
+					
+					<li><code>&lt;link href="css/single_css_file/responsive_bootstrap_carousel_mega_min.css" rel="stylesheet" media="all"&gt;</code></li>
+					
+					<li><h4>JavaScript/jQuery</h4></li>
+					
+					<li>&lt;!-- Pack JavaScript --&gt;</li>
+					
+					<li><code>&lt;script src="js/responsive_bootstrap_carousel.js"&gt;&lt;/script&gt;</code></li>
+
+				</ul>
+
+				<h1>Now It will look like this</h1>
+				
+				<pre class="sz-doc-pre">
+
+&lt;!DOCTYPE html&gt;
+
+&lt;html lang="en-US"&gt;
+
+	&lt;head&gt;
+		
+		<span class="sz-doc-pre-heading">&lt;!--======= Bootstrap StyleSheet =========--&gt;	</span>
+		
+		&lt;link href="css/bootstrap.min.css" rel="stylesheet" media="all"&gt;
+		
+		<span class="sz-doc-pre-heading">&lt;!--======= Awesome Font StyleSheet =========--&gt;</span>		
+		
+		&lt;link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all"&gt;
+		
+		<span class="sz-doc-pre-heading">&lt;!--======= Animation StyleSheet =========--&gt;	</span>
+		
+		&lt;link href="css/animate.min.css" rel="stylesheet"&gt;
+		
+		<span class="sz-doc-pre-heading">&lt;!--======= Pack StyleSheet =========--&gt;	</span>
+		
+		&lt;link href="css/mega_files/responsive_bootstrap_carousel_mega_min.css" rel="stylesheet" media="all"&gt;
+
+	&lt;/head&gt;
+	
+&lt;body&gt;
+
+
+		<span class="sz-doc-pre-heading">&lt;!--*-*-*-*-*-*-*-*-*-*- Carousel *-*-*-*-*-*-*-*-*-*--&gt;</span>
+		
+		&lt;carousel&gt;
+		
+		&lt;/carousel&gt;
+        
+		<span class="sz-doc-pre-heading">&lt;!--*-*-*-*-*-*-*-*-*-*- End Carousel *-*-*-*-*-*-*-*-*-*--&gt;</span>
+
+
+		<span class="sz-doc-pre-heading">&lt;!--======= jQuery =========--&gt;</span>
+		
+		&lt;script src="js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+		<span class="sz-doc-pre-heading">&lt;!--======= Bootstrap =========--&gt;</span>	
+		
+		&lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+		
+		<span class="sz-doc-pre-heading">&lt;!--======= TouchSwipe =========--&gt;</span>	
+		
+		&lt;script src="js/jquery.touchSwipe.min.js"&gt;&lt;/script&gt;
+
+		<span class="sz-doc-pre-heading">&lt;!--======= Pack JavaScript =========--&gt;</span>	
+		
+		&lt;script src="js/responsive_bootstrap_carousel.js"&gt;&lt;/script&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+				</pre>
+
+				
+				<h1 id="html-section">How To Use HTML</h1>
+				
+				<p>After attaching all above files you will be able to attach HTML. There are 141 HTML files in the <code>pack</code> folder. To use HTML Code Please follow the instruction:</p>
+				
+				<ul class="sz-doc-code-ul well">
+				
+					<li>1- Open HTML file that you want to use in a code editor such as Notepad++</li>
+					
+					<li>2- Copy all HTML code of <code>Carousel</code>.</li>
+					
+					<li>3- Paste this <code>Carousel</code> code in your own Project file</li>
+					
+					<li>4- Save your file and open it.</li>
+
+				</ul>
+				
+				<h2>HTML Structure</h2>
+				
+				<pre class="sz-doc-pre">
+&lt;body&gt;
+
+		<span class="sz-doc-pre-heading">&lt;!--*-*-*-*-*-*-*-*-*-*-  BOOTSTRAP CAROUSEL  *-*-*-*-*-*-*-*-*-*--&gt;</span>
+		&lt;div id="fixed_width_carousel"   class="carousel   fixed_width_carousel_fade   animate_text   fixed_width_carousel_wrapper"   data-ride="carousel"   data-interval="6000"   data-pause="hover"&gt;
+		
+				&lt;!--======= First slide =========--&gt;
+				&lt;div class="item active"&gt;
+				
+				&lt;/div&gt;
+				
+				&lt;!--======= Second slide =========--&gt;
+				&lt;div class="item"&gt;
+				
+				&lt;/div&gt;
+				
+		&lt;/div&gt; <span class="sz-doc-pre-heading">&lt;!--*-*-*-*-*-*-*-*-*-*-  End BOOTSTRAP CAROUSEL  *-*-*-*-*-*-*-*-*-*--&gt;</span>
+		
+		
+&lt;/body&gt;
+				</pre>
+				
+			<h1 id="sz_image">How To Change Images</h1>
+			<p>You can find <code>images</code> sub-folder in the <code>Pack</code>folder. You just have to replace all the Pics/Video of <code>images</code> folder with your own.</p>
+			<br>
+			<div class="alert alert-danger">
+				<strong>Note:</strong> Images used in the demo are not include in Pack.
+			</div>
+			
+
+			<h1 id="classes">Classes</h1>
+			<p>Responsive Bootstrap Carousel pack build with Bootstrap. So we used our own classes names to override its formatting.</p>
+			
+			<div class="table-responsive">          
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>Layouts</th>
+							<th>Pack Class</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+
+						<tr>
+							<td>commerce_columns_carousel</td>
+							<td><code>.commerce_columns_</code></td>
+						</tr>
+						<tr>
+							<td>fixed_width_carousel</td>
+							<td><code>.fixed_width_</code></td>
+						</tr>
+						<tr>
+							<td>full_width_carousel</td>
+							<td><code>.full_width_</code></td>
+						</tr>
+						<tr>
+							<td>gp_product_carousel_advance</td>
+							<td><code>.gp_products_</code></td>
+						</tr>
+						<tr>
+							<td>ken_burns_effect_carousel</td>
+							<td><code>.ken_burns_effect_</code></td>
+						</tr>
+						<tr>
+							<td>one_color_blue_carousel</td>
+							<td><code>.one_color_blue_</code></td>
+						</tr>
+						<tr>
+							<td>one_color_carousel</td>
+							<td><code>.one_color_</code></td>
+						</tr>
+						<tr>
+							<td>portfolio_carousel</td>
+							<td><code>.portfolio_</code></td>
+						</tr>
+						<tr>
+							<td>portfolio_columns_carousel</td>
+							<td><code>.portfolio_columns_</code></td>
+						</tr>
+						<tr>
+							<td>portfolio_columns_video_carousel</td>
+							<td><code>.portfolio_columns_video_</code></td>
+						</tr>
+						<tr>
+							<td>post_carousel</td>
+							<td><code>.post_</code></td>
+						</tr>
+						<tr>
+							<td>range_slides_carousel</td>
+							<td><code>.range_slides_</code></td>
+						</tr>
+						<tr>
+							<td>rotate_carousel</td>
+							<td><code>.rotate_</code></td>
+						</tr>
+						<tr>
+							<td>simple_carousel</td>
+							<td><code>.simple_</code></td>
+						</tr>
+						<tr>
+							<td>simple_second_carousel</td>
+							<td><code>.simple_second_</code></td>
+						</tr>
+						<tr>
+							<td>team_columns_carousel</td>
+							<td><code>.team_columns_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_carousel</td>
+							<td><code>.testimonial_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_columns_carousel</td>
+							<td><code>.testimonial_columns_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_columns_text_carousel</td>
+							<td><code>.testimonial_columns_text_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_speech_bubble_border_carousel</td>
+							<td><code>.testimonial_spch_babl_brdr_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_speech_bubble_box_bottom_carousel</td>
+							<td><code>.testim_spch_babl_box_botm_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_speech_bubble_box_carousel</td>
+							<td><code>.testimonial_spch_babl_box_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_speech_bubble_box_left_carousel</td>
+							<td><code>.testim_spch_babl_box_left_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_speech_bubble_box_right_carousel</td>
+							<td><code>.testim_spch_babl_box_right_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_speech_bubble_box_top_carousel</td>
+							<td><code>.testmin_spch_babl_box_top_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_speech_bubble_carousel</td>
+							<td><code>.testimonial_spch_babl_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_speech_bubble_circle_carousel</td>
+							<td><code>.testimonial_spch_babl_cricle_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_thumbnails_carousel</td>
+							<td><code>.testimonial_thumbnails_</code></td>
+						</tr>
+						<tr>
+							<td>testimonial_thumbnails_ind_carousel</td>
+							<td><code>.testimonial_thumbnails_ind_</code></td>
+						</tr>
+						<tr>
+							<td>thumbnail_image_carousel</td>
+							<td><code>.thumbnail_image_</code></td>
+						</tr>
+						<tr>
+							<td>thumbnail_image_gallery_carousel</td>
+							<td><code>.thumbnail_image_gallery_</code></td>
+						</tr>
+						<tr>
+							<td>thumbnail_image_left_carousel</td>
+							<td><code>.thumbnail_image_left_</code></td>
+						</tr>
+						<tr>
+							<td>thumbnail_text_carousel</td>
+							<td><code>.thumbnail_text_</code></td>
+						</tr>
+						<tr>
+							<td>thumbnail_text_left_carousel</td>
+							<td><code>.thumbnail_text_left_</code></td>
+						</tr>
+						<tr>
+							<td>vertical_slide_carousel</td>
+							
+							<td><code>.vertical_slide_</code></td>
+						</tr>
+						<tr>
+							<td>video_carousel</td>
+							
+							<td><code>.video_</code></td>
+						</tr>
+
+					</tbody>
+					
+				</table>
+			</div>
+			
+			<div class="alert alert-danger">
+				<strong>Note:</strong> Above classes examples are showing just pattern and writing style of classes names. 
+			</div>
+			
+			<h1>Fonts</h1>
+			
+			<p>We Used Following Fonts</p>
+			
+			<ul>
+			
+				<li>FontAwesome</li>
+				<li>Lato (Google Fonts)</li>
+				<li>Roboto (Google Fonts)</li>
+				<li>Raleway (Google Fonts)</li>
+				<li>Open Sans (Google Fonts)</li>
+			
+			</ul>
+
+			<h1 id="sz_animation">Animation</h1>
+			<p>We used <code>animate.css of Daniel Eden</code> for animation. You can create your own animation easily by using <code>animation.css</code>.</p>
+
+			<div class="table-responsive">          
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>Animation Name</th>
+							<th>Use</th>
+							<th>Animation Name</th>
+							<th>Use</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<td>bounce</td>
+							<td><code>data-animation="animated bounce"</code></td>
+							<td>flash</td>
+							<td><code>data-animation="animated flash"</code></td>
+						</tr>
+						<tr>
+							<td>pulse</td>
+							<td><code>data-animation="animated pulse"</code></td>
+							<td>rubberBand</td>
+							<td><code>data-animation="animated rubberBand"</code></td>
+						</tr>
+						<tr>
+							<td>shake</td>
+							<td><code>data-animation="animated shake"</code></td>
+							<td>swing</td>
+							<td><code>data-animation="animated swing"</code></td>
+						</tr>
+						<tr>
+							<td>tada</td>
+							<td><code>data-animation="animated tada"</code></td>
+							<td>wobble</td>
+							<td><code>data-animation="animated wobble"</code></td>
+						</tr>
+						<tr>
+							<td>jello</td>
+							<td><code>data-animation="animated jello"</code></td>
+							<td>bounceIn</td>
+							<td><code>data-animation="animated bounceIn"</code></td>
+						</tr>
+						<tr>
+							<td>bounceInDown</td>
+							<td><code>data-animation="animated bounceInDown"</code></td>
+							<td>bounceInLeft</td>
+							<td><code>data-animation="animated bounceInLeft"</code></td>
+						</tr>
+						<tr>
+							<td>bounceInRight</td>
+							<td><code>data-animation="animated bounceInRight"</code></td>
+							<td>bounceInUp</td>
+							<td><code>data-animation="animated bounceInUp"</code></td>
+						</tr>
+						<tr>
+							<td>bounceOut</td>
+							<td><code>data-animation="animated bounceOut"</code></td>
+							<td>bounceOutDown</td>
+							<td><code>data-animation="animated bounceOutDown"</code></td>
+						</tr>
+						<tr>
+							<td>bounceOutLeft</td>
+							<td><code>data-animation="animated bounceOutLeft"</code></td>
+							<td>bounceOutRight</td>
+							<td><code>data-animation="animated bounceOutRight"</code></td>
+						</tr>
+						<tr>
+							<td>bounceOutUp</td>
+							<td><code>data-animation="animated bounceOutUp"</code></td>
+							<td>fadeIn</td>
+							<td><code>data-animation="animated fadeIn"</code></td>
+						</tr>
+						<tr>
+							<td>fadeInDown</td>
+							<td><code>data-animation="animated fadeInDown"</code></td>
+							<td>fadeInDownBig</td>
+							<td><code>data-animation="animated fadeInDownBig"</code></td>
+						</tr>
+						<tr>
+							<td>fadeInLeft</td>
+							<td><code>data-animation="animated fadeInLeft"</code></td>
+							<td>fadeInLeftBig</td>
+							<td><code>data-animation="animated fadeInLeftBig"</code></td>
+						</tr>
+						<tr>
+							<td>fadeInRight</td>
+							<td><code>data-animation="animated fadeInRight"</code></td>
+							<td>fadeInRightBig</td>
+							<td><code>data-animation="animated fadeInRightBig"</code></td>
+						</tr>
+						<tr>
+							<td>fadeInUp</td>
+							<td><code>data-animation="animated fadeInUp"</code></td>
+							<td>fadeInUpBig</td>
+							<td><code>data-animation="animated fadeInUpBig"</code></td>
+						</tr>
+						<tr>
+							<td>fadeOut</td>
+							<td><code>data-animation="animated fadeOut"</code></td>
+							<td>fadeOutDown</td>
+							<td><code>data-animation="animated fadeOutDown"</code></td>
+						</tr>
+						<tr>
+							<td>fadeOutDownBig</td>
+							<td><code>data-animation="animated fadeOutDownBig"</code></td>
+							<td>fadeOutLeft</td>
+							<td><code>data-animation="animated fadeOutLeft"</code></td>
+						</tr>
+						<tr>
+							<td>fadeOutLeftBig</td>
+							<td><code>data-animation="animated fadeOutLeftBig"</code></td>
+							<td>fadeOutRight</td>
+							<td><code>data-animation="animated fadeOutRight"</code></td>
+						</tr>
+						<tr>
+							<td>fadeOutRightBig</td>
+							<td><code>data-animation="animated fadeOutRightBig"</code></td>
+							<td>fadeOutUp</td>
+							<td><code>data-animation="animated fadeOutUp"</code></td>
+						</tr>
+						<tr>
+							<td>fadeOutUpBig</td>
+							<td><code>data-animation="animated fadeOutUpBig"</code></td>
+							<td>flipInX</td>
+							<td><code>data-animation="animated flipInX"</code></td>
+						</tr>
+						<tr>
+							<td>flipInY</td>
+							<td><code>data-animation="animated flipInY"</code></td>
+							<td>flipOutX</td>
+							<td><code>data-animation="animated flipOutX"</code></td>
+						</tr>
+						<tr>
+							<td>flipOutY</td>
+							<td><code>data-animation="animated flipOutY"</code></td>
+							<td>lightSpeedIn</td>
+							<td><code>data-animation="animated lightSpeedIn"</code></td>
+						</tr>
+						<tr>
+							<td>lightSpeedOut</td>
+							<td><code>data-animation="animated lightSpeedOut"</code></td>
+							<td>rotateIn</td>
+							<td><code>data-animation="animated rotateIn"</code></td>
+						</tr>
+						<tr>
+							<td>rotateInDownLeft</td>
+							<td><code>data-animation="animated rotateInDownLeft"</code></td>
+							<td>rotateInDownRight</td>
+							<td><code>data-animation="animated rotateInDownRight"</code></td>
+						</tr>
+						<tr>
+							<td>rotateInUpLeft</td>
+							<td><code>data-animation="animated rotateInUpLeft"</code></td>
+							<td>rotateInUpRight</td>
+							<td><code>data-animation="animated rotateInUpRight"</code></td>
+						</tr>
+						<tr>
+							<td>rotateOut</td>
+							<td><code>data-animation="animated rotateOut"</code></td>
+							<td>rotateOutDownLeft</td>
+							<td><code>data-animation="animated rotateOutDownLeft"</code></td>
+						</tr>
+						<tr>
+							<td>rotateOutDownRight</td>
+							<td><code>data-animation="animated rotateOutDownRight"</code></td>
+							<td>rotateOutUpLeft</td>
+							<td><code>data-animation="animated rotateOutUpLeft"</code></td>
+						</tr>
+						<tr>
+							<td>rotateOutUpRight</td>
+							<td><code>data-animation="animated rotateOutUpRight"</code></td>
+							<td>hinge</td>
+							<td><code>data-animation="animated hinge"</code></td>
+						</tr>
+						<tr>
+							<td>rollIn</td>
+							<td><code>data-animation="animated rollIn"</code></td>
+							<td>rollOut</td>
+							<td><code>data-animation="animated rollOut"</code></td>
+						</tr>
+						<tr>
+							<td>zoomIn</td>
+							<td><code>data-animation="animated zoomIn"</code></td>
+							<td>zoomInDown</td>
+							<td><code>data-animation="animated zoomInDown"</code></td>
+						</tr>
+						<tr>
+							<td>zoomInLeft</td>
+							<td><code>data-animation="animated zoomInLeft"</code></td>
+							<td>zoomInRight</td>
+							<td><code>data-animation="animated zoomInRight"</code></td>
+						</tr>
+						<tr>
+							<td>zoomInUp</td>
+							<td><code>data-animation="animated zoomInUp"</code></td>
+							<td>zoomOut</td>
+							<td><code>data-animation="animated zoomOut"</code></td>
+						</tr>
+						<tr>
+							<td>zoomOutDown</td>
+							<td><code>data-animation="animated zoomOutDown"</code></td>
+							<td>zoomOutLeft</td>
+							<td><code>data-animation="animated zoomOutLeft"</code></td>
+						</tr>
+						<tr>
+							<td>zoomOutRight</td>
+							<td><code>data-animation="animated zoomOutRight"</code></td>
+							<td>zoomOutUp</td>
+							<td><code>data-animation="animated zoomOutUp"</code></td>
+						</tr>
+						<tr>
+							<td>slideInDown</td>
+							<td><code>data-animation="animated slideInDown"</code></td>
+							<td>slideInLeft</td>
+							<td><code>data-animation="animated slideInLeft"</code></td>
+						</tr>
+						<tr>
+							<td>slideInRight</td>
+							<td><code>data-animation="animated slideInRight"</code></td>
+							<td>slideInUp</td>
+							<td><code>data-animation="animated slideInUp"</code></td>
+						</tr>
+						<tr>
+							<td>slideOutDown</td>
+							<td><code>data-animation="animated slideOutDown"</code></td>
+							<td>slideOutLeft</td>
+							<td><code>data-animation="animated slideOutLeft"</code></td>
+						</tr>
+						<tr>
+							<td>slideOutRight</td>
+							<td><code>data-animation="animated slideOutRight"</code></td>
+							<td>slideOutUp</td>
+							<td><code>data-animation="animated slideOutUp"</code></td>
+						</tr>
+					</tbody>
+					
+				</table>
+				
+				<p>For further guideline just read the following complete tutorial about <code>animation.css</code>;</p>
+							
+				<ul>
+							
+					<li><a href="http://daneden.github.io/animate.css/" target="_blank">animate.css Demo</a></li>
+					<li><a href="https://github.com/daneden/animate.css" target="_blank">animate.css</a></li>
+							
+				</ul>
+							
+					<p>You can also read more about <code>animation.css</code> plugIn usage from this article;</p>
+							
+				<ul>
+							
+					<li><a href="http://www.sitepoint.com/bootstrap-carousel-with-css3-animations/" target="_blank">SitePoint</a></li>
+							
+				</ul>
+				
+			</div>
+			
+			<h1 id="sz_carousel">Bootstrap Carousel Options</h1>
+			
+			<p>If you want to know anything about Bootstrap Carousel Options you may refer to the following articles;</p>
+							
+			<ul>
+							
+				<li><a href="http://getbootstrap.com/javascript/#carousel" target="_blank">Bootstrap</a></li>
+				<li><a href="http://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp" target="_blank">W3SCHOOL</a></li>
+							
+			</ul>
+
+			<h1 id="support">Support</h1>
+			
+			<p>Please do not hesitate if you have any queries about this item. We are always there for your help. You can contact us on this e-mail address szthemes53@gmail.com</p>
+			
+			<hr>
+			
+			<span>Copyright © 2016 szthemes All Rights Reserved</span>
+			
+		</div>
+
+		
+
+	
+	<!--======= JavaScript =========-->
+	
+	<!--======= jQuery =========-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	
+	<!--======= Bootstrap =========-->
+	<script src="js/bootstrap.min.js"></script>
+	
+	<!--======= Plug-In =========-->
+	<script src="js/smooth-scroll.js"></script>
+
+	<!--======= Customize =========-->
+	
+	
+</body>
+
+</html>

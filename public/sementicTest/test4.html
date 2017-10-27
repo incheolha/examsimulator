@@ -1,0 +1,36 @@
+<input id="browse" type="file" onchange="previewFiles()" multiple>
+<div id="preview"></div>
+
+<script>
+
+function previewFiles() {
+
+  var preview = document.querySelector('#preview');
+  var files   = document.querySelector('input[type=file]').files;
+
+  function readAndPreview(file) {
+
+    // `file.name` 형태의 확장자 규칙에 주의하세요
+      if ( /\.(?:wav|mp3)$/i.test(file.name)){ {
+      var reader = new FileReader();
+
+      reader.addEventListener("load", function () {
+        var aud = document.createElement("audio");
+         aud.controls= "controls";
+         aud.src=files.url;
+        preview.appendChild( aud );
+      }, false);
+
+      reader.readAsDataURL(file);
+    }
+
+  }
+
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+
+}
+}
+    
+</script>

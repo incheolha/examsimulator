@@ -1,0 +1,196 @@
+
+<div id="input">
+    <input id="browse" type="file" class="fileUpload" accept="audio/*" multiple  />
+
+    <div id="preview" class="preview" >
+    </div>
+</div>
+
+
+<div id="input">
+    <input id="browse1" type="file" class="fileUpload" accept="image/*" multiple >
+
+    <div id="preview1" class="preview">
+    </div>
+</div>
+
+<script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous">
+</script>
+
+<script>
+    
+    
+
+//    function test(){
+//     var a = document.querySelector('input').a;
+//     var b = document.querySelector('')
+//     alert(a);    
+//    };
+    
+    
+//    
+//    document.getElementById("browse2").onchange = function(){
+//        var preview =  document.querySelector("#preview2");
+//        var files =  document.querySelector('#browse2').files;
+//        
+//        function readAndPreview(file){
+//             if ( /\.(jpe?g|png|gif)$/i.test(file.name)){
+//                 var reader = new FileReader();
+//                 
+//                 reader.addEventListener("load", function(){
+//                     if(!files.length){
+//                         preview.innerHTML = "<p>선택된 파일이 없습니다 </p>"
+//                     }else{
+//                         preview.innerHTML = ""; //초기화 
+//                         var list = document.createElement("ul");
+//                         preview.appendChild(list);
+//                         for (var i = 0; i<files.length; i++){
+//                             var li = document.createElement("li");
+//                             list.appendChild(li);
+//                             var img = document.createElement("img");
+//                             img.src = window.URL.createObjectURL(files[i]);
+//                             img.height= 100;
+//                             img.width= 100;
+//                             img.onload = function(){
+//                            window.URL.revokeObjectURL(this.src);
+//                             }
+//                             li.appendChild(img)
+//                             var info = document.createElement("span");
+//                             info.innerHTML = files[i].name + ": " +files[i].size + "bytes";
+//                             li.appendChild(info)
+//                         }
+//                         
+//                     }
+//                 }, false);
+//                 reader.readAsDataURL(file);
+//             }
+//        }
+//        if(files){
+//            [].forEach.call(files, readAndPreview);
+//        }
+//    };
+    
+
+
+    
+
+
+  document.getElementById("browse").onchange = function(){
+        var preview = document.querySelector("#preview");
+        var files = document.querySelector('#browse').files;
+        
+        function readAndPreview(file){
+             if ( /\.(jpe?g|png|gif)$/i.test(file.name)){
+                 var reader = new FileReader();
+                
+                 reader.addEventListener("load", function(){
+                     if(!files.length){
+                         preview.innerHTML = "<p>선택된 파일이 없습니다 </p>"
+                     }else{
+                         preview.innerHTML = ""; //초기화 
+                         var list = document.createElement("ul");
+                         preview.appendChild(list);
+                         for (var i = 0; i<files.length; i++){
+                             var li = document.createElement("li");
+                             list.appendChild(li);
+                             var img = document.createElement("img");
+                             img.src = window.URL.createObjectURL(files[i]);
+                             img.height= 100;
+                             img.width= 100;
+                             img.onload = function(){
+                            window.URL.revokeObjectURL(this.src);
+                             }
+                             li.appendChild(img)
+                             var info = document.createElement("span");
+                             info.innerHTML = files[i].name + ": " +files[i].size + "bytes";
+                             li.appendChild(info)
+                         }
+                         
+                     }
+                 }, false);
+                 reader.readAsDataURL(file);
+             }
+            else if( /\.(?:wav|mp3)$/i.test(file.name)){
+                
+                 var reader = new FileReader();
+            
+            reader.addEventListener("load", function(){
+                if(!files.length){
+                    preview.innerHTML = "<p>No files Selected</p>"
+                    
+                }else{
+                    preview.innerHtml="";
+                    var list = document.createElement("ul");
+                    preview.appendChild(list);
+                    for(var j=0; j<files.length; j++){
+                        var li = document.createElement("li");
+                        list.appendChild(li);
+                        var aud = document.createElement("audio");
+                        aud.src=window.URL.createObjectURL(files[j]);
+                        aud.controls= "controls";
+                        aud.onload= function(){
+                        window.URL.revokeObjectURL(this.src);
+                        }
+                        li.appendChild(aud)
+                        var info = document.createElement("span");
+                        info.innerHTML = files[j].name + ": "+files[j].size+"bytes";
+                        li.appendChild(info);
+                    }
+                }
+            }, false);
+        reader.readAsDataURL(file);    
+        }
+            
+        }
+        if(files){
+            [].forEach.call(files, readAndPreview);
+        }
+    };    
+
+document.getElementById("browse1").onchange=function(){
+        var preview = document.querySelector("#preview1");
+        var files = document.querySelector('#browse1').files;
+        
+        function readAndPreview(file){
+             if ( /\.(jpe?g|png|gif)$/i.test(file.name)){
+                 var reader = new FileReader();
+                 
+                 reader.addEventListener("load", function(){
+                     if(!files.length){
+                         preview.innerHTML = "<p>선택된 파일이 없습니다 </p>"
+                     }else{
+                         preview.innerHTML = ""; //초기화 
+                         var list = document.createElement("ul");
+                         preview.appendChild(list);
+                         for (var i = 0; i<files.length; i++){
+                             var li = document.createElement("li");
+                             list.appendChild(li);
+                             var img = document.createElement("img");
+                             img.src = window.URL.createObjectURL(files[i]);
+                             img.height= 100;
+                             img.width= 100;
+                             img.onload = function(){
+                            window.URL.revokeObjectURL(this.src);
+                             }
+                             li.appendChild(img)
+                             var info = document.createElement("span");
+                             info.innerHTML = files[i].name + ": " +files[i].size + "bytes";
+                             li.appendChild(info)
+                         }
+                         
+                     }
+                 }, false);
+                 reader.readAsDataURL(file);
+             }
+        }
+        if(files){
+            [].forEach.call(files, readAndPreview);
+        }
+    }      
+  
+  
+//    
+</script>

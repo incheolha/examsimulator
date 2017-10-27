@@ -1,0 +1,160 @@
+/*
+	StyleSheet For Responsive Bootstrap Carousel
+	Author: szthemes
+	Item Name: Responsive Bootstrap Carousel
+	Author URI: http://codecanyon.net/user/szthemes
+	Description: Different Types of Bootstrap Carousel
+
+								Content List
+  -----------------------------------------------------------------------------------
+	NAME ----------------------------------------LINE NUMBER--------------------- #
+	PORTFOLIO CAROUSEL --------------------------31------------------------------ 01
+	RESPONSIVE ----------------------------------103----------------------------- 02	
+	COLORS --------------------------------------124----------------------------- 03	
+	[ Note: Line Numbers Are According To Notepad++ ]
+  ------------------------------------------------------------------
+							Fonts Styles
+  ------------------------------------------------------------------
+	  'Raleway', sans-serif ---------------------------------- 01
+	            FontAwesome ---------------------------------- 02
+  ------------------------------------------------------------------
+							Color Codes
+  ------------------------------------------------------------------
+	NAME    ------------------------RGB-------------------------- #
+	#ffffff -------------------rgb(255, 255, 255)---------------- 01
+	#000000 -------------------rgb(0, 0, 0)---------------------- 02
+	#0dbae8 -------------------rgb(13, 186, 232)----------------- 03 	Replace Also This Color To Change Whole Color Scheme
+	#f0f3f8 -------------------rgb(240, 243, 248)---------------- 04 	Replace Also This Color To Change Whole Color Scheme
+*/
+
+/*------------------------------------------------------*/
+/* PORTFOLIO CAROUSEL
+/*------------------------------------------------------*/
+
+.portfolio_carousel_wrapper {
+  padding: 50px;
+  overflow: hidden;
+  font-family: 'Raleway', sans-serif;
+}
+.portfolio_main_heading {
+  margin-bottom: 50px;
+  text-transform: capitalize;
+}
+/*---------- CONTROL INDICATORS ----------*/
+.portfolio_carousel_indicators {
+  bottom: 0px;
+  padding-top: 3px;
+  padding-bottom: 2px;
+}
+.portfolio_carousel_indicators li {
+  border: none;
+}
+.portfolio_carousel_indicators .active {
+  width: 10px;
+  margin: 1px;
+  height: 10px;
+  border: none;
+}
+/*---------- CAPTION ----------*/
+.portfolio_item_text {
+  padding: 0px 30px 5px 30px;
+}
+.portfolio_item_image {
+  padding: 0px;
+}
+.portfolio_item_image img {
+  width: 100%;
+}
+.portfolio_item_text h3 {
+  margin-top: 0%;
+  font-weight: 500;
+  text-shadow: none;
+  text-transform: capitalize;
+}
+.portfolio_item_text a:nth-child(2),
+.portfolio_item_text a:nth-child(2):visited {
+  font-weight: 500;
+  text-shadow: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all ease-in-out 0.3s;
+  -webkit-transition: all ease-in-out 0.3s;
+}
+.portfolio_item_text p {
+  margin-top: 15px;
+  text-align: justify;
+  margin-bottom: 22px;
+}
+.portfolio_item_text a:nth-child(4),
+.portfolio_item_text a:nth-child(4):visited {
+  width: 125px;
+  padding: 10px;
+  display: block;
+  font-weight: 500;
+  text-shadow: none;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all ease-in-out 0.3s;
+  -webkit-transition: all ease-in-out 0.3s;
+}
+
+/*------------------------------------------------------*/
+/* RESPONSIVE
+/*------------------------------------------------------*/
+
+/*---------- MEDIA 767px ----------*/
+@media only screen and (max-width: 767px) {
+  /*---------- CAPTION ----------*/
+  .portfolio_item_text {
+     padding: 25px;
+  }
+}
+/*---------- MAX-WIDTH 480px ----------*/
+@media only screen and (max-width: 480px) {
+  .portfolio_carousel_wrapper {
+     padding: 25px;
+  }
+  .portfolio_main_heading {
+     margin-bottom: 25px;
+  }	
+}
+
+/*------------------------------------------------------*/
+/* COLORS (BLUE)
+/*------------------------------------------------------*/
+
+.portfolio_carousel_wrapper {
+  background: #f0f3f8;
+}
+/*---------- CONTROL INDICATORS ----------*/
+.portfolio_carousel_indicators li {
+  background: #4a525d;
+}
+.portfolio_carousel_indicators .active {
+  background: #0dbae8;
+  border-color: #0dbae8;
+}
+/*---------- CAPTION ----------*/
+.portfolio_item_image {
+  background: #000000;
+}
+.portfolio_item_text a:nth-child(2),
+.portfolio_item_text a:nth-child(2):visited {
+  color: #0dbae8;
+}
+.portfolio_item_text a:nth-child(2):hover,
+.portfolio_item_text a:nth-child(2):active{
+  color: #000000;
+}
+.portfolio_item_text a:nth-child(4),
+.portfolio_item_text a:nth-child(4):visited {
+  color: #ffffff;
+  background: #0dbae8;
+}
+.portfolio_item_text a:nth-child(4):hover,
+.portfolio_item_text a:nth-child(4):active{
+  color: #ffffff;
+  background: #000000;
+}
+/*---------- END ----------*/
