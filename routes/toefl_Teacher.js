@@ -19,7 +19,7 @@ var reading = function(req, res) {
 	if(database.db){
 		console.log(database.UserModel);
 		database.ReadingModel.findByExamNO(paramExamNO,
-		
+	
 			function(err, results){
 				if(err){
 					console.error('챕터 넘버를 찾던 중 에러 발생 : ' + err.stack);
@@ -291,6 +291,10 @@ var writing_int = function(req, res){
                         ExamNO : paramExamNO,
                         ExamDesc : paramExamDesc,
                         writingProblemType : paramwritingProblemType,
+                        writingProblemReading : results[0].Problem[0].writingProblemReading,
+                        writingProblemListeningImage : results[0].Problem[0].writingProblemListeningImage,
+                        writingProblemListeningAudio : results[0].Problem[0].writingProblemListeningAudio,
+                        writingProblemAnswer : results[0].Problem[0].writingProblemAnswer,
                         login_success:true,
                         user:req.user
                     };
@@ -316,10 +320,15 @@ var writing_int = function(req, res){
                     console.log("새로운 문제 만들기로 이동합니다.");
 
                     //파라미터를 넘길때 가짜 정보를 묶어서 넘깁니다.
+                    // 값 1을 주는 이유 : 새로운 문제만들기 랜더링으로 넘어가기위함.
                     var context = {
                         ExamNO : paramExamNO,
                         ExamDesc : paramExamDesc,
                         writingProblemType : paramwritingProblemType,
+                        writingProblemReading :1,
+                        writingProblemListeningImage : 1,
+                        writingProblemListeningAudio : 1,
+                        writingProblemAnswer : 1,
                         login_success : true,
                         user : req.user
 

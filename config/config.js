@@ -3,9 +3,10 @@
  * 설정
  */
 
+
 module.exports = {
 	server_port: 3000,
-	db_url: 'mongodb://localhost:27017/local',
+	db_url: 'mongodb://admin10000:3590dany@ds235785.mlab.com:35785/heroku_vm3q113l',
 	db_schemas: [
     {file:'./user_schema', collection:'users6', schemaName:'UserSchema', modelName:'UserModel'}
     ,{file:'./post_schema', collection:'post', schemaName:'PostSchema', modelName:'PostModel'}
