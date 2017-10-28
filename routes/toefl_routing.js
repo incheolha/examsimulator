@@ -73,7 +73,7 @@ router.route('/toefl/updateExamPost').get(function(req, res) {
                      SetregisterDesc: paramRegisterDesc
 					};
 
-           res.render('./toefl/registration/updateExamPosting.ejs', context, function(err,html) {
+           res.render('./toefl/registration/updateExamPosting2.ejs', context, function(err,html) {
                 if (err) {throw err;}
                 console.log('rendered: ' + html);
                 res.end(html);

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" type="text/css" href="../../../public/sementicTest/Semantic/semantic.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../../../public/sementicTest/Semantic/semantic.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+          
+
+        });
+    </script>
+
+  </head>
+
+<body>
+
+
+<form name="myForm" action="/register/updateregister" method="post">
+  <i class="close icon"></i>
+  <div class="header">
+    Profile Picture
+  </div>
+  <div class="image content">
+    <div class="ui medium image">
+      <img src="../../../public/sementicTest/imgsrc/A_as_well_as_B.png">
+    </div>
+    <div class="description">
+      <div class="ui header">
+           <% var curRegisterNo = SetregisterNo; %>
+           <%  var curRegisterDesc = SetregisterDesc  %>
+            <p>시험회차 : <%= curRegisterNo %>
+  <input type="hidden" name="registerNo" value=<%=curRegisterNo %> />
+  <input type="text" name="registerDesc" required class="form-control" placeholder="출제시험 설명을 입력하세요" />
+   <input type="text" name="registerDesc" value=<%=curRegisterDesc %> />
+      </p>
+    </div>
+  </div>
+  <div class="actions">
+    <a href="/" class="ui black deny button">
+      Nope
+    </a>
+    <button class="ui positive right labeled icon button" type="submit">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </button>
+  </div>
+</div>
+      </form>
+
+
+</body>
+
+</html>
