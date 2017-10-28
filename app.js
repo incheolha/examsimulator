@@ -161,7 +161,7 @@ app.on('close', function () {
 });
 
 // 시작된 서버 객체를 리턴받도록 합니다. 
-var server = http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(process.env.PORT || app.get('port'), function(){
 	console.log('서버가 시작되었습니다. 포트 : ' + app.get('port'));
 
 	// 데이터베이스 초기화
