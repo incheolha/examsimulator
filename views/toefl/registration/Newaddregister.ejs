@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">            
+ 
+    <link rel="stylesheet" type="text/css" href="../../../public/sementicTest/Semantic/semantic.css">
+    
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+   <script src="../../../public/sementicTest/Semantic/semantic.js"></script>  
+
+    
+	<style>
+/*
+           .ui.modal > .header{
+              background-color: #0E6EB8 !important;
+            }                  
+*/
+    </style>     
+   
+        <script>
+            $(document).ready(function(){
+                  $('#modal1').modal('show');
+                
+             
+                
+
+                
+                
+            });
+          
+        </script>
+     
+    </head>
+
+    <body>
+
+          <% var curRegisterNo = SetregisterNo; %>
+                     
+     <div class="ui small modal" id="modal1">
+  <div class="ui blue header">
+    <form name="myForm" action="/register/addregister" method="post" class="ui form">
+    <h2 class="ui centered  header">회차 생성 알림 <i class="browser icon"></i></h2>
+  </div>
+  <div class="content">
+   <h2 class="ui header">생성하려는 회차 :<%= curRegisterNo %>  회차 Toefltest </h2><p>
+     
+   <div class="ui fluid input focus">
+  <input type="hidden" name="registerNo" value=<%=curRegisterNo %>>   
+  <input type="text" name="registerDesc" placeholder="회차에 대한 간략한 설명을 써주세요. 기본은 회차명 입니다.">
+</div> 
+  </div>
+ 
+  <div class="actions">
+     
+    <a class="ui red inverted cancel button" href="/">
+      <i class="remove icon"></i>
+      No
+
+    </a>
+   
+    <button class="ui green ok inverted button" type="submit">
+      <i class="checkmark icon"></i>
+      Yes
+    </button>
+    </form>
+  </div>
+  
+    </div>     
+
+                 
+           
+                 
+
+    
+    </body>
+    
+    
+</html>    

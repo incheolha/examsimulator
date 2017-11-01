@@ -33,7 +33,9 @@ module.exports = {
 		,{file:'./toefl/registration/register', path:'/register/updateregister', method:'updateregister', type:'post'}
 		,{file:'./toefl/registration/register', path:'/register/removeregister', method:'removeregister', type:'post'}
 		,{file:'./toefl/registration/register', path:'/register/listregister', method:'listregister', type:'post'}  
- 		,{file:'./toefl/registration/register', path:'/register/exampost/:id', method:'exampost', type:'get'}  
+		,{file:'./toefl/registration/register', path:'/register/exampost/:id', method:'exampost', type:'get'}  
+		 
+
 //file: js file location path: route path (사용자가 보기좋게.) method: function() what to do , type:post.
 		 
 //addExam routes 

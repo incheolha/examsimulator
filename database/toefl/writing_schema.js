@@ -16,14 +16,13 @@ writingSchemaObj.createSchema = function(mongoose) {
                     writingAnnounceDirection: {type: String, trim: true, 'default': ''}, // 문제출제전 나오는 direction db에서 읽어오기
                     writingAnnouncementAudio: {type: String, trim: true, 'default': ''}, // 디렉션 읽어주는 audio db에서 읽어오기
                     writingProblem: {type: String, trim: true, 'default': ''}, //문제 출제 파트. db에서 읽어오기만 한다.
-
                     writingProblemReading: {type: String, trim:true, 'default': ''}, //ck editor. 문제에 관련된 스크립트.
                     writingProblemListeningImage: {type: String, trim: true, 'default': ''}, //문제에 관련된 lecture image
                     writingProblemListeningAudio: {type: String, trim: true, 'default': ''}, //문제관련 lecture mp3
                     writingProblemAnswer: {type: String, trim: true, 'default': ''} //선생님이 달아주는 해설파트.
                 }]
 });
-    
+
     WritingSchema.methods = {
 		    saveWriting: function(callback) {		// 글 저장
 			    var self = this;
