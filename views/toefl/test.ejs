@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" type="text/css" href="../../public/sementicTest/Semantic/semantic.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../../public/sementicTest/Semantic/semantic.js"></script>  
+    
+    <script src="../../public/sementicTest/ckeditor/ckeditor.js"></script>    
+  
+    <!--	index js import	 -->
+  <script src='../../public/sementicTest/index.js'></script>  
+    
+	<style>
+        .ui.inverted.blue.menu{
+            height: 100px
+        }
+        
+      .ui.grid{
+            margin: 15px;
+          
+        }                                                                                                                      
+    </style>     
+   
+        
+     
+    </head>
+
+
+    <body onload=startTime()>
+         <div class="ui blue borderless inverted menu">
+          <div class="left menu">
+            <a class="item">
+              <h1>Toefl Simulator<br></h1> <br><br> <h4>for Teachers</h4>   
+              </a>
+            </div>      
+        <div class="centered menu">  
+            
+          <a class="item">
+           
+            <i class="huge github icon"></i>
+            </a>
+  
+        </div>     
+        <div class="right menu">
+        <a class="item" id="clock"> </a>    
+       
+    <div class="ui dropdown item">
+    
+      <i class="user icon"></i>
+       <% if (user.permissionTag == 'toeflTeacher') { %>
+         
+          <%= user.name %> 선생님, 환영합니다.
+		      <!-- <%= user.email %> -->
+        <% } %>
+       
+ 
+        <i class="dropdown icon"></i>
+      <div class="menu">
+      
+        <a class="item">profile</a>
+        <a class="item" href="/logout">Logout</a>
+            </div>
+        </div>    
+     </div>   
+    </div>
+
+<h1 class="ui centered header">회차선택 </h1>
+
+       
+  <div class="ui five column grid">       
+  <div class="column">
+      
+    <div class="ui fluid card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+
+                    	<% var addRegisterNo = lists[0]._doc.RegisterNo + 1;%>   
+                      <a class="ui primary button" href="/toefl/registerExamPost?registerNo=<%=addRegisterNo%>"> 문제 추가하기</a>
+                    
+                  </div>
+                </div>
+              </div>
+                <img src="../../public/sementicTest/blue-plus-sign-md.png">
+            </div>
+            <div class="content">
+              <a class="header">문제 출제하기</a>
+              <div class="meta">
+                <span class="date">플러스 버튼을 눌러 문제를 추가해보세요 </span>
+              </div>
+            </div>
+
+          </div>
+  </div>
+
+	    <%		for (var i = 0; i < lists.length; i++) {
+				var curImage = lists[i];
+				var curRegisterNo = lists[i]._doc.RegisterNo;
+                var curRegisterDesc = lists[i]._doc.RegisterDesc;
+                var curRegisterDate = lists[i]._doc.RegisterCreatedDate;
+		%>
+
+
+ <div class="column">
+       <div class="ui fluid card">
+            <div class="ui blurring dimmable medium image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                      <a href="/toefl/updateExamPost?registerNo=<%=curRegisterNo %>&registerDesc=<%=curRegisterDesc %>" class="ui primary button"><%=curRegisterNo %> 회차 출제하기</a>
+                    
+                  </div>
+                </div>
+              </div>
+                <img src="../../public/sementicTest/imgsrc/A_as_well_as_B.png">
+            </div>
+            <div class="content">
+              <a class="header"><%=curRegisterNo %> 회차</a>
+              <div class="meta">
+                <span class="date">생성일자 : <%=curRegisterDate %>  </span>
+              </div>
+            </div>
+    
+          </div>
+  </div>
+    <% } %>	      
+       
+</div>
+
+    
+
+    </body>
+    
+    
+</html>    

@@ -51,7 +51,7 @@ router.route('/toefl/registerExamPost').get(function(req, res) {
                      SetregisterNo: paramRegisterNo
 					};
 
-           res.render('./toefl/registration/registerExamPosting.ejs', context, function(err,html) {
+           res.render('./toefl/registration/Newaddregister.ejs', context, function(err,html) {
                 if (err) {throw err;}
                 console.log('rendered: ' + html);
                 res.end(html);
@@ -73,7 +73,7 @@ router.route('/toefl/updateExamPost').get(function(req, res) {
                      SetregisterDesc: paramRegisterDesc
 					};
 
-           res.render('./toefl/registration/updateExamPosting2.ejs', context, function(err,html) {
+           res.render('./toefl/registration/Newupdateregister.ejs', context, function(err,html) {
                 if (err) {throw err;}
                 console.log('rendered: ' + html);
                 res.end(html);

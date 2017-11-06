@@ -36,10 +36,11 @@ if (database.db) {
 					ExamNO : paramRegisterNo,
 					ExamDesc : paramRegisterDesc
 				}); 
-				//listening 정보 저장
+				// listening 정보 저장
 				var writingContext = new database.WritingModel({
 					ExamNO : paramRegisterNo,
-					ExamDesc : paramRegisterDesc
+					ExamDesc : paramRegisterDesc,
+					
 				});
 
 			register.saveRegister(function(err, result) {

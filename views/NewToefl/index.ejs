@@ -89,8 +89,9 @@
         <div class="ui huge breadcrumb">
 
             <a class="section">회차선택</a>
+      
             <i class="right chevron icon divider"></i>
-            <a class="section"> <%= ExamNO %> 회차</a>
+            <a class="section"> <%=ExamNO %> 회차</a>
             <i class="right chevron icon divider"></i>
            <div class="aictive section">문제 출제하기</div> 
         </div>
@@ -236,8 +237,8 @@
           <div class="content">
               <form action="/toeflTeacher/reading" method="post" id="readingform" >
               
-              <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
-              <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+              <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
+              <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>> 
               <!-- <input type="text" name="readingChapterNumber" id="chapter_value">       -->
               <div class="ui selection fluid dropdown" id="select_Dropdown" name="readingChapterNumber" >
               <input type="hidden" name="readingChapterNumber">
@@ -318,8 +319,8 @@
           <div class="content">
           <form action="/toeflTeacher/listening" method="post" id="listeningform" >
               
-              <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
-              <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+              <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
+              <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>> 
          <div class="ui selection fluid dropdown" id="listening_dropdown">
             <input type="hidden" name="listeningChapterNumber">
              <i class="dropdown icon"></i>
@@ -426,7 +427,7 @@
   
     
     <div class="description">
-      <div class="ui header">선택한 항목 : <%= ExamNO %> 회차 Speaking </div>
+      <div class="ui header">선택한 항목 : <%=ExamNO%>회차 Speaking </div>
       <h4 class="ui header">스피킹 출제화면으로 이동할까요?</h4>
     </div>
   </div>
@@ -435,8 +436,8 @@
     <div class="ui red deny button">
       Nope
     </div>
-    <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
-    <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>
+    <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
+    <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>>
       <input type="hidden" name="speakingProblemType" value="1">  
     <button type="submit" class="ui positive right labeled icon button" >
       Yep, that's me
@@ -457,7 +458,7 @@
   </div>
   <div class="content">
     <div class="description">
-      <div class="ui header">선택한 항목 : <%= ExamNO %> 회차 Writing </div>
+      <div class="ui header">선택한 항목 : <%=ExamNO %> 회차 Writing </div>
        <h4 class="ui header">라이팅 출제화면으로 이동할까요?</h4>
     </div>
   </div>
@@ -466,8 +467,8 @@
     <div class="ui red deny button">
       Nope
     </div>
-     <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
-    <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>  
+     <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
+    <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>>  
      <input type="hidden" name="writingProblemType" value="1">   
     <button type="submit" class="ui positive right labeled icon button" >
       Yep, that's me

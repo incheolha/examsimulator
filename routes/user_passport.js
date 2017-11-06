@@ -66,7 +66,7 @@ module.exports = function(router, passport) {
                                             }
   
                                                 var context = {login_success:true, user:req.user, lists:registerLists};
-                                                        res.render('./toefl/mainexam.ejs', context, function(err,html) {
+                                                        res.render('./toefl/test.ejs', context, function(err,html) {
                                                             if (err) {throw err;}
                                                         res.end(html);
                                                         }); 
