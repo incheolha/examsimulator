@@ -114,7 +114,7 @@ var speaking_ch2 = function(req, res){
 			}
 			console.log("results" +results);
 
-
+ 
 			
 				if(results[0].Problem[1] != null){
 												

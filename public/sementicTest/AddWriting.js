@@ -13,14 +13,17 @@
             $('.menu .item')
                 .tab()
                 ;    
-            
-            CKEDITOR.replace( 'editor1', {
+           
+
+                
+
+            CKEDITOR.replace( 'ckeditor1', {
                 skin:'office2013',
                 width:'100%',
                 height:'500'
         
             });
-                
+            
         $("#wr_chapter_complete_btn").on("click", function(){
             
             $('#go_back_main_modal').modal('show');
@@ -114,7 +117,55 @@
                 [].forEach.call(files, readAndPreview);
             }
         };      	
-                
+          
+        
+
+        $(function(){
+            
+                   
+            $("#btn1").hide();
+            $("#btn2").hide();
+            $("#btn3").hide();
+            $("#btn4").hide();
+
+                    $("#btn1").click(function(){
+                    var text = $(this).text();
+                     $("#ckeditor1").val(text); 
+           
+                    });
+                   
+                    
+                    $("#btn2").click(function(){
+                    var text = $(this).text();
+                     $("#inputtest2").val(text); 
+              
+                    });
+                    
+                    
+                    
+                    $("#btn3").click(function(){
+                    var text = $(this).text();
+                    $("#inputtest3").val(text); 
+                    });
+
+
+
+                    $("#btn4").click(function(){
+                        var text = $(this).text();
+                        $("#inputtest4").val(text);
+                     });            
+        
+                     
+            
+                    $('#btn1').trigger('click');
+                    $('#btn2').trigger('click');
+                    $('#btn3').trigger('click');
+                    $('#btn4').trigger('click');
+
+                   
+               })     
+
+
         
 
     });

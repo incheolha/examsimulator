@@ -44,7 +44,7 @@ module.exports = {
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/speaking/ch1', method:'speaking', type:'post'}
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/integrated', method:'writing_int', type:'post'}
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/independent', method:'writing_ind', type:'post'}
-
+		
 // reading routes 
  
 	,{file:'./toefl/reading/reading', path:'/process/toefl/reading/addreading', method:'addreading', type:'post'}
@@ -78,6 +78,8 @@ module.exports = {
 		,{file:'./toefl/speaking/speaking', path:'/process/toefl/speaking/ch6', method:'speaking_ch6', type:'post'}
 			
 // writing routes
+
+		,{file:'./toefl/writing/multerWriting', path:'/process/toefl/writing/multerAddWriting', method:'addProblemWriting', type:'post'}
 		,{file:'./toefl/writing/writing', path:'/process/toefl/writing/addwriting', method:'addwriting', type:'post'}
 		,{file:'./toefl/writing/writing', path:'/process/toefl/writing/updatewriting', method:'updatewriting', type:'post'}
 		,{file:'./toefl/writing/writing', path:'/process/toefl/writing/removewriting', method:'removewriting', type:'post'}

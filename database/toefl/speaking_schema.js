@@ -57,7 +57,8 @@ speakingSchemaObj.createSchema = function(mongoose) {
 		console.log(ExamNO);
 		return this.find({ExamNO:ExamNO}, callback);
 	});
-	
+    
+    SpeakingSchema.static('findBy')
 
 
     console.log('speaking Schema 설정됨') 
