@@ -1,0 +1,76 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="semantic/semantic.css">
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+    <script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+    <script>
+   
+        $('.example .menu .browse')
+  .popup({
+    inline     : true,
+    hoverable  : true,
+    position   : 'bottom left',
+    delay: {
+      show: 300,
+      hide: 800
+    }
+  })
+;
+    </script>
+</head>
+<body>
+<div class="ui menu">
+  <a class="browse item">
+    Browse
+    <i class="dropdown icon"></i>
+  </a>
+  <div class="ui fluid popup top left transition hidden" style="top: auto; left: 1px; bottom: 69px; right: auto; width: 670px;">
+    <div class="ui four column relaxed divided grid">
+      <div class="column">
+        <h4 class="ui header">Fabrics</h4>
+        <div class="ui link list">
+          <a class="item">Cashmere</a>
+          <a class="item">Linen</a>
+          <a class="item">Cotton</a>
+          <a class="item">Viscose</a>
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="ui header">Size</h4>
+        <div class="ui link list">
+          <a class="item">Small</a>
+          <a class="item">Medium</a>
+          <a class="item">Large</a>
+          <a class="item">Plus Sizes</a>
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="ui header">Colors</h4>
+        <div class="ui link list">
+          <a class="item">Neutrals</a>
+          <a class="item">Brights</a>
+          <a class="item">Pastels</a>
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="ui header">Types</h4>
+        <div class="ui link list">
+          <a class="item">Knitwear</a>
+          <a class="item">Outerwear</a>
+          <a class="item">Pants</a>
+          <a class="item">Shoes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="item">
+    <i class="cart icon"></i>
+    Checkout
+  </a>
+</div>
+</body>

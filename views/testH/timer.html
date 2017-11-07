@@ -1,0 +1,36 @@
+<script language="JavaScript">
+    var timerID;
+    var time = 119;
+    
+        function start_timer(){
+            timerID = setInterval("decrementTime()", 1000);
+        }
+        //남은시간 감소
+        function decrementTime(){
+            var x1 = document.getElementById("time1");
+            var x2 = document.getElementById("time2");
+            x1.innerHTML = toMinSec(time);
+            x2.innerHTML = toMinSec(time);
+        if(time > 0)time--;
+            else{
+                clearInterval(timerID);
+                document.close.submit();
+            }
+        }
+        function toHourMinSec(t){
+            var hour;
+            var min;
+            var sec;
+            
+            hour = Math.floor(t/3600);
+            min = Math.floor((t-(hour*3600))/60);
+            sec = t-(hour*3600)-(min*60);
+            
+            if(hour < 10) = "0" + hour;
+            if(min < 10) = "0" + min;
+            if(sec < 10) = "0" + sec;
+            
+            return(hour + ":" + min: "+" + sec);
+        }
+    </script>
+</div>
