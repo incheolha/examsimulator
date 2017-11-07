@@ -206,7 +206,7 @@ var addProblemWriting = function(req, res){
                                         console.log('저장되어있는 결과값 : '+results);
 
                                         database.WritingModel.update(
-                                            {'ExamNO':paramExamNO},{"$set":{'Problem':[{
+                                            {'writingProblemType':paramwritingProblemType},{"$set":{'Problem':[{
                                                 'writingProblem':paramwritingProblem,
                                                 'writingProblemReading':paramwritingProblemReading,
                                                 'writingProblemListeningImage':paramwritingProblemListeningImage,
@@ -401,9 +401,9 @@ var addProblemWriting = function(req, res){
                                                 // 문제를 업데이트 시에는 스키마 구조와 동일하게 써 주어야 어레이를 손상시키지 않습니다!
                                                 // push하는 부분과 비교하시면 한눈에 알수 있습니다.
                                                 database.WritingModel.update(
-                                                    {'ExamNO':paramExamNO},{"$set":{'Problem':[{
-                                                        'writingProblem':paramwritingProblem,
-                                                        'writingProblemAnswer':paramwritingProblemAnswer
+                                                    {'writingProblemType':paramwritingProblemType},{"$set":{'Problem':[{
+                                                    'writingProblem':paramwritingProblem,
+                                                    'writingProblemAnswer':paramwritingProblemAnswer
                                                     }]}}, function(err, results){
                                                         if(err){
                                                             console.error('문제를 수정하던 중 에러가 발생했습니다.'+err.stack);
