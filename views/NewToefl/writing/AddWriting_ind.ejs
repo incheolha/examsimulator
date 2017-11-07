@@ -1,196 +1,130 @@
 <!doctype html>
 <html>
-    <head>
-    <meta charset="utf-8">    
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../../public/sementicTest/Semantic/semantic.css">
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-    <script src="../../../public/sementicTest/Semantic/semantic.js"></script>  
-   <script src="../../../public/sementicTest/ckeditor/ckeditor.js"></script>
-    <script src="../../../public/sementicTest/AddWriting.js"></script> 
-		
-		<style>
-            
-	 body{
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../../../public/sementicTest/Semantic/semantic.js"></script>
+    <script src="../../../public/sementicTest/ckeditor/ckeditor.js"></script>
+    <script src="../../../public/sementicTest/AddWriting_ind.js"></script>
+
+    <style>
+        body {
             margin: 15px;
-           
         }
-            
-       
-       
-                  
-            
-     .ui.inverted.menu {
-                height: 100px;
-              };
-     
-    
-            
-    </style>  
         
+        .ui.blue.borderless.inverted.menu {
+            height: 100px;
+        }
         
-            
+        ;
+    </style>
 
-    </head>
-    
-    
-     <body onload=startTime()>
-          <div class="ui blue borderless inverted menu">
-          <div class="left menu">
+
+
+
+</head>
+
+
+<body onload=startTime()>
+    <div class="ui blue borderless inverted menu">
+        <div class="left menu">
             <a class="item">
-              <h1>Toefl Simulator<br></h1> <br><br> <h4>for Teachers</h4>   
-              </a>
-            </div>      
-        <div class="centered menu">  
-            
-          <a class="item">
-           
-            <i class="huge github icon"></i>
+                <h1>Toefl Simulator<br></h1> <br><br>
+                <h4>for Teachers</h4>
             </a>
-  
-        </div>     
+        </div>
+        <div class="centered menu">
+
+            <a class="item">
+
+                <i class="huge github icon"></i>
+            </a>
+
+        </div>
         <div class="right menu">
-        <a class="item" id="clock"> </a>    
-       
-    <div class="ui dropdown item">
-      <i class="user icon"></i>
-       <% if (user.permissionTag == 'toeflTeacher') { %>
-         
-          <%= user.name %> 선생님, 환영합니다.
-		      <!-- <%= user.email %> -->
-        <% } %>
+            <a class="item" id="clock"> </a>
 
-      <i class="dropdown icon"></i>
-      <div class="menu">
-        <a class="item">profile</a>
-        <a class="item" href="/logout">Logout</a>
+            <div class="ui dropdown item">
+                <i class="user icon"></i>
+                <% if (user.permissionTag == 'toeflTeacher') { %>
+
+                    <%= user.name %> 선생님, 환영합니다.
+                        <!-- <%= user.email %> -->
+                        <% } %>
+
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item">profile</a>
+                                <a class="item" href="/logout">Logout</a>
+                            </div>
             </div>
-        </div>    
-     </div>   
+        </div>
     </div>
 
-        <div>
-          <div class="ui huge breadcrumb">
-          <a class="section" id="breadcrumbMain">문제출제하기</a>
-          <i class="right chevron icon divider"></i>
-          <a class="section"> <%= ExamNO %> 회차</a>
-          <i class="right chevron icon divider"></i>  
-          <div class="active section">Writing</div>
-         
-      
-    
+    <div>
+        <div class="ui huge breadcrumb">
+            <a class="section" id="breadcrumbMain">문제출제하기</a>
+            <i class="right chevron icon divider"></i>
+            <a class="section">
+                <%= ExamNO %> 회차</a>
+            <i class="right chevron icon divider"></i>
+            <div class="active section">Writing</div>
+
+
+
         </div>
-              <button class="teal ui right floated button" id="wr_chapter_complete_btn">챕터 완료</button>
-         </div>
-       
-        <br>
-             <br>
-         
-            <div class="ui top attached tabular blue two item  menu">
-              <a class="active item" data-tab="first" id="menu_ch_1">
-               Integrated Section
-              </a>
-              <a class="active item" data-tab="second" id="menu_ch_2">
-                Independent Section
-                  
-              </a>
-          
-            </div>    
-            
-        <div class="ui tab segment" data-tab="first" id="chapter3">
-          
-            <div class="ui styled fluid accordion">
-                
-              <form class="ui form">    
-                
-          <div class="title">
-
-            <div class="ui blue ribbon large label">
-                <i class="spoon icon"></i> Reading Script 만들기 
-            </div>
-
-            </div>
-            
-          <div class="content active">
-              <h3 class="ui header">Step1. 지문을 만들어주세요 
-              </h3>           
-<!--
-            <label><h5 class="ui header">Directions : You have 20 minutes to plan and write your response. Your response will be judged on
-            the basis of the quality of your writing and on how well your response presents the points in the
-            lecture and the relationship to the reading passage. Typically, an effective response will be 150 to
-                225 words. </h5></label>
-            <br>
-            <label><h5 class="ui header">Question : Summarize the points made in the lecture, explaining how they cast doubt on the
-                points made in the reading. </h5> </label>
--->
-    
-
-    <div class="field">
-         <textarea name="editor1" id="editor1">
-         </textarea>
-        <br>
-
-    </div>    
-    <br>        
+        <button class="teal ui right floated button" id="wr_chapter_complete_btn">챕터 완료</button>
     </div>
-                  
-          <div class="title active">
-            <div class="ui violet ribbon large label">
-                <i class="spoon icon"></i> Lecture mp3와 img upload하기
-            </div>
-          </div>
-          <div class="content active">
-            <div class="field">  
-        <div>   
-             <h3 class="ui header">Lecture Mp3 upload 하기
-              </h3>           
-           <label for="wr_int_mp3_ipt" class="ui icon button">
-			   
-			
-			   
-                <i class="file icon"></i>
-                Open File</label>
-            <input type="file" id="wr_int_mp3_ipt" style="display:none" accept="audio/*" multiple>
-        </div>
-          <div id="wr_int_mp3_pre" class="preview" >
-        </div>        
-                <br><br>
-             <h3 class="ui header">Lecture Img upload 하기
-              </h3>               
-        <div>
-            <label for="wr_int_img_ipt" class="ui icon button">
-                <i class="file icon"></i>
-                Open File</label>
-            <input type="file" id="wr_int_img_ipt" style="display:none" accept="image/*" multiple>
-        </div> 
-            <div id="wr_int_img_pre" class="preview">
-            </div>       
 
-              <br><br>
-          
-                
-                <button class="ui teal button" id="submitBtn1" type="submit" >Submit</button>
-                
-               
-               
-          </div>
+    <br>
+    <br>
+
+    <div class="ui  inverted blue two item menu">
+        <div class="item">
+            <form action="/toeflTeacher/writing/integrated" method="POST">
+                <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
+                <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>>
+                <input type="hidden" name="writingProblemType" value=1>
+                <button type="submit" class="ui primary button">Integrated Type</button>
+            </form>
         </div>
-       
-            </form>    
-        </div>          
- </div> 
-         
-         
-         
-     <div class="ui tab segment" data-tab="second" id="chapter3">
-                
-                       <form class="ui form">
+        <div class="item">
+            <form action="/toeflTeacher/writing/independent" method="POST">
+                <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
+                <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>>
+                <input type="hidden" name="writingProblemType" value=2>
+                <button type="submit" class="ui primary button">Independent Type</button>
+            </form>
+        </div>
+
+    </div>
+
+    <% var indProblem = writingProblem %>
+    <% var indProblemAnswer = writingProblemAnswer %>
+
+    <!-- <button id="btn1"><%= indProblem %></button>
+    <button id="btn2"><%= indProblemAnswer %></button> -->
     
-            <div class="ui styled fluid accordion">
-<!--
+
+                <% if((indProblem ===1)||(indProblemAnswer ===1)){ %>
+
+
+        <div class="ui fluid container">
+
+        <div class="ui two column divided grid">
+        <div class="row">
+        <div class="column">
+        <div class="ui segment">
+               
+            <form class="ui form" action="/process/toefl/writing/multerAddWriting" method="post" enctype="multipart/form-data" >    
+                <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+                <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+                <input type="hidden" name="writingProblemType" value=2>
+       
+        <!--
           <div class="title">
 
             <div class="ui blue ribbon large label">
@@ -211,68 +145,225 @@
         </div>
           </div>
 -->
-          <div class="title">
-              <div class="ui blue ribbon large label">
-                <i class="spoon icon"></i> 문제 출제하기
-            </div>
-          </div>
-          <div class="content active">
-            <div class="field">
-             <h3 class="ui header"> <label>Question :
-                 Do you agree or disagree with the following statement?</label>
-              </h3>     
-            <h4 class="ui header">문제를 입력해 주세요</h4>
-              <div class="ui input focused">
-                  <input type="text" placeholder="EX. Parents today do not understand their children as well as parents did fifty years ago. ">
-            </div>  
-               <h3 class="ui header"> <label>Use specific reasons and examples to support your opinion.</label>
-                  </h3>     
-            </div>
-          </div>
-          <div class="field">
-          <h3 class="ui header"> 해설 입력하기 (Description)
-              </h3>               
-         <textarea class="ui active textarea" name="speakingProblemAnswer">
-         </textarea>
-       
+                                             <div class="title">
+                                                <div class="ui blue ribbon large label">
+                                                    <i class="spoon icon"></i> 문제 출제하기
+                                                </div>
+                                              </div>
+                                             <div class="content active">
+                                                   <div class="field">
+                                                       <h3 class="ui header"> <label>Question :
+                                                    Do you agree or disagree with the following statement?</label>
+                                                       </h3>
+                                                       <h4 class="ui header">문제를 입력해 주세요</h4>
+                                                       <div class="ui input focused">
+                                                           <input type="text" name="writingProblem" placeholder="EX. Parents today do not understand their children as well as parents did fifty years ago. ">
+                                                       </div>
+                                                       <!-- <h3 class="ui header"> <label>Use specific reasons and examples to support your opinion.</label> -->
+                                                       </h3>
+                                                   </div>
+                                               </div>
+                                               <div class="field">
+                                                   <h3 class="ui header"> 해설 입력하기 (Description)
+                                                   </h3>
+                                                   <textarea class="ui active textarea" name="writingProblemAnswer"></textarea>
+                                                </div>
 
-    </div>   
+                                                <button class="ui primary button" type="submit">출제하기!</button>
+                                            </div>
+                                       </form>
+                                   </div>
+                                    <div class="eigth wide column">
+                                        <div class="ui bottom info message">
+                                            <div class="header">
+                                               아직 저장된 내용이 없네요!
+                                           </div>
+                                           <ul class="list">
+                                               <li>알고 계셨나요??</li>
+                                               <li>문제를 만들고 저장하시면 이부분에서 문제가 나타납니다</li>
+                                            </ul>
+                                        </div>
+                                   </div>
+
+                               </div>
+                           </div>
+                       </div>
+                   </div>
 
 
+               
+               
+               
 
-            <button class="ui primary button" type="submit">출제하기!</button>  
-   
-        </div>
-        </form>   
-    </div>       
-      
-	 <div class="ui modal" id="go_back_main_modal">
-          <i class="close icon"></i>
-          <div class="header">
-			
-  
-			  
-           메인 화면으로 이동하기
-          </div>
-          <div class="content">
-         
-            <div class="description">
-              <div class="ui header">
-				 
-				  문제 출제하기 메인 화면으로 이동합니다.</div>
+
+                <% }else if( (indProblem !=1) || (indProblemAnswer !=1) ){ %>
            
+                   <% var indProblem = writingProblem %>
+                   <% var indProblemAnswer = writingProblemAnswer %>
+               
+  
+                   <button id="btn1"><%= indProblem %></button>
+                   <button id="btn2"><%= indProblemAnswer %></button>
+                  
+
+                                    <div class="ui fluid container">
+
+                                        <div class="ui two column divided grid">
+                                            <div class="row">
+                                                <div class="column">
+
+
+                                                    <div class="ui segment" >
+
+                                                        <form class="ui form" action="/process/toefl/writing/multerAddWriting" method="post" enctype="multipart/form-data" >    
+                                                            <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+                                                            <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+                                                            <input type="hidden" name="writingProblemType" value=2>
+
+                                                            <div class="ui styled fluid accordion">
+                                                                <!--
+          <div class="title">
+
+            <div class="ui blue ribbon large label">
+                <i class="spoon icon"></i> Questions  
             </div>
-          </div>
-          <div class="actions">
-         
-              <button class="ui grey deny button">이전으로</button>
-              
-              <button class="ui blue button">이동하기</button>
+
+            </div>
             
+          <div class="content active">
+              <h3 class="ui header">Independent Section 에 관련된 문제입니다.
+              </h3>     
+        <div class="field">
+            
+            <label><h3 class="ui header">Directions Read the question below. You have 30 minutes to plan, write, and revise your essay.
+            Typically, an effective response will contain a minimum of 300 words.</h3></label>
+            <br>
+           
+        </div>
+                     
+                              
           </div>
-        </div> 		 	 
-		 
-    </body>
-    
-    
-</html>    
+-->
+                                                                <div class="title">
+                                                                    <div class="ui blue ribbon large label">
+                                                                        <i class="spoon icon"></i> 문제 출제하기
+                                                                    </div>
+                                                                </div>
+                                                                <div class="content active">
+                                                                    <div class="field">
+                                                                        <h3 class="ui header"> <label>Question :
+                                                                    Do you agree or disagree with the following statement?</label>
+                                                                        </h3>
+                                                                        <h4 class="ui header">문제를 입력해 주세요</h4>
+                                                                        <div class="ui input focused">
+                                                                            <input type="text" id="inputtest" placeholder="EX. Parents today do not understand their children as well as parents did fifty years ago. ">
+                                                                        </div>
+                                                                        <h3 class="ui header"> <label>Use specific reasons and examples to support your opinion.</label>
+                                                                        </h3>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="field">
+                                                                    <h3 class="ui header"> 해설 입력하기 (Description)
+                                                                    </h3>
+                                                                    <textarea class="ui active textarea" id="inputtest2" name="speakingProblemAnswer"></textarea>
+
+
+                                                                </div>
+
+
+
+                                                                <button class="ui primary button" type="submit">출제하기!</button>
+                                                            </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="eight wide column">
+                                                        <div class="ui raised segment">
+                                                            <div class="ui blue ribbon big label">
+                                                                <i class="spoon icon"></i> 저장된 문제
+                                                            </div>
+                                                            <br>
+
+                                                            <h3 class="ui header"></h3>
+                                                            <table class="ui fluid attached blue large  table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Subject Name</th>
+                                                                        <th>Saved Value</th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Problem</td>
+                                                                        <td>
+                                                                            <%= indProblem %>
+                                                                        </td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td>Problem Desc.</td>
+                                                                        <td>
+                                                                            <%= indProblemAnswer %>
+                                                                        </td>
+
+                                                                    </tr>
+                                                                </tbody>
+
+                                                            </table>
+                                                            <br>
+
+                                                            <div class="ui bottom info message">
+
+                                                                <div class="header">
+                                                                    Was this what you wanted?
+                                                                </div>
+                                                                <ul class="list">
+                                                                    <li>It's good to see you again.</li>
+                                                                    <li>Did you know it's been a while?</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% } %>
+
+                                            <!-- back  modal -->
+                                            <div class="ui modal" id="go_back_main_modal">
+                                                <i class="close icon"></i>
+                                                <div class="header">
+
+
+
+                                                    메인 화면으로 이동하기
+                                                </div>
+                                                <div class="content">
+
+                                                    <div class="description">
+                                                        <div class="ui header">
+
+                                                            문제 출제하기 메인 화면으로 이동합니다.</div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="actions">
+
+                                                    <button class="ui grey deny button">이전으로</button>
+
+                                                    <button class="ui blue button">이동하기</button>
+
+                                                </div>
+                                            </div>
+                                    </div>
+                                    
+</body>
+
+
+</html>
