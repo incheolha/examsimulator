@@ -86,13 +86,22 @@ $(document).ready(function(){
     </div>
 </div>
 <div class="ui two column doubling stackable grid">
-<div class="column">
+
+    <!-- 이부분이 문제가 나오는 부분입니다. -->
+    
+    <div class="column">
+        <% var a = writingProblem %>
+        <% var b =  writingProblemAnswer %>
+
        
 </div>
-<div class="column">
-    
-    <textarea width="100%" border="1">
 
+<!-- 이 부분은 시케이 에디터가 나오는 부분입니다.. -->
+<div class="column">
+    Db에 저장된 문제 : <%= a %>
+    Db에 저장된 해설 : <%= b %> 
+    <textarea width="100%" border="1">
+    
         
     </textarea>
     

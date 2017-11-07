@@ -11,7 +11,7 @@ writingSchemaObj.createSchema = function(mongoose) {
         ExamCreatedTime:{type: Date, 'default': Date.now},      
         
             
-	    Problem:[{
+	    Problem:[{ 
                     writingProblemType : {type: Number},  // 독립형인지, 통합형인지 구분  1:통합형 2:독립형
                     writingAnnounceDirection: {type: String, trim: true, 'default': ''}, // 문제출제전 나오는 direction db에서 읽어오기
                     writingAnnouncementAudio: {type: String, trim: true, 'default': ''}, // 디렉션 읽어주는 audio db에서 읽어오기
@@ -77,7 +77,8 @@ writingSchemaObj.createSchema = function(mongoose) {
 	}
     WritingSchema.static('findByExamNO', function(ExamNO, callback) {
 		console.log(ExamNO);
-		return this.find({ExamNO:ExamNO}, callback);
+        return this.find({ExamNO:ExamNO}, callback);
+        
     });
     
     WritingSchema.static('findByProblemType', function(writingProblemType, callback){
