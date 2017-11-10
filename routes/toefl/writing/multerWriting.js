@@ -1,4 +1,3 @@
-
 //writing chapter에서 문제 업로드시 이곳에서 처리합니다.
 
 //file 처리에 필요한 모듈 정의
@@ -100,9 +99,10 @@ var addProblemWriting = function(req, res){
                                 //찾은 내용이 있다면 진행합니다.
                                 else{
                                     console.log(results[0].Problem[0] + "확인")
-                                    console.log(results[0].Problem[0]);
+                                    console.log('결과값' + results[0].Problem[0].writingProblemType);
                                     //두번째 조건문으로 문제가 있는지 확인합니다.
-                                    if(results[0].Problem[0] == undefined){
+                                    if(results[0].Problem[0].writingProblemType == undefined){
+                                        
                                         console.log("작업하는 회차 확인" +results); 
                                         //문제를 추가하는 함수를 사용합니다.
                                         database.WritingModel.update({
@@ -187,10 +187,11 @@ var addProblemWriting = function(req, res){
                                               
                                     })
                                     //두번째 조건을 처리합니다. 여기서는 Problem안에 최소한 한개의 값이 있을때 problem 을 찾아 업데이트 시킵니다.
-                                }else if(results[0].Problem[0] != null){
+                                }else if(results[0].Problem[0].writingProblemType == 1){
                                     console.log("db에서 최소 1개이상의 문제가 저장되어 있습니다.");
                                     console.log("db에 저장된 통합형을 찾아 비교하여 문제 내용을 업데이트 합니다.")
-                                    database.WritingModel.find({'$and':[{"ExamNO":paramExamNO},{"Problem":{'$elemMatch':{'writingProblemType':paramwritingProblemType}}}]}, function(err, results){
+                                    console.log("결과값"+ results[0].Problem[0].writingProblemType);
+                                    database.WritingModel.find({'$and':[{"ExamNO":paramExamNO}, {"Problem":{'$elemMatch':{'writingProblemType':paramwritingProblemType}}}]} , function(err, results){
 
                                         if(err){
                                             console.error('라이팅 DB안에 Problem을 찾던 중 에러가 발생했습니다.'+err.stack);
@@ -478,6 +479,3 @@ var addProblemWriting = function(req, res){
    
 
 module.exports.addProblemWriting = addProblemWriting;
-
-
-    

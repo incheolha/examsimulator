@@ -290,7 +290,7 @@ var writing_int = function(req, res){
                     var context = { 
                         ExamNO : paramExamNO,
                         ExamDesc : paramExamDesc,
-                        writingProblemType : paramwritingProblemType,
+                        writingProblemType : results[0].Problem[0].writingProblemType,
                         writingProblemReading : results[0].Problem[0].writingProblemReading,
                         writingProblemListeningImage : results[0].Problem[0].writingProblemListeningImage,
                         writingProblemListeningAudio : results[0].Problem[0].writingProblemListeningAudio,
