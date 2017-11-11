@@ -6,6 +6,7 @@
 
 module.exports = {
 	server_port: 3000,
+	// db_url: 'mongodb://admin2000:3590dany@ds237815.mlab.com:37815/heroku_k7rvp5k3',
 	// db_url: 'mongodb://admin20000:3590dany@ds155414.mlab.com:55414/heroku_53dpsf7n',
 	db_url:'mongodb://localhost:27017/local',
 	db_schemas: [
@@ -44,7 +45,7 @@ module.exports = {
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/speaking/ch1', method:'speaking', type:'post'}
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/integrated', method:'writing_int', type:'post'}
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/independent', method:'writing_ind', type:'post'}
-
+		
 // reading routes 
  
 	,{file:'./toefl/reading/reading', path:'/process/toefl/reading/addreading', method:'addreading', type:'post'}
@@ -78,6 +79,8 @@ module.exports = {
 		,{file:'./toefl/speaking/speaking', path:'/process/toefl/speaking/ch6', method:'speaking_ch6', type:'post'}
 			
 // writing routes
+
+		,{file:'./toefl/writing/multerWriting', path:'/process/toefl/writing/multerAddWriting', method:'addProblemWriting', type:'post'}
 		,{file:'./toefl/writing/writing', path:'/process/toefl/writing/addwriting', method:'addwriting', type:'post'}
 		,{file:'./toefl/writing/writing', path:'/process/toefl/writing/updatewriting', method:'updatewriting', type:'post'}
 		,{file:'./toefl/writing/writing', path:'/process/toefl/writing/removewriting', method:'removewriting', type:'post'}

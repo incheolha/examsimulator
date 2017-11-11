@@ -316,6 +316,9 @@ var writing_int = function(req, res){
 
                 }else if(results[0].Problem[0]==undefined){
 
+                    
+
+
                     console.log("db에 저장된 문제가 없습니다.");
                     console.log("새로운 문제 만들기로 이동합니다.");
 
@@ -383,18 +386,23 @@ var writing_ind = function(req, res){
                 res.end();
                 return;
             }
+            
             console.log("results = "+ results) // 찾은 영역을 확인합니다.
-            if(results != null) //찾은 내용이 있다면 진행
+            if(results[0].Problem[1]!=null) //찾은 내용이 있다면 진행
             {
                 //db에서 찾은 내용과 함께 파라미터로 묶어 넘깁니다.
                 var context = {
                     ExamNO : paramExamNO,
                     ExamDesc : paramExamDesc,
                     writingProblemType : paramwritingProblemType,
-
+                    writingProblem : results[0].Problem[1].writingProblem,
+                    // writingProblemReading : results[0].Problem[1].writingProblemReading,
+                    writingProblemAnswer : results[0].Problem[1].writingProblemAnswer,
                     login_success: true,
                     user:req.user
                 }
+
+                
 
                 res.app.render('./NewToefl/writing/AddWriting_ind.ejs', context, function(err, html){
                     if(err){
@@ -412,19 +420,24 @@ var writing_ind = function(req, res){
                 })
 
 
-            }else if(results = null){
+            }else if(results[0].Problem[1]==undefined){
+                //db에서 찾은 내용이 없을경우 
+                //가짜 파라미터를 만들어서 넘깁니다.
                 console.log("db에 저장된 문제가 없습니당");
                 console.log("문제 새로 만들기로 랜더링!");
-
+              
                 var context = {
                     ExamNO : paramExamNO,
                     ExamDesc : paramExamDesc,
+                    writingProblem : 1,
+                    // writingProblemReading :1,
+                    writingProblemAnswer :1,
                     writingProblemType : paramwritingProblemType,
                     login_success : true,
                     user:req.user
                 };
 
-                req.app.render('./NewToefl/speaking/AddSpeaking_ind.ejs', context, function(err, html){
+                req.app.render('./NewToefl/writing/AddWriting_ind.ejs', context, function(err, html){
                     if(err){
                         console.error("독립형으로 랜더링중 문제가 발생했습니다."+ err.stack);
 
