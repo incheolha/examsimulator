@@ -7,7 +7,10 @@
 module.exports = {
 	server_port: 3000,
 	// db_url: 'mongodb://admin2000:3590dany@ds237815.mlab.com:37815/heroku_k7rvp5k3',
+<<<<<<< HEAD
 	// db_url: 'mongodb://admin20000:3590dany@ds155414.mlab.com:55414/heroku_53dpsf7n',
+=======
+>>>>>>> master
 	db_url:'mongodb://localhost:27017/local',
 	db_schemas: [
     {file:'./user_schema', collection:'users6', schemaName:'UserSchema', modelName:'UserModel'}
@@ -45,7 +48,8 @@ module.exports = {
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/speaking/ch1', method:'speaking', type:'post'}
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/integrated', method:'writing_int', type:'post'}
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/independent', method:'writing_ind', type:'post'}
-		
+// student routes
+		,{file:'./student', path:'/toeflStudent/reading', method:'student', type:'post'}
 // reading routes 
  
 	,{file:'./toefl/reading/reading', path:'/process/toefl/reading/addreading', method:'addreading', type:'post'}

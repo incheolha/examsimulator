@@ -1,0 +1,185 @@
+ <!doctype html>
+<head>
+<meta charset="utf-8">
+        <title>test1 reading</title>
+
+        <link rel="stylesheet" type="text/css" href="semantic/semantic.css">
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+    <script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+</head>
+
+<script>
+$(document).ready(function(){
+    $(".timer").click(function(){
+        $(".timer1").toggle();
+    });
+});
+</script>
+<script>
+        $(document).ready(function(){
+    $(".vol").click(function(){
+        $("section").toggle();
+    });
+});
+        </script>
+
+<style>
+    body { margin : 20px; }
+    #top1{width: 50%; height: 100%; float: left}
+    #top2{width: 50%; height: 100%; float: right}
+    #top2_1{width: 50%; height: 100%;  float: right}
+    .li{text-decoration-line: line-through}
+</style>
+
+<body>
+<div class="ui blue inverted menu">
+    <div id="top1">
+        <h1>Toefl Simulator</h1>
+    </div>
+    <div id="top2">
+        <div id="top2_1">
+            <button class="ui blue submit button">
+            <i class="big help icon"></i>
+            </button>
+            <button class="ui blue submit button">
+            <i class="big file text outline icon"></i>
+            </button>
+            <button class=" ui blue submit button">
+            <i class="big volume up icon">
+            </i>
+            </button>
+            <button class="ui blue submit button">
+            <i class="big arrow left icon"></i>
+            </button>
+            <button class="ui blue submit button">
+            <i class="big arrow right icon"></i>
+            </button>
+            <br>
+            <button class="timer ui blue submit button">시간</button>
+            <div class="timer1 ui blue submit button" id="ViewTimer">
+            </div>
+            
+        </div>
+       
+        <script language="JavaScript">
+    var setTime = 60000;
+        function msg_time(){
+            m=Math.floor(setTime/60)+"min"+(setTime%60)+"sec";
+        var msg =  m ;
+        document.all.ViewTimer.innerHTML = msg;
+        setTime--;
+        if(setTime<0){
+            clearInterval(tid);
+            location.href = "test4.html";
+        }
+        }
+        window.onload=function TimerStart(){tid=setInterval('msg_time()',1000)};
+    </script>
+         
+        <button class="ui right floated primary button">
+        CONTINUE
+        </button>
+    </div>
+</div>
+<div class="ui two column doubling stackable grid">
+
+    <!-- 이부분이 문제가 나오는 부분입니다. -->
+    
+    <div class="column">
+        <% var a = writingProblem %>
+        <% var b =  writingProblemAnswer %>
+
+       
+</div>
+
+<!-- 이 부분은 시케이 에디터가 나오는 부분입니다.. -->
+<div class="column">
+    Db에 저장된 문제 : <%= a %>
+    Db에 저장된 해설 : <%= b %> 
+    <textarea width="100%" border="1">
+    
+        
+    </textarea>
+    
+<br>
+</div>
+    </div>
+<div class="ui blue bottom inverted menu">
+    
+</div>
+</body>
+ <a>
+                <section>	
+		              <span class="tooltip"></span> 
+		              <div id="slider"></div> 
+		              <span class="volume"></span>  
+	                   </section>
+                    </a>
+
+ <script>
+            var video = document.getElementById('video');
+            var volumeControl = document.getElementById('volumControl');
+            
+            volumeControl.addEventListener('change', function() {
+                video.volume = this.value / 100;
+            });
+        </script>
+       
+        <script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+	<script>
+		$(function() {
+
+			//Store frequently elements in variables
+			var slider  = $('#slider'),
+				tooltip = $('.tooltip');
+
+			//Hide the Tooltip at first
+			tooltip.hide();
+
+			//Call the Slider
+			slider.slider({
+				//Config
+				range: "min",
+				min: 1,
+				value: 35,
+
+				start: function(event,ui) {
+				    tooltip.fadeIn('fast');
+				},
+
+				//Slider Event
+				slide: function(event, ui) { //When the slider is sliding
+
+					var value  = slider.slider('value'),
+						volume = $('.volume');
+
+					tooltip.css('left', value).text(ui.value);  //Adjust the tooltip accordingly
+
+					if(value <= 5) { 
+						volume.css('background-position', '0 0');
+					} 
+					else if (value <= 25) {
+						volume.css('background-position', '0 -25px');
+					} 
+					else if (value <= 75) {
+						volume.css('background-position', '0 -50px');
+					} 
+					else {
+						volume.css('background-position', '0 -75px');
+					};
+
+				},
+
+				stop: function(event,ui) {
+				    tooltip.fadeOut('fast');
+				},
+			});
+
+		});
+    </script>
+    

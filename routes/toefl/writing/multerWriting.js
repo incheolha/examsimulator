@@ -1,4 +1,3 @@
-
 //writing chapter에서 문제 업로드시 이곳에서 처리합니다.
 
 //file 처리에 필요한 모듈 정의
@@ -76,7 +75,7 @@ var addProblemWriting = function(req, res){
 
 
 
-            if(paramwritingProblemType ==1){
+            if(paramwritingProblemType == 1){
                 console.log("통합형으로 랜더링하자.");
                 var database = req.app.get('database');
                 
@@ -93,15 +92,12 @@ var addProblemWriting = function(req, res){
                                     res.end();
                 
                                     return;
-                                }
-                               
-                                    
-                                
-                                //찾은 내용이 있다면 진행합니다.
-                                else{
+
+                                } else{
                                     console.log(results[0].Problem[0] + "확인")
-                                    console.log(results[0].Problem[0]);
+                                    // console.log('결과값' + results[0].Problem[0].writingProblemType);
                                     //두번째 조건문으로 문제가 있는지 확인합니다.
+<<<<<<< HEAD
                                     if(results[0].Problem[0] == undefined){
                                         console.log("작업하는 회차 확인" +results); 
                                         //문제를 추가하는 함수를 사용합니다.
@@ -215,93 +211,55 @@ var addProblemWriting = function(req, res){
                                             }]}}, function(err, results){
                                                 if(err){
                                                     console.error('문제를 업데이트 하던 중 에러가 발생했습니다.'+error.stack);
+=======
+                                  
+                                      var  quit = false;
+                                      var  i = 0;
+                                       while (!quit) {
+>>>>>>> master
 
-                                                    res.writeHead('200',{'Content-Type':'text/html;charset=utf8;'});
-                                                    res.write('<h2>문제를 업데이트 하던 중 문제가 발생했습니다. <h2>');
-                                                    res.write('<p>'+err.stack+'</p>');
-                                                    res.end();
+                                        if (results[0].Problem[i].writingProblemType == undefined) {
+                                            console.log("this is a third parameters:" + results[0].Problem[i].writingProblemType)
+                                            
+                                                quit = true;
+                                      
+                                        } else if (results[0].Problem[i].writingProblemType == 1) {
 
-                                                    return;
 
-                                                }
-                                                console.log('DB에 내용을 성공적으로 업데이트 하였습니다.')
-                                                console.log('fs를 이용한 이름 재설정');
-                    
-    
-    
-    
-                                                var rename="toefl_WR_"+paramExamNO+"_"+paramwritingProblemType+"_";
-                                                var concre = path+rename;
-                                                console.log("바꾸고자 하는 이름" + concre);
-                                               
-                                               
-                                                fs.exists("./uploads/"+paramwritingProblemListeningAudio, function(exists){
-                                                    console.log(exists? 'yes':"no");
-                                                    if(exists = 'yes'){
-                                                        fs.rename("./uploads/"+paramwritingProblemListeningAudio, concre+paramwritingProblemListeningAudio, function(err){
-                                                            if(err) throw err;
-                                                          
-                                                        })
-                                                        console.log("할룽");
-                                                    }
-                                                });
-                    
-                                                fs.exists("./uploads/"+ paramwritingProblemListeningImage, function(exists){
-                                                    console.log(exists? 'yes':"no");
-                                                    if(exists = 'yes'){
-                                                        fs.rename("./uploads/"+paramwritingProblemListeningImage, concre+paramwritingProblemListeningImage, function(err){
-                                                            if(err) throw err;
-                                                            
-                                                        })
-                                                        console.log("할룽할룽");
-                                                    }
-                                                });
+                                            console.log("this is a first parameters:" + results[0].Problem[i].writingProblemType)
 
-                                                console.log("통합형으로 랜더링 합니다.")
-                                                var context = {
-                                                    ExamNO : paramExamNO,
-                                                    ExamDesc : paramExamDesc,
-                                                    writingProblemType : paramwritingProblemType,
-                                                    writingProblemReading : paramwritingProblemReading,
-                                                    writingProblemListeningAudio : paramwritingProblemListeningAudio,
-                                                    writingProblemListeningImage : paramwritingProblemListeningImage,
-                                                    writingProblemAnswer : paramwritingProblemAnswer,
-                                                    login_success : true,
-                                                    user:req.user
-                                                };
-                                                req.app.render('./NewToefl/writing/AddWriting_int.ejs', context, function(err, html){
-                                                    if(err){
-                                                        console.error('Add_writing 랜더링 중 에러 발생 '+err.stack);
-                                                        res.writeHead('200',{'Content-Type':'text/html;charset=utf8'});
-                                                        res.write('<h2>랜더링중 문제 발생</h2>');
-                                                        res.write('<p>'+err.stack+'</p>');
-                                                        res.end();
-                    
-                                                        return;
-                                                    }
-                                                    console.log("응답 웹문서 : " +html);
-                                                    res.end(html);
-                                                })
 
-                                            })
 
-                                    })
-                                }else{
-                                      console.log("어떠한 작업도 수행하지 못했습니다.")
+
+                                        } else if (results[0].Problem[i].writingProblemType == 2) {
+
+                                            console.log("this is a second parameters:" + results[0].Problem[i].writingProblemType)
+                                            
+
+                                        }
+                                      
                                     }
-        
                                 }
-                            })
+                            });
                         
-                 }else{
+                 } else{
                     res.writeHead('200', {'content-Type':'text/html;charset=utf8'});
                     res.write('<h2>데이터베이스 연걸에 실패했습니다. </h2>');
                     res.end();
-                    }
+                 }
                 
                 
                 
-            }else if(paramwritingProblemType ==2){
+
+
+
+
+
+
+
+
+
+            } else if(paramwritingProblemType ==2){
                         console.log("독립형으로 랜더링합니다.");
                 
                         var paramExamNO = req.body.ExamNO || req.query.ExamNO;
@@ -478,6 +436,3 @@ var addProblemWriting = function(req, res){
    
 
 module.exports.addProblemWriting = addProblemWriting;
-
-
-    

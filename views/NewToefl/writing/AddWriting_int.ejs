@@ -136,6 +136,7 @@
                 <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
                 <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
                 <input type="hidden" name="writingProblemType" value=1>
+                
           <div class="title">
 
             <div class="ui blue ribbon large label">
@@ -272,9 +273,10 @@
         <div class="ui  segment" data-tab="first" id="chapter3">
             
           <form class="ui form" action="/process/toefl/writing/multerAddWriting" method="post" enctype="multipart/form-data" >    
-            <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
-            <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
-            <input type="hidden" name="writingProblemType" value=1>
+            <input type="text" name="ExamNO" value=<%= ExamNO %>>
+            <input type="text" name="ExamDesc" value=<%= ExamDesc %>> 
+            <input type="text" name="writingProblemType" value=<%= writingProblemType%>>
+            
           <div class="title">
 
             <div class="ui blue ribbon large label">
@@ -329,7 +331,7 @@
   </div>
     <div id="wr_int_mp3_pre" class="preview" >
   </div>  
-  <input type="text" id="inputtest2">      
+  <input type="text" id="inputtest3">      
        
        <h3 class="ui header">Lecture Img upload 하기
         </h3>               
@@ -341,7 +343,7 @@
   </div> 
       <div id="wr_int_img_pre" class="preview">
       </div>   
-      <input type="text" id="inputtest3">     
+      <input type="text" id="inputtest2">     
  <br>
  <br>
     <div class="field">

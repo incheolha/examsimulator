@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+        <title>test1 reading</title>
+        <link rel="stylesheet" type="text/css" href="semantic/semantic.css">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+<h1>시간종료되면 나오는 페이지</h1>
+<!--
+<div class="ui top attached tabular menu">
+    <div class="active item">tab</div>
+</div>
+<div class="ui bottom attached active tab segment">
+<p></p>
+</div>
+
+-->
+<script>
+$('.ui.button')
+    .on('click', function(){
+    $.tab('change tab', 'tab-name');
+});
+</script>
+<div class="ui button">ad</div>
+<div class="ui tab" data-tab="tab-name"></div>
