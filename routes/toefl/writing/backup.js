@@ -92,58 +92,217 @@ var addProblemWriting = function(req, res){
                                     res.end();
                 
                                     return;
-
-                                } else{
+                                }
+                               
+                                    
+                                
+                                //찾은 내용이 있다면 진행합니다.
+                                else{
                                     console.log(results[0].Problem[0] + "확인")
                                     // console.log('결과값' + results[0].Problem[0].writingProblemType);
                                     //두번째 조건문으로 문제가 있는지 확인합니다.
-                                  
-                                      var  quit = false;
-                                      var  i = 0;
-                                       while (!quit) {
+                                    if(results[0].Problem[0]== undefined){
+                                        
+                                        console.log("작업하는 회차 확인" +results); 
+                                        //문제를 추가하는 함수를 사용합니다.
+                                        database.WritingModel.update({
+                                            'ExamNO':paramExamNO},{"$push":{'Problem':{
+                                                'writingProblemType':paramwritingProblemType,
+                                                'writingProblem' : paramwritingProblem,
+                                                'writingProblemReading' : paramwritingProblemReading,
+                                                'writingProblemListeningImage' : paramwritingProblemListeningImage,
+                                                'writingProblemListeningAudio':paramwritingProblemListeningAudio,
+                                                'writingProblemAnswer' : paramwritingProblemAnswer
+                    
+                                            }}}, function(err, results){
+                                                if(err){
+                                                    console.error('DB에 문제 추가 중 에러가 발생했습니다.' +err.stack);
+                    
+                                                    res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+                                                    res.write('<h2>writing 문제 추가 중 에러 발생</h2>');
+                                                    res.write('<p>'+err.stack+'</p>');
+                                                    res.end();
+                    
+                                                    return;
+                                                }
+                                                console.log('DB에 내용을 성공적으로 추가하였습니다.')
+                                                console.log('fs를 이용한 이름 재설정');
+                    
+    
+    
+    
+                                                var rename="toefl_WR_"+paramExamNO+"_"+paramwritingProblemType+"_";
+                                                var concre = path+rename;
+                                                console.log("바꾸고자 하는 이름" + concre);
+                                               
+                                               
+                                                fs.exists("./uploads/"+paramwritingProblemListeningAudio, function(exists){
+                                                    console.log(exists? 'yes':"no");
+                                                    if(exists = 'yes'){
+                                                        fs.rename("./uploads/"+paramwritingProblemListeningAudio, concre+paramwritingProblemListeningAudio, function(err){
+                                                            if(err) throw err;
+                                                            console.log("업로드 실패?");  
+                                                        })
+                                                        console.log("할룽");
+                                                    }
+                                                });
+                    
+                                                fs.exists("./uploads/"+ paramwritingProblemListeningImage, function(exists){
+                                                    console.log(exists? 'yes':"no");
+                                                    if(exists = 'yes'){
+                                                        fs.rename("./uploads/"+paramwritingProblemListeningImage, concre+paramwritingProblemListeningImage, function(err){
+                                                            if(err) throw err;
+                                                            console.log("업로드 실팽 ");
+                                                        })
+                                                        console.log("할룽할룽");
+                                                    }
+                                                });
 
-                                        if (results[0].Problem[i].writingProblemType == undefined) {
-                                            console.log("this is a third parameters:" + results[0].Problem[i].writingProblemType)
-                                            
-                                                quit = true;
-                                      
-                                        } else if (results[0].Problem[i].writingProblemType == 1) {
 
+                                                console.log("통합형으로 랜더링 합니다.")
+                                                var context = {
+                                                    ExamNO : paramExamNO,
+                                                    ExamDesc : paramExamDesc,
+                                                    writingProblemType : paramwritingProblemType,
+                                                    writingProblemReading : paramwritingProblemReading,
+                                                    writingProblemListeningAudio : paramwritingProblemListeningAudio,
+                                                    writingProblemListeningImage : paramwritingProblemListeningImage,
+                                                    writingProblemAnswer : paramwritingProblemAnswer,
+                                                    login_success : true,
+                                                    user:req.user
+                                                };
+                                                req.app.render('./NewToefl/writing/AddWriting_int.ejs', context, function(err, html){
+                                                    if(err){
+                                                        console.error('Add_writing 랜더링 중 에러 발생 '+err.stack);
+                                                        res.writeHead('200',{'Content-Type':'text/html;charset=utf8'});
+                                                        res.write('<h2>랜더링중 문제 발생</h2>');
+                                                        res.write('<p>'+err.stack+'</p>');
+                                                        res.end();
+                    
+                                                        return;
+                                                    }
+                                                    console.log("응답 웹문서 : " +html);
+                                                    res.end(html);
+                                                })
+                                              
+                                    })
+                                    //두번째 조건을 처리합니다. 여기서는 Problem안에 최소한 한개의 값이 있을때 problem 을 찾아 업데이트 시킵니다.
+                                }else if(results[0].Problem[0].writingProblemType == 1){
+                                    console.log("db에서 최소 1개이상의 문제가 저장되어 있습니다.");
+                                    console.log("db에 저장된 통합형을 찾아 비교하여 문제 내용을 업데이트 합니다.")
+                                    console.log("결과값"+ results[0].Problem[0].writingProblemType);
+                                    database.WritingModel.find({'$and':[{"ExamNO":paramExamNO}, {"Problem":{'$elemMatch':{'writingProblemType':paramwritingProblemType}}}]} , function(err, results){
 
-                                            console.log("this is a first parameters:" + results[0].Problem[i].writingProblemType)
+                                        if(err){
+                                            console.error('라이팅 DB안에 Problem을 찾던 중 에러가 발생했습니다.'+err.stack);
 
+                                            res.writeHead('200',{'Content-Type':'text/html;charset=utf8'});
+                                            res.write('<h2>라이팅 Db에 유형을 찾던중 에러가 발생했습니다.</h2>');
+                                            res.write('<p>'+err.stack+'</p>');
+                                            res.end()
 
-
-
-                                        } else if (results[0].Problem[i].writingProblemType == 2) {
-
-                                            console.log("this is a second parameters:" + results[0].Problem[i].writingProblemType)
-                                            
-
+                                            return;
                                         }
-                                      
+                                        console.log('db에서 통합형 문제를 찾았습니다.')
+                                        console.log('저장되어있는 결과값 : '+results);
+
+                                        database.WritingModel.update(
+                                            {'ExamNO':paramExamNO},{"$set":{'Problem':[{
+                                                'writingProblem':paramwritingProblem,
+                                                'writingProblemReading':paramwritingProblemReading,
+                                                'writingProblemListeningImage':paramwritingProblemListeningImage,
+                                                'writingProblemListeningAudio':paramwritingProblemListeningAudio,
+                                                'writingProblemAnswer' : paramwritingProblemAnswer
+                                            }]}}, function(err, results){
+                                                if(err){
+                                                    console.error('문제를 업데이트 하던 중 에러가 발생했습니다.'+error.stack);
+
+                                                    res.writeHead('200',{'Content-Type':'text/html;charset=utf8;'});
+                                                    res.write('<h2>문제를 업데이트 하던 중 문제가 발생했습니다. <h2>');
+                                                    res.write('<p>'+err.stack+'</p>');
+                                                    res.end();
+
+                                                    return;
+
+                                                }
+                                                console.log('DB에 내용을 성공적으로 업데이트 하였습니다.')
+                                                console.log('fs를 이용한 이름 재설정');
+                    
+    
+    
+    
+                                                var rename="toefl_WR_"+paramExamNO+"_"+paramwritingProblemType+"_";
+                                                var concre = path+rename;
+                                                console.log("바꾸고자 하는 이름" + concre);
+                                               
+                                               
+                                                fs.exists("./uploads/"+paramwritingProblemListeningAudio, function(exists){
+                                                    console.log(exists? 'yes':"no");
+                                                    if(exists = 'yes'){
+                                                        fs.rename("./uploads/"+paramwritingProblemListeningAudio, concre+paramwritingProblemListeningAudio, function(err){
+                                                            if(err) throw err;
+                                                          
+                                                        })
+                                                        console.log("할룽");
+                                                    }
+                                                });
+                    
+                                                fs.exists("./uploads/"+ paramwritingProblemListeningImage, function(exists){
+                                                    console.log(exists? 'yes':"no");
+                                                    if(exists = 'yes'){
+                                                        fs.rename("./uploads/"+paramwritingProblemListeningImage, concre+paramwritingProblemListeningImage, function(err){
+                                                            if(err) throw err;
+                                                            
+                                                        })
+                                                        console.log("할룽할룽");
+                                                    }
+                                                });
+
+                                                console.log("통합형으로 랜더링 합니다.")
+                                                var context = {
+                                                    ExamNO : paramExamNO,
+                                                    ExamDesc : paramExamDesc,
+                                                    writingProblemType : paramwritingProblemType,
+                                                    writingProblemReading : paramwritingProblemReading,
+                                                    writingProblemListeningAudio : paramwritingProblemListeningAudio,
+                                                    writingProblemListeningImage : paramwritingProblemListeningImage,
+                                                    writingProblemAnswer : paramwritingProblemAnswer,
+                                                    login_success : true,
+                                                    user:req.user
+                                                };
+                                                req.app.render('./NewToefl/writing/AddWriting_int.ejs', context, function(err, html){
+                                                    if(err){
+                                                        console.error('Add_writing 랜더링 중 에러 발생 '+err.stack);
+                                                        res.writeHead('200',{'Content-Type':'text/html;charset=utf8'});
+                                                        res.write('<h2>랜더링중 문제 발생</h2>');
+                                                        res.write('<p>'+err.stack+'</p>');
+                                                        res.end();
+                    
+                                                        return;
+                                                    }
+                                                    console.log("응답 웹문서 : " +html);
+                                                    res.end(html);
+                                                })
+
+                                            })
+
+                                    })
+                                }else{
+                                      console.log("어떠한 작업도 수행하지 못했습니다.")
                                     }
+        
                                 }
-                            });
+                            })
                         
-                 } else{
+                 }else{
                     res.writeHead('200', {'content-Type':'text/html;charset=utf8'});
                     res.write('<h2>데이터베이스 연걸에 실패했습니다. </h2>');
                     res.end();
-                 }
+                    }
                 
                 
                 
-
-
-
-
-
-
-
-
-
-            } else if(paramwritingProblemType ==2){
+            }else if(paramwritingProblemType ==2){
                         console.log("독립형으로 랜더링합니다.");
                 
                         var paramExamNO = req.body.ExamNO || req.query.ExamNO;
