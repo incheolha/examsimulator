@@ -97,19 +97,19 @@ var addProblemWriting = function(req, res){
                                     console.log(results[0].Problem[0] + "확인")
                            
 
-                                     if(results[0].Problem[0].writingProblemType == 1) {
+                                     if(results[0].Problem[0].writingProblemType == 1){
                                          console.log("문제를 저장합니다.")
-
-                                        database.WritingModel.update({
-                                            'ExamNO':paramExamNO,
-                                            'Problem':{'writingProblemType':results[0].Problem[0].writingProblemType}},{"$set":{'Problem':{
+                                         console.log("확인해보자" + paramwritingProblemReading + ", " + paramwritingProblemAnswer)
+                                         console.log("확인용" + results[0].Problem[0]._id);
+                                        database.WritingModel.findOneAndUpdate({'$and':[{"ExamNO":paramExamNO}, {"Problem":{'$elemMatch':{'_id':results[0].Problem[0]._id}}}]},{'$set':[{
                                                 'writingProblemType':paramwritingProblemType,
                                                 'writingProblemReading':paramwritingProblemReading,
                                                 'writingProblemListeningImage':paramwritingProblemListeningImage,
                                                 'writingProblmeListeningAudio':paramwritingProblemListeningAudio,
                                                 'writingProblemAnswer' : paramwritingProblemAnswer
-
-                                            }}}, function(err, results){
+                                        }]}, 
+                                   
+                                        function(err, results){
                                                 if(err){
                                                     console.error('DB에 문제를 추가하던 중 에러가 발생했습니다.'+err.stack);
 
@@ -121,6 +121,7 @@ var addProblemWriting = function(req, res){
                                                     return;
 
                                                 }else{
+                                                    console.log(results)
                                                     console.log("DB에 내용을 성공적으로 추가하였습니다.");
                                                     console.log('fs를 이용한 이름 재설정 ');
 
@@ -156,28 +157,36 @@ var addProblemWriting = function(req, res){
 
                                                     console.log("통합형으로 랜더링 합니다.")
                                                     var context = {
-                                                        ExamNO :   
+                                                        ExamNO : paramExamNO,
+                                                        ExamDesc : paramExamDesc,
+                                                        writingProblemType : paramwritingProblemType,
+                                                        writingProblemReading: paramwritingProblemReading,
+                                                        writingProblemListeningAudio : paramwritingProblemListeningAudio,
+                                                        writingProblemListeningImage : paramwritingProblemListeningImage,
+                                                        writingProblemAnswer : paramwritingProblemAnswer,
+                                                        login_success : true,
+                                                        user: req.user
                                                     }
 
+                                                    req.app.render('./NewToefl/writing/AddWriting_int.ejs', context, function(err, html){
+                                                        if(err){
+                                                            console.error('Add.writing 랜더링 중 에러 발생 '+ err.stack);
+                                                            res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+                                                            res.write('<h2>랜더링 중 문제 발생 </h2>');
+                                                            res.write('<p>'+err.stack+'</p>');
+                                                            res.end();
+
+                                                            return;
+                                                        }else{
+                                                            console.log("응답 웹문서 : " + html);
+                                                            res.end(html);
+
+                                                        }
+                                                    })
 
 
                                                 }
-                                            })
-                                         
-
-
-                                           
-
-
-
-
-                                        } else if (results[0].Problem[i].writingProblemType == 2) {
-
-                                            console.log("this is a second parameters:" + results[0].Problem[i].writingProblemType)
-                                            
-
-                                        }
-                                      
+                                            })      
                                     }
                                 }
                             });
@@ -186,7 +195,7 @@ var addProblemWriting = function(req, res){
                     res.writeHead('200', {'content-Type':'text/html;charset=utf8'});
                     res.write('<h2>데이터베이스 연걸에 실패했습니다. </h2>');
                     res.end();
-                 }
+                 };
                 
                 
                 

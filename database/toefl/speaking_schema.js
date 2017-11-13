@@ -13,7 +13,7 @@ speakingSchemaObj.createSchema = function(mongoose) {
     ExamDesc:{type: String},                                                                     //시험출제 간단 설명
 	ExamCreatedTime:{type: Date, 'default': Date.now},                                         //시험출제 생성일자
 //시험 유형
-    Problem: [{  
+    Problem: {  
                 speakingProblemType: {type: Number},
                 speakingAnnounceImage: {type: String, trim:true, 'default': ''},              // 아나운서 이미지 --- 이미지파일 이름
                 speakingAnnouncementAudio: {type: String, trim:true, 'default': ''},          // 아나운서 멘트  ------ audio 파일이름
@@ -23,7 +23,7 @@ speakingSchemaObj.createSchema = function(mongoose) {
                 speakingProblemListeningAudio: {type: String, trim:true, 'default': ''},           //  시험 4번문제 듣기
                 speakingProblemAnswer: {type: String, trim:true, 'default': ''}               //  시험 4번문제 표준정답 audio파일
                 
-            }]                               
+            }                               
 
 	});
 
