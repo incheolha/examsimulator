@@ -99,15 +99,18 @@ var addProblemWriting = function(req, res){
 
                                      if(results[0].Problem[0].writingProblemType == 1){
                                          console.log("문제를 저장합니다.")
+                                         console.log(paramwritingProblemType +'라이팅 타입')
                                          console.log("확인해보자" + paramwritingProblemReading + ", " + paramwritingProblemAnswer)
                                          console.log("확인용" + results[0].Problem[0]._id);
-                                        database.WritingModel.findOneAndUpdate({'$and':[{"ExamNO":paramExamNO}, {"Problem":{'$elemMatch':{'_id':results[0].Problem[0]._id}}}]},{'$set':[{
-                                                'writingProblemType':paramwritingProblemType,
-                                                'writingProblemReading':paramwritingProblemReading,
-                                                'writingProblemListeningImage':paramwritingProblemListeningImage,
-                                                'writingProblmeListeningAudio':paramwritingProblemListeningAudio,
-                                                'writingProblemAnswer' : paramwritingProblemAnswer
-                                        }]}, 
+                                        // database.WritingModel.findOneAndUpdate({'$and':[{"ExamNO":paramExamNO}, {"Problem":{'$elemMatch':{'_id':results[0].Problem[0]._id}}}]},{'$set':[{
+                                        //         'writingProblemType':paramwritingProblemType,
+                                        //         'writingProblemReading':paramwritingProblemReading,
+                                        //         'writingProblemListeningImage':paramwritingProblemListeningImage,
+                                        //         'writingProblmeListeningAudio':paramwritingProblemListeningAudio,
+                                        //         'writingProblemAnswer' : paramwritingProblemAnswer
+                                        // }]}, 
+                                        database.WritingModel.find({
+                                            'ExamNO':paramExamNO, 'Problem':{'$elemMatch':{'writingProblemType':paramwritingProblemType}}},
                                    
                                         function(err, results){
                                                 if(err){
