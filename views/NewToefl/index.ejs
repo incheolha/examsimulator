@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 
 <html>
@@ -488,4 +489,497 @@
     </body>
     
     
+=======
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" type="text/css" href="../../public/sementicTest/Semantic/semantic.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../../public/sementicTest/Semantic/semantic.js"></script>  
+    
+    <script src="../../public/sementicTest/ckeditor/ckeditor.js"></script>    
+  
+    <!--	index js import	 -->
+  <script src='../../public/sementicTest/index.js'></script>   
+
+
+	<style>
+	
+		
+		body {
+            margin:10px;
+        }
+        
+        /* #examNO{
+          float:right;
+        } */
+
+        .ui.breadcrumb{
+            padding-left: 20px;
+            
+        }
+      
+        .ui.blue.borderless.inverted.menu {
+
+        height: 100px;
+            
+      };
+
+		
+	</style>
+		
+    </head>
+
+
+    <body onload=startTime() >
+<!--		상단 파란색 메뉴바 구성 -->
+        <div class="ui blue borderless inverted menu">
+          <div class="left menu">
+            <a class="item">
+              <h1>Toefl Simulator<br></h1> <br><br> <h4>for Teachers</h4>   
+              </a>
+            </div>      
+        <div class="centered menu">  
+            
+          <a class="item">
+           
+            <i class="huge github icon"></i>
+            </a>
+  
+        </div>     
+        <div class="right menu">
+        <a class="item" id="clock"> </a>    
+       
+    <div class="ui dropdown item">
+    
+      <i class="user icon"></i>
+       <% if (user.permissionTag == 'toeflTeacher') { %>
+         
+          <%= user.name %> 선생님, 환영합니다.
+		      <!-- <%= user.email %> -->
+        <% } %>
+       
+ 
+        <i class="dropdown icon"></i>
+      <div class="menu">
+      
+        <a class="item">profile</a>
+        <a class="item" href="/logout">Logout</a>
+            </div>
+        </div>    
+     </div>   
+    </div>
+
+<!--        상단 메뉴 밑 현재 상태창 표시 -->
+      <div>  
+        <div class="ui huge breadcrumb">
+
+            <a class="section">회차선택</a>
+      
+            <i class="right chevron icon divider"></i>
+            <a class="section"> <%=ExamNO %> 회차</a>
+            <i class="right chevron icon divider"></i>
+           <div class="aictive section">문제 출제하기</div> 
+        </div>
+         
+      
+      </div>    
+   
+      
+           <br>
+            <br>
+           <br>
+<!--   네개의 챕터 그리드 구성    -->
+   <div class="ui four column stackable grid">
+                
+  <div class="column">
+      
+     <div class="ui centered card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <div class="ui primary button" id="test1">Reading 출제하기</div>
+                  </div>
+                </div>
+              </div>
+                <img src="../../public/sementicTest/imgsrc/A_as_well_as_B.png">
+            </div>
+            <div class="content">
+              <a class="header">Reading</a>
+              <div class="meta">
+                <span class="date">Create in Sep 2014</span>
+              </div>
+            </div>
+            <div class="extra content">
+                <div class="ui toggle three bottom attached buttons">
+                    <div class="blue ui button">One</div>
+                    <div class="yellow ui button">Two</div>
+                    <div class="red ui button">Two</div>
+                </div>    
+            </div>
+          </div>
+  </div>
+  <div class="column">
+         <div class="ui centered card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <div class="ui primary button" id="lc_next">Listening 출제하기</div>
+                  </div>
+                </div>
+              </div>
+                <img src="../../public/sementicTest/imgsrc/a_ele.png">
+            </div>
+            <div class="content">
+              <a class="header">Listening</a>
+              <div class="meta">
+                <span class="date">Create in Sep 2014</span>
+              </div>
+            </div>
+            <div class="extra content">
+                <div class="ui toggle three bottom attached buttons">
+					
+                    <div class="blue ui button">One</div>
+                    <div class="yellow ui button">Two</div>
+                    <div class="red ui button">Two</div>
+                </div>    
+            </div>
+          </div>
+  </div>
+  <div class="column">
+        <div class="ui centered card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <div class="ui primary button" id=sp_next>Speaking 출제하기</div>
+                  </div>
+                </div>
+              </div>
+                <img src="../../public/sementicTest/imgsrc/a_piece_of.png">
+            </div>
+            <div class="content">
+              <a class="header">Speaking</a>
+              <div class="meta">
+                <span class="date">Create in Sep 2014</span>
+              </div>
+            </div>
+            <div class="extra content">
+                <div class="ui toggle three bottom attached buttons">
+                    <div class="blue ui button">One</div>
+                    <div class="yellow ui button">Two</div>
+                    <div class="red ui button">Two</div>
+                </div>    
+            </div>
+          </div>
+  </div>
+  <div class="column">
+            <div class="ui centered card">
+            <div class="blurring dimmable image">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <div class="ui primary button" id="wr_next">Writing 출제하기</div>
+                  </div>
+                </div>
+              </div>
+                <img src="../../public/sementicTest/imgsrc/test.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Writing</a>
+              <div class="meta">
+                <span class="date">Create in Sep 2014</span>
+              </div>
+            </div>
+            <div class="extra content">
+                <div class="ui toggle three bottom attached buttons">
+                    <div class="blue ui button">One</div>
+                    <div class="yellow ui button">Two</div>
+                    <div class="red ui button">Two</div>
+                </div>    
+            </div>
+          </div>
+  </div>
+  
+</div>    
+        
+<!--  header 구성   -->
+    <div class="ui  three item bottom fixed stackable borderless menu">
+    <a class="item">회사 약관</a>
+ 
+  <a class="item">TSM co.Ltd</a>
+  <a class="item"><i class="huge github icon"></i></a>
+</div>               
+  
+ 
+    <div class="ui first modal">
+      
+          <div class="header">
+            
+            선택한 항목 : 회차 Reading Chapter : <text id="selectVal" ></text>
+          </div>
+          <div class="content">
+              <form action="/toeflTeacher/reading" method="post" id="readingform" >
+              
+              <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
+              <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>> 
+              <!-- <input type="text" name="readingChapterNumber" id="chapter_value">       -->
+              <div class="ui selection fluid dropdown" id="select_Dropdown" name="readingChapterNumber" >
+              <input type="hidden" name="readingChapterNumber">
+              <i class="dropdown icon"></i>
+              <div class="default text">Select Chapter</div>
+              <div class="menu">
+                <div class="item" data-value="1" >Chapter1</div>
+                <div class="item" data-value="2" >Chapter2</div>
+                <div class="item" data-value="3" >Chapter3</div>
+                <div class="item" data-value="4" >dummy</div>
+                  
+              </div>
+            </div>  
+             </form>   
+            <table class="ui selectable celled table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Status</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <div class="grouped fileds">
+                  
+                    
+                <tr>
+                  <td>Chapter1</td>
+                  <td class="positive">Available</td>
+                 
+                </tr>
+                <tr>
+                  <td>Chapter2</td>
+                  <td class="positive">Available</td>
+                   
+                </tr>
+                <tr>
+                  <td>Chapter3</td>
+                  <td class="positive">Available</td>
+                   
+                </tr>
+                <tr>
+                  <td>Dummy!</td>
+                   <td class="positive">Available</td>
+                  
+                </tr>
+                    
+                  </div>  
+              </tbody>
+                
+            </table>
+ 
+
+          </div>
+          <div class="actions">
+            <div class="ui red  deny button">
+              Nope
+            </div>
+            <button class="blue primary ui button" type="submit" form="readingform">
+              Next!
+            </button>
+          </div>
+            
+  </div>
+
+
+    
+
+      
+        
+ 
+    <div class="ui third longer modal">
+           
+          <i class="close icon"></i>
+          <div class="header">
+            선택한 항목 : 회차 Listening Chapter : <text id="selectVal2"></text>
+		</div>  
+          <div class="content">
+          <form action="/toeflTeacher/listening" method="post" id="listeningform" >
+              
+              <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
+              <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>> 
+         <div class="ui selection fluid dropdown" id="listening_dropdown">
+            <input type="hidden" name="listeningChapterNumber">
+             <i class="dropdown icon"></i>
+             <div class="default text">Select Chapter</div>              
+                <div class="menu">
+                <div class="item" data-value="1">Chapter1</div>
+                <div class="item" data-value="2">Chapter2</div>
+                <div class="item" data-value="3">Chapter3</div>      
+                <div class="item" data-value="4">Chapter4</div>
+                <div class="item" data-value="5">Chapter5</div>
+                <div class="item" data-value="6">Chapter6</div>
+                <div class="item" data-value="7">dummy</div>
+                  
+                </div>  
+              </div>  
+            <table class="ui selectable celled table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Status</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                  
+                <div class="grouped fileds">
+                  
+                    
+                <tr>
+                  <td>Chapter1</td>
+                  <td class="positive">Available</td>
+                 
+                </tr>
+                <tr>
+                  <td>Chapter2</td>
+                  <td class="positive">Available</td>
+                   
+                </tr>
+                <tr>
+                  <td>Chapter3</td>
+                  <td class="positive">Available</td>
+                   
+                </tr>
+                <tr>
+                  <td>Chapter4</td>
+                   <td class="positive">Available</td>
+                  
+                </tr>
+                <tr>
+                  <td>Chapter5</td>
+                   <td class="positive">Available</td>
+                  
+                </tr>
+                <tr>
+                  <td>Chapter6</td>
+                   <td class="positive">Available</td>
+                  
+                </tr>
+                 <tr>
+                  <td> Dummy </td>
+                   <td class="positive">Available</td>
+                  
+                </tr>               
+                    
+                    
+                    
+                  </div>  
+              </tbody>
+                
+            </table>
+ 
+            <div class="description">
+              <div class="ui header">We've auto-chosen a profile image for you.</div>
+            </div>
+          </form>
+          </div>
+      <div class="actions">
+            <div class="ui red  deny button">
+              Nope
+            </div>
+            <button class="blue primary ui button" type="submit" form="listeningform">
+              Next!
+            </button>
+          </div>
+</div>
+
+<!--
+                  listeningChapterNumber:{type:Number},
+                listeningChapterAudio:{type: String, trim:true, 'default':''},
+                listeningChapterImage:{type: String, trim:true, 'default':''},
+        
+-->
+ 
+    
+
+    <!--speaking modal  -->
+    <div class="ui fifth small modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Speaking 출제하기 
+  </div>
+  <div class="content">
+       
+  
+    
+    <div class="description">
+      <div class="ui header">선택한 항목 : <%=ExamNO%>회차 Speaking </div>
+      <h4 class="ui header">스피킹 출제화면으로 이동할까요?</h4>
+    </div>
+  </div>
+  <div class="actions">
+    <form class="ui form" action="/toeflTeacher/speaking/ch1" method="post" >
+    <div class="ui red deny button">
+      Nope
+    </div>
+    <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
+    <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>>
+      <input type="hidden" name="speakingProblemType" value="1">  
+    <button type="submit" class="ui positive right labeled icon button" >
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </button>
+    </form>
+</div>    
+  
+
+<!-- writing modal -->
+<div class="ui sixth small modal">
+
+   
+  
+  <i class="close icon"></i>
+  <div class="header">
+    Writing 출제하기
+  </div>
+  <div class="content">
+    <div class="description">
+      <div class="ui header">선택한 항목 : <%=ExamNO %> 회차 Writing </div>
+       <h4 class="ui header">라이팅 출제화면으로 이동할까요?</h4>
+    </div>
+  </div>
+  <div class="actions">
+    <form class="ui form" action="/toeflTeacher/writing/integrated" method="post" >
+    <div class="ui red deny button">
+      Nope
+    </div>
+     <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
+    <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>>  
+     <input type="hidden" name="writingProblemType" value=1>
+     <input type="hidden" name="writingProblemType2" value=2>   
+    <button type="submit" class="ui positive right labeled icon button" >
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </button>
+    </form>
+  </div>
+   
+ 
+
+
+</div>        
+        
+ 
+   
+      
+    </body>
+    
+    
+>>>>>>> 45ae2a154c5cc3ebd2f2d4eb528181f259044ed2
 </html>
