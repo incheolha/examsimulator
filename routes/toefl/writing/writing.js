@@ -289,7 +289,8 @@ var showwriting = function(req, res) {
 var addproblem = function(req, res) {
 	console.log('writing 모듈 안에 있는 addproblem 호출됨.');
  
-    var paramId = req.body.id || req.query.id;
+	var paramId = req.body.id || req.query.id;
+	
     var paramExamNO = req.body.ExamNO || req.query.ExamNO;
     var paramExamDesc = req.body.ExamDesc || req.query.ExamDesc;
     var paramContents = req.body.contents || req.query.contents;

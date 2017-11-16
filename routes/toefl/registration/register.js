@@ -127,7 +127,7 @@ if (database.db) {
 };
 
 var updateregister = function(req, res) {
-	console.log('register 모듈 안에 있는 add register 호출됨.');
+	console.log('register 모듈 안에 있는 update register 호출됨.');
 	var paramRegisterNo = req.body.registerNo || req.query.registerNo;
 	var paramRegisterDesc = req.body.registerDesc || req.query.registerDesc;
 
@@ -161,7 +161,7 @@ if (database.db) {
                     }
             	
 			    console.log("글 데이터 추가함.");
-			    console.log('글 작성', '포스팅 글을 생성했습니다. : ' + doc.RegisterNo);
+			    console.log('시험회차가 생성했습니다. : ' + doc.RegisterNo);
 			    return;
 			    // return res.redirect('/'); 
 			});

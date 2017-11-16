@@ -18,13 +18,7 @@
         .ui.blue.borderless.inverted.menu {
             height: 100px;
         }
-        
-        ;
     </style>
-
-
-
-
 </head>
 
 
@@ -73,9 +67,8 @@
             <i class="right chevron icon divider"></i>
             <div class="active section">Writing</div>
 
-
-
         </div>
+
         <button class="teal ui right floated button" id="wr_chapter_complete_btn">챕터 완료</button>
     </div>
 
@@ -105,11 +98,8 @@
     <% var indProblem = writingProblem %>
     <% var indProblemAnswer = writingProblemAnswer %>
 
-    <!-- <button id="btn1"><%= indProblem %></button>
-    <button id="btn2"><%= indProblemAnswer %></button> -->
-    
 
-                <% if((indProblem ===1)||(indProblemAnswer ===1)){ %>
+    <% if((indProblem === 1)||(indProblemAnswer === 1)){ %>
 
 
         <div class="ui fluid container">
@@ -122,85 +112,57 @@
             <form class="ui form" action="/process/toefl/writing/multerAddWriting" method="post" enctype="multipart/form-data" >    
                 <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
                 <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
-                <input type="hidden" name="writingProblemType" value=2>
-       
-        <!--
-          <div class="title">
+                <input type="hidden" name="writingProblemType" value=1>
+ 
 
-            <div class="ui blue ribbon large label">
-                <i class="spoon icon"></i> Questions  
-            </div>
+                <div class="title">
+                    <div class="ui blue ribbon large label">
+                        <i class="spoon icon"></i> 문제 출제하기
+                    </div>
+                </div>
 
-            </div>
+                <div class="content active">
+                    <div class="field">
+                        <h3 class="ui header"> <label>Question :Do you agree or disagree with the following statement?</label></h3>
+                        <h4 class="ui header">문제를 입력해 주세요</h4>
+
+                        <div class="ui input focused">
+                            <input type="text" name="writingProblem" placeholder="EX. Parents today do not understand their children as well as parents did fifty years ago. ">
+                        </div>
+                        
+                         <!-- <h3 class="ui header"> <label>Use specific reasons and examples to support your opinion.</label> -->
+                                                 
+                    </div>
+                </div>
+                
+                    <div class="field">
+                        <h3 class="ui header"> 해설 입력하기 (Description)</h3>
+                        <textarea class="ui active textarea" name="writingProblemAnswer"></textarea>
+                    </div>
+
+                    <button class="ui primary button" type="submit">출제하기!</button>
             
-          <div class="content active">
-              <h3 class="ui header">Independent Section 에 관련된 문제입니다.
-              </h3>     
-        <div class="field">
-            
-            <label><h3 class="ui header">Directions Read the question below. You have 30 minutes to plan, write, and revise your essay.
-            Typically, an effective response will contain a minimum of 300 words.</h3></label>
-            <br>
-           
+             </form>
         </div>
-          </div>
--->
-                                             <div class="title">
-                                                <div class="ui blue ribbon large label">
-                                                    <i class="spoon icon"></i> 문제 출제하기
-                                                </div>
-                                              </div>
-                                             <div class="content active">
-                                                   <div class="field">
-                                                       <h3 class="ui header"> <label>Question :
-                                                    Do you agree or disagree with the following statement?</label>
-                                                       </h3>
-                                                       <h4 class="ui header">문제를 입력해 주세요</h4>
-                                                       <div class="ui input focused">
-                                                           <input type="text" name="writingProblem" placeholder="EX. Parents today do not understand their children as well as parents did fifty years ago. ">
-                                                       </div>
-                                                       <!-- <h3 class="ui header"> <label>Use specific reasons and examples to support your opinion.</label> -->
-                                                       </h3>
-                                                   </div>
-                                               </div>
-                                               <div class="field">
-                                                   <h3 class="ui header"> 해설 입력하기 (Description)
-                                                   </h3>
-                                                   <textarea class="ui active textarea" name="writingProblemAnswer"></textarea>
-                                                </div>
+                <div class="eigth wide column">
+                    <div class="ui bottom info message">
+                        <div class="header">아직 저장된 내용이 없네요!</div>
+                        
+                        <ul class="list">
+                            <li>알고 계셨나요??</li>
+                            <li>문제를 만들고 저장하시면 이부분에서 문제가 나타납니다</li>
+                        </ul>
+                     </div>
+                </div>
 
-                                                <button class="ui primary button" type="submit">출제하기!</button>
-                                            </div>
-                                       </form>
-                                   </div>
-                                    <div class="eigth wide column">
-                                        <div class="ui bottom info message">
-                                            <div class="header">
-                                               아직 저장된 내용이 없네요!
-                                           </div>
-                                           <ul class="list">
-                                               <li>알고 계셨나요??</li>
-                                               <li>문제를 만들고 저장하시면 이부분에서 문제가 나타납니다</li>
-                                            </ul>
-                                        </div>
-                                   </div>
-
-                               </div>
-                           </div>
-                       </div>
-                   </div>
+        </div>
+        </div>
+        </div>
+        </div>
 
 
-               
-               
-               
-
-
-                <% }else if( (indProblem !=1) || (indProblemAnswer !=1) ){ %>
+    <% } else if( (indProblem != 1) || (indProblemAnswer != 1) ){ %>
            
-                   <% var indProblem = writingProblem %>
-                   <% var indProblemAnswer = writingProblemAnswer %>
-               
   
                    <button id="btn1"><%= indProblem %></button>
                    <button id="btn2"><%= indProblemAnswer %></button>
@@ -221,29 +183,7 @@
                                                             <input type="hidden" name="writingProblemType" value=2>
 
                                                             <div class="ui styled fluid accordion">
-                                                                <!--
-          <div class="title">
-
-            <div class="ui blue ribbon large label">
-                <i class="spoon icon"></i> Questions  
-            </div>
-
-            </div>
-            
-          <div class="content active">
-              <h3 class="ui header">Independent Section 에 관련된 문제입니다.
-              </h3>     
-        <div class="field">
-            
-            <label><h3 class="ui header">Directions Read the question below. You have 30 minutes to plan, write, and revise your essay.
-            Typically, an effective response will contain a minimum of 300 words.</h3></label>
-            <br>
-           
-        </div>
-                     
-                              
-          </div>
--->
+                                                               
                                                                 <div class="title">
                                                                     <div class="ui blue ribbon large label">
                                                                         <i class="spoon icon"></i> 문제 출제하기
