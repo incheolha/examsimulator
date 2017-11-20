@@ -349,7 +349,31 @@ database.WritingModel.update(
     })
 };
 
-function updateIndWritingSet()
+function updateIndWritingSet(database, paramExamNO, paramwritingProblemType, paramwritingProblem, paramwritingPRoblemAnswer){
+    database.WritingModel.update(
+        {'ExamNO':paramExamNO, 'Problem.writingProblemType':paramwritingProblemType},
+        {'$set':{'Problem.1':[{
+            'writingProblemType':paramwritingProblemType,
+            'writingProblem':paramwritingProblem,
+            'writingProblemAnswer':paramwritingProblemAnswer
+        }]}}, function(err, results){
+            if(err){
+                console.error('독립형 문제를 업데이트 하던 중 에러가 발생했습니다.'+err.stack);
+
+                res.writeHead('200',{'Content-Type':'text/html;charset=utf8'});
+                res.write('<h2>문제를 업데이트 하던 중 에러가 발생했습니다.');
+                res.write('<p>'+err.stack+'</p>');
+                res.end();
+
+                return;
+            }
+            console.log('Db에 내용을 성공적으로 업데이트 했습니다.');
+            
+            return;
+
+        
+    })
+}
 
 
 
