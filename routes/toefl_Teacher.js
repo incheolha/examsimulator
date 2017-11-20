@@ -316,9 +316,6 @@ var writing_int = function(req, res){
 
                 }else if(results[0].Problem[0]==undefined){
 
-                    
-
-
                     console.log("db에 저장된 문제가 없습니다.");
                     console.log("새로운 문제 만들기로 이동합니다.");
 

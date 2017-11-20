@@ -100,6 +100,7 @@ var addProblemWriting = function(req, res){
                             var context = {
                                 ExamNO : paramExamNO,
                                 ExamDesc : paramExamDesc,
+                                writingProblem : paramwritingProblem,
                                 writingProblemType : paramwritingProblemType,
                                 writingProblemReading : paramwritingProblemReading,
                                 writingProblemListeningAudio : paramwritingProblemListeningAudio,
@@ -115,12 +116,12 @@ var addProblemWriting = function(req, res){
                             } else {
                                
 
-                            for (i=0; i < results[0].Problem.length; i++) {
+                            // for (i=0; i < results[0].Problem.length; i++) {
 
-                                if (results[0].Problem[i].writingProblemType == paramwritingProblemType) {                                    
+                                if (results[0].Problem[0].writingProblemType == paramwritingProblemType) {                                    
                                    resultTag = 1;
                                    console.log("db에 존재하고 writing Problem Type 이 " + resultTag + "인 경우")   
-                                } else if (results[0].Problem[i].writingProblemType == paramwritingProblemType) {
+                                } else if (results[0].Problem[0].writingProblemType == paramwritingProblemType) {
                                     resultTag = 2;
                                     console.log("db에 존재하고 writing Problem Type 이 " + resultTag + "인 경우")
                               } else {
@@ -129,7 +130,7 @@ var addProblemWriting = function(req, res){
                               }
                                                                           
 
-                            }      // for 구문끝 지점
+                            // }      // for 구문끝 지점
                                           
                                       
                                     
@@ -142,7 +143,7 @@ var addProblemWriting = function(req, res){
         
                             req.app.render('./NewToefl/writing/AddWriting_int.ejs', context, function(err, html){
                                         if(err){
-                                            errorHanding(err);
+                                            errorHandling(err);
                                             return;
                                         }
                                         console.log("응답 웹문서 : " + html);
@@ -159,7 +160,7 @@ var addProblemWriting = function(req, res){
                         
                         req.app.render('./NewToefl/writing/AddWriting_int.ejs', context, function(err, html){
                                         if(err){
-                                                errorHanding(err);
+                                                errorHandling(err);
                                                 return;
                                             }
                                             console.log("응답 웹문서 : " + html);
@@ -174,7 +175,7 @@ var addProblemWriting = function(req, res){
     
                         req.app.render('./NewToefl/writing/AddWriting_ind.ejs', context, function(err, html){
                             if(err){
-                                    errorHanding(err);
+                                    errorHandling(err);
                                     return;
                                 }
                                 console.log("응답 웹문서 : " + html);
@@ -187,14 +188,11 @@ var addProblemWriting = function(req, res){
                         
                        } else if (resultTag == 3) {
 
-                        updateWritingPush(database, paramExamNO, paramwritingProblemType, paramwritingProblem,
-                            paramwritingProblemReading, paramwritingProblemListeningImage, 
-                            paramwritingProblemListeningAudio,paramwritingProblemAnswer);
-    
+                        updateIndWritingPush(database, paramExamNO, paramwritingProblemType, paramwritingProblem, paramwritingProblemAnswer)    
                      
                         req.app.render('./NewToefl/writing/AddWriting_ind.ejs', context, function(err, html){
                                         if(err){
-                                            errorHanding(err);
+                                            errorHandling(err);
                                             return;
                                         }
                                         console.log("응답 웹문서 : " + html);
@@ -294,12 +292,39 @@ database.WritingModel.update({
 return;
 }
 
+function updateIndWritingPush(database, paramExamNO, paramwritingProblemType, paramwritingProblem, paramwritingProblemAnswer){
+
+    database.WritingModel.update({
+        'ExamNO':paramExamNO},{"$push":{'Problem':{
+            'writingProblemType':paramwritingProblemType,
+            'writingProblem':paramwritingProblem,
+            'writingProblemAnswer':paramwritingProblemAnswer
+        }}}, function(err, results){
+            if(err){
+                console.error('db에 문제를 추가하던 중 에러가 발생했습니다.'+err.stack);
+
+                res.writeHead('200',{'Content-Type':'text/html;charset=utf8'});
+                res.write('<h2>writing ind 문제 추가 중 에러 발생');
+                res.write('<p>'+err.stack+'</p>');
+                res.end();
+
+                return;
+            }
+            console.log("db에 성공적으로 문제를 추가했습니다.");
+            console.log("독립형으로 랜더링 합니다.");
+
+        }
+    )
+    return;
+}
+
+
 function updateWritingSet(database, paramExamNO, paramwritingProblemType, paramwritingProblem,
                           paramwritingProblemReading, paramwritingProblemListeningImage, 
                           paramwritingProblemListeningAudio,paramwritingProblemAnswer) {
 database.WritingModel.update(
     {'ExamNO':paramExamNO, 'Problem.writingProblemType' : paramwritingProblemType },
-        {"$set":{'Problem':[{
+        {"$set":{'Problem.0':[{
         'writingProblemType':paramwritingProblemType,
         'writingProblem':paramwritingProblem,
         'writingProblemReading':paramwritingProblemReading,
@@ -322,5 +347,10 @@ database.WritingModel.update(
         console.log('fs를 이용한 이름 재설정');
         return
     })
-}
+};
+
+function updateIndWritingSet()
+
+
+
 module.exports.addProblemWriting = addProblemWriting;
