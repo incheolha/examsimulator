@@ -110,13 +110,13 @@ var addProblemWriting = function(req, res){
                                 user:req.user
                             };
 
-                            if (results[0].Problem[0] == undefined) {
+                            if ((results[0].Problem[0] == undefined) || (results[0].Problem[1] == undefined) ) {
                                     resultTag = 0;
                                     console.log("db problem이 존재하지 않으경우 " + resultTag + " 값"+ " db내 problem 배열생성")
                             } else {
                                
 
-                            // for (i=0; i < results[0].Problem.length; i++) {
+                            for (i=0; i < results[0].Problem.length; i++) {
 
                                 if (results[0].Problem[0].writingProblemType == paramwritingProblemType) {                                    
                                    resultTag = 1;
@@ -124,13 +124,17 @@ var addProblemWriting = function(req, res){
                                 } else if (results[0].Problem[0].writingProblemType == paramwritingProblemType) {
                                     resultTag = 2;
                                     console.log("db에 존재하고 writing Problem Type 이 " + resultTag + "인 경우")
-                              } else {
-                                    resultTag = 3;
-                                    console.log("db에 존재하고 writing Problem Type  " + resultTag + "존재하지 않은 경우")             
+                              } else if(results[0].Problem[1].writingProblemType == paramwritingProblemType) {
+                                    resultTag =3;
+                                    console.log('db에 독립형 문제가 존재하고 파라미터가 독립형일 경우 ' )
+                                              
+                              } else{
+                                resultTag = 4;
+                                console.log("db에 존재하고 writing Problem Type  " + resultTag + "존재하지 않은 경우")   
                               }
                                                                           
 
-                            // }      // for 구문끝 지점
+                            }      // for 구문끝 지점
                                           
                                       
                                     
@@ -186,7 +190,19 @@ var addProblemWriting = function(req, res){
 
 
                         
-                       } else if (resultTag == 3) {
+                       } else if (resultTag == 3){
+                        updateIndWritingSet(database, paramExamNO, paramwritingProblemType, paramwritingProblem, paramwritingProblemAnswer)
+
+                        req.app.render('./NewToefl/writing/Addwriting_ind.ejs', context, function(err, html){
+                            if(err){
+                                errorHandling(err);
+                                return;
+                            }
+                            console.log('응답 웹문서 : '+ html);
+                            res.end(html);
+                        })
+
+                       } else if (resultTag == 4) {
 
                         updateIndWritingPush(database, paramExamNO, paramwritingProblemType, paramwritingProblem, paramwritingProblemAnswer)    
                      

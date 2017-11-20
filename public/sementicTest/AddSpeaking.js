@@ -4,15 +4,10 @@
        
 //        var editor = CKEDITOR.instances['editor'];
 //            if (editor) { editor.destroy(true); };
-            CKEDITOR.replace( 'editor2', {
+            CKEDITOR.replace( 'editor1', {
             skin:'office2013'
             });
-            CKEDITOR.replace( 'editor3', {
-            skin:'office2013'
-            }); 
-            CKEDITOR.replace( 'editor5', {
-            skin:'office2013'
-            });    
+
             
         $('.ui.accordion')
           .accordion({
