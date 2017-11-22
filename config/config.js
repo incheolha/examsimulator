@@ -42,8 +42,8 @@ module.exports = {
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/reading', method:'reading', type:'post'}
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/listening', method:'listening', type:'post'}
 		,{file:'./toefl_Teacher', path:'/toeflTeacher/speaking/ch1', method:'speaking', type:'post'}
-		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/integrated', method:'writing_int', type:'post'}
-		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/independent', method:'writing_ind', type:'post'}
+		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/integrated', method:'writing', type:'post'}
+		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/independent', method:'writing', type:'post'}
 // student routes
 		,{file:'./student', path:'/toeflStudent/reading', method:'student', type:'post'}
 // reading routes 

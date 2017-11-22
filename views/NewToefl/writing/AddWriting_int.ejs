@@ -110,7 +110,7 @@
     <% var b = writingProblemListeningImage; %>
     <% var c = writingProblemListeningAudio; %>
     <% var d = writingProblemAnswer; %>
-
+   
   <div id="parameter1">
   <button id="btn1"><%= a %></button>
   <button id="btn2"><%= b %></button>
@@ -119,150 +119,6 @@
   </div>
   
 
-    <% if( (a===1)||(b===1)||(c===1)||(d===1)) { %>
-     <!-- 문제가 디비에 없는경우  -->
-    <div class="ui fluid container">
-    
-
-
-    <div class="ui two column divided grid">
-    <div class="row">
-        <div class="column">
-
-        <div class="ui  segment" data-tab="first" id="chapter3">
-          
-
-              <form class="ui form" action="/process/toefl/writing/multerAddWriting" method="post" enctype="multipart/form-data" >    
-                <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
-                <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
-                <input type="hidden" name="writingProblemType" value=1>
-                
-          <div class="title">
-
-            <div class="ui blue ribbon large label">
-                <i class="spoon icon"></i> Reading Script 만들기 
-            </div>
-
-            </div>
-                 <br> 
-          <div class="content active">
-          
-              <h3 class="ui header">Step1. 지문을 만들어주세요 
-              </h3>           
-<!--
-            <label><h5 class="ui header">Directions : You have 20 minutes to plan and write your response. Your response will be judged on
-            the basis of the quality of your writing and on how well your response presents the points in the
-            lecture and the relationship to the reading passage. Typically, an effective response will be 150 to
-                225 words. </h5></label>
-            <br>
-            <label><h5 class="ui header">Question : Summarize the points made in the lecture, explaining how they cast doubt on the
-                points made in the reading. </h5> </label>
--->
-
-    <div class="field">
-         <textarea name="writingProblemReading" id="ckeditor1"></textarea>
-        <br>
-
-    </div>    
-    <br>        
-    </div>
-                  
-          <div class="title active">
-            <div class="ui violet ribbon large label">
-
-                <i class="spoon icon"></i> Lecture mp3와 img upload하기
-            </div>
-            
-          </div>
-        <br>
-          <div class="content active">
-            <div class="field">  
-        <div>   
-             <h3 class="ui header">Lecture Mp3 upload 하기
-              </h3>           
-           <label for="wr_int_mp3_ipt" class="ui icon button">
-			   
-			
-			   
-                <i class="file icon"></i>
-                Open File</label>
-            <input type="file" id="wr_int_mp3_ipt" name="writingProblemListeningAudio" style="display:none" accept="audio/*" multiple>
-        </div>
-          <div id="wr_int_mp3_pre" class="preview" >
-        </div>        
-             
-             <h3 class="ui header">Lecture Img upload 하기
-              </h3>               
-        <div>
-            <label for="wr_int_img_ipt"  class="ui icon button">
-                <i class="file icon"></i>
-                Open File</label>
-            <input type="file" id="wr_int_img_ipt" name="writingProblemListeningImage" style="display:none" accept="image/*" multiple>
-        </div> 
-            <div id="wr_int_img_pre" class="preview">
-            </div>       
- <br>
-    <div class="field">
-          <h3 class="ui header"> 해설 입력하기 (Description)
-              </h3>               
-         <textarea class="ui active textarea" name="writingProblemAnswer"></textarea>
-       
-
-    </div>   
-
-
-              <br><br>
-
-          
-                
-                <button class="ui teal right button" id="submitBtn1" type="submit" >Submit</button>
-                
-               
-               
-          </div>
-        </div>
-       
-            </form>    
-                
- </div> 
-  </div>     
-       
-    <div class="eigth wide column">
-      
-        <div class="ui bottom info message">
-        
-        <div class="header">
-          아직 저장된 내용이 없네요!
-        </div>
-        <ul class="list">
-          <li>알고 계셨나요??</li>
-          <li>문제를 만들고 저장하시면 이부분에서 문제가 나타납니다</li>
-          
-        </ul>
-     
-      </div>
-      </div>
-
-    
-    </div>
-    </div>
-    </div>
-
-
-<!-- 저장된 문제가 있는경우 여기서 랜더링합니다. -->
-
-    <% }else if( (a !=1) || (b!=1) || (c!=1) || (d!=1) ){ %>
-    
-    <% var a = writingProblemReading; %>
-    <% var b = writingProblemListeningImage; %>
-    <% var c = writingProblemListeningAudio; %>
-    <% var d = writingProblemAnswer; %>
-
-
-
-
-
-     
      <div class="ui fluid container">
   
     <div class="ui two column divided grid">
@@ -429,8 +285,7 @@
     </div>
     </div>
     </div>
-    <% } %>
-   
+  
 	 <div class="ui modal" id="go_back_main_modal">
           <i class="close icon"></i>
           <div class="header">
