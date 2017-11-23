@@ -24,11 +24,6 @@
                 height: 100px;
               }
     
-    #submitBtn1{
-       
-    }
-
-    
     </style>  
 
     </head>
@@ -105,7 +100,10 @@
                 </div> 
       
         </div>  
-      
+  
+        
+        
+ <% if (resultModifyTag == true) { %> 
     <% var a = writingProblemReading; %>
     <% var b = writingProblemListeningImage; %>
     <% var c = writingProblemListeningAudio; %>
@@ -116,10 +114,14 @@
   <button id="btn2"><%= b %></button>
   <button id="btn3"><%= c %></button>
   <button id="btn4"><%= d %></button>
-  </div>
-  
+  </div> 
 
-     <div class="ui fluid container">
+    <% } %>
+<%= a %>
+<%= b %>
+<%= c %>
+<%= d %>
+    <div class="ui fluid container">
   
     <div class="ui two column divided grid">
     <div class="row">
@@ -129,21 +131,21 @@
         <div class="ui  segment" data-tab="first" id="chapter3">
             
           <form class="ui form" action="/process/toefl/writing/multerAddWriting" method="post" enctype="multipart/form-data" >    
-            <input type="text" name="ExamNO" value=<%= ExamNO %>>
-            <input type="text" name="ExamDesc" value=<%= ExamDesc %>> 
-            <input type="text" name="writingProblemType" value=<%= writingProblemType%>>
+            <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+            <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
+            <input type="hidden" name="writingProblemType" value=<%= writingProblemType%>>
             
           <div class="title">
 
             <div class="ui blue ribbon large label">
-                <i class="spoon icon"></i> 문제 수정하기
+                <i class="spoon icon"></i> 문제 만들기
             </div>
 
             </div>
                  <br> 
           <div class="content active">
           
-              <h3 class="ui header">Step1. DB에 저장된 구문 수정하기
+              <h3 class="ui header">Step1. 지문 만들기
               </h3>           
 <!--
             <label><h5 class="ui header">Directions : You have 20 minutes to plan and write your response. Your response will be judged on
@@ -154,7 +156,11 @@
             <label><h5 class="ui header">Question : Summarize the points made in the lecture, explaining how they cast doubt on the
                 points made in the reading. </h5> </label>
 -->
-    
+
+
+
+
+
     <div class="field">
          <textarea name="writingProblemReading" id="ckeditor1" ><%= a %>
          </textarea>
@@ -228,6 +234,9 @@
  </div> 
   </div>     
        
+
+  
+  <% if (resultModifyTag == true) { %>
   <div class="eight wide column">
       <div class="ui raised segment">
            <div class="ui blue ribbon big label">
@@ -280,8 +289,20 @@
       </div>
     </div>
   </div>
+<% } else { %>
+     <div class="eigth wide column">
+                    <div class="ui bottom info message">
+                        <div class="header">아직 저장된 내용이 없네요!</div>
+                        
+                        <ul class="list">
+                            <li>알고 계셨나요??</li>
+                            <li>문제가 저장되어 있다면 이곳에서 저장된 내용을 확인하실수 있습니다.</li>
+                        </ul>
+                     </div>
+                </div>
+ <% } %>                   
 
-    
+
     </div>
     </div>
     </div>

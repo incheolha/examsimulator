@@ -323,7 +323,7 @@ var writing = function(req, res){
                             login_success: true,
                             user: req.user
                         };
-       
+   
                         
                         console.log("라우팅 경로:"+problemTypeRoutingPath);
                         console.log("문제유형:"+context.writingProblemType);
@@ -333,19 +333,20 @@ var writing = function(req, res){
                         console.log("라이팅 문제:"+context.writingProblem);
                         console.log("라이팅 문제 정답:"+context.writingProblemAnswer);
                         
-                   
-                    } else {
+                        break;
 
+                    } else {
+                        
                         var context = {
-                            resultModifyTag: true,
+                            resultModifyTag: false,
                             ExamNO : paramExamNO,
                             ExamDesc : paramExamDesc,
                             writingProblemType : paramWritingProblemType,
-                            writingProblem : 1,
-                            writingProblemReading : 1,
-                            writingProblemListeningImage : 1,
-                            writingProblemListeningAudio : 1,
-                            writingProblemAnswer : 1,
+                            writingProblem : '',
+                            writingProblemReading : '',
+                            writingProblemListeningImage : '',
+                            writingProblemListeningAudio : '',
+                            writingProblemAnswer : '',
                             login_success : true,
                             user : req.user
 
@@ -368,11 +369,11 @@ var writing = function(req, res){
                     resultModifyTag: false,
                     ExamNO : paramExamNO,
                     ExamDesc : paramExamDesc,
-                    writingProblemType : paramwritingProblemType,
-                    writingProblemReading :1,
-                    writingProblemListeningImage : 1,
-                    writingProblemListeningAudio : 1,
-                    writingProblemAnswer : 1,
+                    writingProblemType : paramWritingProblemType,
+                    writingProblemReading : '',
+                    writingProblemListeningImage : '',
+                    writingProblemListeningAudio : '',
+                    writingProblemAnswer : '',
                     login_success : true,
                     user : req.user
 
