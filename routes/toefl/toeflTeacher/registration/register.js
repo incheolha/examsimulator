@@ -170,7 +170,7 @@ if (database.db) {
 		 
 		 
 		 //context안에 parameter를 담아서 Addexam으로 보냄  
-			res.app.render('./NewToefl/index.ejs', context, function(err, html){
+			res.app.render('./toefl/toeflTeacher/index.ejs', context, function(err, html){
 			
 			if(err){
 				console.error('응답 웹문서 생성 중 에러 발생 : ' + err.stack);

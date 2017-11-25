@@ -108,22 +108,15 @@ var configPassport = require('./config/passport');
 configPassport(app, passport);
 
 // 패스포트 라우팅 설정
-var userPassport = require('./routes/user_passport');
+var userPassport = require('./routes/toefl/toeflTeacher/user_passport');
 userPassport(router, passport);
 
 
 // 토플 라우팅 설정
-var toeflRouting = require('./routes/toefl_routing');
+var toeflRouting = require('./routes/toefl/toeflTeacher/toefl_routing');
 toeflRouting(router, toeflRouting);
 
 
-// Deemo's toefl writing routing
-var writingRouting = require('./routes/writing_routing');
-writingRouting(router, writingRouting);
-
-// 토플 리딩 라우팅 설정
-var readingRouting = require('./routes/reading_routing');
-readingRouting(router, readingRouting);
 
 //===== 404 에러 페이지 처리 =====//
 var errorHandler = expressErrorHandler({

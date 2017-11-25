@@ -57,7 +57,7 @@ var reading = function(req, res) {
                        				user:req.user
 								};
 								//parameter와 함께 addReading.ejs로 넘어가기.	
-								req.app.render('./NewToefl/reading/AddReading.ejs', context, function(err, html){
+								req.app.render('./toefl/toeflTeacher/reading/reading.ejs', context, function(err, html){
 									if(err){
 										console.error('Add_reading.ejs 랜더링중 에러 발생'+ err.stack);
 
@@ -133,7 +133,7 @@ var listening = function(req, res){
                                 user: req.user
                             }
                             //parameter와 함께 addListening.ejs로 넘기기
-                            req.app.render('./NewToefl/listening/AddListening.ejs', context, function(err, html){
+                            req.app.render('./toefl/toeflTeacher/listening/listening.ejs', context, function(err, html){
                                 if(err){
                                     console.error('AddListening으로 렌더링 중 에러가 발생했습니다.'+ err.stack);
 
@@ -206,7 +206,7 @@ var speaking = function(req, res){
                         user:req.user
                     };
 
-                    res.app.render('./NewToefl/speaking/AddSpeaking.ejs', context, function(err, html){
+                    res.app.render('./toefl/toeflTeacher/speaking/speakingType1.ejs', context, function(err, html){
                         if(err){
                             console.error("응답 웹 문서 생성 중 에러 발생 : " + err.stack);
 
@@ -234,7 +234,7 @@ var speaking = function(req, res){
                         user:req.user
                     };
 
-                    req.app.render('./NewToefl/speaking/AddSpeaking.ejs',context, function(err, html){
+                    req.app.render('./toefl/toeflTeacher/speaking/speakingType1.ejs',context, function(err, html){
                         if(err){
                             console.error("Addspeaking.ejs 로 랜더링중 에러가 발생했습니다."+ err.stack)
 
@@ -274,12 +274,12 @@ var writing = function(req, res){
 
     if (paramWritingProblemType == 1) {
       
-        problemTypeRoutingPath = './NewToefl/writing/AddWriting_int.ejs';
+        problemTypeRoutingPath = './toefl/toeflTeacher/writing/writingIntegrated.ejs';
 
     } else {
 
      
-        problemTypeRoutingPath = './NewToefl/writing/AddWriting_ind.ejs';
+        problemTypeRoutingPath = './toefl/toeflTeacher/writing/writingIndependent.ejs';
 
     }
 

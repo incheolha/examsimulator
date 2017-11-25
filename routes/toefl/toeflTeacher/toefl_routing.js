@@ -9,29 +9,29 @@ module.exports = function(router, toeflRouting) {
 
 // 출제된 시험을 저장하고 각 r/c, l/c, s/p, w/r 영역을 들어간다
 
-router.route('/toefl/addregister').get(function(req, res) {
+// router.route('/toefl/addregister').get(function(req, res) {
         
-        console.log('/toefl 시험 출제 저장화면 요청됨.');
+//         console.log('/toefl 시험 출제 저장화면 요청됨.');
 
-    var paramRegisterNo = req.body.registerNo || req.query.registerNo;
-	 var paramRegisterDesc = req.body.registerDesc || req.query.registerDesc;
+//     var paramRegisterNo = req.body.registerNo || req.query.registerNo;
+// 	 var paramRegisterDesc = req.body.registerDesc || req.query.registerDesc;
 	
-    console.log('요청 파라미터 : ' + paramRegisterNo + paramRegisterDesc);
+//     console.log('요청 파라미터 : ' + paramRegisterNo + paramRegisterDesc);
 
-   // 이곳부터는 실제 영역에 출제가 가능한 페이지를 불러들인다
+//    // 이곳부터는 실제 영역에 출제가 가능한 페이지를 불러들인다
 
-           res.render('./toefl/registration/addregister.ejs', function(err,html) {
-                if (err) {throw err;}
-                console.log('rendered: ' + html);
-                res.end(html);
-            });  
-});
+//            res.render('./toefl/toeflTeacher/registration/addRegister.ejs', function(err,html) {
+//                 if (err) {throw err;}
+//                 console.log('rendered: ' + html);
+//                 res.end(html);
+//             });  
+// });
  
 router.route('/toefl/admin').get(function(req, res) {
         
         console.log('/toefl 관리자 화면 요청됨.');
    
-           res.render('./toefladmin/loginadmin.ejs', function(err,html) {
+           res.render('./toefl/toeflTeacher/adminLogin/loginadmin.ejs', function(err,html) {
                 if (err) {throw err;}
                 console.log('rendered: ' + html);
                 res.end(html);
@@ -51,7 +51,7 @@ router.route('/toefl/registerExamPost').get(function(req, res) {
                      SetregisterNo: paramRegisterNo
 					};
 
-           res.render('./toefl/registration/Newaddregister.ejs', context, function(err,html) {
+           res.render('./toefl/toeflTeacher/registration/addRegister.ejs', context, function(err,html) {
                 if (err) {throw err;}
                 console.log('rendered: ' + html);
                 res.end(html);
@@ -73,7 +73,7 @@ router.route('/toefl/updateExamPost').get(function(req, res) {
                      SetregisterDesc: paramRegisterDesc
 					};
 
-           res.render('./toefl/registration/Newupdateregister.ejs', context, function(err,html) {
+           res.render('./toefl/toeflTeacher/registration/updateRegister.ejs', context, function(err,html) {
                 if (err) {throw err;}
                 console.log('rendered: ' + html);
                 res.end(html);

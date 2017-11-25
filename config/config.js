@@ -26,68 +26,44 @@ module.exports = {
         ,{file:'./post', path:'/process/listpost', method:'listpost', type:'post'}
         ,{file:'./post', path:'/process/listpost', method:'listpost', type:'get'}
 		,{file:'./post', path:'/process/addcomment', method:'addcomment', type:'post'}
-     	,{file:'./multer', path:'/process/multer/updatelistening', method:'updatelistening', type:'post'}
-		,{file:'./toefl/listening/multerAddProblem', path:'/process/toefl/listening/multerAddProblemListening', method:'addProblemListening', type:'post'}
+ 
 // 토플 시험등록 라우팅 구성
-		,{file:'./toefl/registration/register', path:'/register/addregister', method:'addregister', type:'post'}
-		,{file:'./toefl/registration/register', path:'/register/updateregister', method:'updateregister', type:'post'}
-		,{file:'./toefl/registration/register', path:'/register/removeregister', method:'removeregister', type:'post'}
-		,{file:'./toefl/registration/register', path:'/register/listregister', method:'listregister', type:'post'}  
-		,{file:'./toefl/registration/register', path:'/register/exampost/:id', method:'exampost', type:'get'}  
-		 
+		,{file:'./toefl/toeflTeacher/registration/register', path:'/register/addregister', method:'addregister', type:'post'}
+		,{file:'./toefl/toeflTeacher/registration/register', path:'/register/updateregister', method:'updateregister', type:'post'}
+		,{file:'./toefl/toeflTeacher/registration/register', path:'/register/removeregister', method:'removeregister', type:'post'}
+		,{file:'./toefl/toeflTeacher/registration/register', path:'/register/listregister', method:'listregister', type:'post'}  
+		,{file:'./toefl/toeflTeacher/registration/register', path:'/register/exampost/:id', method:'exampost', type:'get'}  
 
-//file: js file location path: route path (사용자가 보기좋게.) method: function() what to do , type:post.
-		 
 //addExam routes 
-		,{file:'./toefl_Teacher', path:'/toeflTeacher/reading', method:'reading', type:'post'}
-		,{file:'./toefl_Teacher', path:'/toeflTeacher/listening', method:'listening', type:'post'}
-		,{file:'./toefl_Teacher', path:'/toeflTeacher/speaking/ch1', method:'speaking', type:'post'}
-		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/integrated', method:'writing', type:'post'}
-		,{file:'./toefl_Teacher', path:'/toeflTeacher/writing/independent', method:'writing', type:'post'}
-// student routes
-		,{file:'./student', path:'/toeflStudent/reading', method:'student', type:'post'}
+		,{file:'./toefl/toeflTeacher/toefl_Teacher', path:'/toeflTeacher/reading', method:'reading', type:'post'}
+		,{file:'./toefl/toeflTeacher/toefl_Teacher', path:'/toeflTeacher/listening', method:'listening', type:'post'}
+		,{file:'./toefl/toeflTeacher/toefl_Teacher', path:'/toeflTeacher/speaking/ch1', method:'speaking', type:'post'}
+		,{file:'./toefl/toeflTeacher/toefl_Teacher', path:'/toeflTeacher/writing/integrated', method:'writing', type:'post'}
+		,{file:'./toefl/toeflTeacher/toefl_Teacher', path:'/toeflTeacher/writing/independent', method:'writing', type:'post'}
+
 // reading routes 
  
-	,{file:'./toefl/reading/reading', path:'/process/toefl/reading/addreading', method:'addreading', type:'post'}
-	,{file:'./toefl/reading/reading', path:'/process/toefl/reading/updatereading', method:'updatereading', type:'post'}
-	,{file:'./toefl/reading/reading', path:'/process/toefl/reading/removereading', method:'removereading', type:'post'}
-    ,{file:'./toefl/reading/reading', path:'/process/toefl/reading/listreading', method:'listreading', type:'post'}  
-    ,{file:'./toefl/reading/reading', path:'/process/toefl/reading/listreading', method:'listreading', type:'get'}  
-    ,{file:'./toefl/reading/reading', path:'/process/showreading/:id', method:'showreading', type:'get'}
-    ,{file:'./toefl/reading/reading', path:'/process/toefl/reading/addproblemreading', method:'addproblemreading', type:'post'}
 
-
+    	,{file:'./toefl/toeflTeacher/reading/reading', path:'/process/toefl/reading/addproblemreading', method:'addproblemreading', type:'post'}
 
 // listening routes
-		,{file:'./toefl/listening/listening', path:'/process/toefl/listening/addlistening', method:'addlistening', type:'post'}
-		// ,{file:'./toefl/listening/listening', path:'/process/toefl/listening/addProblem', method:'addProblem', type:'post'}
-		,{file:'./toefl/listening/listening', path:'/process/toefl/listening/updatelistening', method:'updatelistening', type:'post'}
-		,{file:'./toefl/listening/listening', path:'/process/toefl/listening/removelistening', method:'removelistening', type:'post'}
-		,{file:'./toefl/listening/listening', path:'/process/toefl/listening/listlistening', method:'listlistening', type:'post'}        
+		// ,{file:'./multer', path:'/process/multer/updatelistening', method:'updatelistening', type:'post'}
+		,{file:'./toefl/toeflTeacher/listening/multerAddProblem', path:'/process/toefl/listening/multerAddProblemListening', method:'addProblemListening', type:'post'}
 
 // speaking init
-		,{file:'./toefl/speaking/speaking', path:'/process/toefl/speaking/addspeaking', method:'addspeaking', type:'post'}   
-		,{file:'./toefl/speaking/speaking', path:'/process/toefl/speaking/updatespeaking', method:'updatespeaking', type:'post'}
-		,{file:'./toefl/speaking/speaking', path:'/process/toefl/speaking/removespeaking', method:'removespeaking', type:'post'}
-		,{file:'./toefl/speaking/speaking', path:'/process/toefl/speaking/listspeaking', method:'listspeaking', type:'post'}
-
-		,{file:'./toefl/speaking/multerSpeaking',path:'/process/toefl/speaking/multerAddSpeaking', method:'addProblemSpeaking', type:'post'}
-		,{file:'./toefl/speaking/speaking', path:'/process/toefl/speaking/ch2', method:'speaking_ch2', type:'post'}
-		,{file:'./toefl/speaking/speaking', path:'/process/toefl/speaking/ch3', method:'speaking_ch3', type:'post'}
-		,{file:'./toefl/speaking/speaking', path:'/process/toefl/speaking/ch4', method:'speaking_ch4', type:'post'}
-		,{file:'./toefl/speaking/speaking', path:'/process/toefl/speaking/ch5', method:'speaking_ch5', type:'post'}
-		,{file:'./toefl/speaking/speaking', path:'/process/toefl/speaking/ch6', method:'speaking_ch6', type:'post'}
+		,{file:'./toefl/toeflTeacher/speaking/multerSpeaking',path:'/process/toefl/speaking/multerAddSpeaking', method:'addProblemSpeaking', type:'post'}
+		,{file:'./toefl/toeflTeacher/speaking/speaking', path:'/process/toefl/speaking/ch2', method:'speaking_ch2', type:'post'}
+		,{file:'./toefl/toeflTeacher/speaking/speaking', path:'/process/toefl/speaking/ch3', method:'speaking_ch3', type:'post'}
+		,{file:'./toefl/toeflTeacher/speaking/speaking', path:'/process/toefl/speaking/ch4', method:'speaking_ch4', type:'post'}
+		,{file:'./toefl/toeflTeacher/speaking/speaking', path:'/process/toefl/speaking/ch5', method:'speaking_ch5', type:'post'}
+		,{file:'./toefl/toeflTeacher/speaking/speaking', path:'/process/toefl/speaking/ch6', method:'speaking_ch6', type:'post'}
 			
 // writing routes
 
-		,{file:'./toefl/writing/multerWriting', path:'/process/toefl/writing/multerAddWriting', method:'addProblemWriting', type:'post'}
-		,{file:'./toefl/writing/writing', path:'/process/toefl/writing/addwriting', method:'addwriting', type:'post'}
-		,{file:'./toefl/writing/writing', path:'/process/toefl/writing/updatewriting', method:'updatewriting', type:'post'}
-		,{file:'./toefl/writing/writing', path:'/process/toefl/writing/removewriting', method:'removewriting', type:'post'}
-		,{file:'./toefl/writing/writing', path:'/process/toefl/writing/listwriting', method:'listwriting', type:'post'}
-        ,{file:'./toefl/writing/writing', path:'/process/toefl/writing/showwriting/:id', method:'showwriting', type:'get'}
-        ,{file:'./toefl/writing/writing', path:'/process/toefl/writing/addproblem', method:'addproblem', type:'post'}
+		,{file:'./toefl/toeflTeacher/writing/multerWriting', path:'/process/toefl/writing/multerAddWriting', method:'addProblemWriting', type:'post'}
 
+// student routes
+		,{file:'./student', path:'/toeflStudent/reading', method:'student', type:'post'}
 	],
 
 	facebook: {		// passport facebook

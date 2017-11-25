@@ -66,7 +66,7 @@ module.exports = function(router, passport) {
                                             }
   
                                                 var context = {login_success:true, user:req.user, lists:registerLists};
-                                                        res.render('./toefl/test.ejs', context, function(err,html) {
+                                                        res.render('./toefl/toeflTeacher/registration/registerIndex.ejs', context, function(err,html) {
                                                             if (err) {throw err;}
                                                         res.end(html);
                                                         }); 
@@ -131,7 +131,7 @@ module.exports = function(router, passport) {
             console.dir(req.user);
 
             if (Array.isArray(req.user)) {
-                res.render('./NewToefl/index.ejs', {user: req.user[0]._doc});
+                res.render('./toefl/toeflTeacher/index.ejs', {user: req.user[0]._doc});
             } else {
                 res.render('./NewToefl/index.ejs', {user: req.user});
             }
