@@ -120,11 +120,11 @@ var temp = true;
 
 
                                     if (paramwritingProblemType == 1) {
-                                            problemTypeRoutingPath = './NewToefl/writing/AddWriting_int.ejs';
+                                            problemTypeRoutingPath = './toefl/toeflTeacher/writing/writingIntegrated.ejs';
 
                                         } else {
 
-                                            problemTypeRoutingPath = './NewToefl/writing/AddWriting_ind.ejs';
+                                            problemTypeRoutingPath = './toefl/toeflTeacher/writing/writingIndependent.ejs';
 
                                         }
                                             req.app.render(problemTypeRoutingPath, context, function (err, html) {
@@ -214,7 +214,7 @@ var temp = true;
                                 console.log(results[i] + "찾은 값 확인")
                                 console.log("디렉토리 내에서 파일을 찾았습니다.")
                                 console.log("디렉토리에 있는 파일을 빈 배열에 추가합니다.")
-                                testarray.push(results[i]);
+                                // testarray.push(results[i]);
 
                                 //파일을 찾았다면 폴더내의 파일을 제거합니다.
                                 fs.unlink(path+results[i], function(err, results){
@@ -234,7 +234,7 @@ var temp = true;
                         
 
                          //빈 배열에 저장된 문제 목록을 통해 어떤 파일이 제거되었는지 확인할 수 있습니다.   
-                        console.log("제거된 파일 목록 : " + testarray)
+                        // console.log("제거된 파일 목록 : " + testarray)
 
                         fs.exists("./uploads/"+paramwritingProblemListeningAudio, function(exists){
                                 console.log(exists? 'yes':"no");
@@ -305,8 +305,8 @@ var temp = true;
                                 console.log("DB에 성공적으로 문제를 추가했습니다.")
 
 
-                                                   var path = "./uploads/toefl/wr/";
-                    var testarray = {};
+                    var path = "./uploads/toefl/wr/";
+                    var checkArray = {};
                     var rename="toefl_WR_"+paramExamNO+"_"+paramwritingProblemType+"_";
                     var uploadpath = path+rename;
                   
@@ -332,7 +332,7 @@ var temp = true;
                                 console.log(results[i] + "찾은 값 확인")
                                 console.log("디렉토리 내에서 파일을 찾았습니다.")
                                 console.log("디렉토리에 있는 파일을 빈 배열에 추가합니다.")
-                                testarray.push(results[i]);
+                                // checkArray.push(results[i]);
 
                                 //파일을 찾았다면 폴더내의 파일을 제거합니다.
                                 fs.unlink(path+results[i], function(err, results){
@@ -352,7 +352,7 @@ var temp = true;
                         
 
                          //빈 배열에 저장된 문제 목록을 통해 어떤 파일이 제거되었는지 확인할 수 있습니다.   
-                        console.log("제거된 파일 목록 : " + testarray)
+                        console.log("제거된 파일 목록 : " + checkArray)
 
                         fs.exists("./uploads/"+paramwritingProblemListeningAudio, function(exists){
                                 console.log(exists? 'yes':"no");
