@@ -1,8 +1,11 @@
+//speaking chapter 문제 업로드시 이곳에서 처리 
 
 
-
+//file 처리에 필요한 모듈 정의 
 var multer = require('multer');
 var fs = require('fs');
+
+//문제 변수 초기화
 
 var paramExamNO = "";
 var paramExamDesc = "";
@@ -14,12 +17,8 @@ var paramspeakingProblemReading = "";
 var speakingProblemListeningImage= "";
 var speakingProblemListeningAudio= "";
 var paramspeakingProblemAnswer = "";
-var newArray =[];
-var i = 0;
 var temp = true;
-var temp2 = true;
-
-var path = "./uploads/toefl/sp/";
+;
 
 
 var storage = multer.diskStorage({
@@ -31,47 +30,33 @@ var storage = multer.diskStorage({
             if(file.fieldname=='speakingAnnounceImage'){
                 speakingAnnounceImage = file.originalname;
                 console.log("Announce Image : "+speakingAnnounceImage );
-                // AnnounceImage = newArray[i]
 
                 callback(null, speakingAnnounceImage);
-                // console.log(newArray[i]);
-                // console.log(i);
-                // i++;
+
             }
             else  if(file.fieldname=='speakingAnnouncementAudio'){
                 speakingAnnouncementAudio = file.originalname;
                  console.log("Announcement Audio : "+speakingAnnouncementAudio );
                 callback(null, speakingAnnouncementAudio);
-                // console.log(newArray[i]);
-                // console.log(i);
-                // i++;
+
             }
             else  if(file.fieldname=='speakingProblemListeningAudio'){
                speakingProblemListeningAudio = file.originalname; 
             console.log("ProblemListening Audio : "+speakingProblemListeningAudio );
                 callback(null, speakingProblemListeningAudio);
-                // console.log(newArray[i]);
-                // console.log(i);
-                // i++;
+ 
             }
             else if(file.fieldname=='speakingProblemListeningImage'){
                speakingProblemListeningImage = file.originalname; 
              console.log("Problem Listening Image : "+speakingProblemListeningImage );
                 callback(null, speakingProblemListeningImage);
-                // console.log(newArray[i]);
-                // console.log(i);
-                // i++;
-            }
-            
-           
-        
 
-        
+            }
     }     
 });
 
 var addProblemSpeaking = function(req, res){
-    console.log('/process/toefl/speaking/multerAddSpeaking 호출 됨');
+    console.log('/toefl/toeflTeacher/multerSpeaking 요청됨')
 
     var upload = multer({
         storage: storage
@@ -92,155 +77,173 @@ var addProblemSpeaking = function(req, res){
 
         var database = req.app.get('database');
 
-            if(database.db){
-                console.log("db 초기화");
+        if(database.db){
+            console.log("데이터베이스를 초기화했습니다. ");
 
-                database.SpeakingModel.findByExamNO(paramExamNO, function(err, results){
-                    if(err){
-                        console.error("회차를 찾던중 에러 발생 : " + err.stack);
+            database.WritingModel.findByExamNO(paramExamNO, function(err, results){
 
-                        res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-                        res.write('<h2>회차를 찾던 중 에러 발생</h2>');
-                        res.write('<p>'+err.stack+'</p>');
-                        res.end();
+                if(err){
+                    console.error("회차를 찾던 중 에러 발생  : " +err.stack);
 
-                        return;
+                    errorHandling(err);
 
+                } else {
+
+                    //에러 핸들링 후 디비에 저장할 컨텍스트 생성
+                    var context = {
+                        resultModifyTag : true,
+                        ExamNO : paramExamNO,
+                        ExamDesc: paramExamDesc,
+                        speakingProblem : paramspeakingProblem,
+                        speakingProblemType : paramspeakingProblemType,
+                        speakingProblemReading : paramspeakingProblemReading,
+                        speakingAnnounceImage : paramspeakingAnnounceImage,
+                        speakingAnnouncementAudio : paramspeakingAnnouncementAudio,
+                        speakingProblemListeningAudio : paramspeakingProblemListeningAudio,
+                        speakingProblemListeningImage : paramspeakingProblemListeningImage,
+                        speakingProblemAnswer : paramspeakingProblemAnswer,
+                        login_success : true,
+                        user : req.user
+                    };
+                    if(results[0].Problem[0] != undefined){
+                        //db에 저장된 문제가 있다면 
+                        deleteAndUpdateSpeakingPush(database, paramExamNO, paramspeakingProblem, paramspeakingProblemType,
+                            paramspeakingProblemReading, paramspeakingAnnounceImage, paramspeakingAnnouncementAudio,
+                            paramspeakingProblemListeningAudio, paramspeakingProblemListeningImage, paramspeakingProblemAnswer)
+                        
+                    } else {
+                        //db에 저장된 문제가 없다면
+                        updateSpeakingPush(database, paramExamNO, paramspeakingProblem, paramspeakingProblemType,
+                            paramspeakingProblemReading, paramspeakingAnnounceImage, paramspeakingAnnouncementAudio,
+                            paramspeakingProblemListeningAudio, paramspeakingProblemListeningImage, paramspeakingProblemAnswer)
                     }
-                    console.log(results)
-                    console.log("회차 넘버 double check " + paramExamNO);
 
-                    if(results !=null)
-                        {
-                            database.SpeakingModel.update({
-                                'ExamNO':paramExamNO},{"$push":{'Problem':{
-                                    'speakingProblemType': paramspeakingProblemType,
-                                    'speakingAnnounceImage':speakingAnnounceImage,
-                                    'speakingAnnouncementAudio':speakingAnnouncementAudio,
-                                    'speakingProblem':paramspeakingProblem,
-                                    'speakingProblemReading':paramspeakingProblemReading,
-                                    'speakingProblemListeningImage':speakingProblemListeningImage,
-                                    'speakingProblemListeningAudio':speakingProblemListeningAudio,
-                                    'speakingProblemAnswer':paramspeakingProblemAnswer
+                    //랜더링할 경로를 case문을 사용해 지정
+                    switch(paramspeakingProblemType){
+                        case '1': speakingRoutingPath = './toefl/toeflTeacher/speaking/speakingType1.ejs';
+                                break;
+                        case '2': speakingRoutingPath = './toefl/toeflTeacher/speaking/speakingType2.ejs';
+                                break;
+                        case '3': speakingRoutingPath = './toefl/toeflTeacher/speaking/speakingType3.ejs';
+                                break;
+                        case '4': speakingRoutingPath = './toefl/toeflTeacher/speaking/speakingType4.ejs';
+                                break;
+                        case '5': speakingRoutingPath = './toefl/toeflTeacher/speaking/speakingType5.ejs';
+                                break;
+                        case '6': speakingRoutingPath = './toefl/toeflTeacher/speaking/speakingType6.ejs';
+                                break;
+                        default: speakingRoutingPath = "./";
+                                break;
+                    }
+                    console.log("라우팅 경로 확인 :"+speakingRoutingPath);
 
-                                }}}, function(err, results){
-                                    if(err){
-                                        console.error('DB에 내용 추가 중 에러 발생' + err.stack);
+                    res.app.render(speakingRoutingPath, context, function(err, html){
+					if(err){
+						errorHandling(err);
 
-                                        res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-                                        res.write('<h2>listening chapter number 추가 중 에러 발생 <h2>');
-                                        res.write('<p>'+err.stack+'</p>');
-                                        res.end();
+					}
+					console.log("응답 웹문서 : " + html);
+					res.end(html);
 
-                                        return;
-                                    }
-                                    console.log('DB에 내용을 성공적으로 추가하였습니다.')
-                                    console.log('fs를 이용한 이름 재설정');
+				    })
 
-                                    var rename="toefl_SP_"+paramExamNO+"_"+paramspeakingProblemType+"_";
-                                    var concre = path+rename;
-                                    console.log("바꾸고자 하는 이름 "+ concre);
-                                    // var path2="../uploads/toefl/sp/";
-                                    console.log("paramspeakingAnnounce : " + paramspeakingAnnouncementAudio);
-                                    console.log("2nd"+ speakingAnnouncementAudio);
-                
-
-                                    //fs exists 를 이용하여 업로드된 파일이 ./uploads에  존재하는 지 확인후 경로와 이름을 바꿔줍니다.
-                                    fs.exists("./uploads/"+speakingAnnouncementAudio, function(exists){
-                                        console.log(exists ? 'yes': "no");
-                                        if(exists = 'yes'){
-                                                   fs.rename("./uploads/"+paramspeakingAnnouncementAudio, path+rename+paramspeakingAnnouncementAudio, function(err){
-                                                    if(err) throw err;
-                                                    console.log("kggkgk");
-                                    })
-                                            console.log("할룽");
-                                        }
-                                    })
-
-                                            // if(paramspeakingAnnounceImage != null){
-                                            //     console.log(paramspeakingAnnounceImage)
-                                            //     fs.rename('uploads'+paramspeakingAnnounceImage, path+rename+paramspeakingAnnounceImage, function(err){
-                                            //         if(err) throw err;
-                                            //         console.log("????")
-                                                    
-                                            //     })
-
-                                            // }
-                                            // else if(speakingAnnouncementAudio !=null){
-                                            //     console.log(paramspeakingAnnouncementAudio + "파람")
-                                            //     console.log(speakingAnnouncementAudio + "그냥 ")
-                                            //     fs.rename('uploads/'+paramspeakingAnnouncementAudio, path+rename+paramspeakingAnnouncementAudio, function(err){
-                                            //         if(err) throw err;
-                                            //         console.log("kggkgk");
-
-
-                                            //     })
-
-                                            // }
-                                            // else if(paramspeakingProblemListeningAudio !=null){
-
-                                            //     fs.rename('uploads/'+paramspeakingProblemListeningAudio, path+rename+paramspeakingProblemListeningAudio, function(err){
-                                            //         if(err) throw err;
-                                            //         console.log('hihihihi');
-                                            //     })
-                                            // }
-                                            // else if(paramspeakingProblemListeningImage !=null){
-                                            //     fs.rename(path+paramspeakingProblemListeningImage, path+rename+paramspeakingProblemListeningImage, function(err){
-                                            //         if(err) throw err;
-                                            //         console.log("fsjfsdf");
-                                                    
-
-                                            //     })
-                                            // }
-
-               
-
-									var context = 
-												{
-													ExamNO : paramExamNO,
-													ExamDesc : paramExamDesc,
-                                                    speakingProblemType : paramspeakingProblemType,
-                                                    speakingProblem : paramspeakingProblem,
-                                                    speakingAnnouncementAudio : paramspeakingAnnouncementAudio,
-                                                    speakingProblemAnswer : paramspeakingProblemAnswer,
-                                                    login_success:true,
-                                                    user:req.user
-												};
-												req.app.render('./NewToefl/speaking/AddSpeaking.ejs', context, function(err, html){
-													if(err){
-														console.error('Add_Listening.ejs 랜더링중 에러 발생 ' +err.stack);
-		
-														res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-														res.write('<h2>랜더링중 문제 발생 </h2>');
-														res.write('<p>'+err.stack+'</p>');
-														res.end();
-		
-														return;
-													}
-													console.log('응답 웹문서 : '+ html);
-													res.end(html);
-		
-												});
-
-
-
-                                }
-                            
-                            )}
-
-
-
-
-                })
-            }else{
-                res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-                res.write('<h2>데이터베이스 연결에 실패했습니다. </h2>');
-                res.end();
-            }
-
+                }
+            })
+        } else{
+            res.writeHead('200',{'Content-Type':'text/html;charset=utf8'});
+            res.write('<h2>데이터베이스 연결에 실패했습니다. </h2>');
+            res.end();
+        }
     })
-};
+}
 
+//error 핸들링 함수 선언 
+    function errorHandling(err){
+        
+        res.writeHead('200',{'Content-Type':'text/html;charset=utf8'});
+        res.write('<h2>통합형으로 랜더링 중 에러 발생 </h2>');
+        res.write('<p>'+err.stack+'</p>');
+        res.end();
+
+        return;
+    };
+ 
+    function updateSpeakingPush(database, paramExamNO, paramspeakingProblem, paramspeakingProblemType,
+                            paramspeakingProblemReading, paramspeakingAnnounceImage, paramspeakingAnnouncementAudio,
+                            paramspeakingProblemListeningAudio, paramspeakingProblemListeningImage, paramspeakingProblemAnswer){
+
+                                database.SpeakingModel.update({
+                                    'ExamNO':paramExamNO} , {"$push":{'problem':{
+                                        'speakingProblemType':paramspeakingProblemType,
+                                        'speakingProblem':paramspeakingProblem,
+                                        'speakingProblemReading':paramspeakingProblemReading,
+                                        'speakingAnnounceImage':paramspeakingAnnounceImage,
+                                        'speakingAnnouncementAudio':paramspeakingAnnouncementAudio,
+                                        'speakingProblemListeningAudio':paramspeakingProblemListeningAudio,
+                                        'speakingProblemListeningImage':paramspeakingProblemListeningImage,
+                                        'speakingProblemAnswer':paramspeakingProblemAnswer
+                                    }}}, function(err, results){
+                                        if(err){
+                                            console.error('DB에 문제를 추가하던중 에러가 발생했습니다. ' +err.stack);
+
+                                            errorHandling(err);
+                                        }
+                                        console.log("DB에 성공적으로 문제를 추가했습니다.")
+
+                                        var path = "./uploads/toefl/sp/";
+                                        var rename = "toefl_SP_"+paramExamNO+"_"+paramspeakingProblemType+"_";
+                                        var uploadpath = path+rename;
+
+                                    }
+                                )
+
+
+
+                            }
+
+
+    
+    function deleteAndUpdateSpeakingPush(database, paramExamNO, paramspeakingProblem, paramspeakingProblemType,
+                            paramspeakingProblemReading, paramspeakingAnnounceImage, paramspeakingAnnouncementAudio,
+                            paramspeakingProblemListeningAudio, paramspeakingProblemListeningImage, paramspeakingProblemAnswer){
+
+                                database.SpeakingModel.update({'ExamNO':paramExamNO},
+                                {$pull:{'Problem':{writingProblemType: paramwritingProblemType}}}, function(err, results){
+
+                                    if(err){
+                                        errorHandling(err);
+                                    } else {
+                                        database.SpeakingModel.update({'ExamNO':paramExamNO}, {"$push":{'problem':{
+                                            'speakingProblemType':paramspeakingProblemType,
+                                            'speakingProblem':paramspeakingProblem,
+                                            'speakingProblemReading':paramspeakingProblemReading,
+                                            'speakingAnnounceImage':paramspeakingAnnounceImage,
+                                            'speakingAnnouncementAudio':paramspeakingAnnouncementAudio,
+                                            'speakingProblemListeningAudio':paramspeakingProblemListeningAudio,
+                                            'speakingProblemListeningImage':paramspeakingProblemListeningImage,
+                                            'speakingProblemAnswer':paramspeakingProblemAnswer
+                                        }}}, function(err, results){
+                                            if(err){
+                                                console.error("DB에 문제를 추가하던중 에러가 발생했습니다."+err.stack);
+
+                                                errorHandling(err);
+
+                                            }
+                                            console.log("DB에 성공적으로 문제를 추가했습니다.");
+
+
+                                            var path = "./uploads/toefl/wr/";
+                                            var checkArray = {};
+                                            var rename="toefl_WR_"+paramExamNO+"_"+paramwritingProblemType+"_";
+                                            var uploadpath = pah+rename;
+                                        
+
+                                        })
+
+                                    }
+                                }
+                                )
+                            }
 module.exports.addProblemSpeaking = addProblemSpeaking;
 
 

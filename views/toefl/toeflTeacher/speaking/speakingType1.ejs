@@ -35,15 +35,6 @@
 
      
   
-                    <!--
-     15초의 준비시간, 45초의 응답시간 
-    fs.write  no img, just announcement audio 필요 
--->
-
-<!--
-      <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
-      <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>>        
--->
 <body onload=startTime()>
      <div class="ui blue borderless inverted menu" id="mainMenu">
           <div class="left menu">
@@ -85,8 +76,9 @@
           <i class="right chevron icon divider"></i>
           <a class="section"> <%= ExamNO %> 회차</a>
           <i class="right chevron icon divider"></i>  
-          <div class="active section">Speaking</div>
-         
+          <a class="section">Speaking</a>
+          <i class="right chevron icon divider"></i>  
+          <div class="active section">Chapter <%=speakingProblemType %></div>  
     
         </div>
               <button class="teal ui right floated button" id="sp_chapter_complete_btn">챕터 완료</button>
@@ -98,7 +90,7 @@
     
        <div class="ui inverted blue six item menu">
   <div class="item">
-         <form action="/toeflTeacher/speaking/ch1" method="POST" >
+         <form class="ui form" action="/toefl/toeflTeacher/speaking" method="post" >
           <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
           <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
           <input type="hidden" name="speakingProblemType" value=1>
@@ -106,35 +98,35 @@
            </form> 
   </div>
    <div class="item">
-         <form action="/process/toefl/speaking/ch2" method="POST" >
+        <form class="ui form" action="/toefl/toeflTeacher/speaking" method="post" >
           <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
           <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
           <input type="hidden" name="speakingProblemType" value=2>
        <button type="submit" class="ui primary button">Chapter2</button> 
            </form> 
   </div>  <div class="item">
-         <form action="/process/toefl/speaking/ch3" method="POST" >
+         <form class="ui form" action="/toefl/toeflTeacher/speaking" method="post" >
           <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
           <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
           <input type="hidden" name="speakingProblemType" value=3>
        <button type="submit" class="ui primary button">Chapter3</button> 
            </form> 
   </div>  <div class="item">
-         <form action="/process/toefl/speaking/ch4" method="POST" >
+         <form class="ui form" action="/toefl/toeflTeacher/speaking" method="post" >
           <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
           <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
           <input type="hidden" name="speakingProblemType" value=4>
        <button type="submit" class="ui primary button">Chapter4</button> 
            </form> 
   </div>  <div class="item">
-         <form action="/process/toefl/speaking/ch5" method="POST" >
+         <form class="ui form" action="/toefl/toeflTeacher/speaking" method="post" >
           <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
           <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
           <input type="hidden" name="speakingProblemType" value=5>
        <button type="submit" class="ui primary button">Chapter5</button> 
            </form> 
   </div>  <div class="item">
-         <form action="/process/toefl/speaking/ch6" method="POST" >
+         <form class="ui form" action="/toefl/toeflTeacher/speaking" method="post" >
           <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
           <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
           <input type="hidden" name="speakingProblemType" value=6>
@@ -143,6 +135,7 @@
   </div>
 </div>
 
+<% if (resultModifyTag == true) { %> 
   <% var a = speakingProblem; %>
   <% var b = speakingAnnouncementAudio; %>
   <% var c = speakingProblemAnswer; %>
@@ -151,7 +144,9 @@
   <button  id="btn2"><%= b %></button>
   <button  id="btn3"><%= c %></button>
 
- <% if((a===1) || (b===1) ||(c===1) ) { %>
+<% } %>
+
+
   <div class="ui fluid container">
   
 
@@ -222,122 +217,14 @@
               <button class="ui blue button" type="submit">Submit</button>
             </form>
 
-
-
-
-
-
-     
         </div>
         
     </div>
   
-
-    
- <% }else if((a!=1)||(b!=1)||(c!=1)){ %> 
-
-<div class="ui fluid container">
   
 
+   <% if (resultModifyTag == true) { %> 
 
-  <div class="ui two column divided grid">
-  <div class="same height row">
-    <div class="eigth wide column">
-
-
-
-         <div class="ui raised segment" style="height: 100%"  id="chapter2" >
-         
-      
-
-        <form class="ui large form" action="/process/toefl/speaking/multerAddSpeaking" id="speakingForm1" method="post" enctype="multipart/form-data">
-           <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
-          <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
-          <input type="hidden" name="speakingProblemType" value=<%= speakingProblemType %>>    
-   
-          <div class="field">
-             
-
-
-            <div class="ui blue ribbon big label">
-                <i class="spoon icon"></i> Paired Choice
-            </div>  
-  
-
-            
-    
-       <h3 class="ui header">Personal Preference 에 관련된 문제를 입력해주세요  </h3>
-             
-          
-          <div class="ui input fluid focus">  
-
-            
-            <input type="text" id="inputtest" name="speakingProblem" placeholder="ex) What is your... / Describe a unique about..." >
-     
-         </div>   
-
-              </div>
-                
-                
-              <div class="field">
-                <h3 class="ui header">이 파트와 관련있는 mp3 파일을 올려주세요  </h3>       
-                         <label for="sp_ch_1_mp3_ipt" class="ui icon button">
-                 <i class="file icon"></i>
-                Open mp3 File</label>
-            <input type="file" id="sp_ch_1_mp3_ipt" name="speakingAnnouncementAudio" style="display:none" accept="audio/*" multiple>
-            <div id="sp_ch_1_mp3_pre"> 
-              
-              <input type="text" id="inputtest2" name="speakingProblem"  > 
-              
-            </div>   
-
-                
-              </div>
-
-         <div class="field">
-                  <h3 class="ui header">문제에 관한 설명, 모범 답안 작성하기. </h3>     
-                  
-          <div class="ui input  focus">  
-            <input type="text" id="inputtest3" name="speakingProblemAnswer" placeholder="ex) What is your... / Describe a unique about...">
-        </div>
-
-      
-          </div>
-
-
-              
-              <button class="ui blue button" type="submit">Submit</button>
-            </form>
-
-
-
-
-
-
-     
-        </div>
-        
-    </div>
-  <% } %>  
-  
-
-    <% if(speakingProblem === 1) { %> 
-      <div class="eigth wide column">
-      
-        <div class="ui bottom info message">
-        
-        <div class="header">
-          아직 저장된 내용이 없네요!
-        </div>
-        <ul class="list">
-          <li>알고 계셨나요??</li>
-          <li>문제를 만들고 저장하시면 이부분에서 문제가 나타납니다</li>
-          
-        </ul>
-     
-      </div>
-      </div>
-    <% }else if(speakingProblem !=1){ %>
     <div class="eight wide column">
       <div class="ui raised segment">
            <div class="ui blue ribbon big label">
@@ -355,19 +242,19 @@
           <tr>
             <td>Problem</td>
           
-            <td><%=speakingProblem%></td>
+            <td><%=a%></td>
         
           </tr>
           <tr>
             <td>Problem Audio</td>
        
-            <td><%= speakingAnnouncementAudio%></td>
+            <td><%= b%></td>
         
           </tr>
           <tr>
        
             <td>Problem Desc.</td>
-            <td><%= speakingProblemAnswer%></td>
+            <td><%= c%></td>
        
           </tr>
         </tbody>
@@ -390,12 +277,25 @@
 
     </div>
   </div>
-  <% } %>
+ 
   </div>
 </div>
-
-
-
+     <% } else { %>
+   <div class="eigth wide column">
+      
+  <div class="ui bottom info message">
+        
+      <div class="header">
+        아직 저장된 내용이 없네요!
+      </div>
+      <ul class="list">
+        <li>알고 계셨나요??</li>
+        <li>문제를 만들고 저장하시면 이부분에서 문제가 나타납니다</li>
+          
+      </ul>
+    </div>
+  </div>
+ <% } %>
      
 
 

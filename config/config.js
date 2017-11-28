@@ -37,7 +37,6 @@ module.exports = {
 //addExam routes 
 		,{file:'./toefl/toeflTeacher/toefl_Teacher', path:'/toeflTeacher/reading', method:'reading', type:'post'}
 		,{file:'./toefl/toeflTeacher/toefl_Teacher', path:'/toeflTeacher/listening', method:'listening', type:'post'}
-		,{file:'./toefl/toeflTeacher/toefl_Teacher', path:'/toeflTeacher/speaking/ch1', method:'speaking', type:'post'}
 		,{file:'./toefl/toeflTeacher/toefl_Teacher', path:'/toeflTeacher/writing/integrated', method:'writing', type:'post'}
 		,{file:'./toefl/toeflTeacher/toefl_Teacher', path:'/toeflTeacher/writing/independent', method:'writing', type:'post'}
 
@@ -51,12 +50,9 @@ module.exports = {
 		,{file:'./toefl/toeflTeacher/listening/multerAddProblem', path:'/process/toefl/listening/multerAddProblemListening', method:'addProblemListening', type:'post'}
 
 // speaking init
+		,{file:'./toefl/toeflTeacher/speaking/speaking',path:'/toefl/toeflTeacher/speaking', method:'speaking', type:'post'}
 		,{file:'./toefl/toeflTeacher/speaking/multerSpeaking',path:'/process/toefl/speaking/multerAddSpeaking', method:'addProblemSpeaking', type:'post'}
-		,{file:'./toefl/toeflTeacher/speaking/speaking', path:'/process/toefl/speaking/ch2', method:'speaking_ch2', type:'post'}
-		,{file:'./toefl/toeflTeacher/speaking/speaking', path:'/process/toefl/speaking/ch3', method:'speaking_ch3', type:'post'}
-		,{file:'./toefl/toeflTeacher/speaking/speaking', path:'/process/toefl/speaking/ch4', method:'speaking_ch4', type:'post'}
-		,{file:'./toefl/toeflTeacher/speaking/speaking', path:'/process/toefl/speaking/ch5', method:'speaking_ch5', type:'post'}
-		,{file:'./toefl/toeflTeacher/speaking/speaking', path:'/process/toefl/speaking/ch6', method:'speaking_ch6', type:'post'}
+		
 			
 // writing routes
 

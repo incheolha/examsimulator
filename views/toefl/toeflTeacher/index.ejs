@@ -432,13 +432,13 @@
     </div>
   </div>
   <div class="actions">
-    <form class="ui form" action="/toeflTeacher/speaking/ch1" method="post" >
+    <form class="ui form" action="/toefl/toeflTeacher/speaking" method="post" >
     <div class="ui red deny button">
       Nope
     </div>
     <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
     <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>>
-      <input type="hidden" name="speakingProblemType" value="1">  
+    <input type="hidden" name="speakingProblemType" value=1>  
     <button type="submit" class="ui positive right labeled icon button" >
       Yep, that's me
       <i class="checkmark icon"></i>

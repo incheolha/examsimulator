@@ -158,105 +158,105 @@ var listening = function(req, res){
 
 };
 
-var speaking = function(req, res){
-    console.log("toefl_Teacher 에 있는 speaking 호출됨");
+// var speaking = function(req, res){
+//     console.log("toefl_Teacher 에 있는 speaking 호출됨");
 
-    var paramExamNO = req.body.ExamNO || req.query.ExamNO;
-    var paramExamDesc = req.body.ExamDesc || req.query.ExamDesc;
-    var paramspeakingProblemType = req.body.speakingProblemType || req.query.speakingProblemType;
-    console.log("요청 파라미터 : " + paramExamNO + ", " +paramExamDesc);
+//     var paramExamNO = req.body.ExamNO || req.query.ExamNO;
+//     var paramExamDesc = req.body.ExamDesc || req.query.ExamDesc;
+//     var paramspeakingProblemType = req.body.speakingProblemType || req.query.speakingProblemType;
+//     console.log("요청 파라미터 : " + paramExamNO + ", " +paramExamDesc);
 
-    var database = req.app.get('database');
-    //데이터 베이스 초기화
+//     var database = req.app.get('database');
+//     //데이터 베이스 초기화
 
-    if(database.db){
-        console.log("데이터 베이스를 초기화 했습니다.")
+//     if(database.db){
+//         console.log("데이터 베이스를 초기화 했습니다.")
 
-        database.SpeakingModel.findByExamNO(paramExamNO, function(err, results){
-            if(err){
-                console.error("챕터넘버와 db 의 챕터넘버가 맞지 않습니다." + err.stack);
-                res.writeHead('200',{'Content-Type':'text/html;charset=utf8'});
-                res.write('<h2> 챕터 넘버를 찾던 중 에러가 발생했습니다. </h2>');
-                res.write('<p>'+err.stack+'</p>');
-                res.end();
-                return;
-            }
-            console.dir("results = " + results) // 현재 내가 어디를작업하는지 확인
+//         database.SpeakingModel.findByExamNO(paramExamNO, function(err, results){
+//             if(err){
+//                 console.error("챕터넘버와 db 의 챕터넘버가 맞지 않습니다." + err.stack);
+//                 res.writeHead('200',{'Content-Type':'text/html;charset=utf8'});
+//                 res.write('<h2> 챕터 넘버를 찾던 중 에러가 발생했습니다. </h2>');
+//                 res.write('<p>'+err.stack+'</p>');
+//                 res.end();
+//                 return;
+//             }
+//             console.dir("results = " + results) // 현재 내가 어디를작업하는지 확인
 
-            if(results[0].Problem[0] != null) // 찾은 내용이 있다면 진행
-                {
+//             if(results[0].Problem[0] != null) // 찾은 내용이 있다면 진행
+//                 {
 
-                    var temp = results[0].Problem[0].speakingProblem;
-                    var temp2 = results[0].Problem[0].speakingProblemAnswer;
-                    var temp3 = results[0].Problem[0].speakingAnnouncementAudio;
+//                     var temp = results[0].Problem[0].speakingProblem;
+//                     var temp2 = results[0].Problem[0].speakingProblemAnswer;
+//                     var temp3 = results[0].Problem[0].speakingAnnouncementAudio;
 
-                    console.log("db 에 저장된 문제를 찾았습니다.!");
-                    console.log("db 에서 저장된 문제를 불러옵니다.")
+//                     console.log("db 에 저장된 문제를 찾았습니다.!");
+//                     console.log("db 에서 저장된 문제를 불러옵니다.")
 
-                    // 넘길 정보를 묶어 파라미터로 넘깁니다..
+//                     // 넘길 정보를 묶어 파라미터로 넘깁니다..
 
-                    var context= {
-                        ExamNO : paramExamNO,
-                        ExamDesc : paramExamDesc,
-                        speakingProblemType : paramspeakingProblemType,
-                        speakingProblem : temp,
-                        speakingProblemAnswer : temp2,
-                        speakingAnnouncementAudio : temp3,
-                        login_success : true,
-                        user:req.user
-                    };
+//                     var context= {
+//                         ExamNO : paramExamNO,
+//                         ExamDesc : paramExamDesc,
+//                         speakingProblemType : paramspeakingProblemType,
+//                         speakingProblem : temp,
+//                         speakingProblemAnswer : temp2,
+//                         speakingAnnouncementAudio : temp3,
+//                         login_success : true,
+//                         user:req.user
+//                     };
 
-                    res.app.render('./toefl/toeflTeacher/speaking/speakingType1.ejs', context, function(err, html){
-                        if(err){
-                            console.error("응답 웹 문서 생성 중 에러 발생 : " + err.stack);
+//                     res.app.render('./toefl/toeflTeacher/speaking/speakingType1.ejs', context, function(err, html){
+//                         if(err){
+//                             console.error("응답 웹 문서 생성 중 에러 발생 : " + err.stack);
 
-                            res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-                            res.write('<h2> 응답 웹문서 생성 중 에러 발생 </h2>' + err.stack);
-                            res.end();
+//                             res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+//                             res.write('<h2> 응답 웹문서 생성 중 에러 발생 </h2>' + err.stack);
+//                             res.end();
 
-                            return;
-                        }
-                        console.log('응답 웹문서 : ' + html);
-                        res.end(html)
-                    });
-                }else if(results[0].Problem[0]==undefined){ //찾은 내용이없다면 이곳에서 진행
-                    console.log("db에 저장된 문제가 없네요!");
-                    console.log("문제 새로 만들기로 이동합니다.");
+//                             return;
+//                         }
+//                         console.log('응답 웹문서 : ' + html);
+//                         res.end(html)
+//                     });
+//                 }else if(results[0].Problem[0]==undefined){ //찾은 내용이없다면 이곳에서 진행
+//                     console.log("db에 저장된 문제가 없네요!");
+//                     console.log("문제 새로 만들기로 이동합니다.");
 
-                    var context = {
-                        ExamNO : paramExamNO,
-                        ExamDesc : paramExamDesc, 
-                        speakingProblemType : paramspeakingProblemType,
-                        speakingProblem : 1,
-                        speakingAnnouncementAudio : 1,
-                        speakingProblemAnswer:1,
-                        login_success : true,
-                        user:req.user
-                    };
+//                     var context = {
+//                         ExamNO : paramExamNO,
+//                         ExamDesc : paramExamDesc, 
+//                         speakingProblemType : paramspeakingProblemType,
+//                         speakingProblem : 1,
+//                         speakingAnnouncementAudio : 1,
+//                         speakingProblemAnswer:1,
+//                         login_success : true,
+//                         user:req.user
+//                     };
 
-                    req.app.render('./toefl/toeflTeacher/speaking/speakingType1.ejs',context, function(err, html){
-                        if(err){
-                            console.error("Addspeaking.ejs 로 랜더링중 에러가 발생했습니다."+ err.stack)
+//                     req.app.render('./toefl/toeflTeacher/speaking/speakingType1.ejs',context, function(err, html){
+//                         if(err){
+//                             console.error("Addspeaking.ejs 로 랜더링중 에러가 발생했습니다."+ err.stack)
 
-                            res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-                            res.write('<h2>랜더링중 문제 발생 </h2>');
-                            res.write('<p>'+err.stack+'</p>');
-                            res.end();
+//                             res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+//                             res.write('<h2>랜더링중 문제 발생 </h2>');
+//                             res.write('<p>'+err.stack+'</p>');
+//                             res.end();
 
-                            return;
-                        }
-                        console.log('응답 웹문서 : '+ html);
-                        res.end(html);
-                    });
+//                             return;
+//                         }
+//                         console.log('응답 웹문서 : '+ html);
+//                         res.end(html);
+//                     });
 
-                }
-        })
-    }else{
-        res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-        res.write('<h2>데이터베이스 연결 실패</h2>');
-        res.end();
-    }
-}
+//                 }
+//         })
+//     }else{
+//         res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+//         res.write('<h2>데이터베이스 연결 실패</h2>');
+//         res.end();
+//     }
+// }
 
 
 // writing 통합형/ 독립형 기능
@@ -423,5 +423,5 @@ function errorHandling(err) {
 
 module.exports.reading = reading;
 module.exports.listening = listening;
-module.exports.speaking = speaking;
+// module.exports.speaking = speaking;
 module.exports.writing = writing;

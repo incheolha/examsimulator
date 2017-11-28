@@ -294,6 +294,8 @@ var temp = true;
                             'ExamNO':paramExamNO},{"$push":{'Problem':{
                             'writingProblemType':paramwritingProblemType,
                             'writingProblem':paramwritingProblem,
+                            'writingProblemListeningImage':paramwritingProblemListeningImage,
+                            'writingProblemListeningAudio':paramwritingProblemListeningAudio,
                             'writingProblemReading':paramwritingProblemReading,
                             'writingProblemAnswer':paramwritingProblemAnswer
                         }}}, function(err, results){
@@ -397,8 +399,6 @@ var temp = true;
                        
         return;
     }
-
-
 
 
 
