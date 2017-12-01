@@ -91,10 +91,7 @@ writingSchemaObj.createSchema = function(mongoose) {
         
     });
     
-    WritingSchema.static('findByProblemType', function(writingProblemType, callback){
-         console.log(writingProblemType);
-         return this.find({Problem:[{writingProblemType:writingProblemType}]}, callback)
-    });
+
 
     console.log('writing schema 정의함');
     return WritingSchema;

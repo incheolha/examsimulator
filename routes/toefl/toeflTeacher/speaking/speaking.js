@@ -90,6 +90,7 @@ var speaking = function(req, res){
 								speakingProblem : '',
 								speakingProblemReading : '',
 								speakingProblemListeningImage : '',
+								speakingProblemListeningAudio : '',
 								speakingProblemAnswer : '',
 								login_success : true,
 								user : req.user
@@ -108,7 +109,7 @@ var speaking = function(req, res){
 								ExamDesc : paramExamDesc,
 								speakingProblemType : paramspeakingProblemType,
 								speakingAnnounceImage : '',
-								sspeakingAnnouncementAudio : '',
+								speakingAnnouncementAudio : '',
 								speakingProblem : '',
 								speakingProblemReading : '',
 								speakingProblemListeningImage : '',
@@ -119,7 +120,7 @@ var speaking = function(req, res){
 
 				}
 				
-				console.log("문제 result tag : " + context.resultsModifyTag)
+				console.log("문제 result tag : " + context.resultModifyTag)
 
 				res.app.render(speakingRoutingPath, context, function(err, html){
 					if(err){

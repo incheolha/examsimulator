@@ -42,7 +42,6 @@ module.exports = {
 
 // reading routes 
  
-
     	,{file:'./toefl/toeflTeacher/reading/reading', path:'/process/toefl/reading/addproblemreading', method:'addproblemreading', type:'post'}
 
 // listening routes
