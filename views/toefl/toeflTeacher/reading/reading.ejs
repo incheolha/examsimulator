@@ -185,16 +185,14 @@
           </div>
         </div>
         
-        <div class="ui modal" id="go_back_main_modal">
+   		<div class="ui modal" id="go_back_main_modal">
           <i class="close icon"></i>
           <div class="header">
 			
-  
-			  
            메인 화면으로 이동하기
           </div>
           <div class="content">
-         
+           <form class="ui form" action="/toefl/toeflTeacher/main" method="post" >
             <div class="description">
               <div class="ui header">
 				 
@@ -203,11 +201,13 @@
             </div>
           </div>
           <div class="actions">
-         
-              <button class="ui grey button">이전으로</button>
-              
+             <div class="ui grey deny button">
+                    이전으로
+              </div>
+                <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+                <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
               <button class="ui blue button">이동하기</button>
-            
+              </form>
           </div>
         </div>
 

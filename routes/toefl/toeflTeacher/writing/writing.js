@@ -5,284 +5,149 @@
 // html-entities module is required in showwriting.ejs
 var Entities = require('html-entities').AllHtmlEntities;
 
-var addwriting = function(req, res) {
+var writing = function(req, res){
 
-};
-
-var updatewriting = function(req, res) {
-    console.log('writing 모듈 안에 있는 updatewriting 호출됨.');
-	var paramExamNO = req.body.ExamNO || req.query.ExamNO;
-	var paramExamDesc = req.body.ExamDesc || req.query.ExamDesc; 
-	var paramwritingProblemType= req.body.writingProblemType || req.query.writingProblemType;
-	var paramwritingAnnounceImage = req.body.writingAnnounceImage || req.query.writingAnnounceImage;
-	var paramwritingAnnouncementAudio = req.body.writingAnnouncementAudio || req.query.writingAnnouncementAudio;
-	var paramwritingProblem = req.body.writingProblem || req.query.writingProblem;
-	var paramwritingProblemReading = req.body.writingProblemReading || req.query.writingProblemReading;
-	var paramwritingProblemListeningImage = req.body.writingProblemListeningImage || req.query.writingProblemListeningImage;
-	var paramwritingProblemListening = req.body.writingProblemListening || req.query.writingProblemListening;
-	var paramwritingProblemAnswer = req.body.writingProblemAnswer || req.query.writingProblemAnswer;
-
-	console.log('요청 파라미터 : ' + paramwritingProblemType);
-	var database = req.app.database('database');
-
-	if(database.db){
-		console.log(database.UserModel);
-		database.WritingModel.findByExamNO(paramExamNO,
-		
-			function(err, results){
-				if(err){
-					console.error('챕터 넘버를 찾던 중 에러 발생 : ' +err.stack);
-
-					res.writeHead('200', {'Content-Type':'text/html;charset=utf8;'});
-					res.write('<h2>챕터 넘버를 찾던 중 에러 발생 </h2>');
-					res.write('<p>'+ err.stack + '</p>');
-					res.end();
-
-					return;
-				}
-				console.dir("result = " + results);
-				if(results != null)
-					{
-						database.WritingModel.update(
-						{'ExamNO':paramExamNO},{'$push':{'Problem':{
-							'writingProblemType':paramwritingProblemType,
-							'wrtingAnnounceImage':paramwritingAnnounceImage,
-							'writingAnnouncementAudio':paramwritingAnnouncementAudio,
-							'writingProblem':paramwritingProblem,
-							'writingProblemReading':paramwritingProblemReading,
-							'writingProblemListening':paramwritingProblemListening,
-							'writingProblemListeningImage':paramwritingProblemListeningImage,
-							'writingProblemAnswer':paramwritingProblemAnswer
-						}}}, {'upsert':true}, function(err, results){
-							if(err){
-								console.error('문제 추가 중 에러 발생 : '+ err.stack);
-
-								res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-								res.write('<h2>writing 문제 추가 중 에러 발생 </h2>');
-								res.write('<p>'+err.stack+'</p>');
-								res.end()
-
-								return;
-							}
-							return res.redirect('./toefl/addExam.ejs');
-
-						})
-					}
-			})
-	}else{
-
-		res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-		res.write('<h2>데이터베이스 연결에 실패했습니다. </h2>');
-		res.end();
-	}
-
-};
-
-var removewriting = function(req, res) {
+    console.log("toefl_Teacher에 있는 writing 호출됨");
     
-};
-
-var listwriting = function(req, res) {
-	console.log('writing 모듈 안에 있는 listwriting 호출됨.');
-  
-    var paramPage = req.body.page || req.query.page;
-    var paramPerPage = req.body.perPage || req.query.perPage;
-	
-    console.log('요청 파라미터 : ' + paramPage + ', ' + paramPerPage);
-    
-	var database = req.app.get('database');
-	
-    // 데이터베이스 객체가 초기화된 경우
-	if (database.db) {
-		// 1. 글 리스트
-		var options = {
-			page: paramPage,
-			perPage: paramPerPage
-		}
-		
-		database.WritingModel.list(options, function(err, results) {
-			if (err) {
-                console.error('게시판 글 목록 조회 중 에러 발생 : ' + err.stack);
-                
-                res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-				res.write('<h2>게시판 글 목록 조회 중 에러 발생</h2>');
-                res.write('<p>' + err.stack + '</p>');
-				res.end();
-                
-                return;
-            }
-			
-			if (results) {
-				console.dir(results);
-				// 전체 문서 객체 수 확인
-				database.WritingModel.count().exec(function(err, count) {
-					res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-					// 뷰 템플레이트를 이용하여 렌더링한 후 전송
-					var context = {
-						title: '글 목록',
-						writings: results,
-						page: parseInt(paramPage),
-						pageCount: Math.ceil(count / paramPerPage),
-						perPage: paramPerPage, 
-						totalRecords: count,
-						size: paramPerPage
-					};
-					req.app.render('./board/listwriting.ejs', context, function(err, html) {
-                        if (err) {
-                            console.error('응답 웹문서 생성 중 에러 발생 : ' + err.stack);
-
-                            res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-                            res.write('<h2>응답 웹문서 생성 중 에러 발생</h2>');
-                            res.write('<p>' + err.stack + '</p>');
-                            res.end();
-                            return;
-                        }
-						res.end(html);
-					});
-				});
-			} else {
-				res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-				res.write('<h2>글 목록 조회  실패</h2>');
-				res.end();
-			}
-		});
-	} else {
-		res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-		res.write('<h2>데이터베이스 연결 실패</h2>');
-		res.end();
-	}
-};
-
-var showwriting = function(req, res) {
-	console.log('writing 모듈 안에 있는 showwriting 호출됨.');
-  
-    // URL 파라미터로 전달됨
-    var paramId = req.body.id || req.query.id || req.params.id;
-	
-    console.log('요청 파라미터 : ' + paramId);
-    
-    
-	var database = req.app.get('database');
-	
-    // 데이터베이스 객체가 초기화된 경우
-	if (database.db) {
-		// 1. 글 리스트
-		database.WritingModel.load(paramId, function(err, results) {
-			if (err) {
-                console.error('게시판 글 조회 중 에러 발생 : ' + err.stack);
-                
-                res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-				res.write('<h2>게시판 글 조회 중 에러 발생</h2>');
-                res.write('<p>' + err.stack + '</p>');
-				res.end();
-                
-                return;
-            }
-			
-			if (results) {
-				console.dir(results);
-  
-				res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-				
-				// 뷰 템플레이트를 이용하여 렌더링한 후 전송
-				var context = {
-					title: '글 조회 ',
-					writings: results,
-					Entities: Entities
-				};
-				
-				req.app.render('./toefl/writing/showwriting.ejs', context, function(err, html) {
-					if (err) {
-                        console.error('응답 웹문서 생성 중 에러 발생 : ' + err.stack);
-                
-                        res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-                        res.write('<h2>응답 웹문서 생성 중 에러 발생</h2>');
-                        res.write('<p>' + err.stack + '</p>');
-                        res.end();
-
-                        return;
-                    }
-					
-					console.log('응답 웹문서 : ' + html);
-					res.end(html);
-				});
-			 
-			} else {
-				res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-				res.write('<h2>글 조회실패함</h2>');
-				res.end();
-			}
-		});
-	
-	} else {
-		res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-		res.write('<h2>데이터베이스 연결 실패</h2>');
-		res.end();
-	}
-    
-	
-};
-
-var addproblem = function(req, res) {
-	console.log('writing 모듈 안에 있는 addproblem 호출됨.');
- 
-	var paramId = req.body.id || req.query.id;
-	
     var paramExamNO = req.body.ExamNO || req.query.ExamNO;
     var paramExamDesc = req.body.ExamDesc || req.query.ExamDesc;
-    var paramContents = req.body.contents || req.query.contents;
-    var paramWriter = req.body.writer || req.query.writer;
     var paramWritingProblemType = req.body.writingProblemType || req.query.writingProblemType;
-    var paramWritingAnnounceImage = req.body.writingAnnounceImage || req.query.writingAnnounceImage;
-    var paramWritingAnnounceMentAudio = req.body.writingAnnounceMentAudio || req.query.writingAnnounceMentAudio;
-    var paramWritingProblem = req.body.writingProblem || req.query.writingProblem;
-    var paramWritingProblemReading = req.body.writingProblemReading || req.query.writingProblemReading;
-    var paramWritingProblemListeningImage = req.body.writingProblemListeningImage || req.query.writingProblemListeningImage;
-    var paramWritingProblemListening = req.body.writingProblemListening || req.query.writingProblemListening;
-    var paramWritingProblemAnswer = req.body.writingProblemAnswer || req.query.writingProblemAnswer;
-	
-    console.log('요청 파라미터 : ' + paramExamNO + ', ' + paramExamDesc + ', ' + paramContents + ', ' + 
-               paramWriter + ', ' + paramWritingProblemType + ', ' + paramWritingAnnounceImage + ', ' + paramWritingAnnounceMentAudio + ', ' + paramWritingProblem + ', ' + paramWritingProblemReading + ', ' + paramWritingProblemListeningImage + ', ' + paramWritingProblemListening + ', ' + paramWritingProblemAnswer);
-    
-	var database = req.app.get('database');
-	
-	// 데이터베이스 객체가 초기화된 경우
-	if (database.db) {
-		
-		// 1. 아이디를 이용해 사용자 검색
-		database.WritingModel.findByIdAndUpdate(paramId,
-            {'$push': {'Problem':{'writingProblem':paramWritingProblem, 'writingProblemReading':paramWritingProblemReading}}},
-            {'new':true, 'upsert':true},
-            function(err, results) {
-                if (err) {
-                    console.error('게시판 댓글 추가 중 에러 발생 : ' + err.stack);
 
-                    res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-                    res.write('<h2>게시판 댓글 추가 중 에러 발생</h2>');
-                    res.write('<p>' + err.stack + '</p>');
-                    res.end();
 
-                    return;
+    console.log("요청 파라미터 + problem type : " + paramExamNO + ", " + paramWritingProblemType);
+
+    if (paramWritingProblemType == 1) {
+      
+        problemTypeRoutingPath = './toefl/toeflTeacher/writing/writingIntegrated.ejs';
+
+    } else {
+
+     
+        problemTypeRoutingPath = './toefl/toeflTeacher/writing/writingIndependent.ejs';
+
+    }
+
+    var database = req.app.get('database');
+    //데이터베이스 초기화
+    if(database.db){
+        console.log("데이터베이스를 초기화 했습니다.");
+
+        database.WritingModel.findByExamNO(paramExamNO, function(err, results){
+            if(err){
+         
+                errorHandling(err);
+
+            }
+            console.dir("results = " +results); //내가 찾고 있는 영역확인
+
+            if(results[0].Problem[0] != null) //찾은 내용이 있다면 진행
+            {
+
+
+                console.log("db 에 저장된 문제를 찾았습니다.");
+                console.log("db 의 문제와함께 랜더링합니다.");
+                //회차정보와 로그인 정보를 파라미터로 묶어 넘긴다.
+                for (var i = 0; i < results[0].Problem.length; i++) {
+
+                    console.log("i 값은:"+ results[0].Problem.length);
+                    if (results[0].Problem[i].writingProblemType == paramWritingProblemType) {
+                        console.log("db측 문제 유형은 "+ results[0].Problem[i].writingProblemType);
+                        console.log("문제 유형은 "+ paramWritingProblemType);
+                        
+                        var context = {
+                            resultModifyTag: true,
+                            ExamNO: paramExamNO,
+                            ExamDesc: paramExamDesc,
+                            writingProblemType: results[0].Problem[i].writingProblemType,
+                            writingProblem: results[0].Problem[i].writingProblem,
+                            writingProblemReading: results[0].Problem[i].writingProblemReading,
+                            writingProblemListeningImage: results[0].Problem[i].writingProblemListeningImage,
+                            writingProblemListeningAudio: results[0].Problem[i].writingProblemListeningAudio,
+                            writingProblemAnswer: results[0].Problem[i].writingProblemAnswer,
+                            login_success: true,
+                            user: req.user
+                        };
+   
+                        
+                        console.log("라우팅 경로:"+problemTypeRoutingPath);
+                        console.log("문제유형:"+context.writingProblemType);
+                        console.log("시험문제:"+context.ExamNO);
+                        console.log("시험설명:"+context.ExamDesc);
+                        console.log("시험지문:"+context.writingProblemReading);
+                        console.log("라이팅 문제:"+context.writingProblem);
+                        console.log("라이팅 문제 정답:"+context.writingProblemAnswer);
+                        
+                        break;
+
+                    } else {
+                        
+                        var context = {
+                            resultModifyTag: false,
+                            ExamNO : paramExamNO,
+                            ExamDesc : paramExamDesc,
+                            writingProblemType : paramWritingProblemType,
+                            writingProblem : '',
+                            writingProblemReading : '',
+                            writingProblemListeningImage : '',
+                            writingProblemListeningAudio : '',
+                            writingProblemAnswer : '',
+                            login_success : true,
+                            user : req.user
+
+                        };
+                    }
+
+                    console.log("count I 값은"+ i);
                 }
+     
+         
 
-                console.log("글 데이터 추가함.");
-                console.log('글 작성', '포스팅 글을 생성했습니다. : ' + paramId);
+            } else if (results[0].Problem[0]== undefined ) {
 
-                return res.redirect('/process/toefl/writing/showwriting/' + paramId); 
+                console.log("db에 저장된 문제가 없습니다.");
+                console.log("새로운 문제 만들기로 이동합니다.");
+
+
+
+                var context = {
+                    resultModifyTag: false,
+                    ExamNO : paramExamNO,
+                    ExamDesc : paramExamDesc,
+                    writingProblemType : paramWritingProblemType,
+                    writingProblemReading : '',
+                    writingProblemListeningImage : '',
+                    writingProblemListeningAudio : '',
+                    writingProblemAnswer : '',
+                    login_success : true,
+                    user : req.user
+
+                };
+
+               
+            }
+
+            console.log("문제 resultMotifyTag: " + context.resultModifyTag);
+
+
+            res.app.render(problemTypeRoutingPath, context, function(err, html){
+                if(err){
+                    errorHandling(err);
+                }
+                console.log("응답 웹문서 : " + html);
+                res.end(html);
+             });
+
         });
- 
-	} else {
-		res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-		res.write('<h2>데이터베이스 연결 실패</h2>');
-		res.end();
-	}
-	
+
+
+    } else {
+        res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+        res.write('<h2>데이터베이스 연결 실패</h2>');
+        res.end();
+    }
+    
 };
 
 
-module.exports.addwriting = addwriting;
-module.exports.updatewriting = updatewriting;
-module.exports.removewriting = removewriting;
-module.exports.listwriting = listwriting;
-module.exports.showwriting = showwriting;
-module.exports.addproblem = addproblem;
+
+module.exports.writing = writing;

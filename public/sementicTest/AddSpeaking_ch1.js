@@ -79,14 +79,13 @@
          $("#inputtest").val(text); 
 
         });
-        $("#btn2").hide();
+       
         
         $("#btn2").click(function(){
         var text = $(this).text();
          $("#inputtest2").val(text); 
 
         });        
-        $("#btn3").hide();
         
         $("#btn3").click(function(){
         var text = $(this).text();

@@ -199,46 +199,46 @@
                   
                   
         <h3 class="ui header">문제를 소개하는 Narrator mp3 파일을 올려주세요  </h3>       
-        <label for="sp_ch_5_mp3_ipt" class="ui icon button">
+        <label for="sp_ch_1_mp3_ipt" class="ui icon button">
             <i class="file icon"></i>
             Open mp3 File</label>
-            <input type="file" id="sp_ch_5_mp3_ipt" name="speakingAnnouncementAudio" style="display:none" accept="audio/*" multiple>
-            <div id="sp_ch_5_mp3_pre">  
+            <input type="file" id="sp_ch_1_mp3_ipt" name="speakingAnnouncementAudio" style="display:none" accept="audio/*" multiple>
+            <div id="sp_ch_1_mp3_pre">  
               </div>             
-                  
-     
-
+            <input type="text" id="inputtest1">      
+        
               </div>
                 
               
              <div class="field">
         
         <h3 class="ui header"> conversation mp3/img 파일 업로드하기   </h3>      
-            <label for="sp_ch_5_img_ipt" class="ui icon button">
+            <label for="sp_ch_1_img_ipt" class="ui icon button">
                  <i class="file icon"></i>
                 Open img File</label>
-            <input type="file" id="sp_ch_5_img_ipt" id="speakingProblemListneingImage" style="display:none" accept="image/*" multiple>
-            <div id="sp_ch_5_img_pre">
-            </div> 
+            <input type="file" id="sp_ch_1_img_ipt" id="speakingProblemListneingImage" style="display:none" accept="image/*" multiple>
+            <div id="sp_ch_1_img_pre">
+            </div>
+            <input type="text" id="inputtest2"> 
             <br>
             <br>  
-              <label for="sp_ch_5_1_mp3_ipt" class="ui icon button">
+              <label for="sp_ch_2_mp3_ipt" class="ui icon button">
                  <i class="file icon"></i>
                 Open mp3 File</label>
-            <input type="file" id="sp_ch_5_1_mp3_ipt" name="speakingProblemListeningAudio" style="display:none" accept="audio/*" multiple>
-            <div id="sp_ch_5_1_mp3_pre">  
+            <input type="file" id="sp_ch_2_mp3_ipt" name="speakingProblemListeningAudio" style="display:none" accept="audio/*" multiple>
+            <div id="sp_ch_2_mp3_pre">  
               </div>   
-                
+            <input type="text" id="inputtest3">    
                 
                 
                 </div>                                
              
             <div class='field'>
                 <h3 class="ui header">  문제 입력하기   </h3>   
-                <input type="text" class="ui input" name="speakingProblem" placeholder="문제를 입력해 주세요 ">
+                <input type="text" id="inputtest4" class="ui input" name="speakingProblem" placeholder="문제를 입력해 주세요 ">
                 
                  <h3 class="ui header"> 문제 해설작성하기  </h3>   
-                <input type="text" class="ui input" name="speakingProblemAnswer" placeholder="해설을 입력해 주세요 ">
+                <input type="text" id="inputtest5" class="ui input" name="speakingProblemAnswer" placeholder="해설을 입력해 주세요 ">
                 
                 
                 </div>    
@@ -347,7 +347,7 @@
            메인 화면으로 이동하기
           </div>
           <div class="content">
-         
+           <form class="ui form" action="/toefl/toeflTeacher/main" method="post" >
             <div class="description">
               <div class="ui header">
 				 
@@ -356,13 +356,15 @@
             </div>
           </div>
           <div class="actions">
-         
-              <button class="ui grey deny button">이전으로</button>
-              
+             <div class="ui grey deny button">
+                    이전으로
+              </div>
+                <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+                <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
               <button class="ui blue button">이동하기</button>
-            
+              </form>
           </div>
-        </div> 		 		 
+        </div> 		 
 			 
 			 
 

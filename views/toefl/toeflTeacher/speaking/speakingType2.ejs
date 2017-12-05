@@ -188,7 +188,7 @@
           <div class="ui input fluid focus">  
 
             
-            <input type="text"  name="speakingProblem" placeholder="Some people prefer that.." >
+            <input type="text" id="inputtest"  name="speakingProblem" placeholder="Some people prefer that.." >
      
          </div>   
 
@@ -203,7 +203,7 @@
             <input type="file" id="sp_ch_1_mp3_ipt" name="speakingAnnouncementAudio" style="display:none" accept="audio/*" multiple>
             <div id="sp_ch_1_mp3_pre"> 
               
-              <!-- <input type="text" id="inputtest2" name="speakingProblem"  >  -->
+             <input type="text" id="inputtest2">
               
             </div>   
 
@@ -214,7 +214,7 @@
                   <h3 class="ui header">문제에 관한 설명, 모범 답안 작성하기. </h3>     
                   
           <div class="ui input  focus">  
-            <input type="text"  name="speakingProblemAnswer" placeholder="ex) What is your... / Describe a unique about...">
+            <input type="text" id="inputtest3"  name="speakingProblemAnswer" placeholder="ex) What is your... / Describe a unique about...">
         </div>
 
       
@@ -323,7 +323,7 @@
            메인 화면으로 이동하기
           </div>
           <div class="content">
-         
+           <form class="ui form" action="/toefl/toeflTeacher/main" method="post" >
             <div class="description">
               <div class="ui header">
 				 
@@ -332,14 +332,15 @@
             </div>
           </div>
           <div class="actions">
-         
-              <button class="ui grey deny button">이전으로</button>
-              
+             <div class="ui grey deny button">
+                    이전으로
+              </div>
+                <input type="hidden" name="ExamNO" value=<%= ExamNO %>>
+                <input type="hidden" name="ExamDesc" value=<%= ExamDesc %>> 
               <button class="ui blue button">이동하기</button>
-            
+              </form>
           </div>
-        </div> 		 		 
-			 
+        </div>
 			 
 
 </body>

@@ -11,20 +11,15 @@
         
         var selectVal = $("#selectVal")
         var selectVal2= $("#selectVal2");
-        var a = document.getElementById("chapter_value")
+   
 
  
-
-
-		$("#select_Dropdown").dropdown()
-		.change (function(){
-        
-        var value = JSON.stringify($(this).dropdown('get value'));
-        $("#chapter_value").val(value)
-        alert(a);
-             
-        
+        $("#reading_dropdown").dropdown(
+		).on('change', function(){
+			 var a =($("#reading_dropdown").dropdown('get value'))
+			 selectVal.text(a);
 		});
+
 		 
       
         $("#listening_dropdown").dropdown(
@@ -74,91 +69,7 @@
         $('.ui.radio.checkbox')
             .checkbox();
           
-    //  CKEDITOR.replace( 'readingScript' );
-	
-//    document.getElementById("lc_ch_1_img_ipt").onchange = function(){
-//         var preview = document.getElementById("lc_ch_1_img_pre");
-//         var files = document.getElementById("lc_ch_1_img_ipt").files;
-        
-//         function readAndPreview(file){
-//              if ( /\.(jpe?g|png|gif)$/i.test(file.name)){
-//                  var reader = new FileReader();
-                 
-//                  reader.addEventListener("load", function(){
-//                      if(!files.length){
-//                          preview.innerHTML = "<p>선택된 파일이 없습니다 </p>"
-//                      }else{
-//                          preview.innerHTML = ""; //초기화 
-//                          var list = document.createElement("ul");
-//                          preview.appendChild(list);
-//                          for (var i = 0; i<files.length; i++){
-//                              var li = document.createElement("li");
-//                              list.appendChild(li);
-//                              var img = document.createElement("img");
-//                              img.src = window.URL.createObjectURL(files[i]);
-//                              img.height= 100;
-//                              img.width= 100;
-//                              img.onload = function(){
-//                             window.URL.revokeObjectURL(this.src);
-//                              }
-//                              li.appendChild(img)
-//                              var info = document.createElement("span");
-//                              info.innerHTML = files[i].name + ": " +files[i].size + "bytes";
-//                              li.appendChild(info)
-//                          }
-                         
-//                      }
-//                  }, false);
-//                  reader.readAsDataURL(file);
-//              }
-//         }
-//         if(files){
-//             [].forEach.call(files, readAndPreview);
-//         }
-//     }      
-    
-//     document.getElementById("lc_ch_1_mp3_ipt").onchange = function(){
-//         var preview = document.getElementById("lc_ch_1_mp3_pre");
-//         var files = document.getElementById('lc_ch_1_mp3_ipt').files;
-        
-//         function readAndPreview(file){
-//              if ( /\.(?:wav|mp3)$/i.test(file.name)){
-//                  var reader = new FileReader();
-                 
-//                  reader.addEventListener("load", function(){
-//                      if(!files.length){
-//                          preview.innerHTML = "<p>선택된 파일이 없습니다 </p>"
-//                      }else{
-//                         preview.innerHTML="";
-//                         var list = document.createElement("ol");                    
-//                         preview.appendChild(list)
-                       
-//                           for(var j=0; j<files.length; j++)
-//                             {
-//                             var li = document.createElement("li");
-//                             list.appendChild(li);
-//                             var aud = document.createElement("audio");
-//                             aud.src=window.URL.createObjectURL(files[j]);
-//                             aud.controls= "controls";
-//                             aud.onload= function(){
-//                             window.URL.revokeObjectURL(this.src);
-//                             }
-//                             li.appendChild(aud)
-//                             var info = document.createElement("span");
-//                             info.innerHTML = files[j].name + ": "+files[j].size+"bytes";
-//                             li.appendChild(info);
-//                         }
-                         
-//                      }
-//                  }, false);
-//                  reader.readAsDataURL(file);
-//              }
-            
-//         }
-//         if(files){
-//             [].forEach.call(files, readAndPreview);
-//         }
-//     };      
+ 
     
 });         
 

@@ -240,7 +240,7 @@
               <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
               <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>> 
               <!-- <input type="text" name="readingChapterNumber" id="chapter_value">       -->
-              <div class="ui selection fluid dropdown" id="select_Dropdown" name="readingChapterNumber" >
+              <div class="ui selection fluid dropdown" id="reading_dropdown" name="readingChapterNumber" >
               <input type="hidden" name="readingChapterNumber">
               <i class="dropdown icon"></i>
               <div class="default text">Select Chapter</div>
@@ -463,7 +463,7 @@
     </div>
   </div>
   <div class="actions">
-    <form class="ui form" action="/toeflTeacher/writing/integrated" method="post" >
+    <form class="ui form" action="/toefl/toeflTeacher/writing" method="post" >
     <div class="ui red deny button">
       Nope
     </div>
