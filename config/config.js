@@ -44,7 +44,7 @@ module.exports = {
     	,{file:'./toefl/toeflTeacher/reading/reading', path:'/process/toefl/reading/addproblemreading', method:'addproblemreading', type:'post'}
 
 // listening routes
-		,{file:'./toefl/toeflTeacher/listening/multerAddProblem', path:'/process/toefl/listening/multerAddProblemListening', method:'addProblemListening', type:'post'}
+		,{file:'./toefl/toeflTeacher/listening/multerListening', path:'/toefl/toeflTeacher/listening/multerAddListening', method:'addProblemListening', type:'post'}
 
 // speaking routes
 		,{file:'./toefl/toeflTeacher/speaking/speaking',path:'/toefl/toeflTeacher/speaking', method:'speaking', type:'post'}

@@ -35,16 +35,16 @@
         });
         
         $('.ui.modal').modal();
-        $('ui.fourth.longer.modal').modal('show');
+       
 
   
         $('#test1').click(function(){
             $('.first.modal')
             .modal('show');
         });
-        
+      
         $('#lc_next').click(function(){
-            $('.third.longer.modal')
+            $('.second.modal')
             .modal('show');
         });
         $('#sp_next').click(function(){
@@ -56,13 +56,20 @@
             .modal('show');
         });        
 
-            $('.coupled.longer.modal')
-          .modal({
-            allowMultiple: true
-          })
+    
+         $('.coupled.modal')
+        .modal({
+            allowMultiple: false
+        })
         ;
-  
-        
+        $('.second.modal')
+        .modal('attach events', '.third.modal .blue.button')
+        ;
+        // attach events to buttons
+        $('.third.modal')
+        .modal('attach events', '.second.modal .blue.button')
+        ;
+
 
         
         

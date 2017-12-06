@@ -305,15 +305,28 @@
   </div>
 
 
-    
+  <!--listening chapter step modal  -->
+    <div class="ui coupled modal">
+    <div class="ui second attached longer modal">
+                
+    <div class="ui two top attached steps">
+      <div class="active step">
+        <i class="payment icon"></i>
+        <div class="content">
+          <div class="title">Billing</div>
+          <div class="description">Enter billing information</div>
+        </div>
+      </div>
+      <div class="disabled step">
+        <i class="info icon"></i>
+        <div class="content">
+          <div class="title">Confirm Order</div>
+          <div class="description">Verify order details</div>
+        </div>
+      </div>
+    </div>
 
-      
-        
- 
-    <div class="ui third longer modal">
-           
-          <i class="close icon"></i>
-          <div class="header">
+  <div class="header">
             선택한 항목 : 회차 Listening Chapter : <text id="selectVal2"></text>
 		</div>  
           <div class="content">
@@ -401,11 +414,57 @@
             <div class="ui red  deny button">
               Nope
             </div>
-            <button class="blue primary ui button" type="submit" form="listeningform">
+            <button class="blue primary ui button" id="second_next">
               Next!
             </button>
           </div>
 </div>
+
+ <div class="ui third attached longer modal">
+                
+    <div class="ui two top attached steps">
+      <div class="disabled step">
+        <i class="payment icon"></i>
+        <div class="content">
+          <div class="title">Billing</div>
+          <div class="description">Enter billing information</div>
+        </div>
+      </div>
+     
+         <div class="active step">
+        <i class="info icon"></i>
+        <div class="content">
+          <div class="title">Confirm Order</div>
+          <div class="description">Verify order details</div>
+        </div>
+      </div>
+    </div>
+
+  <div class="header">
+  
+ 
+            <div class="description">
+              <div class="ui header">We've auto-chosen a profile image for you.</div>
+            </div>
+          </form>
+          </div>
+      <div class="actions">
+            <div class="ui red  deny button">
+              Nope
+            </div>
+            <div class="ui blue primary button">
+              Back
+            </div>
+            <button class="ui green button" type="submit" form="listeningform">
+              Next!
+            </button>
+          </div>
+</div>
+    </div>       
+
+
+
+
 
 <!--
                   listeningChapterNumber:{type:Number},
