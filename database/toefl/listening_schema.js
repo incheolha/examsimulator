@@ -10,8 +10,7 @@ listeningSchemaObj.createSchema = function(mongoose) {
 	    
         ExamNO: {type: Number, trim:true, unique:true, 'default':''},     	                                  //시험출제 횟차    -시험응시collection과 연결필요
         ExamDesc:{type: String, trim:true, 'default':''},                                                          //시험출제 간단 설명
-        ExamCreatedTime:{type: Date, 'default': Date.now},                                //시험출제 생성일자
-        writer : {type: mongoose.Schema.ObjectId, ref:'users6'},                           //출제자 
+        ExamCreatedTime:{type: Date, 'default': Date.now},                                //시험출제 생성일자                          //출제자 
         listeningParagraph :[{
                 // type:[], trim: true, 'default':'',
                 listeningChapterNumber:{type:Number},

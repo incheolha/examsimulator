@@ -306,7 +306,7 @@
 
 
   <!--listening chapter step modal  -->
-    <div class="ui coupled modal">
+  
     <div class="ui second attached longer modal">
                 
     <div class="ui two top attached steps">
@@ -330,7 +330,7 @@
             선택한 항목 : 회차 Listening Chapter : <text id="selectVal2"></text>
 		</div>  
           <div class="content">
-          <form action="/toeflTeacher/listening" method="post" id="listeningform" >
+          <form action="/toefl/toeflTeacher/listening" method="post" id="listeningform" >
               
               <input type="hidden" name="ExamNO" value=<%=ExamNO %>>
               <input type="hidden" name="ExamDesc" value=<%=ExamDesc %>> 
@@ -339,13 +339,13 @@
              <i class="dropdown icon"></i>
              <div class="default text">Select Chapter</div>              
                 <div class="menu">
-                <div class="item" data-value="1">Chapter1</div>
-                <div class="item" data-value="2">Chapter2</div>
-                <div class="item" data-value="3">Chapter3</div>      
-                <div class="item" data-value="4">Chapter4</div>
-                <div class="item" data-value="5">Chapter5</div>
-                <div class="item" data-value="6">Chapter6</div>
-                <div class="item" data-value="7">dummy</div>
+                <div class="item" data-value=1>Chapter1</div>
+                <div class="item" data-value=2>Chapter2</div>
+                <div class="item" data-value=3>Chapter3</div>      
+                <div class="item" data-value=4>Chapter4</div>
+                <div class="item" data-value=5>Chapter5</div>
+                <div class="item" data-value=6>Chapter6</div>
+                <div class="item" data-value=7>dummy</div>
                   
                 </div>  
               </div>  
@@ -408,59 +408,19 @@
             <div class="description">
               <div class="ui header">We've auto-chosen a profile image for you.</div>
             </div>
-          </form>
+          
           </div>
       <div class="actions">
             <div class="ui red  deny button">
               Nope
             </div>
-            <button class="blue primary ui button" id="second_next">
+            <button type="submit" class="blue primary ui button" >
               Next!
             </button>
           </div>
-</div>
-
- <div class="ui third attached longer modal">
-                
-    <div class="ui two top attached steps">
-      <div class="disabled step">
-        <i class="payment icon"></i>
-        <div class="content">
-          <div class="title">Billing</div>
-          <div class="description">Enter billing information</div>
-        </div>
-      </div>
-     
-         <div class="active step">
-        <i class="info icon"></i>
-        <div class="content">
-          <div class="title">Confirm Order</div>
-          <div class="description">Verify order details</div>
-        </div>
-      </div>
-    </div>
-
-  <div class="header">
-  
- 
-            <div class="description">
-              <div class="ui header">We've auto-chosen a profile image for you.</div>
-            </div>
           </form>
-          </div>
-      <div class="actions">
-            <div class="ui red  deny button">
-              Nope
-            </div>
-            <div class="ui blue primary button">
-              Back
-            </div>
-            <button class="ui green button" type="submit" form="listeningform">
-              Next!
-            </button>
-          </div>
 </div>
-    </div>       
+
 
 
 

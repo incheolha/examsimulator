@@ -57,19 +57,8 @@
         });        
 
     
-         $('.coupled.modal')
-        .modal({
-            allowMultiple: false
-        })
-        ;
-        $('.second.modal')
-        .modal('attach events', '.third.modal .blue.button')
-        ;
-        // attach events to buttons
-        $('.third.modal')
-        .modal('attach events', '.second.modal .blue.button')
-        ;
-
+  
+      
 
         
         
