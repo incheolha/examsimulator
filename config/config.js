@@ -56,7 +56,12 @@ module.exports = {
 		,{file:'./toefl/toeflTeacher/writing/multerWriting', path:'/process/toefl/writing/multerAddWriting', method:'addProblemWriting', type:'post'}
 
 // student routes
-		,{file:'./student', path:'/toeflStudent/reading', method:'student', type:'post'}
+		
+		,{file:'./student', path:'/toeflStudent/reading', method:'student', type:'get'}
+		,{file:'./student', path:'/toeflStudent/listening', method:'student', type:'get'}
+		,{file:'./student', path:'/toeflStudent/speaking', method:'student', type:'get'}
+		,{file:'./student', path:'/toeflStudent/writing', method:'student', type:'get'}
+
 	],
 
 	facebook: {		// passport facebook
