@@ -28,7 +28,14 @@
 	<link rel="stylesheet" href="/public/toeflassets/css/bootstrap.css">
 	<link rel="stylesheet" href="/public/toeflassets/css/index_style.css">
 	<link rel="stylesheet" id="theme-switch" href="/public/toeflassets/css/index_style.css">
+<!--부트스트랩 CSS-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--부트스트랩 JS-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!--script-->
+	<script src='../public/sementicTest/index.js'></script>
 	<script src="/public/toeflassets/js/main.js"></script>
     <script src="/public/toeflassets/js/modernizr-2.6.2.min.js"></script>
 	<script src="/public/toeflassets/js/jquery.min.js"></script>
@@ -205,7 +212,7 @@
 		    		</div></div></div></div></div>
 <!--시험종류-->
     <div id="fh5co-our-services" data-section="services">
-  <div class="container">
+  <!-- <div class="container">
     <div class="row row-bottom-padded-sm">
       <div class="col-md-12 section-heading text-center">
         <h2 class="to-animate">Exam simulation</h2>
@@ -216,137 +223,104 @@
 			   
                 
 			  <form action="/toeflStudent/reading" method="post" id="StudentTest" >
-                <div class="card" style="width: 20rem;">
+                 <div class="card" style="width: 20rem;">
 
-  <img class="card-img-top" src="./toefl/image/d.jpg" alt="Card image cap">
+   <img class="card-img-top" src="./toefl/image/d.jpg" alt="Card image cap">
   <div class="card-block">
 	<h4 class="card-title">Card title</h4>
 	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 	<input type="hidden" name="ExamNO" value=4>
 	<input type="hidden" name="ExamDesc" value="4">
 	<input type="hidden" name="writingProblemType" value="2">
-	<button type="submit" class="btn btn-primary">시험보기</button>
+	<button type="submit" class="btn btn-primary">시험보기</button> 
 		</form>
-            </div></div></div></div></div>
-	 <ul class="nav nav-pills">
-                    <li class="filter" data-filter="all">
-                        <a href="#noAction">All</a>
-                    </li>
-                    <li class="filter" data-filter="web">
-                        <a href="#noAction">영어</a>
-                    </li>
-                    <li class="filter" data-filter="photo">
-                        <a href="#noAction">중국어</a>
-                    </li>
-                    <li class="filter" data-filter="identity">
-                        <a href="#noAction">일본어</a>
-                    </li>
-                </ul>
-  <div class="row">
-<div class="col-md-4">
-  <ul id="portfolio-grid" class="thumbnails row">
-                        <li class="span4 mix web">
-                            <div class="thumbnail float_l">
-                                <img src="../public/toeflassets/images/test.jpeg">
-                                <a href="/toefl_exam" class="more show_hide">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>toefl</h3>
-                                <p>영어권 대학에서 사용되는 학문적인 영어 구사 능력을 평가하는 시험입니다.</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
-                        <li class="span4 mix photo">
-                            <div class="thumbnail float_l">
-                                <img src="../public/toeflassets/images/test.jpeg">
-                                <a href="#single-project" class="show_hide more" rel="#slidingDiv1">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>teps</h3>
-                                <p>한국인들의 영어 의사소통 능력을 측정하기 위해 개발된 시험입니다.</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
-                        <li class="span4 mix identity">
-                            <div class="thumbnail float_l">
-                                <img src="../public/toeflassets/images/test.jpeg">
-                                <a href="/" class="more show_hide">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>toeic</h3>
-                                <p>현재 취업에 있어 필수적인 영어시험 점수로 이용되고 있습니다.</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
-                        <li class="span4 mix web">
-                            <div class="thumbnail float_l">
-                                <img src="../public/toeflassets/images/test.jpeg">
-                                <a href="#single-project" class="show_hide more">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>ielts</h3>
-                                <p>유학이나 연수 및 이민을 준비하는 분들께 적합한 시험입니다.</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
-                        <li class="span4 mix photo">
-                            <div class="thumbnail ">
-                                <img src="../public/toeflassets/images/test.jpeg">
-                                <a href="#single-project" class="show_hide more" rel="#slidingDiv4">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>opic</h3>
-                                <p>절대평가 방식으로 측정되는 5개의 외국어 말하기 평가시험 입니다.</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
-                        <li class="span4 mix identity">
-                            <div class="thumbnail">
-                                <img src="../public/toeflassets/images/test.jpeg">
-                                <a href="#single-project" class="show_hide more" rel="#slidingDiv5">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>neat</h3>
-                                <p>일상생활에 필요한 실용 영어능력을 평가하는 시험입니다.</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
-                        <li class="span4 mix web">
-                            <div class="thumbnail">
-                                <img src="../public/toeflassets/images/test.jpeg"/>
-                                <a href="#single-project" class="show_hide more" rel="#slidingDiv6">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>Thumbnail label</h3>
-                                <p>Thumbnail caption...</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
-                        <li class="span4 mix photo">
-                            <div class="thumbnail">
-                                <img src="../public/toeflassets/images/test.jpeg">
-                                <a href="#single-project" class="show_hide more" rel="#slidingDiv7">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>Thumbnail label</h3>
-                                <p>Thumbnail caption...</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
-                        <li class="span4 mix identity">
-                            <div class="thumbnail">
-                                <img src="../public/toeflassets/images/test.jpeg">
-                                <a href="#single-project" class="show_hide more" rel="#slidingDiv8">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>Thumbnail label</h3>
-                                <p>Thumbnail caption...</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div></div></div>
+			</div></div></div></div></div> -->
+			
+
+
+			<div class="container">
+				<div class="row row-bottom-padded-sm">
+					<div class="col-md-12 section-heading text-center">
+						<h2 class="to-animate">Exam simulation</h2>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 to-animate">
+						<h3>이용가능한 시험</h3>
+						
+					<div class="carousel slide" id="myCarousel">
+						<div class="carousel-inner">
+							<div class="item active">
+									<ul class="thumbnails">
+										<li class="col-sm-3">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+												</div>
+												<div class="caption">
+													<% var i;
+														for(i = 0; i <= list.length; i++){
+															%>
+									
+													<h4>시험1</h4>
+													<p>시험1설명</p>
+													<button type="submit" class="btn btn-mini">시험보기</button>
+												</div>
+											</div>
+										</li>
+										<% } %>
+										<!-- <li class="col-sm-3">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+												</div>
+												<div class="caption">
+													<h4>시험2</h4>
+													<p>시험2설명</p>
+													<button type="submit" class="btn btn-mini">시험보기</button>
+												</div>
+											</div>
+										</li> -->
+										<!-- <li class="col-sm-3">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+												</div>
+												<div class="caption">
+													<h4>3</h4>
+													<p>3</p>
+													<button type="submit" class="btn btn-mini">시험보기</button>
+												</div>
+											</div>
+										</li> -->
+										<!-- <li class="col-sm-3">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+												</div>
+												<div class="caption">
+													<h4>4</h4>
+													<p> 4</p>
+													<a class="btn btn-mini" href="#">» 4</a>
+												</div>
+											</div>
+										</li> -->
+									</ul>
+									
+							  </div><!-- /Slide1 --> 
+							</div>
+					   <nav>
+							<ul class="control-box pager">
+								<li><a data-slide="prev" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-left"></i></a></li>
+								<li><a data-slide="next" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-right"></i></li>
+							</ul>
+						</nav>
+					   <!-- /.control-box -->   
+											  
+					</div><!-- /#myCarousel -->
+			
+				</div><!-- /.col-xs-12 -->          
+				
+				</div><!-- /.container -->
+	
 <!--돈-->
 	<div id="fh5co-pricing" data-section="pricing">
 		<div class="container">
