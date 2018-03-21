@@ -7,7 +7,7 @@ listeningSchemaObj.createSchema = function(mongoose) {
 	 
 // 스피킹 스키마 정의
 	var ListeningSchema = mongoose.Schema({
-	    
+
         ExamNO: {type: Number, trim:true, unique:true, 'default':''},     	                                  //시험출제 횟차    -시험응시collection과 연결필요
         ExamDesc:{type: String, trim:true, 'default':''},                                                          //시험출제 간단 설명
         ExamCreatedTime:{type: Date, 'default': Date.now},                                //시험출제 생성일자                          //출제자 
@@ -16,10 +16,6 @@ listeningSchemaObj.createSchema = function(mongoose) {
                 listeningChapterNumber:{type:Number},
                 listeningChapterAudio:{type: String, trim:true, 'default':''},
                 listeningChapterImage:{type: String, trim:true, 'default':''},
-                
-                    
-
-
                         Problem: [{     
                                         listeningProblemType: { type: Number },                                   // 1~7번 까지의 유형       
                                         listeningAnnouncementText1: {type: String, trim:true, 'default':''},

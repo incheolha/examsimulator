@@ -22,8 +22,12 @@ var testAudio2 = "";
 var narrAudio1 = "";
 var narrAudio2 = "";
 
+var addChapterListening = function(req, res){
+
+}
 var addProblemListening = function(req, res){
 
 }
 
+module.exports.addChapterListening = addChapterListening;
 module.exports.addProblemListening = addProblemListening;

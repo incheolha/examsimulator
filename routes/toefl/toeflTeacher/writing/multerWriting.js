@@ -32,9 +32,9 @@ var temp = true;
                 console.log("Announce Image : "+writingProblemListeningImage );
 
                 callback(null, writingProblemListeningImage);
-     ;
+     
             }
-            else  if(file.fieldname=='writingProblemListeningAudio'){
+            else if(file.fieldname=='writingProblemListeningAudio'){
                 writingProblemListeningAudio = file.originalname;
                  console.log("Announcement Audio : "+writingProblemListeningAudio );
                 callback(null, writingProblemListeningAudio);

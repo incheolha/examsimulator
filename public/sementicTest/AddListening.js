@@ -1,11 +1,16 @@
-  $( document ).ready(function() {   
+  $( document ).ready(function() { 
+        
+    $('#hello').click(function(){
+            $('.first.modal')
+            .modal('show');
+        });
+    
+
            
          $("#ui_import_listening_modal").load("index.html .ui.coupled.longer.modal"); 
            
         $("#lc_chapter_complete_btn").on("click", function(){
-            $('.ui.dropdown').dropdown();
-            
-            
+            $('.ui.dropdown').dropdown();   
             $('.coupled.longer.modal')
               .modal({
                 allowMultiple: true
